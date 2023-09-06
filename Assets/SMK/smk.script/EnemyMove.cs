@@ -12,6 +12,6 @@ public class EnemyMove : MonoBehaviour
 
     void Update()
     {
-        transform.position = Vector3.MoveTowards(gameObject.transform.position, waypoint.transform.position, 0.1f);
+       
     }
 }
