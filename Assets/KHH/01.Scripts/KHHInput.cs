@@ -17,9 +17,6 @@ public class KHHInput : MonoBehaviour
     public Vector3 InputRightHandPos { get; set; }
     public Quaternion InputRightHandRot { get; set; }
 
-    //Test
-    public Vector3 InputTestTarget { get; set; }
-
     private void Awake()
     {
         instance = this;
@@ -28,28 +25,21 @@ public class KHHInput : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        InputAccel = Input.GetKey(KeyCode.W);
-        InputBrake = Input.GetKey(KeyCode.S);
-        InputSteer = Input.GetAxis("Horizontal");
-        InputBoost = Input.GetKey(KeyCode.LeftShift);   //부스터
+        InputAccel = OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger, OVRInput.Controller.LTouch) > 0.1f;
+        InputBrake = OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger, OVRInput.Controller.LTouch) > 0.1f;
+        //InputSteer = Input.GetAxis("Horizontal");
+        float steer = OVRInput.GetLocalControllerRotation(OVRInput.Controller.LTouch).eulerAngles.z / 180f - 1f;
+        if (steer < 0) steer = Mathf.Abs(steer) - 1f;
+        else steer = 1f - Mathf.Abs(steer);
+        InputSteer = steer;
+
+        InputBoost = OVRInput.GetDown(OVRInput.Button.One, OVRInput.Controller.RTouch);
 
         //사격
-        if (Input.GetMouseButtonDown(0)) InputFire = true;
-        else if (Input.GetMouseButtonUp(0)) InputFire = false;
+        InputFire = OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger, OVRInput.Controller.RTouch) > 0.2f;
         //보조무기
         if (Input.GetMouseButtonDown(1)) InputSub = true;
         else if (Input.GetMouseButtonUp(1)) InputSub = false;
         InputShield = Input.GetKey(KeyCode.LeftControl);
-
-        //Test
-        if (InputFire)
-        {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-            if (Physics.Raycast(ray, out hit, 100f, LayerMask.GetMask("Ground")))
-                InputTestTarget = hit.point;
-            else
-                InputTestTarget = Vector3.zero;
-        }
     }
 }
