@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class KHHKart : MonoBehaviour
 {
@@ -18,18 +19,22 @@ public class KHHKart : MonoBehaviour
 
     //speed
     int fowardBack = 1;
-    float normalSpeed = 14f;
+    public float normalSpeed = 18f;
 
     //boost
-    float boostMultiply = 1.5f;
-    float boostGauge = 100f;
+    float boostMultiply = 1.8f;
+    float boostMax = 10f;
+    float boostGauge = 10f;
+    float boostUse = 2f;
+    public Image gaugeBoostImage;
 
     //drift
-    float driftSpeed = 12f;
-    float driftCharge = 10f;
+    public float driftMultiply = 1.3f;
+    public float driftSpeed = 12f;
+    float driftCharge = 3f;
 
     //back
-    float backSpeed = 12f;
+    public float backSpeed = 12f;
 
     [Header("Physics")]
     [SerializeField] Collider carCollider;
@@ -50,6 +55,7 @@ public class KHHKart : MonoBehaviour
     float fireLineDelay = 0.05f;
 
     public KHHLaser laser;
+    public Transform weapon;
     public Transform firePos;
     LineRenderer fireLine;
     public GameObject fireEffectPrefab;
@@ -59,12 +65,32 @@ public class KHHKart : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        fireLine = weapon.GetComponent<LineRenderer>();
 
-        fireLine = firePos.GetComponent<LineRenderer>();
+        boostGauge = boostMax;
+        gaugeBoostImage.fillAmount = 1f;
     }
 
     private void Update()
     {
+        //전진후진판단
+        float dot = Vector3.Dot(transform.forward, rb.velocity);
+        if (dot < 0) fowardBack = -1;
+        else fowardBack = 1;
+
+        //뒤집힘 방지
+        //현재 위치에서 바닥으로 레이캐스트
+        Vector3 bottomNormal = Vector3.up;
+        if (Physics.Raycast(transform.position, -transform.up, out RaycastHit hit, 10f))
+            bottomNormal = hit.normal;
+
+        //바닥과의 각도가 45도 이상이면
+        if (Vector3.Angle(bottomNormal, transform.up) > 45f)
+        {
+            //바닥과 수직인 방향으로 Lerp보정
+            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(Vector3.Cross(transform.right, bottomNormal), bottomNormal), Time.deltaTime);
+        }
+
         if (fireLineOn)
         {
             fireLineTime += Time.deltaTime;
@@ -74,11 +100,6 @@ public class KHHKart : MonoBehaviour
                 fireLine.enabled = false;
             }
         }
-
-        //전진후진판단
-        float dot = Vector3.Dot(transform.forward, rb.velocity);
-        if (dot < 0) fowardBack = -1;
-        else fowardBack = 1;
     }
 
     // Update is called once per frame
@@ -127,12 +148,17 @@ public class KHHKart : MonoBehaviour
                     //회전보정
                     if (rb.velocity.magnitude > 0.1f)
                     {
-                        transform.Rotate(Vector3.up * KHHInput.instance.InputSteer);
-                        rb.velocity = (rb.velocity.normalized + transform.forward).normalized * rb.velocity.magnitude * fowardBack;
+                        transform.Rotate(Vector3.up * KHHInput.instance.InputSteer * driftMultiply);
+                        //rb.velocity = (rb.velocity.normalized + transform.forward).normalized * rb.velocity.magnitude * fowardBack;
                     }
                     //가속
                     addSpeed = driftSpeed - rb.velocity.magnitude;
                     if (addSpeed < 0) addSpeed = 0;
+                    //드리프트 충전
+                    boostGauge += Time.fixedDeltaTime * driftCharge;
+                    if (boostGauge > boostMax)
+                        boostGauge = boostMax;
+                    gaugeBoostImage.fillAmount = boostGauge / boostMax;
                     break;
                 case MoveState.Brake:
                     //물리재질
@@ -155,7 +181,15 @@ public class KHHKart : MonoBehaviour
             }
 
             if (KHHInput.instance.InputBoost)
-                addSpeed *= boostMultiply;
+            {
+                boostGauge -= Time.fixedDeltaTime * boostUse;
+                if (boostGauge < 0)
+                    boostGauge = 0;
+                else
+                    addSpeed *= boostMultiply;
+                gaugeBoostImage.fillAmount = boostGauge / boostMax;
+            }
+
             rb.AddForce(transform.forward * addSpeed);
         }
     }
@@ -185,6 +219,7 @@ public class KHHKart : MonoBehaviour
 
     void UpdateFire()
     {
+        weapon.LookAt(laser.HitPoint);
         if (KHHInput.instance.InputFire)
         {
             fireTime += Time.fixedDeltaTime;
