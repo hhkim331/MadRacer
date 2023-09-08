@@ -17,9 +17,10 @@ public class KHHKart : MonoBehaviour
         Back,
     }
 
+    [Header("Move")]
     //speed
     int fowardBack = 1;
-    public float normalSpeed = 18f;
+    public float normalSpeed = 20f;
 
     //boost
     float boostMultiply = 1.8f;
@@ -27,14 +28,18 @@ public class KHHKart : MonoBehaviour
     float boostGauge = 10f;
     float boostUse = 2f;
     public Image gaugeBoostImage;
+    public GameObject boostEffect;
 
     //drift
-    public float driftMultiply = 1.3f;
-    public float driftSpeed = 12f;
+    public float driftMultifly = 1.5f;
+    //public float driftAdditional = 0.3f;
+    public float driftSpeed = 16f;
     float driftCharge = 3f;
+    public GameObject driftRightEffect;
+    public GameObject driftLeftEffect;
 
     //back
-    public float backSpeed = 12f;
+    public float backSpeed = 16f;
 
     [Header("Physics")]
     [SerializeField] Collider carCollider;
@@ -58,7 +63,7 @@ public class KHHKart : MonoBehaviour
     public Transform weapon;
     public Transform firePos;
     LineRenderer fireLine;
-    public GameObject fireEffectPrefab;
+    public ParticleSystem muzzleFlash;
     public GameObject explosionPrefab;
 
     // Start is called before the first frame update
@@ -148,8 +153,8 @@ public class KHHKart : MonoBehaviour
                     //회전보정
                     if (rb.velocity.magnitude > 0.1f)
                     {
-                        transform.Rotate(Vector3.up * KHHInput.instance.InputSteer * driftMultiply);
-                        //rb.velocity = (rb.velocity.normalized + transform.forward).normalized * rb.velocity.magnitude * fowardBack;
+                        transform.Rotate(Vector3.up * KHHInput.instance.InputSteer * driftMultifly);
+                        //rb.velocity = transform.forward * rb.velocity.magnitude * fowardBack;
                     }
                     //가속
                     addSpeed = driftSpeed - rb.velocity.magnitude;
@@ -180,14 +185,43 @@ public class KHHKart : MonoBehaviour
                     break;
             }
 
+            //부스트
             if (KHHInput.instance.InputBoost)
             {
                 boostGauge -= Time.fixedDeltaTime * boostUse;
                 if (boostGauge < 0)
+                {
                     boostGauge = 0;
+                    boostEffect.SetActive(false);
+                }
                 else
+                {
                     addSpeed *= boostMultiply;
+                    boostEffect.SetActive(true);
+                }
                 gaugeBoostImage.fillAmount = boostGauge / boostMax;
+            }
+            else
+                boostEffect.SetActive(false);
+
+            //드리프트 이펙트
+            if (moveState == MoveState.Drift)
+            {
+                if (KHHInput.instance.InputSteer > 0.1f)
+                {
+                    driftRightEffect.SetActive(true);
+                    driftLeftEffect.SetActive(false);
+                }
+                else if (KHHInput.instance.InputSteer < -0.1f)
+                {
+                    driftRightEffect.SetActive(false);
+                    driftLeftEffect.SetActive(true);
+                }
+            }
+            else
+            {
+                driftRightEffect.SetActive(false);
+                driftLeftEffect.SetActive(false);
             }
 
             rb.AddForce(transform.forward * addSpeed);
@@ -231,6 +265,7 @@ public class KHHKart : MonoBehaviour
                 fireLineTime = 0f;
                 fireLine.SetPosition(0, firePos.position);
                 fireLine.SetPosition(1, laser.HitPoint);
+                muzzleFlash.Play();
             }
         }
         else
