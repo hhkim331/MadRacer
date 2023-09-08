@@ -28,6 +28,7 @@ public class TestScript : MonoBehaviour
                 print("총알충전");
                 break;
             case ItmeType.Booster:
+                print("부스터 충전");
                 break;
             default:
                 break;
