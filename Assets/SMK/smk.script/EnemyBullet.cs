@@ -32,4 +32,5 @@ public class EnemyBullet : MonoBehaviour
         }
         //Ãæµ¹½Ã ÆÄ±«
     }
+
 }
