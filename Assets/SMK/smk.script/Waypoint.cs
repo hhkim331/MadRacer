@@ -8,11 +8,11 @@ public class Waypoint : MonoBehaviour
     public float radius = 1.0f;
     private void OnDrawGizmos()
     {
-        Gizmos.color = Color.cyan;
+        Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, radius);
         if (nextPoint != null)
         {
-            Gizmos.color = Color.green;
+            Gizmos.color = Color.black;
             Gizmos.DrawLine(transform.position, nextPoint.transform.position);
         }
     }
