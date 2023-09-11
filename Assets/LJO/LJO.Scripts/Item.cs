@@ -8,7 +8,8 @@ public class Item : MonoBehaviour
     public enum ItmeType
     {
         Bullet,
-        Booster
+        Booster,
+        
 
     }
     public ItmeType itemType;
@@ -20,11 +21,11 @@ public class Item : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
-        {
-            other.GetComponent<TestScript>().ApplyItem(itemType);
-            Destroy(gameObject);
-        }
+        //if (other.CompareTag("Player"))
+        //{
+        //    other.GetComponent<TestScript>().ApplyItem(itemType);
+        //    Destroy(gameObject);
+        //}
     }
     // Update is called once per frame
     void Update()

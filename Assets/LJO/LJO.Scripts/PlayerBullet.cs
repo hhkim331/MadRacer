@@ -22,7 +22,10 @@ public class PlayerBullet : MonoBehaviour
     {
         UpdateSpecialAttack();
     }
+
     public GameObject bowFactory;
+    public Transform FirePosition;
+
     private void UpdateSpecialAttack()
     {
         velocity += gravity * Time.deltaTime;
@@ -32,6 +35,7 @@ public class PlayerBullet : MonoBehaviour
         }
         transform.position += velocity * Time.deltaTime;
     }
+
     private void OnCollisionEnter(Collision collision)
     {
         
