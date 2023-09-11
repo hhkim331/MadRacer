@@ -30,6 +30,7 @@ public class PlayerBullet : MonoBehaviour
         {
             transform.forward = velocity.normalized;
         }
+        transform.position += velocity * Time.deltaTime;
     }
     private void OnCollisionEnter(Collision collision)
     {
