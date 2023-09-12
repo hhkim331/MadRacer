@@ -17,6 +17,13 @@ public class KHHKart : MonoBehaviour
         Back,
     }
 
+    [Header("Wheel")]
+    public WheelCollider[] wheels;
+    public Transform[] wheelMeshes;
+    public float power = 100f;
+    public float steer = 30f;
+    public float brake = 100f;
+
     [Header("Move")]
     //speed
     public Transform handle;
@@ -102,6 +109,9 @@ public class KHHKart : MonoBehaviour
         fireLine = weaponBarrel.GetComponent<LineRenderer>();
 
         BoostGauge = boostMax;
+
+        //wheel
+        rb.centerOfMass = new Vector3(0, -1f, 0);
     }
 
     private void Update()
@@ -146,6 +156,21 @@ public class KHHKart : MonoBehaviour
 
     void UpdateMove()
     {
+        for (int i = 0; i < wheels.Length; i++)
+        {
+            // for문을 통해서 휠콜라이더 전체를 Vertical 입력에 따라서 power만큼의 힘으로 움직이게한다.
+            wheels[i].motorTorque = Input.GetAxis("Vertical") * power;
+        }
+        for (int i = 0; i < 2; i++)
+        {
+            // 앞바퀴만 각도전환이 되어야하므로 for문을 앞바퀴만 해당되도록 설정한다.
+            wheels[i].steerAngle = Input.GetAxis("Horizontal") * steer;
+        }
+
+
+
+
+
         //지상에서만 작동
         if (IsGrounded())
         {
@@ -213,7 +238,7 @@ public class KHHKart : MonoBehaviour
             }
 
             //부스트
-            if (KHHInput.instance.InputBoost && BoostGauge>0)
+            if (KHHInput.instance.InputBoost && BoostGauge > 0)
             {
                 boostEffect.SetActive(true);
                 addSpeed *= boostMultiply;
