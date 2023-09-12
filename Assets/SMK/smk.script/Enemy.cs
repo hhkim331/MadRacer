@@ -41,14 +41,16 @@ public class Enemy : MonoBehaviour
         state = EnemyState.Move;
         //Vector3 dir = transform.position - enemyEye.visibleTargets[0].position;
     }
-
+    public float enemyHP = 120;
     private void UpdateHit()
     {
+        enemyHP -= 1;
+        state = EnemyState.Attack;
         //피격
         //닿은 오브젝트의 tag..? layer가 적이나 플레이어면, 피격
         //장애물이면, 
         //waypoint 스크립트 중지, 뒤로 움직이기.
-        
+
 
         //체력이 없으면 die 상태로 전환.
     }
@@ -107,6 +109,11 @@ public class Enemy : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         //피격 상태로 변환
-        state = EnemyState.Hit;
+        if (collision != null)
+        {
+
+            state = EnemyState.Hit;
+
+        }
     }
 }

@@ -24,8 +24,8 @@ public class EnemyEye : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(delay);
             FindVisibleTargets();
+            yield return new WaitForSeconds(delay);
         }
     }
 

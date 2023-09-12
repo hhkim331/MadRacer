@@ -72,17 +72,17 @@ public class WaypointFollow : MonoBehaviour
         //}
         //이동
         transform.position = Vector3.MoveTowards(gameObject.transform.position, waypoint.transform.position, normalSpeed); //이동
-        if ((waypoint.transform.position - transform.position).sqrMagnitude <= waypoint.radius * waypoint.radius)
-        {
+        ////if ((waypoint.transform.position - transform.position).sqrMagnitude <= waypoint.radius * waypoint.radius)
+        //{
 
-            //waypoint 변경
-            waypoint = waypoint.nextPoint;
-            if (waypoint != null)
-            {
-                nextPoint = waypoint.nextPoint;
-                //nextpoint를 리스트로 작성해서 랜덤하게 가져오는 방식으로 움직이는걸 바꾸기
-            }
-        }
+        //    //waypoint 변경
+        //    waypoint = waypoint.nextPoint;
+        //    if (waypoint != null)
+        //    {
+        //        nextPoint = waypoint.nextPoint;
+        //        //nextpoint를 리스트로 작성해서 랜덤하게 가져오는 방식으로 움직이는걸 바꾸기
+        //    }
+        //}
         // enemyEye.visibleTargets[0]가 있을때, 약 몇초 동안 enemyEye.visibleTargets[0]로 향하게 하기
         if (enemyEye.visibleTargets != null)
         {
@@ -102,5 +102,14 @@ public class WaypointFollow : MonoBehaviour
     {
         isGround = Physics.BoxCast(transform.position, groundBx * 0.5f, -transform.up, out RaycastHit hit, transform.rotation, 0.1f, groundLr);
         return isGround;
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        waypoint = waypoint.nextPoint;
+        if (waypoint != null)
+        {
+            nextPoint = waypoint.nextPoint;
+            //nextpoint를 리스트로 작성해서 랜덤하게 가져오는 방식으로 움직이는걸 바꾸기
+        }
     }
 }
