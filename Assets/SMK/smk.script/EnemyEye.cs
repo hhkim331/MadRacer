@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class EnemyEye : MonoBehaviour
 {
+
+    public static EnemyEye Instance;
+    private void Awake()
+    {
+        Instance = this;
+    }
+
     // 시야각 설정
     public float viewRadius;
     [Range(0, 360)]

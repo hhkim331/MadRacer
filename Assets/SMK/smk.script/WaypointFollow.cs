@@ -44,7 +44,7 @@ public class WaypointFollow : MonoBehaviour
     void Update()
     {
         UpdateFollow();
-        Vector3 waypointenemy = gameObject.transform.position- waypoint.transform.position;
+        //Vector3 waypointenemy = gameObject.transform.position- waypoint.transform.position;
 
         //if (Isground())
         //{
@@ -63,7 +63,9 @@ public class WaypointFollow : MonoBehaviour
     {
         //속도 변화 가까워지면 감속 / 멀면 가속
         //멀면 가속
-        //if ()
+        //KHHWaypoint hitWaypoint = GetComponent<KHHWaypoint>();
+        ////Vector3 dir= transform.position - hitWaypoint.GetComponentInParent<Vector3>();
+        //if (Vector3.Distance(hitWaypoint.transform.position, transform.position) >=0.5f)
         //{
         //    speed = acceleration;
         //}
@@ -74,30 +76,14 @@ public class WaypointFollow : MonoBehaviour
         //}
         //이동
         transform.position = Vector3.MoveTowards(gameObject.transform.position, waypoint.transform.position, normalSpeed); //이동
-        ////if ((waypoint.transform.position - transform.position).sqrMagnitude <= waypoint.radius * waypoint.radius)
-        //{
-
-        //    //waypoint 변경
-        //    waypoint = waypoint.nextPoint;
-        //    if (waypoint != null)
-        //    {
-        //        nextPoint = waypoint.nextPoint;
-        //        //nextpoint를 리스트로 작성해서 랜덤하게 가져오는 방식으로 움직이는걸 바꾸기
-        //    }
-        //}
-        // enemyEye.visibleTargets[0]가 있을때, 약 몇초 동안 enemyEye.visibleTargets[0]로 향하게 하기
-        //if (enemyEye.visibleTargets != null)
-        //{
-        //    StartCoroutine(TowardPlayer());
-        //}
 
     }
-    IEnumerator TowardPlayer()
-    {
-        // 3초 정도 시행하기
-        transform.position = Vector3.MoveTowards(gameObject.transform.position, enemyEye.visibleTargets[0].transform.position, normalSpeed);
-        yield return new WaitForSeconds(3);
-    }
+    //IEnumerator TowardPlayer()
+    //{
+    //    // 3초 정도 시행하기
+    
+    //    yield return new WaitForSeconds(3);
+    //}Z
     
     //ground 판정
     bool Isground()
@@ -107,16 +93,13 @@ public class WaypointFollow : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
+        //waypoint로 향하기
         KHHWaypoint hitWaypoint = other.GetComponent<KHHWaypoint>();
         if(hitWaypoint == null) return;
         if (waypointIndex == hitWaypoint.waypointIndex) return;
         waypointIndex = hitWaypoint.waypointIndex;
         waypoint = hitWaypoint.NextPoint();
 
-        if (waypoint != null)
-        {
-            //nextPoint = waypoint.nextPoint;
-            //nextpoint를 리스트로 작성해서 랜덤하게 가져오는 방식으로 움직이는걸 바꾸기
-        }
     }
+    
 }
