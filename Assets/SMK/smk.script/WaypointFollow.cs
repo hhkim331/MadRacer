@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+ 
 
 public class WaypointFollow : MonoBehaviour
 {
@@ -31,17 +32,22 @@ public class WaypointFollow : MonoBehaviour
     public float normalSpeed = 0.1f;//평소 속도
     public float acceleration = 2f;//가속
     public float breakForce = 0.01f;//감속
+    public float speed;
+    EnemyEye enemyEye;
     void Start()
     {
-
+        speed = normalSpeed;
     }
 
     void Update()
     {
-        if (Isground())
-        {
-            UpdateFollow();
-        }
+        UpdateFollow();
+        Vector3 waypointenemy = gameObject.transform.position- waypoint.transform.position;
+
+        //if (Isground())
+        //{
+        //    UpdateFollow();
+        //}
         //이동방향을 enemy의 앞방향(z방향)으로 설정
         //transform.forward = waypoint.transform.forward;
         //(waypoint와 point 간의 거리)의 제곱이 waypoint의 반지름의 제곱보다 작거나 같을 때 (= waypoint랑 point간의 거리가 짧을때)
@@ -50,11 +56,21 @@ public class WaypointFollow : MonoBehaviour
         //방향의 범위를 정해서, 범위 외로 움직이면, 이펙트(파이어, 연기, 스키드마크) / 
     }
 
-    public enum Enemystate { }
-
 
     void UpdateFollow()
     {
+        //속도 변화 가까워지면 감속 / 멀면 가속
+        //멀면 가속
+        //if ()
+        //{
+        //    speed = acceleration;
+        //}
+        ////가까우면 감속
+        //else
+        //{
+        //    speed = breakForce;
+        //}
+        //이동
         transform.position = Vector3.MoveTowards(gameObject.transform.position, waypoint.transform.position, normalSpeed); //이동
         if ((waypoint.transform.position - transform.position).sqrMagnitude <= waypoint.radius * waypoint.radius)
         {
@@ -64,15 +80,23 @@ public class WaypointFollow : MonoBehaviour
             if (waypoint != null)
             {
                 nextPoint = waypoint.nextPoint;
+                //nextpoint를 리스트로 작성해서 랜덤하게 가져오는 방식으로 움직이는걸 바꾸기
             }
+        }
+        // enemyEye.visibleTargets[0]가 있을때, 약 몇초 동안 enemyEye.visibleTargets[0]로 향하게 하기
+        if (enemyEye.visibleTargets != null)
+        {
+            StartCoroutine(TowardPlayer());
         }
 
     }
-    void reverse()
+    IEnumerator TowardPlayer()
     {
-
+        // 3초 정도 시행하기
+        transform.position = Vector3.MoveTowards(gameObject.transform.position, enemyEye.visibleTargets[0].transform.position, normalSpeed);
+        yield return new WaitForSeconds(3);
     }
-
+    
     //ground 판정
     bool Isground()
     {
