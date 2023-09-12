@@ -27,13 +27,15 @@ public class WaypointFollow : MonoBehaviour
     public Vector3 groundBx = Vector3.zero;
 
 
-    public Waypoint waypoint;//향하는 곳.
-    Waypoint nextPoint;//다음 향할 곳
+    public KHHWaypoint waypoint;//향하는 곳.
+    KHHWaypoint nextPoint;//다음 향할 곳
     public float normalSpeed = 0.1f;//평소 속도
     public float acceleration = 2f;//가속
     public float breakForce = 0.01f;//감속
     public float speed;
     EnemyEye enemyEye;
+
+    int waypointIndex = -1;
     void Start()
     {
         speed = normalSpeed;
@@ -84,10 +86,10 @@ public class WaypointFollow : MonoBehaviour
         //    }
         //}
         // enemyEye.visibleTargets[0]가 있을때, 약 몇초 동안 enemyEye.visibleTargets[0]로 향하게 하기
-        if (enemyEye.visibleTargets != null)
-        {
-            StartCoroutine(TowardPlayer());
-        }
+        //if (enemyEye.visibleTargets != null)
+        //{
+        //    StartCoroutine(TowardPlayer());
+        //}
 
     }
     IEnumerator TowardPlayer()
@@ -105,10 +107,15 @@ public class WaypointFollow : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        waypoint = waypoint.nextPoint;
+        KHHWaypoint hitWaypoint = other.GetComponent<KHHWaypoint>();
+        if(hitWaypoint == null) return;
+        if (waypointIndex == hitWaypoint.waypointIndex) return;
+        waypointIndex = hitWaypoint.waypointIndex;
+        waypoint = hitWaypoint.NextPoint();
+
         if (waypoint != null)
         {
-            nextPoint = waypoint.nextPoint;
+            //nextPoint = waypoint.nextPoint;
             //nextpoint를 리스트로 작성해서 랜덤하게 가져오는 방식으로 움직이는걸 바꾸기
         }
     }
