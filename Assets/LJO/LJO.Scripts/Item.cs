@@ -18,11 +18,12 @@ public class Item : MonoBehaviour
     {
         
     }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            other.GetComponent<TestScript>().ApplyItem(itemType);
+            other.GetComponentInParent<KHHKart>().ApplyItem(itemType);
             Destroy(gameObject);
         }
     }

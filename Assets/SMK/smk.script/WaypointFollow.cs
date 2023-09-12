@@ -58,7 +58,6 @@ public class WaypointFollow : MonoBehaviour
         transform.position = Vector3.MoveTowards(gameObject.transform.position, waypoint.transform.position, normalSpeed); //이동
         if ((waypoint.transform.position - transform.position).sqrMagnitude <= waypoint.radius * waypoint.radius)
         {
-
             //waypoint 변경
             waypoint = waypoint.nextPoint;
             if (waypoint != null)
@@ -66,7 +65,6 @@ public class WaypointFollow : MonoBehaviour
                 nextPoint = waypoint.nextPoint;
             }
         }
-
     }
     void reverse()
     {

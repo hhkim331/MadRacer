@@ -19,19 +19,32 @@ public class KHHKart : MonoBehaviour
 
     [Header("Move")]
     //speed
+    public Transform handle;
+
     int fowardBack = 1;
     public float normalSpeed = 20f;
 
     //boost
-    float boostMultiply = 1.8f;
+    public float boostMultiply = 1.8f;
     float boostMax = 10f;
     float boostGauge = 10f;
+    public float BoostGauge
+    {
+        get { return boostGauge; }
+        set
+        {
+            boostGauge = value;
+            if (boostGauge < 0) boostGauge = 0;
+            if (boostGauge > boostMax) boostGauge = boostMax;
+            gaugeBoostImage.fillAmount = boostGauge / boostMax;
+        }
+    }
     float boostUse = 2f;
     public Image gaugeBoostImage;
     public GameObject boostEffect;
 
     //drift
-    public float driftMultifly = 1.5f;
+    public float driftRotMultifly = 1.5f;
     //public float driftAdditional = 0.3f;
     public float driftSpeed = 16f;
     float driftCharge = 3f;
@@ -52,6 +65,21 @@ public class KHHKart : MonoBehaviour
     public Vector3 groundBox = Vector3.zero;
 
     //fire
+    int bulletCount = 0;
+    public int BulletCount
+    {
+        get { return bulletCount; }
+        set
+        {
+            bulletCount = value;
+            if (bulletCount < 0) bulletCount = 0;
+            if (bulletCount > 250) bulletCount = 250;
+
+
+        }
+    }
+    public int bulletMax = 250;
+
     float fireTime = 0.1f;
     float fireDelay = 0.1f;
 
@@ -60,7 +88,8 @@ public class KHHKart : MonoBehaviour
     float fireLineDelay = 0.05f;
 
     public KHHLaser laser;
-    public Transform weapon;
+    public Transform weaponBody;
+    public Transform weaponBarrel;
     public Transform firePos;
     LineRenderer fireLine;
     public ParticleSystem muzzleFlash;
@@ -70,10 +99,9 @@ public class KHHKart : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        fireLine = weapon.GetComponent<LineRenderer>();
+        fireLine = weaponBarrel.GetComponent<LineRenderer>();
 
-        boostGauge = boostMax;
-        gaugeBoostImage.fillAmount = 1f;
+        BoostGauge = boostMax;
     }
 
     private void Update()
@@ -105,6 +133,8 @@ public class KHHKart : MonoBehaviour
                 fireLine.enabled = false;
             }
         }
+
+        handle.localRotation = Quaternion.Euler(15, 0, -KHHInput.instance.InputSteer * 180f);
     }
 
     // Update is called once per frame
@@ -153,17 +183,14 @@ public class KHHKart : MonoBehaviour
                     //회전보정
                     if (rb.velocity.magnitude > 0.1f)
                     {
-                        transform.Rotate(Vector3.up * KHHInput.instance.InputSteer * driftMultifly);
+                        transform.Rotate(Vector3.up * KHHInput.instance.InputSteer * driftRotMultifly);
                         //rb.velocity = transform.forward * rb.velocity.magnitude * fowardBack;
                     }
                     //가속
                     addSpeed = driftSpeed - rb.velocity.magnitude;
                     if (addSpeed < 0) addSpeed = 0;
                     //드리프트 충전
-                    boostGauge += Time.fixedDeltaTime * driftCharge;
-                    if (boostGauge > boostMax)
-                        boostGauge = boostMax;
-                    gaugeBoostImage.fillAmount = boostGauge / boostMax;
+                    BoostGauge += Time.fixedDeltaTime * driftCharge;
                     break;
                 case MoveState.Brake:
                     //물리재질
@@ -186,20 +213,11 @@ public class KHHKart : MonoBehaviour
             }
 
             //부스트
-            if (KHHInput.instance.InputBoost)
+            if (KHHInput.instance.InputBoost && BoostGauge>0)
             {
-                boostGauge -= Time.fixedDeltaTime * boostUse;
-                if (boostGauge < 0)
-                {
-                    boostGauge = 0;
-                    boostEffect.SetActive(false);
-                }
-                else
-                {
-                    addSpeed *= boostMultiply;
-                    boostEffect.SetActive(true);
-                }
-                gaugeBoostImage.fillAmount = boostGauge / boostMax;
+                boostEffect.SetActive(true);
+                addSpeed *= boostMultiply;
+                BoostGauge -= Time.fixedDeltaTime * boostUse;
             }
             else
                 boostEffect.SetActive(false);
@@ -253,12 +271,13 @@ public class KHHKart : MonoBehaviour
 
     void UpdateFire()
     {
-        weapon.LookAt(laser.HitPoint);
-        if (KHHInput.instance.InputFire)
+        weaponBody.LookAt(laser.HitPoint);
+        if (KHHInput.instance.InputFire && bulletCount > 0)
         {
             fireTime += Time.fixedDeltaTime;
             if (fireTime > fireDelay)
             {
+                BulletCount--;
                 fireTime = 0;
                 fireLineOn = true;
                 fireLine.enabled = true;
@@ -267,6 +286,8 @@ public class KHHKart : MonoBehaviour
                 fireLine.SetPosition(1, laser.HitPoint);
                 muzzleFlash.Play();
             }
+
+            weaponBarrel.Rotate(Vector3.forward * 1000f * Time.fixedDeltaTime);
         }
         else
         {
@@ -301,6 +322,23 @@ public class KHHKart : MonoBehaviour
 
             Gizmos.color = Color.blue;
             Gizmos.DrawSphere(hit.point, 0.1f);
+        }
+    }
+
+    public void ApplyItem(Item.ItmeType itemType)
+    {
+        switch (itemType)
+        {
+            case Item.ItmeType.Bullet:
+                BulletCount = 250;
+                print("총알충전");
+                break;
+            case Item.ItmeType.Booster:
+                BoostGauge = boostMax;
+                print("부스터 충전");
+                break;
+            default:
+                break;
         }
     }
 }
