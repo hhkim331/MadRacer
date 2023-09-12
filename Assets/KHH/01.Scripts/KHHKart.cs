@@ -310,21 +310,6 @@ public class KHHKart : MonoBehaviour
         return Physics.BoxCast(transform.position, groundBox * 0.5f, -transform.up, out RaycastHit hit, transform.rotation, 0.1f, groundLayer);
     }
 
-    void OnDrawGizmos()
-    {
-        if (Physics.BoxCast(transform.position, groundBox * 0.5f, -transform.up, out RaycastHit hit, transform.rotation, 0.1f))
-        {
-            Gizmos.color = Color.red;
-            Gizmos.DrawRay(transform.position, -transform.up * hit.distance);
-
-            Gizmos.color = Color.green;
-            Gizmos.DrawWireCube(transform.position + -transform.up * hit.distance, groundBox);
-
-            Gizmos.color = Color.blue;
-            Gizmos.DrawSphere(hit.point, 0.1f);
-        }
-    }
-
     public void ApplyItem(Item.ItmeType itemType)
     {
         switch (itemType)
@@ -339,6 +324,21 @@ public class KHHKart : MonoBehaviour
                 break;
             default:
                 break;
+        }
+    }
+
+    void OnDrawGizmos()
+    {
+        if (Physics.BoxCast(transform.position, groundBox * 0.5f, -transform.up, out RaycastHit hit, transform.rotation, 0.1f))
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawRay(transform.position, -transform.up * hit.distance);
+
+            Gizmos.color = Color.green;
+            Gizmos.DrawWireCube(transform.position + -transform.up * hit.distance, groundBox);
+
+            Gizmos.color = Color.blue;
+            Gizmos.DrawSphere(hit.point, 0.1f);
         }
     }
 }
