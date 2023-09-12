@@ -48,19 +48,19 @@ public class TestScript : MonoBehaviour
         transform.position += velocity * Time.deltaTime;
     }
 
-    //public void ApplyItem(ItmeType itemType)
-    //{
-    //    switch (itemType)
-    //    {
-    //        case ItmeType.Bullet:
-    //            print("총알충전");
-    //            break;
-    //        case ItmeType.Booster:
-    //            print("부스터 충전");
-    //            break;
-    //        default:
-    //            break;
-    //    }
-    //}
+    public void ApplyItem(ItmeType itemType)
+    {
+        switch (itemType)
+        {
+            case ItmeType.Bullet:
+                print("총알충전");
+                break;
+            case ItmeType.Booster:
+                print("부스터 충전");
+                break;
+            default:
+                break;
+        }
+    }
 
 }
