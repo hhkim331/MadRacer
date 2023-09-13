@@ -43,15 +43,15 @@ public class PlayerBullet : MonoBehaviour
         
         transform.position += velocity * Time.deltaTime;
 
-        if (isHit)
-        {
-            transform.rotation = hitRotation;
-            transform.position = hitPosition;
-        }
-        else
-        {
-            rb.transform.forward = rb.velocity.normalized;
-        }
+        //if (isHit)
+        //{
+        //    transform.rotation = hitRotation;
+        //    transform.position = hitPosition;
+        //}
+        //else
+        //{
+        //    rb.transform.forward = rb.velocity.normalized;
+        //}
 
     }
 

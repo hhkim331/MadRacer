@@ -10,6 +10,8 @@ public class TestScript : MonoBehaviour
     public static TestScript Instance;
 
     public GameObject bowFactory;
+    public GameObject bow;
+    public Transform inven;
 
     public Transform FirePosition;
 
@@ -53,10 +55,17 @@ public class TestScript : MonoBehaviour
         switch (itemType)
         {
             case ItmeType.Bullet:
+                
                 print("총알충전");
                 break;
             case ItmeType.Booster:
                 print("부스터 충전");
+                break;
+            case ItmeType.attack:
+
+                GameObject Instantiatebow = Instantiate(bow,inven.transform.position,Quaternion.identity,inven);
+
+                print("석궁 충전");
                 break;
             default:
                 break;

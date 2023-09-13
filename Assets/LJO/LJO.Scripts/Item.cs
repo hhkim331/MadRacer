@@ -12,6 +12,7 @@ public class Item : MonoBehaviour
     {
         Bullet,
         Booster,
+        attack
         
 
     }
@@ -36,14 +37,14 @@ public class Item : MonoBehaviour
 
         }
     }
-    //void OnCollisionEnter(Collision collision)
-    //{
-    //    if (collision.gameObject.CompareTag("Ground"))
-    //    {
-    //        rb.isKinematic = true;
-    //        velocity = Vector3.zero;
-    //    }
-    //}
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            rb.isKinematic = true;
+            velocity = Vector3.zero;
+        }
+    }
     // Update is called once per frame
     void Update()
     {

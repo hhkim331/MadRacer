@@ -114,6 +114,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bowFactory: {fileID: 4007206006421385781, guid: 17826ab38617c154290eafd781ab0c6d, type: 3}
+  bow: {fileID: 0}
+  inven: {fileID: 0}
   FirePosition: {fileID: 812012612622714182}
   speed: 5
   gravity: {x: 0, y: -0.98100007, z: 0}
@@ -131,7 +133,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!1 &812012612622714183
 GameObject:
