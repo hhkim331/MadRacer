@@ -13,6 +13,7 @@ public class KHHKartRank : MonoBehaviour
 
     public KHHWaypoint prevWaypoint;
     public KHHWaypoint nextWaypoint;
+    public Vector3 WayForward { get { return (nextWaypoint.transform.parent.position - prevWaypoint.transform.parent.position).normalized; } }
 
     // Update is called once per frame
     void Update()
@@ -37,5 +38,15 @@ public class KHHKartRank : MonoBehaviour
             checkPointCount = 0;
             lap++;
         }
+    }
+
+    public Vector3 GetReturnTrackPoint()
+    {
+        if (prevWaypoint != null && nextWaypoint != null)
+            return Vector3.Lerp(prevWaypoint.transform.parent.position, nextWaypoint.transform.parent.position, wayPercent);
+        else if (prevWaypoint != null)
+            return prevWaypoint.transform.parent.position;
+        else
+            return Vector3.zero;
     }
 }
