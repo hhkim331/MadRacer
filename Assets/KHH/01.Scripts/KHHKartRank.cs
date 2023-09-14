@@ -4,16 +4,27 @@ using UnityEngine;
 
 public class KHHKartRank : MonoBehaviour
 {
+    public bool isFinish = false;
     public int rank = 0;
     public int lap = 0;
+    public int finalLap = 2;
     public int wayPointIndex = 0;
     public float wayPercent = 0;
 
+    bool isMine = false;
+    public bool IsMine { get { return isMine; } set { isMine = value; } }
     int checkPointCount = 0;
 
     public KHHWaypoint prevWaypoint;
     public KHHWaypoint nextWaypoint;
     public Vector3 WayForward { get { return (nextWaypoint.transform.parent.position - prevWaypoint.transform.parent.position).normalized; } }
+
+    //private IEnumerator Start()
+    //{
+    //    yield return new WaitForSeconds(1f);
+    //    isFinish = true;
+    //    KHHGameManager.instance.GameEnd();
+    //}
 
     // Update is called once per frame
     void Update()
@@ -37,6 +48,11 @@ public class KHHKartRank : MonoBehaviour
         {
             checkPointCount = 0;
             lap++;
+            if (lap == finalLap)
+            {
+                isFinish = true;
+                if (isMine) KHHGameManager.instance.GameEnd();
+            }
         }
     }
 

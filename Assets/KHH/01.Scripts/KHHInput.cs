@@ -2,6 +2,27 @@ using UnityEngine;
 
 public class KHHInput : MonoBehaviour
 {
+    bool active = false;
+    public bool Active
+    {
+        get { return active; }
+        set
+        {
+            active = value;
+            if (!active)
+            {
+                InputAccel = 0f;
+                InputBrake = false;
+                InputSteer = 0f;
+                InputBoost = false;
+                InputFire = false;
+                InputGrip = false;
+                InputShield = false;
+                InputReturn = false;
+            }
+        }
+    }
+
     //input
     public float InputAccel { get; set; }
     public bool InputBrake { get; set; }

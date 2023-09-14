@@ -5,12 +5,14 @@ using UnityEngine;
 public class KHHLaser : MonoBehaviour
 {
     private LineRenderer laser;        // 레이저
-    private RaycastHit Collided_object; // 충돌된 객체
-    private GameObject currentObject;   // 가장 최근에 충돌한 객체를 저장하기 위한 객체
+    private RaycastHit hitObj; // 충돌된 객체
+    private GameObject curObj;   // 가장 최근에 충돌한 객체를 저장하기 위한 객체
     private Vector3 hitPoint;              // 충돌 지점
     public Vector3 HitPoint { get { return hitPoint; } }
+    public float Distance { get { return Vector3.Distance(transform.position, hitPoint); } }
 
-    public float raycastDistance = 100f; // 레이저 포인터 감지 거리
+    public LayerMask hitLayer; // 레이저 포인터가 충돌할 레이어
+    public float raycastDistance = 1000f; // 레이저 포인터 감지 거리
 
     private void Start()
     {
@@ -23,10 +25,10 @@ public class KHHLaser : MonoBehaviour
         laser.SetPosition(0, transform.position);
 
         // 충돌 감지 시
-        if (Physics.Raycast(transform.position, transform.forward, out Collided_object, raycastDistance))
+        if (Physics.Raycast(transform.position, transform.forward, out hitObj, raycastDistance, hitLayer))
         {
-            laser.SetPosition(1, Collided_object.point);
-            hitPoint = Collided_object.point;
+            laser.SetPosition(1, hitObj.point);
+            hitPoint = hitObj.point;
         }
         else
         {

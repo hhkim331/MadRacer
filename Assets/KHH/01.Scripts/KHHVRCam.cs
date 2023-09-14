@@ -13,4 +13,9 @@ public class KHHVRCam : MonoBehaviour
         yield return null;
         head.transform.localPosition = -cam.transform.localPosition;
     }
+
+    public void GameEnd()
+    {
+        transform.position = new Vector3(0, 5000, 0);
+    }
 }
