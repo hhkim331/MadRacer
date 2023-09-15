@@ -35,8 +35,6 @@ public class KHHLaser : MonoBehaviour
             hitPoint = hitObj.point;
             hitNormal = hitObj.normal;
 
-            Debug.Log(hitObj.transform.name);
-
             KHHTarget target = hitObj.transform.GetComponent<KHHTarget>();
             if (target != null) hitType = target.hitType;
         }

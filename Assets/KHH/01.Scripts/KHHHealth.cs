@@ -5,8 +5,8 @@ using static KHHTarget;
 
 public class KHHHealth : MonoBehaviour
 {
-    protected int health = 10;
-    public int maxHealth = 10;
+    protected int health = 100;
+    public int maxHealth = 100;
     public Image healthBar;
 
     bool isDead = false;
@@ -33,14 +33,17 @@ public class KHHHealth : MonoBehaviour
         }
     }
 
-    public virtual void Hit()
+    public virtual void Hit(int damage)
     {
         if (health > 0)
         {
-            health--;
-            healthBar.fillAmount = (float)health / maxHealth;
+            health -= damage;
             if (health < 0)
+            {
+                health = 0;
                 Die();
+            }
+            healthBar.fillAmount = (float)health / maxHealth;
         }
     }
 
