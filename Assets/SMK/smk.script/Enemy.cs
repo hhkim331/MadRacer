@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.PackageManager;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
@@ -43,6 +44,11 @@ public class Enemy : MonoBehaviour
     public GameObject driftREffect;
     public GameObject driftLEffect;
     public GameObject destroyEffect;
+    public GameObject bulletEffect;
+
+    LineRenderer enemyAttackline;
+
+    public Transform muzzle;
     #endregion
 
     void Awake()
@@ -55,7 +61,7 @@ public class Enemy : MonoBehaviour
         destroyEffect.SetActive(false);
         driftLEffect.SetActive(false);
         driftREffect.SetActive(false);
-
+        enemyAttackline = GetComponent<LineRenderer>();
 
     }
 
@@ -154,21 +160,41 @@ public class Enemy : MonoBehaviour
     private void UpdateAttack()
     {
         //시간이 흐르다가. 
-        currentTime += Time.deltaTime;
-        //현재시간이 firetiem을 초과하면, 
-        if (currentTime > fireTime)
+        //currentTime += Time.deltaTime;
+        //if (currentTime > 0.2f)
+        //{
+        enemyAttackline.SetPosition(0, muzzle.position);
+        print("l");
+        if (enemyEye.visibleTargets[0] != null)
         {
-            //현재시간을 0으로 초기화하고
-            currentTime = 0;
-            //총알공장에서 총알을 만들고
-            var bullet = Instantiate(bulletFactory);
-            bullet.transform.position = firePosition.position;
-            //enemyEye에서 인식한 visibleTargets의 첫번째(0)을 향해서
-            print(EnemyEye.Instance.visibleTargets[0]);
-            Vector3 dir = EnemyEye.Instance.visibleTargets[0].position - firePosition.position;
-            bullet.transform.forward = dir + Vector3.up * 20;
+            // ray를 오브젝트 인식한 순서대로 쏨.
+            Ray ray = new Ray(enemyEye.visibleTargets[0].transform.position, enemyEye.visibleTargets[0].transform.forward);
+            RaycastHit hitInfo;
+            enemyAttackline.SetPosition(1, muzzle.position);
+            if (Physics.Raycast(ray, out hitInfo, 5))
+            {
+                var bulletImpact = Instantiate(bulletEffect);
+                bulletImpact.transform.position = hitInfo.point;
+                Destroy(bulletImpact, 0.5f);
+                if (hitInfo.transform.gameObject.tag == "Player")
+                {
+                    print("rr");
+                    //너 맞았다고 소식주기.
+                    hitInfo.transform.GetComponent<Enemy>().UpdateHit(25, transform.position);
+                    //이거 통일해야 함..플레이어든 에너미든 상태 받기.^^
+                    Destroy(hitInfo.transform.gameObject);
+                }
+            }
+            else
+            {
+                enemyAttackline.SetPosition(1, ray.origin + ray.direction * 1000);
+            }
+
         }
-        state = EnemyState.Move;
+        else
+        {
+            state = EnemyState.Move;
+        }
     }
     //리스폰
     IEnumerator respawn(float respawntime)
@@ -181,10 +207,10 @@ public class Enemy : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         //총알에 부딪혔을때
-        if (collision.collider.gameObject.CompareTag("bullet"))
+        if (collision.collider.gameObject.CompareTag("Respawn"))
         {
             //피격상태로 진입. 이거 어ㄸ허게 부르지..
-            UpdateHit(25,transform.position);
+            UpdateHit(25, transform.position);
         }
     }
 }
