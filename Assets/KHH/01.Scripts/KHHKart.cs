@@ -10,6 +10,9 @@ public class KHHKart : MonoBehaviour
     KHHKartRank myKartRank;
     Rigidbody rb;
 
+    public KHHModel model;
+    public KHHModel.ModelType modelType = KHHModel.ModelType.Black;
+
     public enum MoveState
     {
         None,
@@ -82,6 +85,7 @@ public class KHHKart : MonoBehaviour
 
         rb = GetComponent<Rigidbody>();
 
+        model.Set(modelType);
         BoostGauge = boostMax;
 
         //wheel
@@ -346,9 +350,6 @@ public class KHHKart : MonoBehaviour
         isBoost = false;
     }
 
-    public GameObject bow;
-    public Transform inven;
-
     public void ApplyItem(Item.ItmeType itemType)
     {
         switch (itemType)
@@ -362,7 +363,7 @@ public class KHHKart : MonoBehaviour
                 print("부스터 충전");
                 break;
             case Item.ItmeType.attack:
-                GameObject subWeapon = Instantiate(bow,inven);
+                weapon.SetWeapon();
                 break;
             default:
                 break;

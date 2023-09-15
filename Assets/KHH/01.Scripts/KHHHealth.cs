@@ -53,6 +53,8 @@ public class KHHHealth : MonoBehaviour
         model.SetActive(false);
         rb.isKinematic = true;
 
+        GameObject item = Instantiate(bulletItem, transform.position,Quaternion.identity);
+
         GameObject explosion = Instantiate(explosionPrefab);
         explosion.transform.position = transform.position + Vector3.up;
         Destroy(explosion, 4);

@@ -38,6 +38,10 @@ public class KHHWeapon : MonoBehaviour
     public GameObject sandEffect;
     public GameObject stoneEffect;
 
+    GameObject subWeapon;
+    public GameObject bow;
+    public Transform inven;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -123,5 +127,11 @@ public class KHHWeapon : MonoBehaviour
     public void BulletSupply()
     {
         BulletCount = bulletMax;
+    }
+
+    public void SetWeapon()
+    {
+        //if (subWeapon == null)
+        //    subWeapon = Instantiate(bow, inven);
     }
 }
