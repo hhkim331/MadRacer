@@ -9,7 +9,7 @@ public class Enemy : MonoBehaviour
     //아이템 섭취시 몇초후 시행
     //죽으면 파괴
     //몇초후 부활..?
-
+    #region 상태 전환
     public enum EnemyState
     {
         Move,
@@ -17,13 +17,15 @@ public class Enemy : MonoBehaviour
         //MeleeAttack,
         Item,
         Die,
-        Hit,
         Booster,
     }
-    public float enemyHP = 120;
+    #endregion
+    #region 변수
     public EnemyState state;
     EnemyEye enemyEye;
     WaypointFollow waypointFollow;
+
+
 
     float currentTime;
     public float fireTime;
@@ -32,10 +34,29 @@ public class Enemy : MonoBehaviour
 
     public float boosterMaxGauge = 250;
     public float boosterGauge;
-    void Start()
+
+    private WaypointFollow _waypointFollow;
+    public GameObject _kart;
+    public GameObject destroyKart;
+
+    //이펙트 효과들
+    public GameObject driftREffect;
+    public GameObject driftLEffect;
+    public GameObject destroyEffect;
+    #endregion
+
+    void Awake()
     {
         state = EnemyState.Move;
         boosterGauge = 0;
+        _waypointFollow = gameObject.GetComponent<WaypointFollow>();
+        _kart = gameObject.GetComponent<GameObject>();
+        destroyKart.SetActive(false);
+        destroyEffect.SetActive(false);
+        driftLEffect.SetActive(false);
+        driftREffect.SetActive(false);
+
+
     }
 
     void Update()
@@ -49,7 +70,6 @@ public class Enemy : MonoBehaviour
             //case EnemyState.MeleeAttack: UpdateMeleeAttack(); break;
             case EnemyState.Item: UpdateItem(); break;
             case EnemyState.Die: UpdateDie(); break;
-            case EnemyState.Hit: UpdateHit(); break;
             case EnemyState: UpdateBooster(); break;
         }
         //Vector3 dir = transform.position - enemyEye.visibleTargets[0].position;
@@ -60,18 +80,23 @@ public class Enemy : MonoBehaviour
         waypointFollow.speed = waypointFollow.acceleration;
     }
 
+    EnemyHP enemyhp;
     //피격
-    private void UpdateHit()
+    public void UpdateHit(int dmg, Vector3 origine)
     {
-        enemyHP -= 1;
-        if (enemyHP > 0)
+        if (enemyhp == null)
         {
-            //waypoint 스크립트 잠시 멈추고, 뒤로 움직이기.
-
+            enemyhp = GetComponent<EnemyHP>();
+        }
+        enemyhp.hp -= dmg;
+        if (enemyhp.hp > 0)
+        {
+            //원상태로 복구
             state = EnemyState.Move;
         }
         else
         {
+            //체력이 없으면 die 상태로 전환.
             state = EnemyState.Die;
 
         }
@@ -79,13 +104,8 @@ public class Enemy : MonoBehaviour
         //장애물이면, 
 
 
-        //체력이 없으면 die 상태로 전환.
     }
 
-    private void UpdateMeleeAttack()
-    {
-        //enemyEye.visibleTargets[0]가 0.1m 에 있을 경우 시행.
-    }
 
     private void UpdateMove()
     {
@@ -104,13 +124,25 @@ public class Enemy : MonoBehaviour
             state = EnemyState.Booster;
         }
     }
-
     private void UpdateDie()
     {
-
-        //본 상태의 모델 끄고, waypointFollow 상태 중지
+        //waypointFollow 상태 중지
+        _waypointFollow.enabled = false;
+        //본 상태의 모델 끄고,
+        _kart.gameObject.SetActive(false);
         //파괴되는 이펙트와 모델 켜서 보여주기
+        destroyEffect.SetActive(true);
+        destroyKart.gameObject.SetActive(true);
         //몇초 후 다시 (move) 원상태+ HP 원상 복구 , waypointFollow 켜기
+        StartCoroutine(respawn(0.5f));
+        //부서진거 끄기
+        destroyKart.gameObject.SetActive(false);
+        _waypointFollow.enabled = true;
+        _kart.gameObject.SetActive(true);
+
+
+        // 이걸 정리를 어떻게 하지..
+
     }
 
     private void UpdateItem()
@@ -138,19 +170,21 @@ public class Enemy : MonoBehaviour
         }
         state = EnemyState.Move;
     }
-    //private void OnCollisionEnter(Collision collision)
-    //{
-    //    //피격 상태로 변환
-    //    if (collision != null)
-    //    {
-
-    //        state = EnemyState.Hit;
-
-    //    }
-    //}
-
-    private void OnTriggerEnter()
+    //리스폰
+    IEnumerator respawn(float respawntime)
     {
+        yield return new WaitForSeconds(respawntime);
+        enemyhp.hp = 100;
+        //Instantiate()
+    }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        //총알에 부딪혔을때
+        if (collision.collider.gameObject.CompareTag("bullet"))
+        {
+            //피격상태로 진입. 이거 어ㄸ허게 부르지..
+            UpdateHit(25,transform.position);
+        }
     }
 }
