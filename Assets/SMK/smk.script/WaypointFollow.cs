@@ -32,12 +32,16 @@ public class WaypointFollow : MonoBehaviour
     public float acceleration = 2f;//가속
     public float breakForce = 0.01f;//감속
     public float speed;
-    EnemyEye enemyEye;
 
     Rigidbody rb;
 
 
     int waypointIndex = -1;
+
+    //베지어 곡선 변수
+    public KHHWaypoint waypoint2;
+    public KHHWaypoint waypoint3;
+
     void Start()
     {
         speed = normalSpeed;
@@ -62,12 +66,18 @@ public class WaypointFollow : MonoBehaviour
 
 
         ////회전
-        Vector3 dir = waypoint.transform.position - transform.position;
-        dir.y = 0;
-        Quaternion way = Quaternion.LookRotation(dir);
-        transform.rotation = way;
+        //Vector3 dir = waypoint.transform.position - transform.position;
+        //dir.y = 0;
+        //Quaternion way = Quaternion.LookRotation(dir);
+        //transform.rotation = way;
+
 
     }
+
+    //private void CalculateCurvePoints(int count)
+    //{
+    //    Vector3 pA = waypoint.position;
+    //}
 
     //ground 판정
     bool Isground()
