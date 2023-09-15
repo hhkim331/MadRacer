@@ -34,7 +34,9 @@ public class KHHWeapon : MonoBehaviour
     public Transform firePos;
     LineRenderer fireLine;
     public ParticleSystem muzzleFlash;
-    public GameObject explosionPrefab;
+    public GameObject metalEffect;
+    public GameObject sandEffect;
+    public GameObject stoneEffect;
 
     // Start is called before the first frame update
     void Start()
@@ -79,6 +81,19 @@ public class KHHWeapon : MonoBehaviour
                 fireLine.SetPosition(0, firePos.position);
                 fireLine.SetPosition(1, laser.HitPoint);
                 muzzleFlash.Play();
+
+                if (laser.HitObjType == KHHTarget.HitType.Metal)
+                {
+                    Instantiate(metalEffect, laser.HitPoint, Quaternion.LookRotation(laser.HitNormal));
+                }
+                else if (laser.HitObjType == KHHTarget.HitType.Sand)
+                {
+                    Instantiate(sandEffect, laser.HitPoint, Quaternion.LookRotation(laser.HitNormal));
+                }
+                else if (laser.HitObjType == KHHTarget.HitType.Stone)
+                {
+                    Instantiate(stoneEffect, laser.HitPoint, Quaternion.LookRotation(laser.HitNormal));
+                }
             }
 
             bulletText.transform.localScale = new Vector3(-0.05f, 0.05f, 0.05f) * laser.Distance;

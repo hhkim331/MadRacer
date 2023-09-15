@@ -10,9 +10,6 @@ public class KHHKart : MonoBehaviour
     KHHKartRank myKartRank;
     Rigidbody rb;
 
-    //health
-    public float health = 100f;
-
     public enum MoveState
     {
         None,
