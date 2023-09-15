@@ -3425,6 +3425,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 175548858, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: healthBar
+      value: 
+      objectReference: {fileID: 1548664780}
+    - target: {fileID: 175548858, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: postProcessProfile
+      value: 
+      objectReference: {fileID: 11400000, guid: 6a354086c8e766c43bb492b6efa318fa, type: 2}
     - target: {fileID: 4667048316251629702, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
       propertyPath: waypoint
       value: 
@@ -3439,7 +3447,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4667048316251629703, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.55
+      value: 1.68
       objectReference: {fileID: 0}
     - target: {fileID: 4667048316251629703, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3447,7 +3455,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4667048316251629703, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4.12
+      value: -7.91
       objectReference: {fileID: 0}
     - target: {fileID: 4667048316251629703, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5316,10 +5324,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 10
   healthBar: {fileID: 36506297}
+  respawnDelay: 1
+  model: {fileID: 0}
+  rb: {fileID: 0}
+  bulletItem: {fileID: 0}
+  explosionPrefab: {fileID: 0}
   hitDuration: 0.5
   postProcessProfile: {fileID: 11400000, guid: 6a354086c8e766c43bb492b6efa318fa, type: 2}
   maxIntensity: 0.3
-  explosionPrefab: {fileID: 0}
 --- !u!114 &395740604
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16439,6 +16451,17 @@ Transform:
   m_Father: {fileID: 1773926657}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 87.899, z: 0}
+--- !u!114 &1224730193 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3580380435527760379, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+  m_PrefabInstance: {fileID: 1564037134}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1227446273
 GameObject:
   m_ObjectHideFlags: 0
@@ -19992,6 +20015,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3958567116302281994, guid: 6562db65d290fef40a94cf7c11153c3a, type: 3}
   m_PrefabInstance: {fileID: 702124555}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1548664780 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3580380435527760379, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+  m_PrefabInstance: {fileID: 240147127}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1549337354
 GameObject:
   m_ObjectHideFlags: 0
@@ -20240,14 +20274,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 175548858, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: healthBar
+      value: 
+      objectReference: {fileID: 1224730193}
+    - target: {fileID: 175548858, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: postProcessProfile
+      value: 
+      objectReference: {fileID: 11400000, guid: 6a354086c8e766c43bb492b6efa318fa, type: 2}
     - target: {fileID: 4667048316251629702, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
       propertyPath: waypoint
       value: 
       objectReference: {fileID: 520347996}
-    - target: {fileID: 4667048316251629702, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4667048316251629703, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
       propertyPath: m_RootOrder
       value: 8

@@ -24,33 +24,33 @@ public class EnemyFire : MonoBehaviour
         enemyEye = GetComponent<EnemyEye>();
         bulletEffect.SetActive(false);
     }
-    private void Update()
-    {
-        if (enemyEye != null)
-        {
-            // ray를 오브젝트 인식한 순서대로 쏨.
-            Ray ray = new Ray(enemyEye.visibleTargets[0].transform.position, enemyEye.visibleTargets[0].transform.forward);
-            RaycastHit hitInfo;
-            if (Physics.Raycast(ray, out hitInfo, 5))
-            {
-                if (hitInfo.transform.gameObject.tag == "Player")
-                {
-                    //너 맞았다고 소식주기.
-                    bulletEffect.gameObject.SetActive(true);
-                    hitInfo.transform.GetComponent<Enemy>().UpdateHit(25, transform.position);
-                    Destroy(hitInfo.transform.gameObject);
-                    bulletEffect.gameObject.SetActive(false);
-                    Destroy(gameObject);
-                }
-            }
-            else if (hitInfo.transform.gameObject)
-            {
-                bulletEffect.gameObject.SetActive(true);
-                Destroy(hitInfo.transform.gameObject);
-                bulletEffect.gameObject.SetActive(false);
-                Destroy(gameObject);
-            }
+    //private void update()
+    //{
+    //    if (enemyeye != null)
+    //    {
+    //        // ray를 오브젝트 인식한 순서대로 쏨.
+    //        ray ray = new ray(enemyeye.visibletargets[0].transform.position, enemyeye.visibletargets[0].transform.forward);
+    //        raycasthit hitinfo;
+    //        if (physics.raycast(ray, out hitinfo, 5))
+    //        {
+    //            if (hitinfo.transform.gameobject.tag == "player")
+    //            {
+    //                //너 맞았다고 소식주기.
+    //                bulleteffect.gameobject.setactive(true);
+    //                hitinfo.transform.getcomponent<enemy>().updatehit(25, transform.position);
+    //                destroy(hitinfo.transform.gameobject);
+    //                bulleteffect.gameobject.setactive(false);
+    //                destroy(gameobject);
+    //            }
+    //        }
+    //        else if (hitinfo.transform.gameobject)
+    //        {
+    //            bulleteffect.gameobject.setactive(true);
+    //            destroy(hitinfo.transform.gameobject);
+    //            bulleteffect.gameobject.setactive(false);
+    //            destroy(gameobject);
+    //        }
 
-        }
-    }
+    //    }
+    //}
 }

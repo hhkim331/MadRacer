@@ -7949,6 +7949,7 @@ GameObject:
   - component: {fileID: 5766413230043917670}
   - component: {fileID: 1144060380}
   - component: {fileID: 1144060388}
+  - component: {fileID: 175548858}
   m_Layer: 11
   m_Name: enemy
   m_TagString: Player
@@ -8000,6 +8001,8 @@ MonoBehaviour:
   acceleration: 2
   breakForce: 0.01
   speed: 0
+  waypoint2: {fileID: 0}
+  waypoint3: {fileID: 0}
 --- !u!114 &4667048316251629700
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8161,6 +8164,28 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 0
+--- !u!114 &175548858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4667048316251630457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45e16bdda2b551945bd5367bdfe18b15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  healthBar: {fileID: 0}
+  respawnDelay: 1
+  model: {fileID: 0}
+  rb: {fileID: 0}
+  bulletItem: {fileID: 0}
+  explosionPrefab: {fileID: 0}
+  hitDuration: 0.5
+  postProcessProfile: {fileID: 0}
+  maxIntensity: 0.3
 --- !u!1 &4677604574225201876
 GameObject:
   m_ObjectHideFlags: 0

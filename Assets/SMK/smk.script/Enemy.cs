@@ -15,9 +15,7 @@ public class Enemy : MonoBehaviour
     {
         Move,
         Attack,
-        //MeleeAttack,
         Item,
-        Die,
         Booster,
     }
     #endregion
@@ -73,10 +71,8 @@ public class Enemy : MonoBehaviour
         {
             case EnemyState.Move: UpdateMove(); break;
             case EnemyState.Attack: UpdateAttack(); break;
-            //case EnemyState.MeleeAttack: UpdateMeleeAttack(); break;
             case EnemyState.Item: UpdateItem(); break;
-            case EnemyState.Die: UpdateDie(); break;
-            case EnemyState: UpdateBooster(); break;
+            case EnemyState:Booster: UpdateBooster(); break;
         }
         //Vector3 dir = transform.position - enemyEye.visibleTargets[0].position;
     }
@@ -86,31 +82,7 @@ public class Enemy : MonoBehaviour
         waypointFollow.speed = waypointFollow.acceleration;
     }
 
-    EnemyHP enemyhp;
-    //피격
-    public void UpdateHit(int dmg, Vector3 origine)
-    {
-        if (enemyhp == null)
-        {
-            enemyhp = GetComponent<EnemyHP>();
-        }
-        enemyhp.hp -= dmg;
-        if (enemyhp.hp > 0)
-        {
-            //원상태로 복구
-            state = EnemyState.Move;
-        }
-        else
-        {
-            //체력이 없으면 die 상태로 전환.
-            state = EnemyState.Die;
-
-        }
-        //닿은 오브젝트의 tag..? layer가 적이나 플레이어면, 피격
-        //장애물이면, 
-
-
-    }
+    
 
 
     private void UpdateMove()
@@ -130,26 +102,7 @@ public class Enemy : MonoBehaviour
             state = EnemyState.Booster;
         }
     }
-    private void UpdateDie()
-    {
-        //waypointFollow 상태 중지
-        _waypointFollow.enabled = false;
-        //본 상태의 모델 끄고,
-        _kart.gameObject.SetActive(false);
-        //파괴되는 이펙트와 모델 켜서 보여주기
-        destroyEffect.SetActive(true);
-        destroyKart.gameObject.SetActive(true);
-        //몇초 후 다시 (move) 원상태+ HP 원상 복구 , waypointFollow 켜기
-        StartCoroutine(respawn(0.5f));
-        //부서진거 끄기
-        destroyKart.gameObject.SetActive(false);
-        _waypointFollow.enabled = true;
-        _kart.gameObject.SetActive(true);
-
-
-        // 이걸 정리를 어떻게 하지..
-
-    }
+    
 
     private void UpdateItem()
     {
@@ -179,9 +132,10 @@ public class Enemy : MonoBehaviour
                 if (hitInfo.transform.gameObject.tag == "Player")
                 {
                     print("rr");
-                    //너 맞았다고 소식주기.
-                    hitInfo.transform.GetComponent<Enemy>().UpdateHit(25, transform.position);
-                    //이거 통일해야 함..플레이어든 에너미든 상태 받기.^^
+                    ////너 맞았다고 소식주기.
+                    //hitInfo.transform.GetComponent<Enemy>().UpdateHit(25, transform.position);
+                    ////이거 통일해야 함..플레이어든 에너미든 상태 받기.^^
+                    
                     Destroy(hitInfo.transform.gameObject);
                 }
             }
@@ -194,23 +148,6 @@ public class Enemy : MonoBehaviour
         else
         {
             state = EnemyState.Move;
-        }
-    }
-    //리스폰
-    IEnumerator respawn(float respawntime)
-    {
-        yield return new WaitForSeconds(respawntime);
-        enemyhp.hp = 100;
-        //Instantiate()
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        //총알에 부딪혔을때
-        if (collision.collider.gameObject.CompareTag("Respawn"))
-        {
-            //피격상태로 진입. 이거 어ㄸ허게 부르지..
-            UpdateHit(25, transform.position);
         }
     }
 }
