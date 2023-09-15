@@ -14,6 +14,10 @@ public class KHHHealth : MonoBehaviour
     public float respawnDelay = 1.0f;
 
     //»ç¸Á È¿°ú
+    public GameObject model;
+    public Rigidbody rb;
+
+    public GameObject bulletItem;
     public GameObject explosionPrefab;
 
     protected virtual void Update()
@@ -42,6 +46,10 @@ public class KHHHealth : MonoBehaviour
 
     public virtual void Die()
     {
+        isDead = true;
+        model.SetActive(false);
+        rb.isKinematic = true;
+
         GameObject explosion = Instantiate(explosionPrefab);
         explosion.transform.position = transform.position + Vector3.up;
         Destroy(explosion, 4);
@@ -50,6 +58,9 @@ public class KHHHealth : MonoBehaviour
     public virtual void Respawn()
     {
         isDead = false;
+        model.SetActive(true);
+        rb.isKinematic = false;
+
         health = maxHealth;
         healthBar.fillAmount = 1;
     }
