@@ -1,12 +1,14 @@
+using System.Collections;
+using System.ComponentModel;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class KHHKart : MonoBehaviour
 {
+    KHHInput input;
+    KHHWeapon weapon;
+    KHHKartRank myKartRank;
     Rigidbody rb;
-
-    //health
-    public float health = 100f;
 
     public enum MoveState
     {
@@ -20,14 +22,16 @@ public class KHHKart : MonoBehaviour
     [Header("Move")]
     //speed
     public Transform handle;
+    public Transform[] wheels;
 
+    public float targetSpeed = 40f;
     int fowardBack = 1;
-    public float normalSpeed = 20f;
+    public float normalSpeed = 40f;
 
     //boost
     public float boostMultiply = 1.8f;
-    float boostMax = 10f;
-    float boostGauge = 10f;
+    float boostMax = 100f;
+    float boostGauge = 100f;
     public float BoostGauge
     {
         get { return boostGauge; }
@@ -39,20 +43,19 @@ public class KHHKart : MonoBehaviour
             gaugeBoostImage.fillAmount = boostGauge / boostMax;
         }
     }
-    float boostUse = 2f;
+    float boostUse = 12f;
     public Image gaugeBoostImage;
     public GameObject boostEffect;
 
     //drift
     public float driftRotMultifly = 1.5f;
-    //public float driftAdditional = 0.3f;
-    public float driftSpeed = 16f;
-    float driftCharge = 3f;
+    public float driftSpeedMultifly = 0.7f;
+    float driftCharge = 7f;
     public GameObject driftRightEffect;
     public GameObject driftLeftEffect;
 
     //back
-    public float backSpeed = 16f;
+    public float backSpeedMultifly = 0.7f;
 
     [Header("Physics")]
     [SerializeField] Collider carCollider;
@@ -62,50 +65,37 @@ public class KHHKart : MonoBehaviour
     //ground
     //bool isGrounded = false;
     public LayerMask groundLayer;
-    public Vector3 groundBox = Vector3.zero;
+    Vector3 groundNormal = Vector3.up;
 
-    //fire
-    int bulletCount = 0;
-    public int BulletCount
-    {
-        get { return bulletCount; }
-        set
-        {
-            bulletCount = value;
-            if (bulletCount < 0) bulletCount = 0;
-            if (bulletCount > 250) bulletCount = 250;
-
-
-        }
-    }
-    public int bulletMax = 250;
-
-    float fireTime = 0.1f;
-    float fireDelay = 0.1f;
-
-    bool fireLineOn = false;
-    float fireLineTime = 0.0f;
-    float fireLineDelay = 0.05f;
-
-    public KHHLaser laser;
-    public Transform weaponBody;
-    public Transform weaponBarrel;
-    public Transform firePos;
-    LineRenderer fireLine;
-    public ParticleSystem muzzleFlash;
-    public GameObject explosionPrefab;
+    //외부에 의한 부스터
+    bool isBoost = false;
+    float boostLeftTime = 0f;
+    Coroutine coBoost;
 
     // Start is called before the first frame update
     void Start()
     {
+        input = GetComponent<KHHInput>();
+        weapon = GetComponent<KHHWeapon>();
+        myKartRank = GetComponent<KHHKartRank>();
+        myKartRank.IsMine = true;
+
         rb = GetComponent<Rigidbody>();
-        fireLine = weaponBarrel.GetComponent<LineRenderer>();
 
         BoostGauge = boostMax;
+
+        //wheel
+        rb.centerOfMass = new Vector3(0, -1f, 0);
     }
+
+    bool canStartBoost = true;
+    float startBoostInputTime = 0f;
 
     private void Update()
     {
+        if (myKartRank.isFinish) return;
+        if (KHHGameManager.instance.isStart == false) return;
+
         //전진후진판단
         float dot = Vector3.Dot(transform.forward, rb.velocity);
         if (dot < 0) fowardBack = -1;
@@ -124,24 +114,33 @@ public class KHHKart : MonoBehaviour
             transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(Vector3.Cross(transform.right, bottomNormal), bottomNormal), Time.deltaTime);
         }
 
-        if (fireLineOn)
-        {
-            fireLineTime += Time.deltaTime;
-            if (fireLineTime > fireLineDelay)
-            {
-                fireLineOn = false;
-                fireLine.enabled = false;
-            }
-        }
-
-        handle.localRotation = Quaternion.Euler(15, 0, -KHHInput.instance.InputSteer * 180f);
+        handle.localRotation = Quaternion.Euler(15, 0, -input.InputSteer * 180f);
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
+        if (myKartRank.isFinish) return;
+        if (KHHGameManager.instance.isStart == false)
+        {
+            //시작 부스터 판단을 위한 시간적립
+            if (input.InputBoost)
+                startBoostInputTime += Time.fixedDeltaTime;
+            else
+                startBoostInputTime = 0;
+            return;
+        }
+
+        if (canStartBoost)
+        {
+            if (startBoostInputTime > 0 && startBoostInputTime < 0.5f)
+                ApplyBoost(3f);
+            canStartBoost = false;
+        }
+
         UpdateMove();
-        UpdateFire();
+        if (input.InputReturn)
+            ReturnTrack();
     }
 
     void UpdateMove()
@@ -149,6 +148,19 @@ public class KHHKart : MonoBehaviour
         //지상에서만 작동
         if (IsGrounded())
         {
+            //부스트
+            if (input.InputBoost && BoostGauge > 0)
+            {
+                boostEffect.SetActive(true);
+                targetSpeed = normalSpeed * boostMultiply;
+                BoostGauge -= Time.fixedDeltaTime * boostUse;
+            }
+            else
+            {
+                boostEffect.SetActive(false);
+                targetSpeed = normalSpeed;
+            }
+
             float addSpeed = 0;
             MoveState moveState = GetMoveState();
 
@@ -160,7 +172,7 @@ public class KHHKart : MonoBehaviour
                     //회전보정
                     if (rb.velocity.magnitude > 0.1f)
                     {
-                        transform.Rotate(Vector3.up * KHHInput.instance.InputSteer);
+                        transform.Rotate(Vector3.up * input.InputSteer);
                         rb.velocity = transform.forward * rb.velocity.magnitude * fowardBack;
                     }
                     break;
@@ -170,11 +182,11 @@ public class KHHKart : MonoBehaviour
                     //회전보정
                     if (rb.velocity.magnitude > 0.1f)
                     {
-                        transform.Rotate(Vector3.up * KHHInput.instance.InputSteer);
+                        transform.Rotate(Vector3.up * input.InputSteer);
                         rb.velocity = transform.forward * rb.velocity.magnitude * fowardBack;
                     }
                     //가속
-                    addSpeed = normalSpeed - rb.velocity.magnitude;
+                    addSpeed = targetSpeed - rb.velocity.magnitude;
                     if (addSpeed < 0) addSpeed = 0;
                     break;
                 case MoveState.Drift:
@@ -183,14 +195,15 @@ public class KHHKart : MonoBehaviour
                     //회전보정
                     if (rb.velocity.magnitude > 0.1f)
                     {
-                        transform.Rotate(Vector3.up * KHHInput.instance.InputSteer * driftRotMultifly);
+                        transform.Rotate(Vector3.up * input.InputSteer * driftRotMultifly);
                         //rb.velocity = transform.forward * rb.velocity.magnitude * fowardBack;
                     }
                     //가속
-                    addSpeed = driftSpeed - rb.velocity.magnitude;
+                    addSpeed = targetSpeed * driftSpeedMultifly - rb.velocity.magnitude;
                     if (addSpeed < 0) addSpeed = 0;
                     //드리프트 충전
-                    BoostGauge += Time.fixedDeltaTime * driftCharge;
+                    if (!input.InputBoost)
+                        BoostGauge += Time.fixedDeltaTime * driftCharge;
                     break;
                 case MoveState.Brake:
                     //물리재질
@@ -198,7 +211,7 @@ public class KHHKart : MonoBehaviour
                     //회전보정
                     if (rb.velocity.magnitude > 0.1f)
                     {
-                        transform.Rotate(Vector3.up * KHHInput.instance.InputSteer);
+                        transform.Rotate(Vector3.up * input.InputSteer);
                         rb.velocity = transform.forward * rb.velocity.magnitude * fowardBack;
                     }
                     break;
@@ -206,31 +219,23 @@ public class KHHKart : MonoBehaviour
                     //물리재질
                     carCollider.material = normalPM;
                     //가속
-                    addSpeed = backSpeed - rb.velocity.magnitude;
+                    addSpeed = targetSpeed * backSpeedMultifly - rb.velocity.magnitude;
                     if (addSpeed < 0) addSpeed = 0;
                     addSpeed *= -1f;
                     break;
             }
 
-            //부스트
-            if (KHHInput.instance.InputBoost && BoostGauge>0)
-            {
-                boostEffect.SetActive(true);
-                addSpeed *= boostMultiply;
-                BoostGauge -= Time.fixedDeltaTime * boostUse;
-            }
-            else
-                boostEffect.SetActive(false);
+            addSpeed *= 1.5f;
 
             //드리프트 이펙트
             if (moveState == MoveState.Drift)
             {
-                if (KHHInput.instance.InputSteer > 0.1f)
+                if (input.InputSteer > 0.1f)
                 {
                     driftRightEffect.SetActive(true);
                     driftLeftEffect.SetActive(false);
                 }
-                else if (KHHInput.instance.InputSteer < -0.1f)
+                else if (input.InputSteer < -0.1f)
                 {
                     driftRightEffect.SetActive(false);
                     driftLeftEffect.SetActive(true);
@@ -242,17 +247,31 @@ public class KHHKart : MonoBehaviour
                 driftLeftEffect.SetActive(false);
             }
 
-            rb.AddForce(transform.forward * addSpeed);
+            //속도 적용
+            if (!isBoost) rb.AddForce(transform.forward * addSpeed);
+
+            //바닥과의 각도
+            Vector3 rawGroundNormal = Vector3.zero;
+            foreach (var wheel in wheels)
+                if (Physics.Raycast(wheel.position, -transform.up, out RaycastHit hit, 10f))
+                    rawGroundNormal += hit.normal;
+            rawGroundNormal.Normalize();
+            groundNormal = Vector3.Slerp(groundNormal, rawGroundNormal, 10 * Time.fixedDeltaTime);
+
+            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(Vector3.ProjectOnPlane(transform.forward, groundNormal).normalized, groundNormal),
+                Mathf.Clamp(Vector3.Dot(rb.velocity.normalized, groundNormal) * rb.velocity.magnitude * 10, 0.1f, 0.3f));
+
+            transform.Rotate(rb.angularVelocity * Mathf.Rad2Deg * Time.fixedDeltaTime, Space.World);
         }
     }
 
     MoveState GetMoveState()
     {
-        if (KHHInput.instance.InputBrake)
+        if (input.InputBrake)
         {
-            if (KHHInput.instance.InputAccel)
+            if (input.InputAccel > 0.1f)
             {
-                if (Mathf.Abs(KHHInput.instance.InputSteer) > 0.1f)
+                if (Mathf.Abs(input.InputSteer) > 0.1f)
                     return MoveState.Drift;
                 else
                     return MoveState.Back;
@@ -262,67 +281,69 @@ public class KHHKart : MonoBehaviour
         }
         else
         {
-            if (KHHInput.instance.InputAccel)
+            if (input.InputAccel > 0.1f)
                 return MoveState.Accel;
             else
                 return MoveState.None;
         }
     }
 
-    void UpdateFire()
-    {
-        weaponBody.LookAt(laser.HitPoint);
-        if (KHHInput.instance.InputFire && bulletCount > 0)
-        {
-            fireTime += Time.fixedDeltaTime;
-            if (fireTime > fireDelay)
-            {
-                BulletCount--;
-                fireTime = 0;
-                fireLineOn = true;
-                fireLine.enabled = true;
-                fireLineTime = 0f;
-                fireLine.SetPosition(0, firePos.position);
-                fireLine.SetPosition(1, laser.HitPoint);
-                muzzleFlash.Play();
-            }
-
-            weaponBarrel.Rotate(Vector3.forward * 1000f * Time.fixedDeltaTime);
-        }
-        else
-        {
-            fireTime = fireDelay;
-        }
-
-        if (KHHInput.instance.InputSub)
-        {
-            Debug.Log("Sub");
-        }
-
-        if (KHHInput.instance.InputShield)
-        {
-            Debug.Log("Shield");
-        }
-    }
-
     bool IsGrounded()
     {
-        return Physics.BoxCast(transform.position, groundBox * 0.5f, -transform.up, out RaycastHit hit, transform.rotation, 0.1f, groundLayer);
+        foreach (var wheel in wheels)
+        {
+            if (Physics.Raycast(wheel.position, -transform.up, out RaycastHit hit, 1f))
+                return true;
+        }
+        return false;
+        //return Physics.BoxCast(transform.position + transform.forward * 0.3f, groundBox * 0.5f, -transform.up, out RaycastHit hit, transform.rotation, 0.1f, groundLayer);
     }
 
-    void OnDrawGizmos()
+    void ReturnTrack()
     {
-        if (Physics.BoxCast(transform.position, groundBox * 0.5f, -transform.up, out RaycastHit hit, transform.rotation, 0.1f))
+        Vector3 point = myKartRank.GetReturnTrackPoint();
+        Physics.Raycast(point + Vector3.up * 10f, Vector3.down, out RaycastHit hit, 20f, groundLayer);
+        if (hit.collider != null)
+            point = hit.point;
+        transform.position = point;
+        transform.forward = myKartRank.WayForward;
+        rb.velocity = Vector3.zero;
+        rb.angularVelocity = Vector3.zero;
+    }
+
+    public void ApplyBoost(float boostTime)
+    {
+        isBoost = true;
+        if (boostLeftTime < boostTime)
+            boostLeftTime = boostTime;
+
+        if (coBoost != null)
+            StopCoroutine(coBoost);
+        coBoost = StartCoroutine(CoBoost());
+    }
+
+    IEnumerator CoBoost()
+    {
+        while (boostLeftTime > 0)
         {
-            Gizmos.color = Color.red;
-            Gizmos.DrawRay(transform.position, -transform.up * hit.distance);
+            if (!isBoost) //부스트 상태가 아니게 된 경우
+            {
+                boostLeftTime = 0;
+                break;
+            }
 
-            Gizmos.color = Color.green;
-            Gizmos.DrawWireCube(transform.position + -transform.up * hit.distance, groundBox);
+            float boostSpeed = targetSpeed * boostMultiply;
+            if (rb.velocity.magnitude < boostSpeed * 0.5f)
+                rb.velocity = transform.forward * boostSpeed * 0.5f;
+            boostSpeed -= rb.velocity.magnitude;
+            rb.AddForce(transform.forward * boostSpeed);
 
-            Gizmos.color = Color.blue;
-            Gizmos.DrawSphere(hit.point, 0.1f);
+            boostLeftTime -= Time.deltaTime;
+            yield return null;
         }
+
+        boostLeftTime = 0;
+        isBoost = false;
     }
 
     public void ApplyItem(Item.ItmeType itemType)
@@ -330,7 +351,7 @@ public class KHHKart : MonoBehaviour
         switch (itemType)
         {
             case Item.ItmeType.Bullet:
-                BulletCount = 250;
+                weapon.BulletSupply();
                 print("총알충전");
                 break;
             case Item.ItmeType.Booster:

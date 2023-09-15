@@ -1,21 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class KHHPlayerUI : MonoBehaviour
 {
-    //
+    KHHKartRank myKartRank;
+    public TextMeshProUGUI rankText;
+    public TextMeshProUGUI lapText;
 
-
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        
+        myKartRank = GetComponent<KHHKartRank>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        rankText.text = string.Format("¼øÀ§:{0}/6", myKartRank.rank);
+        lapText.text = string.Format("·¦:{0}/2", myKartRank.lap);
     }
 }
