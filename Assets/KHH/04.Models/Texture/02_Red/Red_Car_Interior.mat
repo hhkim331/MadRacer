@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Car_Interior
+  m_Name: Red_Car_Interior
   m_Shader: {fileID: 47, guid: 0000000000000000f000000000000000, type: 0}
   m_ValidKeywords:
   - _METALLICGLOSSMAP
@@ -23,7 +23,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: d82f5368b17970841ad9b72f6453f82b, type: 3}
+        m_Texture: {fileID: 2800000, guid: 77de31618bc9476429625ae36f0b5ec7, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -43,15 +43,15 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 3465b60437156e44cb3cf2c3aa3d8ac1, type: 3}
+        m_Texture: {fileID: 2800000, guid: 5efac7733ad8f234ebe3622cdba0770b, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
-        m_Texture: {fileID: 2800000, guid: 3c08aafc7a20d2841a5016f933e77ec7, type: 3}
+        m_Texture: {fileID: 2800000, guid: 19d7523ab931a4a4b839130d3c18511c, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
-        m_Texture: {fileID: 2800000, guid: 3c08aafc7a20d2841a5016f933e77ec7, type: 3}
+        m_Texture: {fileID: 2800000, guid: 19d7523ab931a4a4b839130d3c18511c, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ParallaxMap:

@@ -1,85 +1,56 @@
-using System.Collections;
 using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
 using UnityEngine.UI;
+using static KHHTarget;
 
 public class KHHHealth : MonoBehaviour
 {
-    int health = 10;
+    protected int health = 10;
     public int maxHealth = 10;
     public Image healthBar;
 
-    //피격 효과
-    float hitTime = 0.0f;
-    public float hitDuration = 0.5f;
-    public PostProcessProfile postProcessProfile;
-    float intensity = 0.0f;
-    public float maxIntensity = 0.3f;
+    bool isDead = false;
+    float respawnTime = 0f;
+    public float respawnDelay = 1.0f;
 
     //사망 효과
     public GameObject explosionPrefab;
 
-    Coroutine coHitEffect;
-
-    // Start is called before the first frame update
-    void Start()
+    protected virtual void Update()
     {
-        postProcessProfile.GetSetting<Vignette>().intensity.value = 0;
+        if (isDead)
+        {
+            respawnTime += Time.deltaTime;
+            if (respawnTime > respawnDelay)
+            {
+                respawnTime = 0;
+                Respawn();
+            }
+        }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
-    public void Hit()
+    public virtual void Hit()
     {
         if (health > 0)
         {
             health--;
             healthBar.fillAmount = (float)health / maxHealth;
-            hitTime = 0;
-            if (coHitEffect != null)
-                StopCoroutine(coHitEffect);
-            coHitEffect = StartCoroutine(CoHitEffect());
+            if (health < 0)
+                Die();
         }
     }
 
-    void Die()
+    public virtual void Die()
     {
         GameObject explosion = Instantiate(explosionPrefab);
         explosion.transform.position = transform.position + Vector3.up;
         Destroy(explosion, 4);
     }
 
-    public void Respawn()
+    public virtual void Respawn()
     {
+        isDead = false;
         health = maxHealth;
         healthBar.fillAmount = 1;
-        hitTime = 0;
-        intensity = 0;
-        postProcessProfile.GetSetting<Vignette>().intensity.value = 0;
-    }
-
-    IEnumerator CoHitEffect()
-    {
-        while (hitTime < hitDuration)
-        {
-            hitTime += Time.deltaTime;
-            intensity += Time.deltaTime * maxIntensity / hitDuration;
-            if (intensity > maxIntensity) intensity = maxIntensity;
-            postProcessProfile.GetSetting<Vignette>().intensity.value = intensity;
-            yield return null;
-        }
-
-        while (hitTime > 0)
-        {
-            hitTime -= Time.deltaTime;
-            intensity -= Time.deltaTime * maxIntensity / hitDuration;
-            if (intensity < 0) intensity = 0;
-            postProcessProfile.GetSetting<Vignette>().intensity.value = intensity;
-            yield return null;
-        }
     }
 }
