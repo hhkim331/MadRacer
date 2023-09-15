@@ -2,19 +2,47 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Rendering.PostProcessing;
 using UnityEngine.UI;
 
 
 public class EnemyHP : KHHHealth
 {
-    //피격 상태
+    //피격 효과
+    float hitTime = 0.0f;
+    public float hitDuration = 0.5f;
+    float intensity = 0.0f;
+    public float maxIntensity = 0.3f;
+    Coroutine coHitEffect;
     //죽는 상태
-
 
     void Start()
     {
         
     }
+    private override void Enemyhit(float damage)
+    {
+        base.Hit(damage);
+        if (health > 0)
+        {
+            hitTime = 0;
+            if (coHitEffect != null)
+                StopCoroutine(coHitEffect);
+            coHitEffect = StartCoroutine(CoHitEffect());
+        }
+    }
+
+    private override void Enemydie()
+    {
+        base.Die();
+    }
+    public override void EnemyRespawn()
+    {
+        base.Respawn();
+        hitTime = 0;
+        intensity = 0;
+    }
+    #region
     //public void UpdateHit(int dmg, Vector3 origine)
     //{
     //    if (health == null)
@@ -68,4 +96,23 @@ public class EnemyHP : KHHHealth
     //        UpdateHit(25, transform.position);
     //    }
     //}
+    #endregion
+    IEnumerator CoHitEffect()
+    {
+        while (hitTime < hitDuration)
+        {
+            hitTime += Time.deltaTime;
+            intensity += Time.deltaTime * maxIntensity / hitDuration;
+            if (intensity > maxIntensity) intensity = maxIntensity;
+            yield return null;
+        }
+
+        while (hitTime > 0)
+        {
+            hitTime -= Time.deltaTime;
+            intensity -= Time.deltaTime * maxIntensity / hitDuration;
+            if (intensity < 0) intensity = 0;
+            yield return null;
+        }
+    }
 }
