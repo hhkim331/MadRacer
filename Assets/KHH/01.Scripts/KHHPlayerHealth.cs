@@ -20,7 +20,7 @@ public class KHHPlayerHealth : KHHHealth
         postProcessProfile.GetSetting<Vignette>().intensity.value = 0;
     }
 
-    public override void Hit(int damage)
+    public override void Hit(float damage)
     {
         base.Hit(damage);
         if (health > 0)
