@@ -43,7 +43,7 @@ public class KHHWeapon : MonoBehaviour
     {
         input = GetComponent<KHHInput>();
         fireLine = firePos.GetComponent<LineRenderer>();
-        BulletCount = 250;
+        BulletCount = 0;
     }
 
     // Update is called once per frame

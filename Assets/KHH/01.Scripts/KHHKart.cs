@@ -346,6 +346,9 @@ public class KHHKart : MonoBehaviour
         isBoost = false;
     }
 
+    public GameObject bow;
+    public Transform inven;
+
     public void ApplyItem(Item.ItmeType itemType)
     {
         switch (itemType)
@@ -357,6 +360,9 @@ public class KHHKart : MonoBehaviour
             case Item.ItmeType.Booster:
                 BoostGauge = boostMax;
                 print("부스터 충전");
+                break;
+            case Item.ItmeType.attack:
+                GameObject subWeapon = Instantiate(bow,inven);
                 break;
             default:
                 break;
