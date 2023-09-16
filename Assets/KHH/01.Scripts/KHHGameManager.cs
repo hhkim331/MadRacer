@@ -28,6 +28,8 @@ public class KHHGameManager : MonoBehaviour
 
     private void Start()
     {
+        SoundManager.instance.PlayBGM("Stage");
+
         kartRanks = new KHHKartRank[kartObjs.Length];
         for (int i = 0; i < kartObjs.Length; i++)
             kartRanks[i] = kartObjs[i].GetComponent<KHHKartRank>();
@@ -38,12 +40,16 @@ public class KHHGameManager : MonoBehaviour
     IEnumerator StartGame()
     {
         startText.text = "3";
+        SoundManager.instance.PlaySFX("StartCount");
         yield return new WaitForSeconds(1f);
         startText.text = "2";
+        SoundManager.instance.PlaySFX("StartCount");
         yield return new WaitForSeconds(1f);
         startText.text = "1";
+        SoundManager.instance.PlaySFX("StartCount");
         yield return new WaitForSeconds(1f);
         startText.text = "GO!";
+        SoundManager.instance.PlaySFX("StartCountEnd");
         yield return new WaitForSeconds(0.1f);
         isStart = true;
         yield return new WaitForSeconds(0.9f);
@@ -73,6 +79,7 @@ public class KHHGameManager : MonoBehaviour
 
     public void GameEnd()
     {
+        StopEngineSound();
         StartCoroutine(CoGameEnd());
     }
 
@@ -104,5 +111,13 @@ public class KHHGameManager : MonoBehaviour
             colorGrading.colorFilter.value = color;
             yield return null;
         }
+    }
+
+    void StopEngineSound()
+    {
+        SoundManager.instance.StopEngine("EngineIdle");
+        SoundManager.instance.StopEngine("EngineAccel");
+        SoundManager.instance.StopEngine("EngineDrift");
+        SoundManager.instance.StopEngine("EngineBrake");
     }
 }

@@ -23,6 +23,7 @@ public class KHHPlayerHealth : KHHHealth
     public override void Hit(float damage)
     {
         base.Hit(damage);
+        SoundManager.instance.PlaySFX("Hit");
         if (health > 0)
         {
             hitTime = 0;

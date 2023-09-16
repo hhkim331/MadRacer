@@ -85,6 +85,7 @@ public class KHHWeapon : MonoBehaviour
                 fireLine.SetPosition(0, firePos.position);
                 fireLine.SetPosition(1, laser.HitPoint);
                 muzzleFlash.Play();
+                SoundManager.instance.PlaySFX("Fire");
 
                 if (laser.HitObjType == KHHTarget.HitType.Metal)
                 {
