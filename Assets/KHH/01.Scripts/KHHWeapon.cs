@@ -47,7 +47,7 @@ public class KHHWeapon : MonoBehaviour
     {
         input = GetComponent<KHHInput>();
         fireLine = firePos.GetComponent<LineRenderer>();
-        BulletCount = 0;
+        BulletCount = 250;
     }
 
     // Update is called once per frame
@@ -87,15 +87,20 @@ public class KHHWeapon : MonoBehaviour
                 muzzleFlash.Play();
                 SoundManager.instance.PlaySFX("Fire");
 
-                if (laser.HitObjType == KHHTarget.HitType.Metal)
+                KHHHealth health = laser.hitObj.GetComponentInParent<KHHHealth>();
+                if (health != null)
+                    health.Hit(10);
+
+                KHHTarget.HitType hitType = laser.hitObj.GetComponentInParent<KHHTarget>().hitType;
+                if (hitType == KHHTarget.HitType.Metal)
                 {
                     Instantiate(metalEffect, laser.HitPoint, Quaternion.LookRotation(laser.HitNormal));
                 }
-                else if (laser.HitObjType == KHHTarget.HitType.Sand)
+                else if (hitType == KHHTarget.HitType.Sand)
                 {
                     Instantiate(sandEffect, laser.HitPoint, Quaternion.LookRotation(laser.HitNormal));
                 }
-                else if (laser.HitObjType == KHHTarget.HitType.Stone)
+                else if (hitType == KHHTarget.HitType.Stone)
                 {
                     Instantiate(stoneEffect, laser.HitPoint, Quaternion.LookRotation(laser.HitNormal));
                 }

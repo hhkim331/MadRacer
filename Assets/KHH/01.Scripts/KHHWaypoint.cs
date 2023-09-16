@@ -14,6 +14,18 @@ public class KHHWaypoint : MonoBehaviour
     public int waypointIndex;
     public NextWaypoint[] nextPoint;
 
+    public Vector3 wayPosition;
+
+    private void Start()
+    {
+        Ray ray = new Ray(transform.position + Vector3.up * 10, Vector3.down);
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit, 100f, 1<<LayerMask.NameToLayer("Default")))
+        {
+            wayPosition = hit.point;
+        }
+    }
+
     public KHHWaypoint NextPoint()
     {
         float totalWeight = 0;

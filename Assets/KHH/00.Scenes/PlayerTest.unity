@@ -172,6 +172,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1731213491}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &5405093
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -270,6 +271,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1377013019}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &21005590
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -424,6 +426,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 636617441}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &34847555
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -486,6 +489,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1880589201}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &36757871
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -638,6 +642,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1543354679}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &45181041
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -952,6 +957,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1299302750}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &53352998
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1523,6 +1529,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1549337356}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &114894023
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1758,6 +1765,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1989887730}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &130601115
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1820,6 +1828,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1377013019}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &132031132
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1882,6 +1891,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1777504022}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &133020209
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1944,6 +1954,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 424810054}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &133346475
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2073,6 +2084,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1884624402}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &142756545
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2343,6 +2355,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1925763822}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &153750920
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2405,6 +2418,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 636617441}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &162115210
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2753,6 +2767,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1760764947}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &185653019
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3379,6 +3394,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 643869064}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &212068563
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3441,6 +3457,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1777504022}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &215718647
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3681,6 +3698,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 636617441}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &222658130
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3743,6 +3761,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1421090691}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &229129252
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4195,6 +4214,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 443949693}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &247689393
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4766,6 +4786,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 626305524}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &301437399
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4890,6 +4911,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1377013019}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &305531632
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5076,6 +5098,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1777504022}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &314502272
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5609,6 +5632,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1377013019}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &336663689
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6032,6 +6056,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1989887730}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &365538051
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6535,6 +6560,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 142756544}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &393790193
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6689,6 +6715,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1884624402}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &400003600
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6751,6 +6778,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1227446275}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &400712012
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6849,6 +6877,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 142756544}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &409378050
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7022,6 +7051,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 21005589}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &418684963
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7084,6 +7114,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 636617441}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &421995472
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7146,6 +7177,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 520347996}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &424810055
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7370,7 +7402,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 429817432}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.1, z: 10}
+  m_LocalPosition: {x: 5.89, y: 0.1, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -7768,6 +7800,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 215718646}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &443087089
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7830,6 +7863,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 874942455}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &443949694
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7873,9 +7907,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41e136e9ea4d1174b86aae4cbf1e44bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitObj: {fileID: 0}
   hitLayer:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 65537
   raycastDistance: 500
 --- !u!120 &447623039
 LineRenderer:
@@ -8049,6 +8084,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 2003058824}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &448234621
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8203,6 +8239,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1731213491}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &454110915
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8265,6 +8302,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1989887730}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &454603245
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8419,6 +8457,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1980722630}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &456831936
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8573,6 +8612,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1421090691}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &459722010
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9136,6 +9176,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 2003058824}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &492532318
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9198,6 +9239,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1436618882}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &498338663
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9474,6 +9516,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1880589201}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &520347997
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9536,6 +9579,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1760764947}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &523272110
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10441,6 +10485,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1836268208}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &566774982
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10637,6 +10682,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 2136482464}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &574041986
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10699,6 +10745,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1980722630}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &578995869
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11230,6 +11277,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 2109557913}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &610386936
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11292,6 +11340,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 424810054}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &614072674
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11354,6 +11403,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1339092095}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &622354849
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11447,6 +11497,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1543354679}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &626305525
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11775,6 +11826,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1227446275}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &636617442
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11899,6 +11951,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1731213491}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &643869065
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11961,6 +12014,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1777504022}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &644461324
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12085,6 +12139,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 215718646}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &655356025
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12147,6 +12202,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1730814438}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &656739638
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12399,6 +12455,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1549337356}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &673896784
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12675,6 +12732,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1989887730}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &679603260
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12737,6 +12795,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 215718646}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &681938680
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12835,6 +12894,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1760764947}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &683616440
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12897,6 +12957,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 2003058824}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &693752191
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13035,6 +13096,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 643869064}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &701994317
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13251,6 +13313,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 520347996}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &705059486
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13391,6 +13454,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 185653018}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &705897363
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13536,6 +13600,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 459722009}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &732907911
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13714,6 +13779,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 679603259}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &746484652
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13997,6 +14063,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 2136482464}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &762635130
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14517,6 +14584,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 459722009}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &805418579
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14579,6 +14647,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1436618882}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &811614266
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14721,6 +14790,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1925763822}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &815353420
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15247,6 +15317,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1568019558}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &830029575
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15825,6 +15896,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 2109557913}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &847387255
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15887,6 +15959,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1108797905}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &847517051
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16221,6 +16294,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1421090691}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &861211675
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16283,6 +16357,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1299302750}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &873826505
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16345,6 +16420,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 424810054}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &874942456
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16499,6 +16575,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 566774981}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &887729352
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17217,6 +17294,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 443949693}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &918886340
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17279,6 +17357,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1730814438}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &920140082
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17407,6 +17486,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1299302750}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &927147787
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17607,6 +17687,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1980722630}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &935450650
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17669,6 +17750,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1760764947}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &945761880
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17731,6 +17813,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 142756544}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &947983988
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17829,6 +17912,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1752117522}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &950263526
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17891,6 +17975,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1421090691}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &957686270
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18155,6 +18240,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 185653018}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &963420596
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18598,6 +18684,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1925763822}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &982955751
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18723,6 +18810,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1884624402}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &999549118
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18945,6 +19033,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 142756544}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1007971833
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19007,6 +19096,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 424810054}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1011893720
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19131,6 +19221,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1752117522}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1022700977
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19388,6 +19479,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isStart: 0
+  isEnd: 0
   startText: {fileID: 600867650}
   kartObjs:
   - {fileID: 429817432}
@@ -19479,6 +19571,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 679603259}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1031031411
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19737,6 +19830,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 409378049}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1049216408
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19799,6 +19893,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 520347996}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1059515148
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19861,6 +19956,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 636617441}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1060540835
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19923,6 +20019,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1880589201}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1064073297
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19985,6 +20082,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1925763822}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1069018832
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20127,6 +20225,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1108797905}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1076822718
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20225,6 +20324,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1836268208}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1082418731
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20379,6 +20479,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1436618882}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1087465040
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20601,6 +20702,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 21005589}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1099420721
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20663,6 +20765,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1752117522}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1108797906
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20725,6 +20828,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 566774981}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1110318474
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20787,6 +20891,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1836268208}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1110800487
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20849,6 +20954,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 2136482464}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1112199117
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21449,6 +21555,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 34847554}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1147199171
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21669,6 +21776,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1980722630}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1155726505
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21823,6 +21931,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1568019558}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1158477985
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21916,6 +22025,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 626305524}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1160359724
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21978,6 +22088,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1339092095}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1167026344
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22570,6 +22681,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 443949693}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1203862096
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22632,6 +22744,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 626305524}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1209305140
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22694,6 +22807,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1731213491}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1211097162
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22756,6 +22870,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 2136482464}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1211101926
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22976,6 +23091,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1108797905}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1227446276
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23350,6 +23466,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 34847554}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1251001768
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23536,6 +23653,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1299302750}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1266261727
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23758,6 +23876,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1777504022}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1287602467
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23820,6 +23939,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 520347996}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1288421770
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24113,6 +24233,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1549337356}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1299302751
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24237,6 +24358,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 874942455}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1301231573
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24506,6 +24628,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 34847554}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1339092096
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24849,6 +24972,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1730814438}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1346591164
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -25003,6 +25127,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 409378049}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1349701233
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -25192,6 +25317,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 874942455}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1365239876
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -25522,6 +25648,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 566774981}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1371671972
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -25726,6 +25853,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 459722009}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1375309060
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -25788,6 +25916,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1108797905}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1376968726
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -25850,6 +25979,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 643869064}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1377013020
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -26023,6 +26153,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 185653018}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1379932328
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -26448,6 +26579,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 2109557913}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1421090692
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -26682,6 +26814,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 626305524}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1436618883
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -27070,6 +27203,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1227446275}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1478991816
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -27193,6 +27327,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1989887730}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1493282230
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -27357,6 +27492,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1568019558}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1512561673
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -27419,6 +27555,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1731213491}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1515888815
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -27481,6 +27618,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 409378049}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1517722724
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -27777,6 +27915,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1884624402}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1542381775
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -27901,6 +28040,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1925763822}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1543354680
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -27981,6 +28121,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1436618882}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1549337357
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -28061,6 +28202,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 2003058824}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1555627039
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -28430,6 +28572,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 566774981}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1568019559
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -28492,6 +28635,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 21005589}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1571704255
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -28646,6 +28790,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 643869064}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1573067216
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -28805,6 +28950,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1543354679}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1594098673
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -28867,6 +29013,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1836268208}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1597804664
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -28929,6 +29076,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 874942455}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1598721346
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -29107,6 +29255,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1543354679}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1606766408
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -29169,6 +29318,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1227446275}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1621456035
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -29297,6 +29447,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1752117522}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1633376992
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -29488,6 +29639,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1730814438}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1649687123
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -29550,6 +29702,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 2109557913}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1655074932
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -29692,6 +29845,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 34847554}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1665588169
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -29754,6 +29908,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 566774981}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1672668792
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -30019,6 +30174,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 2109557913}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1677118342
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -30161,6 +30317,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 34847554}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1685696716
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -30311,6 +30468,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1884624402}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1696231767
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -30373,6 +30531,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1339092095}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1705052830
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -30435,6 +30594,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 874942455}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1708814994
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -30661,6 +30821,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1549337356}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1717042052
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -30813,6 +30974,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1377013019}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1722398458
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -30875,6 +31037,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 459722009}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1730814439
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -30937,6 +31100,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 2003058824}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1731213492
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -31061,6 +31225,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 21005589}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1739402850
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -31290,6 +31455,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 215718646}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1752117523
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -31427,6 +31593,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 2136482464}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1760764948
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -31599,6 +31766,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1760764947}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1769227118
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -31769,6 +31937,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 142756544}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1774181440
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -31831,6 +32000,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 927147786}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1775007724
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -31968,6 +32138,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1339092095}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1776893166
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -32030,6 +32201,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 443949693}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1777504023
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -32238,6 +32410,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 643869064}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1792663820
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -32300,6 +32473,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 409378049}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1794386883
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -32601,6 +32775,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1421090691}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1818903849
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -32663,6 +32838,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 459722009}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1819739628
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -32866,6 +33042,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 679603259}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1836268209
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -33112,6 +33289,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 520347996}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1845434710
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -33174,6 +33352,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 927147786}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1849990005
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -33254,6 +33433,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1568019558}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1880589202
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -33427,6 +33607,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1339092095}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1884624403
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -33489,6 +33670,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1880589201}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1886204706
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -33551,6 +33733,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 215718646}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1886476250
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -33613,6 +33796,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 927147786}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1886943664
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -33675,6 +33859,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 443949693}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1899569394
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -33737,6 +33922,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1549337356}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1903731773
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -33786,6 +33972,475 @@ Transform:
   m_Father: {fileID: 1773926657}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 252.074, z: 0}
+--- !u!1001 &1920440786
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 645273246, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 12155080362147221, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 153120894872903558, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 185596179107750519, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 375877954671317487, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 457894039988376388, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 622739665121067286, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 660665528617243214, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 804756922809009121, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 831570440931919817, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 858705625587946405, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 948462618317930735, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 950121771329661563, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 1036860503105590578, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 1225555791019369967, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 1254611172646905424, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 1256320920968039620, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 1345492360266543902, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 1379243989746848849, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 1449981443688425171, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 1455523084631283517, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 1628769561781209049, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 1868671406752351575, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 1955536275151903951, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 2347243066942010049, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 2412967720900687908, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 2510707901418017114, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 2701758511864117432, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 2759682047637804826, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 2826920974618839105, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 2952646009141414017, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 3022542411109772976, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 3197863751889050836, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 3249593708784663404, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 3460243656929033849, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 3514475651495102089, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 3541363538697491965, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 3544940498311089207, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 4032511970585484620, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 4132771565628972434, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 4133340022043424518, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 4241922567487749507, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 4272185206598596373, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 4527588686844026191, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 4532918869721053662, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 4667048315107771220, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 4667048316251629702, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: waypoint
+      value: 
+      objectReference: {fileID: 520347996}
+    - target: {fileID: 4667048316251629702, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4667048316251629703, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_RootOrder
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4667048316251629703, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4667048316251629703, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4667048316251629703, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4667048316251629703, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4667048316251629703, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4667048316251629703, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4667048316251629703, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4667048316251629703, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4667048316251629703, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4667048316251629703, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4667048316251630457, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_Name
+      value: enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 4667048316251630457, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 4684219567402392250, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 4852785360359538000, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 5005983634349614200, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 5010891590931648928, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 5037515478451257494, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 5084547254720508075, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 5276286220882025982, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 5300309130650422724, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 5440205950491590149, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 5477233925949592442, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 5502917324495142949, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 5555925739309306125, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 5702023472101032324, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 5766413230043917670, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: targetMask.m_Bits
+      value: 67584
+      objectReference: {fileID: 0}
+    - target: {fileID: 5771250188919255737, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 5819218052873721920, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 5877650929112543249, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 5979996893244079472, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 6041836556830163414, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 6060556653911953176, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 6352820044365145298, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 6462290816719490432, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 6532195089907592749, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 6746837706868591877, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 6783025028166845973, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 6962422659900150736, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 7012790304159782690, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 7269449499689540777, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 7277138116781162753, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 7406187713511900457, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 7430780570920373068, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 7507797817683466709, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 7641256110375179502, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 7655887772280516064, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 7669125579852198236, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708590668292623260, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 7709165650766389512, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 7771072694575524862, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 7838810478103815638, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 7860289023472341464, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 7869861613054161435, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 7921690345086302296, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 7990530373166049672, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 8109262998153403318, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 8150781695052587688, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 8249575814019691901, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 8328578927519894142, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 8489254053412241912, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 8625562625591147936, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 8672364922424617537, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 8791128544496745392, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 8913891163267225877, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 8994435959919271275, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 9055927245966478168, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
 --- !u!1 &1923053885
 GameObject:
   m_ObjectHideFlags: 0
@@ -33835,6 +34490,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1108797905}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1923053888
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -33897,6 +34553,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 185653018}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1925763823
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -33977,6 +34634,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 424810054}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1930878451
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -34039,6 +34697,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1227446275}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1935609290
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -34299,6 +34958,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 679603259}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1951576055
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -34361,6 +35021,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1752117522}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1951830439
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -34913,6 +35574,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 927147786}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1980722631
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -35301,6 +35963,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 21005589}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1989887731
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -35443,6 +36106,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 626305524}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1991635453
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -35572,6 +36236,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1980722630}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &2003058825
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -35726,6 +36391,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 185653018}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &2013267301
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -35880,6 +36546,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 679603259}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &2017867050
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -36344,6 +37011,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1568019558}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &2026701708
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -36978,6 +37646,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1836268208}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &2041700386
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -37278,6 +37947,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 927147786}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &2055289390
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -38027,6 +38697,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1436618882}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &2105781685
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -38139,6 +38810,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1299302750}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &2108707948
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -38201,6 +38873,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 409378049}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &2109557914
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -38281,6 +38954,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1543354679}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &2111119180
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -38543,6 +39217,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1730814438}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &2136482465
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -38697,6 +39372,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1880589201}
     weight: 1
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &2143403467
 BoxCollider:
   m_ObjectHideFlags: 0

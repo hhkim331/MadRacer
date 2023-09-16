@@ -63,6 +63,8 @@ public class Enemy : MonoBehaviour
 
     void Update()
     {
+        if (!KHHGameManager.instance.isStart) return;
+
         //EnemyState enemyState = GetEnemyState();
         boosterGauge += Time.deltaTime;
         switch (state)
@@ -120,22 +122,20 @@ public class Enemy : MonoBehaviour
             Ray ray = new Ray(enemyEye.visibleTargets[0].transform.position, enemyEye.visibleTargets[0].transform.forward);
             RaycastHit hitInfo;
             //일정 시간을 더해서 시간이 되면,
-            bulletTime += Time.deltaTime; 
+            bulletTime += Time.deltaTime;
 
             if (Physics.Raycast(ray, out hitInfo, 25))
             {
                 bulletMaxCount--;
-                if (bulletTime > bulletDelay )
+                if (bulletTime > bulletDelay)
                 {
                     if (bulletMaxCount == 0) return;
                     enemyAttackline.SetPosition(1, muzzle.position);
                     var bulletImpact = Instantiate(bulletEffect);
                     bulletImpact.transform.position = hitInfo.point;
                     bulletTime = 0;
-                    print("1");
-                    enemyEye.visibleTargets[0].transform.GetComponentInParent<EnemyHP>().Hit(25);
+                    enemyEye.visibleTargets[0].transform.GetComponentInParent<KHHHealth>().Hit(1);
                 }
-
             }
             else
             {
