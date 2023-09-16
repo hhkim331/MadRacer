@@ -46,9 +46,11 @@ public class SoundManager : MonoBehaviour
 
     [SerializeField] List<SoundData> loadingBGMSoundInfos = new List<SoundData>();
     [SerializeField] List<SoundData> loadingSFXSoundInfos = new List<SoundData>();
+    [SerializeField] List<SoundData> loadingEngineSoundInfos = new List<SoundData>();
 
     Dictionary<string, SoundData> bgmContainer = new Dictionary<string, SoundData>();
     Dictionary<string, SoundData> sfxContainer = new Dictionary<string, SoundData>();
+    Dictionary<string, SoundData> engineContainer = new Dictionary<string, SoundData>();
 
     GameObject bgmObj = null;   // 백그라운드 오브젝트
     AudioSource bgmSrc = null;  // 백그라운드 AudioSource 컴포넌트
@@ -57,6 +59,11 @@ public class SoundManager : MonoBehaviour
     int sfxCurCount = 0;
     List<GameObject> sfxObjList = new List<GameObject>(); //ArrayList m_sndObjList = new ArrayList();          // 효과음 오브젝트
     AudioSource[] sfxSrcList;
+
+    int engineMaxCount = 4;
+    int engineCurCount = 0;
+    List<GameObject> engineObjList = new List<GameObject>();
+    AudioSource[] engineSrcList;
 
     SoundData soundData = null;
 
@@ -90,8 +97,14 @@ public class SoundManager : MonoBehaviour
         {
             sfxContainer.Add(loadingSFXSoundInfos[i].key, loadingSFXSoundInfos[i]);
         }
-
         sfxSrcList = new AudioSource[sfxMaxCount];
+
+        //engine
+        for (int i = 0; i < loadingEngineSoundInfos.Count; i++)
+        {
+            engineContainer.Add(loadingEngineSoundInfos[i].key, loadingEngineSoundInfos[i]);
+        }
+        engineSrcList = new AudioSource[engineMaxCount];
     }
 
     public void LoadChildGameObj()
@@ -124,6 +137,23 @@ public class SoundManager : MonoBehaviour
                 sfxObjList.Add(newSoundOBJ);
             }
         }//for (int a_ii = 0; a_ii < m_EffSdCount; a_ii++)
+
+        for (int a_ii = 0; a_ii < engineMaxCount; a_ii++)
+        {
+            if (engineObjList.Count < engineMaxCount)
+            {
+                GameObject newSoundOBJ = new GameObject();
+                newSoundOBJ.transform.SetParent(this.transform);
+                newSoundOBJ.transform.localPosition = Vector3.zero;
+                AudioSource a_AudioSrc = newSoundOBJ.AddComponent<AudioSource>();
+                a_AudioSrc.playOnAwake = false;
+                a_AudioSrc.loop = true;
+                newSoundOBJ.name = "EngineObj";
+
+                engineSrcList[engineObjList.Count] = a_AudioSrc;
+                engineObjList.Add(newSoundOBJ);
+            }
+        }
     }
 
     #region BGM
@@ -321,6 +351,74 @@ public class SoundManager : MonoBehaviour
                 src.pitch = pitch;
             else if (src.clip.name == "super" || src.clip.name == "hot") src.pitch = 1;
             else src.pitch = pitch;
+        }
+    }
+    #endregion
+
+    #region Engine
+    public void PlayEngine(string key, float delay = 0, bool bLoop = true)
+    {
+        if (engineContainer.ContainsKey(key) == false)
+            return;
+
+        soundData = engineContainer[key];
+
+        foreach (var engineSrc in engineSrcList)
+        {
+            if (engineSrc.clip == soundData.audioClip)
+            {
+                if (!engineSrc.isPlaying)
+                {
+                    //engineSrc.volume = sfxVolume;
+                    engineSrc.loop = bLoop;
+                    engineSrc.PlayDelayed(delay);
+                }
+                return;
+            }
+        }
+
+        if (engineObjList.Count < engineMaxCount)
+        {
+            GameObject newSoundOBJ = new GameObject();
+            newSoundOBJ.transform.SetParent(this.transform);
+            newSoundOBJ.transform.localPosition = Vector3.zero;
+            AudioSource a_AudioSrc = newSoundOBJ.AddComponent<AudioSource>();
+            a_AudioSrc.playOnAwake = false;
+            newSoundOBJ.name = "EngineObj";
+
+            engineSrcList[engineObjList.Count] = a_AudioSrc;
+            engineObjList.Add(newSoundOBJ);
+        }
+
+        if (soundData != null && engineSrcList[engineCurCount] != null)
+        {
+            engineSrcList[engineCurCount].clip = soundData.audioClip;
+            engineSrcList[engineCurCount].outputAudioMixerGroup = soundData.audioMixerGroup;
+            engineSrcList[engineCurCount].spatialBlend = 0f;
+            //engineSrcList[engineCurCount].volume = sfxVolume;
+            engineSrcList[engineCurCount].loop = bLoop;
+            engineSrcList[engineCurCount].PlayDelayed(delay);
+
+            engineCurCount++;
+            if (engineMaxCount <= engineCurCount)
+                engineCurCount = 0;
+        }
+    }
+
+    public void StopEngine(string key)
+    {
+        if (engineContainer.ContainsKey(key) == false)
+            return;
+
+        soundData = engineContainer[key];
+
+        foreach (var engineSrc in engineSrcList)
+        {
+            if (engineSrc.clip == soundData.audioClip)
+            {
+                engineSrc.Stop();
+                return;
+            }
         }
     }
     #endregion
