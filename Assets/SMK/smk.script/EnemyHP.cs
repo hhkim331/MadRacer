@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Rendering.PostProcessing;
 using UnityEngine.UI;
 
 
@@ -13,30 +12,30 @@ public class EnemyHP : KHHHealth
     public float hitDuration = 0.5f;
     float intensity = 0.0f;
     public float maxIntensity = 0.3f;
-    Coroutine coHitEffect;
+    Coroutine hitEffect;
     //ав╢б ╩Себ
 
     void Start()
     {
-        
+
     }
-    private override void Enemyhit(float damage)
+    public override void Hit(float damage)
     {
         base.Hit(damage);
         if (health > 0)
         {
             hitTime = 0;
-            if (coHitEffect != null)
-                StopCoroutine(coHitEffect);
-            coHitEffect = StartCoroutine(CoHitEffect());
+            if (hitEffect != null)
+                StopCoroutine(hitEffect);
+            hitEffect = StartCoroutine(HitEffect());
         }
     }
 
-    private override void Enemydie()
+    public override void Die()
     {
         base.Die();
     }
-    public override void EnemyRespawn()
+    public override void Respawn()
     {
         base.Respawn();
         hitTime = 0;
@@ -97,7 +96,7 @@ public class EnemyHP : KHHHealth
     //    }
     //}
     #endregion
-    IEnumerator CoHitEffect()
+    IEnumerator HitEffect()
     {
         while (hitTime < hitDuration)
         {

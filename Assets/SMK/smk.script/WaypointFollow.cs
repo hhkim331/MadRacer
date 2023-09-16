@@ -74,12 +74,6 @@ public class WaypointFollow : MonoBehaviour
 
     }
 
-    //private void CalculateCurvePoints(int count)
-    //{
-    //    Vector3 pA = waypoint.position;
-    //}
-
-    //ground ÆÇÁ¤
     bool Isground()
     {
         isGround = Physics.BoxCast(transform.position, groundBx * 0.5f, -transform.up, out RaycastHit hit, transform.rotation, 0.1f, groundLr);
