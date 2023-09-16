@@ -11,11 +11,15 @@ public class EnemyHP : KHHHealth
     float intensity = 0.0f;
     public float maxIntensity = 0.3f;
     Coroutine hitEffect;
+
+    WaypointFollow _waypointFollow;
+    Enemy enemy;
     //ав╢б ╩Себ
 
     void Start()
     {
-
+        _waypointFollow = GetComponent<WaypointFollow>();
+        enemy = GetComponent<Enemy>();
     }
     public override void Hit(float damage)
     {
@@ -32,12 +36,18 @@ public class EnemyHP : KHHHealth
     public override void Die()
     {
         base.Die();
+        enemy.enabled = false;
+        _waypointFollow.enabled = false;
+
     }
     public override void Respawn()
     {
         base.Respawn();
         hitTime = 0;
         intensity = 0;
+        enemy.enabled = true;
+
+        _waypointFollow.enabled = true;
     }
     #region
     //public void UpdateHit(int dmg, Vector3 origine)
