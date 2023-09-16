@@ -16,11 +16,12 @@ public class EnemyHP : KHHHealth
     Enemy enemy;
     //ав╢б ╩Себ
 
-    void Start()
+    protected override void Start()
     {
         _waypointFollow = GetComponent<WaypointFollow>();
         enemy = GetComponent<Enemy>();
     }
+
     public override void Hit(float damage)
     {
         base.Hit(damage);

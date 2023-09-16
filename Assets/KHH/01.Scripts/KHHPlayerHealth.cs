@@ -7,15 +7,15 @@ public class KHHPlayerHealth : KHHHealth
 {
     //피격 효과
     float hitTime = 0.0f;
-    public float hitDuration = 0.5f;
+    float hitDuration = 0.5f;
     public PostProcessProfile postProcessProfile;
     float intensity = 0.0f;
-    public float maxIntensity = 0.3f;
+    float maxIntensity = 0.6f;
 
     Coroutine coHitEffect;
 
     // Start is called before the first frame update
-    void Start()
+    protected override void Start()
     {
         postProcessProfile.GetSetting<Vignette>().intensity.value = 0;
     }

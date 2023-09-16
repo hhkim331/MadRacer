@@ -378,12 +378,15 @@ public class KHHKart : MonoBehaviour
     void UpdateSound()
     {
         if (input.InputBoost)
-            SoundManager.instance.StopEngine("EngineAccel");
+            SoundManager.instance.PlayEngine("EngineBoost");
+        else
+            SoundManager.instance.StopEngine("EngineBoost");
+
         switch (curMoveState)
         {
             case MoveState.Accel:
                 SoundManager.instance.StopEngine("EngineIdle");
-                SoundManager.instance.StopEngine("EngineBoost");
+                SoundManager.instance.PlayEngine("EngineAccel");
                 SoundManager.instance.StopEngine("EngineDrift");
                 break;
             case MoveState.Drift:

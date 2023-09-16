@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using static KHHTarget;
 
 public class KHHWeapon : MonoBehaviour
 {
@@ -91,18 +92,21 @@ public class KHHWeapon : MonoBehaviour
                 if (health != null)
                     health.Hit(10);
 
-                KHHTarget.HitType hitType = laser.hitObj.GetComponentInParent<KHHTarget>().hitType;
-                if (hitType == KHHTarget.HitType.Metal)
+                KHHTarget target = laser.hitObj.GetComponentInParent<KHHTarget>();
+                if(target!=null)
                 {
-                    Instantiate(metalEffect, laser.HitPoint, Quaternion.LookRotation(laser.HitNormal));
-                }
-                else if (hitType == KHHTarget.HitType.Sand)
-                {
-                    Instantiate(sandEffect, laser.HitPoint, Quaternion.LookRotation(laser.HitNormal));
-                }
-                else if (hitType == KHHTarget.HitType.Stone)
-                {
-                    Instantiate(stoneEffect, laser.HitPoint, Quaternion.LookRotation(laser.HitNormal));
+                    if (target.hitType == KHHTarget.HitType.Metal)
+                    {
+                        Instantiate(metalEffect, laser.HitPoint, Quaternion.LookRotation(laser.HitNormal));
+                    }
+                    else if (target.hitType == KHHTarget.HitType.Sand)
+                    {
+                        Instantiate(sandEffect, laser.HitPoint, Quaternion.LookRotation(laser.HitNormal));
+                    }
+                    else if (target.hitType == KHHTarget.HitType.Stone)
+                    {
+                        Instantiate(stoneEffect, laser.HitPoint, Quaternion.LookRotation(laser.HitNormal));
+                    }
                 }
             }
 

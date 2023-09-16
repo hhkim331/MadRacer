@@ -1,9 +1,12 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using static KHHModel;
 
 public class Enemy : MonoBehaviour
 {
+    public KHHModel model;
+    public KHHModel.ModelType modelType = KHHModel.ModelType.Black;
     //EnemyEye의 리스트 첫번째 공격하기
     //아이템 섭취시 몇초후 시행
     //죽으면 파괴
@@ -59,6 +62,11 @@ public class Enemy : MonoBehaviour
         enemyHP = GetComponent<EnemyHP>();
         enemyEye = GetComponent<EnemyEye>();
 
+    }
+
+    private void Start()
+    {
+        model.Set(modelType);
     }
 
     void Update()

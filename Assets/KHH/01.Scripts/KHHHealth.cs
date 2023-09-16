@@ -11,6 +11,7 @@ public class KHHHealth : MonoBehaviour
     float respawnTime = 0f;
     public float respawnDelay = 2.0f;
 
+    KHHKartRank kartRank;
     //»ç¸Á È¿°ú
     public GameObject model;
     public Rigidbody rb;
@@ -18,8 +19,15 @@ public class KHHHealth : MonoBehaviour
     public GameObject bulletItem;
     public GameObject explosionPrefab;
 
+    protected virtual void Start()
+    {
+        kartRank = GetComponent<KHHKartRank>();
+    }
+
     protected virtual void Update()
     {
+        if (kartRank.isFinish) return;
+
         if (isDead)
         {
             respawnTime += Time.deltaTime;
@@ -33,6 +41,8 @@ public class KHHHealth : MonoBehaviour
 
     public virtual void Hit(float damage)
     {
+        if (kartRank.isFinish) return;
+
         if (health > 0)
         {
             health -= damage;

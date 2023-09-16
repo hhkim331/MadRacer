@@ -16,7 +16,7 @@ public class KHHPlayerUI : MonoBehaviour
 
     private void Update()
     {
-        rankText.text = string.Format("순위:{0}/6", myKartRank.rank);
+        rankText.text = string.Format("순위:{0}/5", myKartRank.rank);
         lapText.text = string.Format("랩:{0}/2", myKartRank.lap);
     }
 }
