@@ -10,6 +10,7 @@ public class KHHGameManager : MonoBehaviour
 
     //start
     public bool isStart = false;
+    public bool isEnd = false;
     public TextMeshProUGUI startText;
 
     public GameObject[] kartObjs;
@@ -111,6 +112,7 @@ public class KHHGameManager : MonoBehaviour
             colorGrading.colorFilter.value = color;
             yield return null;
         }
+        isEnd = true;
     }
 
     void StopEngineSound()
