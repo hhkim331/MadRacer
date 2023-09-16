@@ -1,7 +1,5 @@
 using UnityEngine;
-using UnityEngine.Rendering.PostProcessing;
 using UnityEngine.UI;
-using static KHHTarget;
 
 public class KHHHealth : MonoBehaviour
 {
@@ -11,7 +9,7 @@ public class KHHHealth : MonoBehaviour
 
     bool isDead = false;
     float respawnTime = 0f;
-    public float respawnDelay = 1.0f;
+    public float respawnDelay = 2.0f;
 
     //»ç¸Á È¿°ú
     public GameObject model;
@@ -38,7 +36,7 @@ public class KHHHealth : MonoBehaviour
         if (health > 0)
         {
             health -= damage;
-            if (health < 0)
+            if (health <= 0)
             {
                 health = 0;
                 Die();
@@ -53,7 +51,7 @@ public class KHHHealth : MonoBehaviour
         model.SetActive(false);
         rb.isKinematic = true;
 
-        GameObject item = Instantiate(bulletItem, transform.position,Quaternion.identity);
+        GameObject item = Instantiate(bulletItem, transform.position + Vector3.up, Quaternion.identity);
 
         GameObject explosion = Instantiate(explosionPrefab);
         explosion.transform.position = transform.position + Vector3.up;
