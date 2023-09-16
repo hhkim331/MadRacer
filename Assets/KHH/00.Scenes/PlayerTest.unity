@@ -7461,6 +7461,7 @@ MonoBehaviour:
   maxHealth: 100
   healthBar: {fileID: 1125310958}
   respawnDelay: 2
+  kartRank: {fileID: 429817439}
   model: {fileID: 317294883}
   rb: {fileID: 429817436}
   bulletItem: {fileID: 4131127300465671443, guid: b0a18ca11e5907a4591dc3d763fa379c, type: 3}
@@ -11561,7 +11562,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4667048316251629702, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
       propertyPath: normalSpeed
-      value: 0.7
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4667048316251629702, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
       propertyPath: acceleration
@@ -22104,7 +22105,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4667048316251629702, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
       propertyPath: normalSpeed
-      value: 0.7
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4667048316251629702, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
       propertyPath: acceleration
@@ -31551,7 +31552,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4667048316251629702, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
       propertyPath: normalSpeed
-      value: 0.7
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4667048316251629702, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
       propertyPath: acceleration
@@ -35496,6 +35497,10 @@ PrefabInstance:
       propertyPath: waypoint
       value: 
       objectReference: {fileID: 520347996}
+    - target: {fileID: 4667048316251629702, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: normalSpeed
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4667048316251629703, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
       propertyPath: m_RootOrder
       value: 15

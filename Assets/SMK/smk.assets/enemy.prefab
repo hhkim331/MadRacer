@@ -3301,6 +3301,7 @@ MonoBehaviour:
   maxHealth: 100
   healthBar: {fileID: 4790581058257844989}
   respawnDelay: 1
+  kartRank: {fileID: 8037933237495302548}
   model: {fileID: 8328578927519894142}
   rb: {fileID: 1144060380}
   bulletItem: {fileID: 4131127300465671443, guid: b0a18ca11e5907a4591dc3d763fa379c, type: 3}

@@ -11,7 +11,7 @@ public class KHHHealth : MonoBehaviour
     float respawnTime = 0f;
     public float respawnDelay = 2.0f;
 
-    KHHKartRank kartRank;
+    public KHHKartRank kartRank;
     //»ç¸Á È¿°ú
     public GameObject model;
     public Rigidbody rb;
@@ -21,7 +21,6 @@ public class KHHHealth : MonoBehaviour
 
     protected virtual void Start()
     {
-        kartRank = GetComponent<KHHKartRank>();
     }
 
     protected virtual void Update()
