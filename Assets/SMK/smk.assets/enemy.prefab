@@ -158,7 +158,7 @@ GameObject:
   - component: {fileID: 1164948047000869076}
   - component: {fileID: 7409195197634717301}
   - component: {fileID: 1707959465242221839}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Decoration 8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -241,7 +241,7 @@ GameObject:
   - component: {fileID: 4185261868895816362}
   - component: {fileID: 6051434720976565059}
   - component: {fileID: 1119522105537072301}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Car_Engine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -400,7 +400,7 @@ GameObject:
   - component: {fileID: 8231480173965620561}
   - component: {fileID: 8092737760897097699}
   - component: {fileID: 6357686168879161609}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Weapon_Gun 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -481,7 +481,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4906435922508288567}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -628,7 +628,7 @@ GameObject:
   - component: {fileID: 1504528732462962095}
   - component: {fileID: 9167983381205348866}
   - component: {fileID: 4239611721675957566}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Wheel_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -711,7 +711,7 @@ GameObject:
   - component: {fileID: 2023709068263781734}
   - component: {fileID: 4029975373047793787}
   - component: {fileID: 3888735809672638720}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Weapon_Saw 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -794,7 +794,7 @@ GameObject:
   - component: {fileID: 4233760817681075493}
   - component: {fileID: 2237174305311618002}
   - component: {fileID: 5220677859148439252}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Cylinder019
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -877,7 +877,7 @@ GameObject:
   - component: {fileID: 3512135163597985520}
   - component: {fileID: 3333508991289967739}
   - component: {fileID: 5578716427778479939}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Seat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -960,7 +960,7 @@ GameObject:
   - component: {fileID: 38754758990015419}
   - component: {fileID: 8868767916271451518}
   - component: {fileID: 1261027142736992633}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Vent_Pipe 7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1043,7 +1043,7 @@ GameObject:
   - component: {fileID: 6080542796364238325}
   - component: {fileID: 8734476136108110719}
   - component: {fileID: 8689528579603932342}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Wheel_Axle_Rear
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1126,7 +1126,7 @@ GameObject:
   - component: {fileID: 4067909446967234261}
   - component: {fileID: 8007275433836595643}
   - component: {fileID: 3789469655115812979}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Decoration 9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1271,7 +1271,7 @@ GameObject:
   - component: {fileID: 3767566889103670526}
   - component: {fileID: 4631719847295694435}
   - component: {fileID: 4155319662381107504}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Weapon_Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1354,7 +1354,7 @@ GameObject:
   - component: {fileID: 1315070879627931592}
   - component: {fileID: 1737493431333999364}
   - component: {fileID: 7233321777829287998}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Suspension
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1678,7 +1678,7 @@ GameObject:
   - component: {fileID: 7714641049241228439}
   - component: {fileID: 5203924990181300943}
   - component: {fileID: 7591418562783480934}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Vent_Pipe 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1761,7 +1761,7 @@ GameObject:
   - component: {fileID: 6876737907392666465}
   - component: {fileID: 3120296941669618427}
   - component: {fileID: 8510060469199688217}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Suspension 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1842,7 +1842,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7654831378685247121}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Saw
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1877,7 +1877,7 @@ GameObject:
   - component: {fileID: 7324998845564369980}
   - component: {fileID: 4497911353793481691}
   - component: {fileID: 4831594658322834111}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Wheel_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1960,7 +1960,7 @@ GameObject:
   - component: {fileID: 2715487580484272899}
   - component: {fileID: 5541924467459032300}
   - component: {fileID: 670381526175149635}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Weapon_Saw
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2044,7 +2044,7 @@ GameObject:
   - component: {fileID: 8828967177946419473}
   - component: {fileID: 3473782477664289029}
   - component: {fileID: 8986068720176441274}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Decoration 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2127,7 +2127,7 @@ GameObject:
   - component: {fileID: 1711441846773781281}
   - component: {fileID: 8802542183896907041}
   - component: {fileID: 7124477502666347627}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Weapon_Gun 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2286,7 +2286,7 @@ GameObject:
   - component: {fileID: 2307391311409010521}
   - component: {fileID: 6389406795134227586}
   - component: {fileID: 2448170257331838745}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Decoration 6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2369,7 +2369,7 @@ GameObject:
   - component: {fileID: 6408286333743547155}
   - component: {fileID: 6292439658871078498}
   - component: {fileID: 4838212700683490685}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Frame 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2452,7 +2452,7 @@ GameObject:
   - component: {fileID: 3735129551775897001}
   - component: {fileID: 3789548379034907257}
   - component: {fileID: 2487381801538693813}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Vent_Pipe 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2535,7 +2535,7 @@ GameObject:
   - component: {fileID: 5327659128618336984}
   - component: {fileID: 1084537922293287711}
   - component: {fileID: 4021220844170282030}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Wheel_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2618,7 +2618,7 @@ GameObject:
   - component: {fileID: 860332177070830021}
   - component: {fileID: 3131047207207390389}
   - component: {fileID: 2265383018157433064}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Weapon_Saw 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2702,7 +2702,7 @@ GameObject:
   - component: {fileID: 5482698455621458406}
   - component: {fileID: 7275343010029169732}
   - component: {fileID: 3181983279223077348}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Suspension 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2785,7 +2785,7 @@ GameObject:
   - component: {fileID: 7929846057089322823}
   - component: {fileID: 4931914704033705634}
   - component: {fileID: 8156593305223257715}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Gauge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2868,7 +2868,7 @@ GameObject:
   - component: {fileID: 8161929177447501167}
   - component: {fileID: 4659770061627615569}
   - component: {fileID: 7834160033253270278}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Vent_Pipe 6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2951,7 +2951,7 @@ GameObject:
   - component: {fileID: 5031326082968573626}
   - component: {fileID: 3109102492999414029}
   - component: {fileID: 8241685019333007915}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Decoration
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3047,7 +3047,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4667048315107771220}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1.11}
+  m_LocalPosition: {x: 0, y: 1.67, z: 0.198}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3068,10 +3068,10 @@ GameObject:
   - component: {fileID: 5766413230043917670}
   - component: {fileID: 1144060380}
   - component: {fileID: 1144060388}
-  - component: {fileID: 997314654}
+  - component: {fileID: 507324633}
   m_Layer: 11
   m_Name: enemy
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3101,7 +3101,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4667048316251630457}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1e171d39b9ce9c44196ef9f6af7699ea, type: 3}
   m_Name: 
@@ -3140,11 +3140,12 @@ MonoBehaviour:
   firePosition: {fileID: 4667048315107771221}
   boosterMaxGauge: 250
   boosterGauge: 0
-  _kart: {fileID: 0}
-  destroyKart: {fileID: 0}
+  bulletCount: 0
+  bulletMaxCount: 250
+  bulletTime: 0.1
+  bulletDelay: 0.1
   driftREffect: {fileID: 100002, guid: 20b31fcfaed0cb842a56fbbe2419428f, type: 3}
   driftLEffect: {fileID: 100002, guid: 20b31fcfaed0cb842a56fbbe2419428f, type: 3}
-  destroyEffect: {fileID: 100002, guid: 99c73c92ac40473459640b165473206f, type: 3}
   bulletEffect: {fileID: 100002, guid: 20b31fcfaed0cb842a56fbbe2419428f, type: 3}
   muzzle: {fileID: 4667048315107771221}
 --- !u!114 &5766413230043917670
@@ -3167,6 +3168,7 @@ MonoBehaviour:
   obstacleMask:
     serializedVersion: 2
     m_Bits: 0
+  objectId: 0
   visibleTargets: []
 --- !u!54 &1144060380
 Rigidbody:
@@ -3283,7 +3285,7 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 0
---- !u!114 &997314654
+--- !u!114 &507324633
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3315,7 +3317,7 @@ GameObject:
   - component: {fileID: 3431218640573712972}
   - component: {fileID: 6220156489470283493}
   - component: {fileID: 5507419437822390567}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Vent_Pipe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3397,7 +3399,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7608814535784957148}
   - component: {fileID: 5251671850368336712}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Mad race_Car_Last
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3529,7 +3531,7 @@ GameObject:
   - component: {fileID: 214248078540588725}
   - component: {fileID: 1206900497855160893}
   - component: {fileID: 8511625338991878974}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Wheel_Axle_Front
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3612,7 +3614,7 @@ GameObject:
   - component: {fileID: 1601303774231899138}
   - component: {fileID: 8337084793931883170}
   - component: {fileID: 1530539858023795453}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Vent_Pipe 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3693,7 +3695,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4214231537837739915}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Weapons
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3728,7 +3730,7 @@ GameObject:
   - component: {fileID: 7645315831729775880}
   - component: {fileID: 668658838773590160}
   - component: {fileID: 8631417931406117684}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Decoration 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3811,7 +3813,7 @@ GameObject:
   - component: {fileID: 651965149933590245}
   - component: {fileID: 4996010325826245160}
   - component: {fileID: 3863109528457536270}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Battery box
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3894,7 +3896,7 @@ GameObject:
   - component: {fileID: 5544680021721233277}
   - component: {fileID: 9212716028849396162}
   - component: {fileID: 1548749136971285295}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Decoration 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3977,7 +3979,7 @@ GameObject:
   - component: {fileID: 561803445331092150}
   - component: {fileID: 2054286226995769561}
   - component: {fileID: 2555294830230037654}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Decoration 7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4060,7 +4062,7 @@ GameObject:
   - component: {fileID: 822401103019560634}
   - component: {fileID: 1652749514302170493}
   - component: {fileID: 8325203578268167006}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Wheel_04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4143,7 +4145,7 @@ GameObject:
   - component: {fileID: 8106767226956055094}
   - component: {fileID: 9085389279844621535}
   - component: {fileID: 2814984365550636219}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Weapon_Saw 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4225,7 +4227,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5094038781177269058}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4259,7 +4261,7 @@ GameObject:
   - component: {fileID: 2978405312979060167}
   - component: {fileID: 8750566980168729123}
   - component: {fileID: 6247047686450344233}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Vent_Pipe 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4342,7 +4344,7 @@ GameObject:
   - component: {fileID: 5791751964083789845}
   - component: {fileID: 7998265148409731137}
   - component: {fileID: 5591203084493558331}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Decoration 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4425,7 +4427,7 @@ GameObject:
   - component: {fileID: 4749449440378067721}
   - component: {fileID: 7621906382584637865}
   - component: {fileID: 7468756725201314949}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Vent_Pipe 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4508,7 +4510,7 @@ GameObject:
   - component: {fileID: 2112307348978185715}
   - component: {fileID: 1384638461191535987}
   - component: {fileID: 4253332386720121083}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Decoration 14
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4591,7 +4593,7 @@ GameObject:
   - component: {fileID: 7552275533199459750}
   - component: {fileID: 7396207932955180190}
   - component: {fileID: 3491355853372829051}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Decoration 10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4674,7 +4676,7 @@ GameObject:
   - component: {fileID: 1827260023484157799}
   - component: {fileID: 7781874841275114008}
   - component: {fileID: 7243446869346303948}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Suspension 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4757,7 +4759,7 @@ GameObject:
   - component: {fileID: 4889111472134340571}
   - component: {fileID: 7342012070025511497}
   - component: {fileID: 8444583206358049461}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Light 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4840,7 +4842,7 @@ GameObject:
   - component: {fileID: 6428615183451755961}
   - component: {fileID: 6560412781853244358}
   - component: {fileID: 4874852383520710522}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Cylinder057
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4923,7 +4925,7 @@ GameObject:
   - component: {fileID: 2092643674258216622}
   - component: {fileID: 9169918545973038806}
   - component: {fileID: 449505936738714955}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Frame 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5006,7 +5008,7 @@ GameObject:
   - component: {fileID: 2002754096121394861}
   - component: {fileID: 1630175303083612478}
   - component: {fileID: 6291950207413536889}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Decoration 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5089,7 +5091,7 @@ GameObject:
   - component: {fileID: 6213015974176889983}
   - component: {fileID: 244214750187181778}
   - component: {fileID: 7457425542427817585}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Weapon_Saw 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5248,7 +5250,7 @@ GameObject:
   - component: {fileID: 1605630084781963022}
   - component: {fileID: 7982265586319747327}
   - component: {fileID: 1384083053916550875}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Car_Frame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5331,7 +5333,7 @@ GameObject:
   - component: {fileID: 2646246850446791173}
   - component: {fileID: 205588207022024196}
   - component: {fileID: 9188018320908136628}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Weapon_Saw 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5415,7 +5417,7 @@ GameObject:
   - component: {fileID: 4817476948693778664}
   - component: {fileID: 5244230221399283145}
   - component: {fileID: 8102099276588728187}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Decoration 11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5498,7 +5500,7 @@ GameObject:
   - component: {fileID: 8066274470905546408}
   - component: {fileID: 6182636625074893021}
   - component: {fileID: 157656418778011781}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Dashboard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5643,7 +5645,7 @@ GameObject:
   - component: {fileID: 6126582273266934729}
   - component: {fileID: 8458917378792477825}
   - component: {fileID: 1243612488834073266}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Car_Interior 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5726,7 +5728,7 @@ GameObject:
   - component: {fileID: 3066338168902050009}
   - component: {fileID: 3861789805827498598}
   - component: {fileID: 7010384843513950471}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Decoration 13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5809,7 +5811,7 @@ GameObject:
   - component: {fileID: 1362745236514491346}
   - component: {fileID: 2165047193439158975}
   - component: {fileID: 5717693632441292274}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Car_Interior
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5996,7 +5998,7 @@ GameObject:
   - component: {fileID: 8435290789393046955}
   - component: {fileID: 5638119618915117897}
   - component: {fileID: 3071128156306673396}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Frame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6079,7 +6081,7 @@ GameObject:
   - component: {fileID: 1553158559638896361}
   - component: {fileID: 552627536270906534}
   - component: {fileID: 187489788733799220}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Decoration 15
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6162,7 +6164,7 @@ GameObject:
   - component: {fileID: 8176004231221653894}
   - component: {fileID: 7711837822844721485}
   - component: {fileID: 5021112744296155330}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6245,7 +6247,7 @@ GameObject:
   - component: {fileID: 4115334099786080533}
   - component: {fileID: 1893245779037619192}
   - component: {fileID: 693170699719667387}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Weapon_Gun 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6363,7 +6365,7 @@ GameObject:
   - component: {fileID: 7736361670880819320}
   - component: {fileID: 1219990553094056205}
   - component: {fileID: 4125780105411893197}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Console box
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6510,7 +6512,7 @@ GameObject:
   - component: {fileID: 4885001679628900380}
   - component: {fileID: 4616599587836216959}
   - component: {fileID: 2087611492267619180}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Frame 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6628,7 +6630,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1634779762066779329}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Wheels
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6727,7 +6729,7 @@ GameObject:
   - component: {fileID: 2770995708858425263}
   - component: {fileID: 6862809857264328688}
   - component: {fileID: 6148490111809200140}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6810,7 +6812,7 @@ GameObject:
   - component: {fileID: 4482884420589749182}
   - component: {fileID: 7709199197351788231}
   - component: {fileID: 2406997622211364724}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Weapon_Gun 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6895,7 +6897,7 @@ GameObject:
   - component: {fileID: 191558911020042942}
   - component: {fileID: 6018041801134201782}
   - component: {fileID: 6813545372333825791}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Decoration 12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6978,7 +6980,7 @@ GameObject:
   - component: {fileID: 4079020769667177026}
   - component: {fileID: 3347952547546453562}
   - component: {fileID: 8475579308233403202}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Frame 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7061,7 +7063,7 @@ GameObject:
   - component: {fileID: 5478633722126911860}
   - component: {fileID: 5192444500490797393}
   - component: {fileID: 2524780305823841587}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Car_body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7570,7 +7572,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: bb3da4f1405447a47bc7b5669dcff3c3, type: 3}
       propertyPath: m_TagString
-      value: Player
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: -7511558181221131132, guid: bb3da4f1405447a47bc7b5669dcff3c3, type: 3}

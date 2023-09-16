@@ -1,7 +1,5 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.PackageManager;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
@@ -23,6 +21,7 @@ public class Enemy : MonoBehaviour
     public EnemyState state;
     EnemyEye enemyEye;
     WaypointFollow waypointFollow;
+    EnemyHP enemyHP;
 
 
 
@@ -33,15 +32,15 @@ public class Enemy : MonoBehaviour
 
     public float boosterMaxGauge = 250;
     public float boosterGauge;
+    public int bulletCount = 0;
+    public int bulletMaxCount = 250;
+    public float bulletTime = 0.1f;
+    public float bulletDelay = 0.1f;
 
-    private WaypointFollow _waypointFollow;
-    public GameObject _kart;
-    public GameObject destroyKart;
 
     //이펙트 효과들
     public GameObject driftREffect;
     public GameObject driftLEffect;
-    public GameObject destroyEffect;
     public GameObject bulletEffect;
 
     LineRenderer enemyAttackline;
@@ -53,13 +52,12 @@ public class Enemy : MonoBehaviour
     {
         state = EnemyState.Move;
         boosterGauge = 0;
-        _waypointFollow = gameObject.GetComponent<WaypointFollow>();
-        _kart = gameObject.GetComponent<GameObject>();
-        destroyKart.SetActive(false);
-        destroyEffect.SetActive(false);
+
         driftLEffect.SetActive(false);
         driftREffect.SetActive(false);
         enemyAttackline = GetComponent<LineRenderer>();
+        enemyHP = GetComponent<EnemyHP>();
+        enemyEye = GetComponent<EnemyEye>();
 
     }
 
@@ -72,7 +70,7 @@ public class Enemy : MonoBehaviour
             case EnemyState.Move: UpdateMove(); break;
             case EnemyState.Attack: UpdateAttack(); break;
             case EnemyState.Item: UpdateItem(); break;
-            case EnemyState:Booster: UpdateBooster(); break;
+            case EnemyState: Booster: UpdateBooster(); break;
         }
         //Vector3 dir = transform.position - enemyEye.visibleTargets[0].position;
     }
@@ -82,18 +80,18 @@ public class Enemy : MonoBehaviour
         waypointFollow.speed = waypointFollow.acceleration;
     }
 
-    
+
 
 
     private void UpdateMove()
     {
         //EnemyEye에서 리스트에 인식된 오브젝트가 있을 경우.
-        if (EnemyEye.Instance.visibleTargets[0] != null)
+        if (enemyEye.visibleTargets.Count > 0)
         {
+
             //Attack 상태로 변경하기
             state = EnemyState.Attack;
         }
-
         //만약, item 과 부딪혔을 경우
         //피격 당했을 경우,
         //만약 부스터 게이지가 다 찼을 경우
@@ -102,7 +100,7 @@ public class Enemy : MonoBehaviour
             state = EnemyState.Booster;
         }
     }
-    
+
 
     private void UpdateItem()
     {
@@ -112,35 +110,36 @@ public class Enemy : MonoBehaviour
 
     private void UpdateAttack()
     {
-        //시간이 흐르다가. 
-        //currentTime += Time.deltaTime;
-        //if (currentTime > 0.2f)
-        //{
         enemyAttackline.SetPosition(0, muzzle.position);
         print("l");
+        if (enemyEye.visibleTargets.Count == 0) return;
         if (enemyEye.visibleTargets[0] != null)
         {
+            print("3");
             // ray를 오브젝트 인식한 순서대로 쏨.
             Ray ray = new Ray(enemyEye.visibleTargets[0].transform.position, enemyEye.visibleTargets[0].transform.forward);
             RaycastHit hitInfo;
-            enemyAttackline.SetPosition(1, muzzle.position);
-            if (Physics.Raycast(ray, out hitInfo, 5))
+            //일정 시간을 더해서 시간이 되면,
+            bulletTime += Time.deltaTime; 
+
+            if (Physics.Raycast(ray, out hitInfo, 25))
             {
-                var bulletImpact = Instantiate(bulletEffect);
-                bulletImpact.transform.position = hitInfo.point;
-                Destroy(bulletImpact, 0.5f);
-                if (hitInfo.transform.gameObject.tag == "Player")
+                bulletMaxCount--;
+                if (bulletTime > bulletDelay )
                 {
-                    print("rr");
-                    ////너 맞았다고 소식주기.
-                    //hitInfo.transform.GetComponent<Enemy>().UpdateHit(25, transform.position);
-                    ////이거 통일해야 함..플레이어든 에너미든 상태 받기.^^
-                    
-                    Destroy(hitInfo.transform.gameObject);
+                    if (bulletMaxCount == 0) return;
+                    enemyAttackline.SetPosition(1, muzzle.position);
+                    var bulletImpact = Instantiate(bulletEffect);
+                    bulletImpact.transform.position = hitInfo.point;
+                    bulletTime = 0;
+                    print("1");
+                    enemyEye.visibleTargets[0].transform.GetComponentInParent<EnemyHP>().Hit(25);
                 }
+
             }
             else
             {
+                bulletTime = bulletDelay;
                 enemyAttackline.SetPosition(1, ray.origin + ray.direction * 1000);
             }
 
@@ -150,4 +149,5 @@ public class Enemy : MonoBehaviour
             state = EnemyState.Move;
         }
     }
+
 }
