@@ -2971,6 +2971,9 @@ MonoBehaviour:
     audioClip: {fileID: 8300000, guid: fecaf588288e8a244a1719ee0ffeced2, type: 3}
     audioMixerGroup: {fileID: 3400455450313100829, guid: ae101cbab219c66429efe9e8aee1b5e8, type: 2}
   loadingSFXSoundInfos:
+  - key: Explosion
+    audioClip: {fileID: 8300000, guid: 85865eeec34b6154283b6a6f3279de92, type: 3}
+    audioMixerGroup: {fileID: 4279812013490589395, guid: ae101cbab219c66429efe9e8aee1b5e8, type: 2}
   - key: Fire
     audioClip: {fileID: 8300000, guid: 3d19c37c858f48f459d4db517194d012, type: 3}
     audioMixerGroup: {fileID: -6248729513244160737, guid: ae101cbab219c66429efe9e8aee1b5e8, type: 2}

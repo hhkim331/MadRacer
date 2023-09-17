@@ -60,6 +60,8 @@ public class KHHHealth : MonoBehaviour
         model.SetActive(false);
         rb.isKinematic = true;
 
+        SoundManager.instance.PlaySFXFromObject(transform.position, "Explosion");
+
         GameObject item = Instantiate(bulletItem, transform.position + Vector3.up, Quaternion.identity);
 
         GameObject explosion = Instantiate(explosionPrefab);
