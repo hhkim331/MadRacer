@@ -315,7 +315,7 @@ public class SoundManager : MonoBehaviour
 
             sfxSrcList[sfxCurCount].clip = soundData.audioClip;
             sfxSrcList[sfxCurCount].outputAudioMixerGroup = soundData.audioMixerGroup;
-            sfxSrcList[sfxCurCount].spatialBlend = 1f;
+            sfxSrcList[sfxCurCount].spatialBlend = 0.95f;
             //sfxSrcList[sfxCurCount].volume = sfxVolume;
             sfxSrcList[sfxCurCount].loop = bLoop;
             sfxSrcList[sfxCurCount].PlayDelayed(delay);
