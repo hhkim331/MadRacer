@@ -10,9 +10,16 @@ public class Item : MonoBehaviour
     public Transform playerCar;  // 플레이어 차량의 Transform
     public float spawnInterval = 1.0f; // 예: 5초마다 아이템 생성
     public float dropCooldown = 60f; // 60초 쿨다운
-   // private HashSet<Transform> usedDropPoints = new HashSet<Transform>();
+                                     // private HashSet<Transform> usedDropPoints = new HashSet<Transform>();
 
     //public Vector3 gravity = new Vector3(0, -9.81f * 0.1f, 0);
+    [System.Serializable]
+    public class DropPointInfo
+    {
+        public Transform dropPoint;  // 드롭 지점의 위치
+        public ItmeType itemType;  // 드롭할 아이템 타입
+    }
+
     public enum ItmeType
     {
         Bullet,
@@ -23,12 +30,7 @@ public class Item : MonoBehaviour
     }
     public ItmeType itemType;
     private Dictionary<Transform, float> lastDropTimeByPoint = new Dictionary<Transform, float>();
-    [System.Serializable]
-    public class DropPointInfo
-    {
-        public Transform dropPoint;
-        public ItmeType itemType;
-    }
+    
     public List<DropPointInfo> dropPointInfos;
     // Start is called before the first frame update
     void Start()
@@ -48,6 +50,17 @@ public class Item : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        KHHWaypoint hitWaypoint = other.GetComponent<KHHWaypoint>();
+
+        if (hitWaypoint != null)
+        {
+            DropPointInfo dropInfo = hitWaypoint.associatedDropInfo;
+
+            if (dropInfo != null)
+            {
+                SpawnItem(dropInfo.dropPoint, dropInfo.itemType);
+            }
+        }
         if (other.CompareTag("Player"))
         {
             other.GetComponentInParent<KHHKart>().ApplyItem(itemType);
@@ -131,7 +144,7 @@ public class Item : MonoBehaviour
     }
     void SpawnItem(Transform dropPoint, ItmeType typeToSpawn)
     {
-        Vector3 spawnPosition = dropPoint.position + Vector3.up * heightAboveCar;
+        Vector3 spawnPosition = dropPoint.position;
         GameObject droppedItem = Instantiate(itemPrefab, spawnPosition, Quaternion.identity);
         droppedItem.GetComponent<Item>().itemType = typeToSpawn;
     }
