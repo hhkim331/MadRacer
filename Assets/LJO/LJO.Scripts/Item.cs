@@ -50,17 +50,17 @@ public class Item : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        KHHWaypoint hitWaypoint = other.GetComponent<KHHWaypoint>();
+        //KHHWaypoint hitWaypoint = other.GetComponent<KHHWaypoint>();
 
-        if (hitWaypoint != null)
-        {
-            DropPointInfo dropInfo = hitWaypoint.associatedDropInfo;
+        //if (hitWaypoint != null)
+        //{
+        //    DropPointInfo dropInfo = hitWaypoint.associatedDropInfo;
 
-            if (dropInfo != null)
-            {
-                SpawnItem(dropInfo.dropPoint, dropInfo.itemType);
-            }
-        }
+        //    if (dropInfo != null)
+        //    {
+        //        SpawnItem(dropInfo.dropPoint, dropInfo.itemType);
+        //    }
+        //}
         if (other.CompareTag("Player"))
         {
             other.GetComponentInParent<KHHKart>().ApplyItem(itemType);

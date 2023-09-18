@@ -7405,7 +7405,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 429817432}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.1, z: -12}
+  m_LocalPosition: {x: 0, y: 0.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -7447,8 +7447,41 @@ MonoBehaviour:
   finalLap: 2
   wayPointIndex: 0
   wayPercent: 0
+  itemPrefab: {fileID: 0}
+  waypointItemSpawnInfos:
+  - waypointIndex: 0
+    itemType: 0
+    spawnPoints:
+    - {fileID: 1323137007}
+    - {fileID: 624472971}
+  - waypointIndex: 4
+    itemType: 2
+    spawnPoints:
+    - {fileID: 293711618}
+    - {fileID: 552764872}
+  - waypointIndex: 11
+    itemType: 1
+    spawnPoints:
+    - {fileID: 448673310}
+  - waypointIndex: 18
+    itemType: 1
+    spawnPoints:
+    - {fileID: 378815289}
+  - waypointIndex: 25
+    itemType: 2
+    spawnPoints:
+    - {fileID: 195517605}
+  - waypointIndex: 31
+    itemType: 1
+    spawnPoints:
+    - {fileID: 973086412}
   prevWaypoint: {fileID: 424810054}
   nextWaypoint: {fileID: 520347996}
+  itemSpawnPoints: []
+  itemPrefabs:
+  - {fileID: 8065399958949744904, guid: 6b2dbcbaf95e0e346a1bfd0f764f01ae, type: 3}
+  - {fileID: 8414077993291194471, guid: 57d7eb2855636b24abcf419b890aa7e5, type: 3}
+  - {fileID: 3505115506752926963, guid: 829d849db27a74043be4651c6c465a44, type: 3}
 --- !u!114 &429817440
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11940,7 +11973,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 624472970}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -18.07, y: 5.87, z: -140.81}
+  m_LocalPosition: {x: -23.8, y: 9.8, z: 65.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -25559,7 +25592,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1323137006}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -5.86, z: -147.63}
+  m_LocalPosition: {x: 0, y: 13.48, z: -7.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
