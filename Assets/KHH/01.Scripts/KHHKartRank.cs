@@ -31,7 +31,7 @@ public class KHHKartRank : MonoBehaviour
     bool isMine = false;
     public bool IsMine { get { return isMine; } set { isMine = value; } }
    //public Dictionary<int, GameObject> waypointItemMapping = new Dictionary<int, GameObject>();
-    public List<WaypointItemSpawnInfo> waypointItemSpawnInfos = new List<WaypointItemSpawnInfo>();
+   public List<WaypointItemSpawnInfo> waypointItemSpawnInfos = new List<WaypointItemSpawnInfo>();
 
     int checkPointCount = 0;
 
@@ -39,7 +39,7 @@ public class KHHKartRank : MonoBehaviour
     public KHHWaypoint nextWaypoint;
     public Vector3 WayForward { get { return (nextWaypoint.transform.parent.position - prevWaypoint.transform.parent.position).normalized; } }
 
-    public Transform[] itemSpawnPoints;
+    //public Transform[] itemSpawnPoints;
 
     //private IEnumerator Start()
     //{
