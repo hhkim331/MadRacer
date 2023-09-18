@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static Item;
 
 [System.Serializable]
 public class NextWaypoint
@@ -13,7 +14,7 @@ public class KHHWaypoint : MonoBehaviour
 {
     public int waypointIndex;
     public NextWaypoint[] nextPoint;
-
+    
     public KHHWaypoint NextPoint()
     {
         float totalWeight = 0;
@@ -33,4 +34,5 @@ public class KHHWaypoint : MonoBehaviour
         }
         return null;
     }
+    public DropPointInfo associatedDropInfo;
 }
