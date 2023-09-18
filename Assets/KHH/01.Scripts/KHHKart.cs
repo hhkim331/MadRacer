@@ -10,6 +10,9 @@ public class KHHKart : MonoBehaviour
     KHHKartRank myKartRank;
     Rigidbody rb;
 
+    public KHHModel model;
+    public KHHModel.ModelType modelType = KHHModel.ModelType.Black;
+
     public enum MoveState
     {
         None,
@@ -18,6 +21,8 @@ public class KHHKart : MonoBehaviour
         Brake,
         Back,
     }
+    MoveState curMoveState = MoveState.None;
+    MoveState newMoveState = MoveState.None;
 
     [Header("Move")]
     //speed
@@ -82,6 +87,7 @@ public class KHHKart : MonoBehaviour
 
         rb = GetComponent<Rigidbody>();
 
+        model.Set(modelType);
         BoostGauge = boostMax;
 
         //wheel
@@ -162,9 +168,8 @@ public class KHHKart : MonoBehaviour
             }
 
             float addSpeed = 0;
-            MoveState moveState = GetMoveState();
-
-            switch (moveState)
+            newMoveState = GetMoveState();
+            switch (newMoveState)
             {
                 case MoveState.None:
                     //물리재질
@@ -228,7 +233,7 @@ public class KHHKart : MonoBehaviour
             addSpeed *= 1.5f;
 
             //드리프트 이펙트
-            if (moveState == MoveState.Drift)
+            if (newMoveState == MoveState.Drift)
             {
                 if (input.InputSteer > 0.1f)
                 {
@@ -263,6 +268,9 @@ public class KHHKart : MonoBehaviour
 
             transform.Rotate(rb.angularVelocity * Mathf.Rad2Deg * Time.fixedDeltaTime, Space.World);
         }
+
+        UpdateSound();
+        curMoveState = newMoveState;
     }
 
     MoveState GetMoveState()
@@ -346,15 +354,13 @@ public class KHHKart : MonoBehaviour
         isBoost = false;
     }
 
-    public GameObject bow;
-    public Transform inven;
-
     public void ApplyItem(Item.ItmeType itemType)
     {
         switch (itemType)
         {
             case Item.ItmeType.Bullet:
                 weapon.BulletSupply();
+                SoundManager.instance.PlaySFX("Reload");
                 print("총알충전");
                 break;
             case Item.ItmeType.Booster:
@@ -362,9 +368,36 @@ public class KHHKart : MonoBehaviour
                 print("부스터 충전");
                 break;
             case Item.ItmeType.attack:
-                GameObject subWeapon = Instantiate(bow,inven);
+                weapon.SetWeapon();
                 break;
             default:
+                break;
+        }
+    }
+
+    void UpdateSound()
+    {
+        if (input.InputBoost)
+            SoundManager.instance.PlayEngine("EngineBoost");
+        else
+            SoundManager.instance.StopEngine("EngineBoost");
+
+        switch (curMoveState)
+        {
+            case MoveState.Accel:
+                SoundManager.instance.StopEngine("EngineIdle");
+                SoundManager.instance.PlayEngine("EngineAccel");
+                SoundManager.instance.StopEngine("EngineDrift");
+                break;
+            case MoveState.Drift:
+                SoundManager.instance.StopEngine("EngineIdle");
+                SoundManager.instance.PlayEngine("EngineAccel");
+                SoundManager.instance.PlayEngine("EngineDrift");
+                break;
+            default:
+                SoundManager.instance.PlayEngine("EngineIdle");
+                SoundManager.instance.StopEngine("EngineAccel");
+                SoundManager.instance.StopEngine("EngineDrift");
                 break;
         }
     }

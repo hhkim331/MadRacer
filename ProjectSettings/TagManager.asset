@@ -6,7 +6,6 @@ TagManager:
   tags:
   - Start
   - Ground
-  - Waypoint
   layers:
   - Default
   - TransparentFX
@@ -24,7 +23,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - Enemy
   - 
   - 
   - 

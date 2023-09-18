@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using static KHHTarget;
 
 public class KHHWeapon : MonoBehaviour
 {
@@ -38,12 +39,16 @@ public class KHHWeapon : MonoBehaviour
     public GameObject sandEffect;
     public GameObject stoneEffect;
 
+    GameObject subWeapon;
+    public GameObject bow;
+    public Transform inven;
+
     // Start is called before the first frame update
     void Start()
     {
         input = GetComponent<KHHInput>();
         fireLine = firePos.GetComponent<LineRenderer>();
-        BulletCount = 0;
+        BulletCount = 250;
     }
 
     // Update is called once per frame
@@ -81,18 +86,27 @@ public class KHHWeapon : MonoBehaviour
                 fireLine.SetPosition(0, firePos.position);
                 fireLine.SetPosition(1, laser.HitPoint);
                 muzzleFlash.Play();
+                SoundManager.instance.PlaySFX("Fire");
 
-                if (laser.HitObjType == KHHTarget.HitType.Metal)
+                KHHHealth health = laser.hitObj.GetComponentInParent<KHHHealth>();
+                if (health != null)
+                    health.Hit(10);
+
+                KHHTarget target = laser.hitObj.GetComponentInParent<KHHTarget>();
+                if(target!=null)
                 {
-                    Instantiate(metalEffect, laser.HitPoint, Quaternion.LookRotation(laser.HitNormal));
-                }
-                else if (laser.HitObjType == KHHTarget.HitType.Sand)
-                {
-                    Instantiate(sandEffect, laser.HitPoint, Quaternion.LookRotation(laser.HitNormal));
-                }
-                else if (laser.HitObjType == KHHTarget.HitType.Stone)
-                {
-                    Instantiate(stoneEffect, laser.HitPoint, Quaternion.LookRotation(laser.HitNormal));
+                    if (target.hitType == KHHTarget.HitType.Metal)
+                    {
+                        Instantiate(metalEffect, laser.HitPoint, Quaternion.LookRotation(laser.HitNormal));
+                    }
+                    else if (target.hitType == KHHTarget.HitType.Sand)
+                    {
+                        Instantiate(sandEffect, laser.HitPoint, Quaternion.LookRotation(laser.HitNormal));
+                    }
+                    else if (target.hitType == KHHTarget.HitType.Stone)
+                    {
+                        Instantiate(stoneEffect, laser.HitPoint, Quaternion.LookRotation(laser.HitNormal));
+                    }
                 }
             }
 
@@ -123,5 +137,11 @@ public class KHHWeapon : MonoBehaviour
     public void BulletSupply()
     {
         BulletCount = bulletMax;
+    }
+
+    public void SetWeapon()
+    {
+        //if (subWeapon == null)
+        //    subWeapon = Instantiate(bow, inven);
     }
 }

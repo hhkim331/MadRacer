@@ -38,10 +38,6 @@ public class WaypointFollow : MonoBehaviour
 
     int waypointIndex = -1;
 
-    //베지어 곡선 변수
-    public KHHWaypoint waypoint2;
-    public KHHWaypoint waypoint3;
-
     void Start()
     {
         speed = normalSpeed;
@@ -52,6 +48,8 @@ public class WaypointFollow : MonoBehaviour
 
     void Update()
     {
+        if (!KHHGameManager.instance.isStart) return;
+
         UpdateFollow();
         //바닥으로 ray를 쏴서  ground 판정하기
 
@@ -62,24 +60,18 @@ public class WaypointFollow : MonoBehaviour
     {
         //속도 변화 가까워지면 감속 / 멀면 가속
         //이동
-        transform.position = Vector3.MoveTowards(gameObject.transform.position, waypoint.transform.position, normalSpeed); //이동
+        transform.position = Vector3.MoveTowards(gameObject.transform.position, waypoint.wayPosition, normalSpeed); //이동
 
 
-        ////회전
-        //Vector3 dir = waypoint.transform.position - transform.position;
-        //dir.y = 0;
-        //Quaternion way = Quaternion.LookRotation(dir);
-        //transform.rotation = way;
+        //회전
+        Vector3 dir = waypoint.wayPosition - transform.position;
+        dir.y = 0;
+        Quaternion way = Quaternion.LookRotation(dir);
+        transform.rotation = way;
 
 
     }
 
-    //private void CalculateCurvePoints(int count)
-    //{
-    //    Vector3 pA = waypoint.position;
-    //}
-
-    //ground 판정
     bool Isground()
     {
         isGround = Physics.BoxCast(transform.position, groundBx * 0.5f, -transform.up, out RaycastHit hit, transform.rotation, 0.1f, groundLr);

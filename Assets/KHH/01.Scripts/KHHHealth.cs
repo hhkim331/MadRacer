@@ -1,23 +1,32 @@
 using UnityEngine;
-using UnityEngine.Rendering.PostProcessing;
 using UnityEngine.UI;
-using static KHHTarget;
 
 public class KHHHealth : MonoBehaviour
 {
-    protected int health = 10;
-    public int maxHealth = 10;
+    protected float health = 100;
+    public float maxHealth = 100;
     public Image healthBar;
 
     bool isDead = false;
     float respawnTime = 0f;
-    public float respawnDelay = 1.0f;
+    public float respawnDelay = 2.0f;
 
+    public KHHKartRank kartRank;
     //»ç¸Á È¿°ú
+    public GameObject model;
+    public Rigidbody rb;
+
+    public GameObject bulletItem;
     public GameObject explosionPrefab;
+
+    protected virtual void Start()
+    {
+    }
 
     protected virtual void Update()
     {
+        if (kartRank.isFinish) return;
+
         if (isDead)
         {
             respawnTime += Time.deltaTime;
@@ -29,19 +38,32 @@ public class KHHHealth : MonoBehaviour
         }
     }
 
-    public virtual void Hit()
+    public virtual void Hit(float damage)
     {
+        if (kartRank.isFinish) return;
+
         if (health > 0)
         {
-            health--;
-            healthBar.fillAmount = (float)health / maxHealth;
-            if (health < 0)
+            health -= damage;
+            if (health <= 0)
+            {
+                health = 0;
                 Die();
+            }
+            healthBar.fillAmount = health / maxHealth;
         }
     }
 
     public virtual void Die()
     {
+        isDead = true;
+        model.SetActive(false);
+        rb.isKinematic = true;
+
+        SoundManager.instance.PlaySFXFromObject(transform.position, "Explosion");
+
+        GameObject item = Instantiate(bulletItem, transform.position + Vector3.up, Quaternion.identity);
+
         GameObject explosion = Instantiate(explosionPrefab);
         explosion.transform.position = transform.position + Vector3.up;
         Destroy(explosion, 4);
@@ -50,6 +72,9 @@ public class KHHHealth : MonoBehaviour
     public virtual void Respawn()
     {
         isDead = false;
+        model.SetActive(true);
+        rb.isKinematic = false;
+
         health = maxHealth;
         healthBar.fillAmount = 1;
     }
