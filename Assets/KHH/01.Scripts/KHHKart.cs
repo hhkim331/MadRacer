@@ -99,6 +99,7 @@ public class KHHKart : MonoBehaviour
 
     private void Update()
     {
+        handle.localRotation = Quaternion.Euler(15, 0, -input.InputSteer * 180f);
         if (myKartRank.isFinish) return;
         if (KHHGameManager.instance.isStart == false) return;
 
@@ -119,8 +120,6 @@ public class KHHKart : MonoBehaviour
             //바닥과 수직인 방향으로 Lerp보정
             transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(Vector3.Cross(transform.right, bottomNormal), bottomNormal), Time.deltaTime);
         }
-
-        handle.localRotation = Quaternion.Euler(15, 0, -input.InputSteer * 180f);
     }
 
     // Update is called once per frame

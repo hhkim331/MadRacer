@@ -29,6 +29,8 @@ public class KHHWeapon : MonoBehaviour
     float fireLineTime = 0.0f;
     float fireLineDelay = 0.05f;
 
+    public Transform gripRight;
+
     public KHHLaser laser;
     public Transform gunBody;
     public Transform gunBarrel;
@@ -39,6 +41,7 @@ public class KHHWeapon : MonoBehaviour
     public GameObject sandEffect;
     public GameObject stoneEffect;
 
+    bool gripSubWeapon = false;
     GameObject subWeapon;
     public GameObject bow;
     public Transform inven;
@@ -51,6 +54,7 @@ public class KHHWeapon : MonoBehaviour
         BulletCount = 250;
     }
 
+    public Animator saw;
     // Update is called once per frame
     void Update()
     {
@@ -67,7 +71,17 @@ public class KHHWeapon : MonoBehaviour
             }
         }
 
-        UpdateFire();
+
+        if (gripSubWeapon)
+        {
+            UpdateSubWeapon();
+        }
+        else
+        {
+            UpdateFire();
+            if (input.InputGrip)
+                GripWeapon();
+        }
     }
 
     void UpdateFire()
@@ -93,7 +107,7 @@ public class KHHWeapon : MonoBehaviour
                     health.Hit(10);
 
                 KHHTarget target = laser.hitObj.GetComponentInParent<KHHTarget>();
-                if(target!=null)
+                if (target != null)
                 {
                     if (target.hitType == KHHTarget.HitType.Metal)
                     {
@@ -122,15 +136,15 @@ public class KHHWeapon : MonoBehaviour
             bulletText.transform.localPosition = new Vector3(0, 0.1f, 0);
         }
 
-        if (input.InputGrip)
-        {
-            Debug.Log("Sub");
-        }
-
         if (input.InputShield)
         {
             Debug.Log("Shield");
         }
+    }
+
+    void UpdateSubWeapon()
+    {
+
     }
 
     //총알 보급
@@ -141,7 +155,32 @@ public class KHHWeapon : MonoBehaviour
 
     public void SetWeapon()
     {
-        //if (subWeapon == null)
-        //    subWeapon = Instantiate(bow, inven);
+        if (subWeapon == null)
+            subWeapon = Instantiate(bow, inven);
+    }
+
+    void GripWeapon()
+    {
+        float distance = Vector3.Distance(gripRight.position, subWeapon.transform.position);
+        if (distance < 1)
+        {
+            gripSubWeapon = true;
+            subWeapon.transform.SetParent(gripRight);
+            subWeapon.transform.localPosition = Vector3.zero;
+            subWeapon.transform.localRotation = Quaternion.identity;
+            subWeapon.transform.localScale = Vector3.one * 0.1f;
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        //적 레이어
+        if (other.gameObject.layer == LayerMask.NameToLayer("Enemy"))
+        {
+            saw.SetTrigger("Active");
+            KHHHealth health = other.GetComponentInParent<KHHHealth>();
+            if (health != null)
+                health.Hit(999);
+        }
     }
 }
