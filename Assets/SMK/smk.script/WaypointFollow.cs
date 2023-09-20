@@ -7,6 +7,8 @@ public class WaypointFollow : MonoBehaviour
 {
     //waypoint로 향하게 함.
     //만약, waypoint를 지나면, 오브젝트의 앞방향에 위치한 다음 waypoint를 방향삼기.
+    //nextpoint로 이동하기전에 돌린 rotation 이 일정 이상이면, 드리프트 하게 바꾸기.
+
     //nextpoint를 인식해서 해당 위치로 이동하기. 
 
 
@@ -19,10 +21,8 @@ public class WaypointFollow : MonoBehaviour
     #endregion
     //드리프트
     //-자동차를 미끄러트려 컨트롤.
-    //차체 후미
-    //부스터
 
-    bool isGround = false;
+    //부스터
     public LayerMask groundLr;
     public Vector3 groundBx = Vector3.zero;
 
@@ -33,6 +33,7 @@ public class WaypointFollow : MonoBehaviour
     public float breakForce = 0.01f;//감속
     public float speed;
 
+    public float currentTime;
     Rigidbody rb;
 
 
@@ -40,49 +41,71 @@ public class WaypointFollow : MonoBehaviour
 
     void Start()
     {
+        currentTime = 0;
         speed = normalSpeed;
         rb = GetComponent<Rigidbody>();
         rb.constraints = RigidbodyConstraints.FreezeRotationX;
         rb.constraints = RigidbodyConstraints.FreezeRotationZ;
     }
 
+    bool isRot;
+    public Transform tr;
     void Update()
     {
-        if (!KHHGameManager.instance.isStart) return;
+        //if (!KHHGameManager.instance.isStart) return;
 
         UpdateFollow();
-        //바닥으로 ray를 쏴서  ground 판정하기
+
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            isRot = true;
+        }
+
+        if (isRot)
+        {
+            //회전
+            Vector3 dir = tr.position - transform.position;
+            dir.y = 0;
+            Vector3 dir2 = transform.forward;
+            dir2.y = 0;
+            dir = Vector3.Lerp(dir2, dir, Time.deltaTime);
+            dir.y = transform.forward.y;
+            transform.forward = dir;
+        }
 
     }
 
 
     void UpdateFollow()
     {
-        //속도 변화 가까워지면 감속 / 멀면 가속
         //이동
-        transform.position = Vector3.MoveTowards(gameObject.transform.position, waypoint.wayPosition, normalSpeed); //이동
+        //피격, 시작 후 시간 흐름으로 속도 증가.
+        //if (!KHHGameManager.instance.isStart) return;
+
+        transform.position += transform.forward * speed * Time.deltaTime;
+
 
 
         //회전
         Vector3 dir = waypoint.wayPosition - transform.position;
         dir.y = 0;
-        Quaternion way = Quaternion.LookRotation(dir);
-        transform.rotation = way;
-
-
+        Vector3 dir2 = transform.forward;
+        dir2.y = 0;
+        dir = Vector3.Lerp(dir2, dir, Time.deltaTime * 0.1f);
+        dir.y = transform.forward.y;
+        transform.forward = dir;
     }
 
-    bool Isground()
-    {
-        isGround = Physics.BoxCast(transform.position, groundBx * 0.5f, -transform.up, out RaycastHit hit, transform.rotation, 0.1f, groundLr);
-        return isGround;
-    }
-    //다음 waypoint 로 교체
+
+
+    //충돌시 다음 waypoint로 변경
     private void OnTriggerEnter(Collider other)
     {
-        //waypoint를 n개중에 하나로 바꾸기.
         KHHWaypoint hitWaypoint = other.GetComponent<KHHWaypoint>();
+
+        currentTime += Time.deltaTime;
         if (hitWaypoint == null) return;
+        //waypoint 
         if (waypointIndex == hitWaypoint.waypointIndex) return;
         waypointIndex = hitWaypoint.waypointIndex;
         waypoint = hitWaypoint.NextPoint();

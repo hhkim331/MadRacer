@@ -3117,10 +3117,12 @@ MonoBehaviour:
     m_Bits: 4294967295
   groundBx: {x: 1, y: 1, z: 1}
   waypoint: {fileID: 0}
-  normalSpeed: 0.7
+  normalSpeed: 5
   acceleration: 3
   breakForce: 0.1
   speed: 0
+  currentTime: 0
+  tr: {fileID: 0}
 --- !u!114 &4667048316251629700
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3326,8 +3328,12 @@ MonoBehaviour:
   finalLap: 2
   wayPointIndex: 0
   wayPercent: 0
+  itemPrefab: {fileID: 0}
+  waypointItemSpawnInfos: []
   prevWaypoint: {fileID: 0}
   nextWaypoint: {fileID: 0}
+  itemSpawnPoints: []
+  itemPrefabs: []
 --- !u!1 &4684219567402392250
 GameObject:
   m_ObjectHideFlags: 0
@@ -5932,8 +5938,8 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7669125579852198236}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.766}
-  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
+  m_LocalPosition: {x: 0, y: 0, z: -0.36}
+  m_LocalScale: {x: 0.02, y: 0.02, z: 0.02}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3742303989840605221}
@@ -5945,7 +5951,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0.174, y: 2.272}
+  m_AnchoredPosition: {x: 0.174, y: 2.919}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &6732185528370570417

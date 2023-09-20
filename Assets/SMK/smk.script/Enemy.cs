@@ -16,8 +16,7 @@ public class Enemy : MonoBehaviour
     {
         Move,
         Attack,
-        Item,
-        Booster,
+        //Item,
     }
     #endregion
     #region 변수
@@ -55,6 +54,7 @@ public class Enemy : MonoBehaviour
     {
         state = EnemyState.Move;
         boosterGauge = 0;
+        bulletCount = 0;
 
         driftLEffect.SetActive(false);
         driftREffect.SetActive(false);
@@ -71,7 +71,7 @@ public class Enemy : MonoBehaviour
 
     void Update()
     {
-        if (!KHHGameManager.instance.isStart) return;
+        //if (!KHHGameManager.instance.isStart) return;
 
         //EnemyState enemyState = GetEnemyState();
         boosterGauge += Time.deltaTime;
@@ -79,16 +79,12 @@ public class Enemy : MonoBehaviour
         {
             case EnemyState.Move: UpdateMove(); break;
             case EnemyState.Attack: UpdateAttack(); break;
-            case EnemyState.Item: UpdateItem(); break;
-            case EnemyState: Booster: UpdateBooster(); break;
+            //case EnemyState.Item: UpdateItem(); break;
         }
         //Vector3 dir = transform.position - enemyEye.visibleTargets[0].position;
     }
 
-    private void UpdateBooster()
-    {
-        waypointFollow.speed = waypointFollow.acceleration;
-    }
+
 
 
 
@@ -107,14 +103,13 @@ public class Enemy : MonoBehaviour
         //만약 부스터 게이지가 다 찼을 경우
         if (boosterGauge == 100)
         {
-            state = EnemyState.Booster;
+            //스피드 가속
+            waypointFollow.speed = waypointFollow.acceleration;
         }
-    }
-
-
-    private void UpdateItem()
-    {
-        throw new NotImplementedException();
+        else
+        {
+            waypointFollow.speed = waypointFollow.normalSpeed;
+        }
     }
 
 
@@ -156,6 +151,27 @@ public class Enemy : MonoBehaviour
         {
             state = EnemyState.Move;
         }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        //부스터 아이템에 부딪혔을때,
+        if (collision.gameObject.CompareTag("Item"))
+        {
+            //부스터 게이지 채우기
+            boosterGauge += 25;
+        }
+        //총알 아이템에 부딪혔을때
+        else
+        {
+            //총알 채우기
+            bulletCount += 25;
+        }
+    }
+    IEnumerator startBooster()
+    {
+        //시간 더해서 일정시간이후에는 속도 감소
+        yield return new WaitForSeconds(0.3f);
     }
 
 }

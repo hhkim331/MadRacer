@@ -16,6 +16,7 @@ public class EnemyHP : KHHHealth
     Enemy enemy;
     //죽는 상태
 
+    //public GameObject hitEffect;
     protected override void Start()
     {
         _waypointFollow = GetComponent<WaypointFollow>();
@@ -25,11 +26,15 @@ public class EnemyHP : KHHHealth
     public override void Hit(float damage)
     {
         base.Hit(damage);
+        //일정 시간이 지나면 UI 비활성화
+
         if (health > 0)
         {
             hitTime = 0;
             if (hitEffect != null)
                 StopCoroutine(hitEffect);
+            //피격 받았을경우 uI 활성화
+            //이펙트 활성화->비활성화.
             hitEffect = StartCoroutine(HitEffect());
         }
     }
@@ -47,7 +52,8 @@ public class EnemyHP : KHHHealth
         hitTime = 0;
         intensity = 0;
         enemy.enabled = true;
-
+        //리스폰 된 경우 uI 활성화
+        //일정 시간이 지나면 UI 비활성화
         _waypointFollow.enabled = true;
     }
     #region
