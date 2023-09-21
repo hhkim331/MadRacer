@@ -38,7 +38,7 @@ public class KHHHealth : MonoBehaviour
         }
     }
 
-    public virtual void Hit(float damage)
+    public virtual void Hit(float damage, KHHKartRank kart)
     {
         if (kartRank.isFinish) return;
 
@@ -49,6 +49,12 @@ public class KHHHealth : MonoBehaviour
             {
                 health = 0;
                 Die();
+                if (kartRank.IsMine)
+                    KHHGameManager.instance.PlayerUI.EnemyKillPlayer(kart.name);
+                else if (kart.IsMine)
+                    KHHGameManager.instance.PlayerUI.PlayerKillEnemy(kartRank.name);
+                else
+                    KHHGameManager.instance.PlayerUI.EnemyKillEnemy(kart.name, kartRank.name);
             }
             healthBar.fillAmount = health / maxHealth;
         }

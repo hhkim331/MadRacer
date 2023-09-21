@@ -20,9 +20,9 @@ public class KHHPlayerHealth : KHHHealth
         postProcessProfile.GetSetting<Vignette>().intensity.value = 0;
     }
 
-    public override void Hit(float damage)
+    public override void Hit(float damage, KHHKartRank kart)
     {
-        base.Hit(damage);
+        base.Hit(damage, kart);
         SoundManager.instance.PlaySFX("Hit");
         if (health > 0)
         {

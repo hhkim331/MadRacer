@@ -1446,7 +1446,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12c4bf06b19810f438349d96921794af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerHealth: {fileID: 429817440}
 --- !u!4 &93984563
 Transform:
   m_ObjectHideFlags: 0
@@ -3314,6 +3313,7 @@ RectTransform:
   - {fileID: 600867648}
   - {fileID: 1001058781}
   - {fileID: 912387067}
+  - {fileID: 333193233}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5619,6 +5619,104 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9191600507859106525, guid: 57d7eb2855636b24abcf419b890aa7e5, type: 3}
   m_PrefabInstance: {fileID: 332171269}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &333193232
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 333193233}
+  - component: {fileID: 333193237}
+  - component: {fileID: 333193236}
+  - component: {fileID: 333193234}
+  m_Layer: 5
+  m_Name: Hit
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &333193233
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 333193232}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 207123573}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 1024, y: 1024}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!95 &333193234
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 333193232}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 55c0aea3af80cab42ab32ae9a21a3fe0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &333193236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 333193232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 1382804945, guid: 97057a1327cea1348a19921dc4ab88d4, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &333193237
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 333193232}
+  m_CullTransparentMesh: 1
 --- !u!1 &336663686
 GameObject:
   m_ObjectHideFlags: 0
@@ -7315,7 +7413,6 @@ GameObject:
   - component: {fileID: 429817434}
   - component: {fileID: 429817433}
   - component: {fileID: 429817439}
-  - component: {fileID: 429817438}
   - component: {fileID: 429817440}
   m_Layer: 11
   m_Name: Kart
@@ -7432,20 +7529,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &429817438
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 429817432}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b6343bd4f655fb49ae765d8fc673288, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rankText: {fileID: 1963282140}
-  lapText: {fileID: 775040017}
 --- !u!114 &429817439
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7458,6 +7541,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc427883bce29fa47bc8fa30d121d0a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  name: 
   isFinish: 0
   rank: 0
   lap: 0
@@ -17062,7 +17146,7 @@ MonoBehaviour:
   m_text: "\uC5D0\uB108\uC9C0\uAC00 \uBD80\uC871\uD574\uC11C \uBD80\uC2A4\uD2B8\uB97C
     \uC0AC\uC6A9\uD560 \uC218 \uC5C6\uC2B5\uB2C8\uB2E4"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 0404575d0360d624a8821c8c392ced6e, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 936752761a2194a4ea2843bf344b3b94, type: 2}
   m_sharedMaterial: {fileID: 5561655975406874116, guid: 936752761a2194a4ea2843bf344b3b94, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -17103,7 +17187,7 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_enableWordWrapping: 0
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
@@ -17126,7 +17210,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &912387069
@@ -19488,6 +19572,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1027571025}
   - component: {fileID: 1027571026}
+  - component: {fileID: 1027571027}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -19522,6 +19607,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6057e1bd9dfd0d8409bbdb79dba2e63a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  time: 0
   isStart: 0
   isEnd: 0
   startText: {fileID: 600867650}
@@ -19534,6 +19620,22 @@ MonoBehaviour:
   rankUIObj: {fileID: 1001058780}
   vrCam: {fileID: 1358581880}
   postProcessProfile: {fileID: 11400000, guid: 6a354086c8e766c43bb492b6efa318fa, type: 2}
+--- !u!114 &1027571027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1027571024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b6343bd4f655fb49ae765d8fc673288, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myKartRank: {fileID: 429817439}
+  rankText: {fileID: 1963282140}
+  lapText: {fileID: 775040017}
+  infoText: {fileID: 912387068}
 --- !u!1 &1029816541
 GameObject:
   m_ObjectHideFlags: 0

@@ -22,9 +22,9 @@ public class EnemyHP : KHHHealth
         enemy = GetComponent<Enemy>();
     }
 
-    public override void Hit(float damage)
+    public override void Hit(float damage, KHHKartRank kart)
     {
-        base.Hit(damage);
+        base.Hit(damage, kart);
         if (health > 0)
         {
             hitTime = 0;

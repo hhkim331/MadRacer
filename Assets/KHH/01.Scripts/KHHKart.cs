@@ -154,11 +154,20 @@ public class KHHKart : MonoBehaviour
         if (IsGrounded())
         {
             //부스트
-            if (input.InputBoost && BoostGauge > 0)
+            if (input.InputBoost)
             {
-                boostEffect.SetActive(true);
-                targetSpeed = normalSpeed * boostMultiply;
-                BoostGauge -= Time.fixedDeltaTime * boostUse;
+                if (BoostGauge > 0)
+                {
+                    boostEffect.SetActive(true);
+                    targetSpeed = normalSpeed * boostMultiply;
+                    BoostGauge -= Time.fixedDeltaTime * boostUse;
+                }
+                else
+                {
+                    boostEffect.SetActive(false);
+                    targetSpeed = normalSpeed;
+                    KHHGameManager.instance.PlayerUI.NoEnergyBoost();
+                }
             }
             else
             {
@@ -360,11 +369,9 @@ public class KHHKart : MonoBehaviour
             case Item.ItmeType.Bullet:
                 weapon.BulletSupply();
                 SoundManager.instance.PlaySFX("Reload");
-                print("총알충전");
                 break;
             case Item.ItmeType.Booster:
                 BoostGauge = boostMax;
-                print("부스터 충전");
                 break;
             case Item.ItmeType.attack:
                 weapon.SetWeapon();
