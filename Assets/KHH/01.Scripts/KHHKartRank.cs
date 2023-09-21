@@ -29,7 +29,6 @@ public class KHHKartRank : MonoBehaviour
     public GameObject itemPrefab;
     bool isMine = false;
     public bool IsMine { get { return isMine; } set { isMine = value; } }
-   //public Dictionary<int, GameObject> waypointItemMapping = new Dictionary<int, GameObject>();
    public List<WaypointItemSpawnInfo> waypointItemSpawnInfos = new List<WaypointItemSpawnInfo>();
 
     int checkPointCount = 0;
@@ -37,15 +36,6 @@ public class KHHKartRank : MonoBehaviour
     public KHHWaypoint prevWaypoint;
     public KHHWaypoint nextWaypoint;
     public Vector3 WayForward { get { return (nextWaypoint.transform.parent.position - prevWaypoint.transform.parent.position).normalized; } }
-
-    //public Transform[] itemSpawnPoints;
-
-    //private IEnumerator Start()
-    //{
-    //    yield return new WaitForSeconds(1f);
-    //    isFinish = true;
-    //    KHHGameManager.instance.GameEnd();
-    //}
 
     // Update is called once per frame
     void Update()
@@ -60,43 +50,9 @@ public class KHHKartRank : MonoBehaviour
         KHHWaypoint hitWaypoint = other.GetComponent<KHHWaypoint>();
         if (hitWaypoint == null) return;
         if (wayPointIndex == hitWaypoint.waypointIndex) return;
-        //if (isMine)
-        //{
-        //    // 웨이포인트를 지날 때 아이템 프리팹 인스턴스화
-        //    foreach (Transform spawnPoint in itemSpawnPoints)
-        //    {
-        //        Debug.Log("cani");
-        //        Instantiate(itemPrefab, spawnPoint.position, spawnPoint.rotation);
-        //    }
-        //}
-        //if (isMine)
-        //{
-        //    // 해당 웨이 포인트 인덱스에 대한 아이템 프리팹이 있는지 확인
-        //    if (waypointItemMapping.ContainsKey(wayPointIndex))
-        //    {
-        //    Debug.Log("tgdf");
-        //        // 웨이 포인트 인덱스에 따른 아이템 인스턴스화
-        //        GameObject itemToSpawn = waypointItemMapping[wayPointIndex];
-        //        foreach (Transform spawnPoint in itemSpawnPoints)
-        //        {
-        //            Instantiate(itemToSpawn, spawnPoint.position, spawnPoint.rotation);
-        //        }
-        //    }
-
 
         wayPointIndex = hitWaypoint.waypointIndex;
-        //if (isMine)
-        //{
-        //    WaypointItemSpawnInfo spawnInfo = waypointItemSpawnInfos.Find(info => info.waypointIndex == wayPointIndex);
-        //    if (spawnInfo != null)
-        //    {
-        //        Debug.Log("spawnInfo");
-        //        foreach (Transform spawnPoint in spawnInfo.spawnPoints)
-        //        {
-        //            Instantiate(itemPrefab, spawnPoint.position, spawnPoint.rotation);
-        //        }
-        //    }
-        //}
+
         if (isMine)
         {
             WaypointItemSpawnInfo spawnInfo = waypointItemSpawnInfos.Find(info => info.waypointIndex == wayPointIndex);
@@ -109,8 +65,6 @@ public class KHHKartRank : MonoBehaviour
                 }
             }
         }
-
-
 
         wayPointIndex = hitWaypoint.waypointIndex;
         prevWaypoint = hitWaypoint;

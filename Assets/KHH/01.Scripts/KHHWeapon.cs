@@ -46,6 +46,7 @@ public class KHHWeapon : MonoBehaviour
     GameObject subWeapon;
     public GameObject bow;
     public Transform inven;
+    CrossBow crossBow;
 
     // Start is called before the first frame update
     void Start()
@@ -73,7 +74,6 @@ public class KHHWeapon : MonoBehaviour
             }
         }
 
-
         if (gripSubWeapon)
         {
             UpdateSubWeapon();
@@ -81,7 +81,7 @@ public class KHHWeapon : MonoBehaviour
         else
         {
             UpdateFire();
-            if (input.InputGrip)
+            if (subWeapon != null && input.InputGrip)
                 GripWeapon();
         }
     }
@@ -153,9 +153,27 @@ public class KHHWeapon : MonoBehaviour
         }
     }
 
+    bool subFire = false;
     void UpdateSubWeapon()
     {
+        if (crossBow == null)
+        {
+            gripSubWeapon = false;
+            return;
+        }
 
+        if(input.InputFire)
+        {
+            if(subFire==false)
+            {
+                subFire = true;
+                crossBow.UpdateAttack();
+            }
+        }
+        else
+        {
+            subFire = false;
+        }
     }
 
     //ÃÑ¾Ë º¸±Þ
@@ -183,6 +201,7 @@ public class KHHWeapon : MonoBehaviour
             subWeapon.transform.localPosition = Vector3.zero;
             subWeapon.transform.localRotation = Quaternion.identity;
             subWeapon.transform.localScale = Vector3.one * 0.1f;
+            crossBow = subWeapon.GetComponent<CrossBow>();
         }
     }
 
