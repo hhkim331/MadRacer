@@ -14,17 +14,17 @@ public class TestScript : MonoBehaviour
     public Transform inven;
 
     public Transform FirePosition;
-
-    Rigidbody rb;
-    public float speed = 10;
-    Vector3 velocity;
-    public Vector3 gravity = new Vector3(0, -9.81f * 0.1f, 0);
+    private int bulletCount = 0;
+    private float bowCreateTime;
     // Start is called before the first frame update
+    private void Awake()
+    {
+        bowCreateTime = Time.time;
+    }
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
-        rb.useGravity = false;
-        velocity = transform.forward * speed;
+
+
     }
 
     // Update is called once per frame
@@ -36,40 +36,49 @@ public class TestScript : MonoBehaviour
             UpdateAttack();
 
         }
+        if (bulletCount >=3 )
+        {
+            DestroyBow();
+        }
     }
+    private void DestroyBow()
+    {
+        Destroy(gameObject);
+    }
+
+
 
     private void UpdateAttack()
     {
-        var bullet = Instantiate(bowFactory);
-
-        velocity += gravity * Time.deltaTime;
+       // var bullet = Instantiate(bowFactory);
+        var bullet = Instantiate(bowFactory, FirePosition.position, FirePosition.rotation);
 
         bullet.transform.position = FirePosition.position;
-        transform.forward = velocity.normalized;
 
-        transform.position += velocity * Time.deltaTime;
+        bulletCount++;
     }
 
-    public void ApplyItem(ItmeType itemType)
-    {
-        switch (itemType)
-        {
-            case ItmeType.Bullet:
-                
-                print("총알충전");
-                break;
-            case ItmeType.Booster:
-                print("부스터 충전");
-                break;
-            case ItmeType.attack:
 
-                GameObject Instantiatebow = Instantiate(bow,inven.transform.position,Quaternion.identity,inven);
+    //public void ApplyItem(Item.ItemType itemType)
+    //{
+    //    switch (itemType)
+    //    {
+    //        case Item.ItemType.Bullet:
 
-                print("석궁 충전");
-                break;
-            default:
-                break;
-        }
-    }
+    //            print("총알충전");
+    //            break;
+    //        case Item.ItemType.Booster:
+    //            print("부스터 충전");
+    //            break;
+    //        case Item.ItemType.attack:
+
+    //            GameObject Instantiatebow = Instantiate(bow, inven.transform.position, Quaternion.identity, inven);
+
+    //            print("석궁 충전");
+    //            break;
+    //        default:
+    //            break;
+    //    }
+    //}
 
 }

@@ -22,7 +22,7 @@ public class PlayerCarScript : MonoBehaviour
         KHHWaypoint hitWaypoint = other.GetComponent<KHHWaypoint>();
         if (hitWaypoint != null && dropManager != null)
         {
-            Item.ItmeType typeToSpawn;
+            Item.ItemType typeToSpawn;
             Transform targetDropPoint = dropManager.GetDropPointForWaypoint(hitWaypoint.waypointIndex, out typeToSpawn);
 
             if (targetDropPoint != null && CanDropItemAt(targetDropPoint))
@@ -40,7 +40,7 @@ public class PlayerCarScript : MonoBehaviour
         return Time.time - lastDropTimeByPoint[dropPoint] > dropCooldown;
     }
 
-    void SpawnItem(Transform dropPoint, Item.ItmeType typeToSpawn)
+    void SpawnItem(Transform dropPoint, Item.ItemType typeToSpawn)
     {
         
     }

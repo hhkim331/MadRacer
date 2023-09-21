@@ -171,7 +171,7 @@ Transform:
   - {fileID: 946514267}
   - {fileID: 556887774}
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &24416683
 GameObject:
@@ -269,9 +269,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 600037582}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &25514500
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -313,7 +311,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4879895948571250, guid: 4c76dafd02a02674ca2ecd6ace8d1f84, type: 3}
       propertyPath: m_RootOrder
-      value: 35
+      value: 26
       objectReference: {fileID: 0}
     - target: {fileID: 4879895948571250, guid: 4c76dafd02a02674ca2ecd6ace8d1f84, type: 3}
       propertyPath: m_LocalScale.x
@@ -554,7 +552,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4951087927239166, guid: da637f7d18bde774bbb182e8fb34044a, type: 3}
       propertyPath: m_RootOrder
-      value: 16
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4951087927239166, guid: da637f7d18bde774bbb182e8fb34044a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -645,9 +643,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1326961400}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &55817245
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -695,9 +691,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 329940383}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &60596252
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -861,9 +855,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 383449779}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &64819619
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -917,10 +909,12 @@ MonoBehaviour:
   maxHealth: 10
   healthBar: {fileID: 2092838820}
   respawnDelay: 1
+  kartRank: {fileID: 0}
+  model: {fileID: 0}
+  rb: {fileID: 0}
+  bulletItem: {fileID: 0}
   explosionPrefab: {fileID: 0}
-  hitDuration: 0.5
   postProcessProfile: {fileID: 11400000, guid: 6a354086c8e766c43bb492b6efa318fa, type: 2}
-  maxIntensity: 0.3
 --- !u!114 &65559220
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -954,11 +948,13 @@ MonoBehaviour:
   wayPointIndex: 0
   wayPercent: 0
   itemPrefab: {fileID: 8414077993291194471, guid: 57d7eb2855636b24abcf419b890aa7e5, type: 3}
+  waypointItemSpawnInfos:
+  - waypointIndex: 0
+    itemType: 0
+    spawnPoints: []
   prevWaypoint: {fileID: 0}
   nextWaypoint: {fileID: 0}
-  itemSpawnPoints:
-  - {fileID: 1851209649}
-  - {fileID: 1654664215}
+  itemPrefabs: []
 --- !u!114 &65559222
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -981,6 +977,8 @@ MonoBehaviour:
   metalEffect: {fileID: 1000010355441670, guid: 6aefc11fb4d4cbf4a88f115839a7ef9e, type: 3}
   sandEffect: {fileID: 1000012142692022, guid: 800ef6c97664b5844bbef16848ed09d3, type: 3}
   stoneEffect: {fileID: 1000010844420130, guid: 92cac2166432c0046b935155b209bf46, type: 3}
+  bow: {fileID: 812012611883900888, guid: 697a7a896a77c22439d36c3cc152a049, type: 3}
+  inven: {fileID: 80970070}
 --- !u!114 &65559223
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1005,6 +1003,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5e645c825e8760468622c38c856b1dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  model: {fileID: 0}
+  modelType: 0
   handle: {fileID: 1211670092}
   wheels:
   - {fileID: 24416684}
@@ -1027,8 +1027,6 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 1
-  bow: {fileID: 812012611883900888, guid: 697a7a896a77c22439d36c3cc152a049, type: 3}
-  inven: {fileID: 80970070}
 --- !u!54 &65559225
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1063,7 +1061,7 @@ Transform:
   - {fileID: 80970070}
   - {fileID: 216889452}
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &65559227
 MonoBehaviour:
@@ -1100,7 +1098,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7519568887721732069, guid: e0b5bc43070f7c7489053c3597727cd2, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 7519568887721732069, guid: e0b5bc43070f7c7489053c3597727cd2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1161,7 +1159,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4461525478859692, guid: a95da9e299c9e1c41af8a4fe583b1832, type: 3}
       propertyPath: m_RootOrder
-      value: 18
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4461525478859692, guid: a95da9e299c9e1c41af8a4fe583b1832, type: 3}
       propertyPath: m_LocalScale.x
@@ -1271,9 +1269,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1370188095}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &80515998
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1501,9 +1497,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1803138055}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &87471774
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1571,9 +1565,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1538556011}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &91516951
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1636,9 +1628,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 957723291}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &96120018
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1769,9 +1759,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 635589260}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &110679342
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1845,7 +1833,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7909948886873561317, guid: 85d3fa2ccf19c5c49a23a0b0d263a044, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7909948886873561317, guid: 85d3fa2ccf19c5c49a23a0b0d263a044, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1999,9 +1987,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1250775486}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &117819982
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2064,9 +2050,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1526656919}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &120149862
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2129,9 +2113,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 957723291}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &132083310
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2194,9 +2176,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 2055043505}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &133987987
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2308,7 +2288,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4820845810167580, guid: 5c87670be91b12548b479de572150a2b, type: 3}
       propertyPath: m_RootOrder
-      value: 95
+      value: 83
       objectReference: {fileID: 0}
     - target: {fileID: 4820845810167580, guid: 5c87670be91b12548b479de572150a2b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2406,9 +2386,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1286866262}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &141871720
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2435,7 +2413,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4879895948571250, guid: 4c76dafd02a02674ca2ecd6ace8d1f84, type: 3}
       propertyPath: m_RootOrder
-      value: 61
+      value: 54
       objectReference: {fileID: 0}
     - target: {fileID: 4879895948571250, guid: 4c76dafd02a02674ca2ecd6ace8d1f84, type: 3}
       propertyPath: m_LocalScale.x
@@ -2647,9 +2625,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 60596251}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &165565821
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2821,7 +2797,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4879895948571250, guid: 4c76dafd02a02674ca2ecd6ace8d1f84, type: 3}
       propertyPath: m_RootOrder
-      value: 68
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 4879895948571250, guid: 4c76dafd02a02674ca2ecd6ace8d1f84, type: 3}
       propertyPath: m_LocalScale.x
@@ -2911,7 +2887,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2762484637671705070, guid: 55b97c3803c613c41b203686f58a0971, type: 3}
       propertyPath: m_RootOrder
-      value: 14
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 2762484637671705070, guid: 55b97c3803c613c41b203686f58a0971, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3041,9 +3017,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1443680061}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &187405052
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3189,9 +3163,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1634609433}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &191768364
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3479,9 +3451,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 432145666}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &197374160
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3504,7 +3474,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7519568887721732069, guid: e0b5bc43070f7c7489053c3597727cd2, type: 3}
       propertyPath: m_RootOrder
-      value: 84
+      value: 76
       objectReference: {fileID: 0}
     - target: {fileID: 7519568887721732069, guid: e0b5bc43070f7c7489053c3597727cd2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3694,9 +3664,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1784226895}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &212063601
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3951,9 +3919,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 741542343}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &229079629
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4037,7 +4003,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4461525478859692, guid: a95da9e299c9e1c41af8a4fe583b1832, type: 3}
       propertyPath: m_RootOrder
-      value: 20
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 4461525478859692, guid: a95da9e299c9e1c41af8a4fe583b1832, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4135,9 +4101,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1538556011}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &238154957
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4284,9 +4248,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1202560181}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &251668374
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4385,9 +4347,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1887125774}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &255120284
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4616,7 +4576,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7909948886873561317, guid: 85d3fa2ccf19c5c49a23a0b0d263a044, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7909948886873561317, guid: 85d3fa2ccf19c5c49a23a0b0d263a044, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4713,7 +4673,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6310615876039402316, guid: fbe770b56aa8d1e4992fb6083dd77b65, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6310615876039402316, guid: fbe770b56aa8d1e4992fb6083dd77b65, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5016,9 +4976,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 814402460}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &293351740
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5041,7 +4999,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6368216002459736860, guid: b66ab809882a7ec45817e2c669d10fd6, type: 3}
       propertyPath: m_RootOrder
-      value: 97
+      value: 85
       objectReference: {fileID: 0}
     - target: {fileID: 6368216002459736860, guid: b66ab809882a7ec45817e2c669d10fd6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5280,7 +5238,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3548204073837834756, guid: 7c158b91846096343a69ac232c7f2861, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3548204073837834756, guid: 7c158b91846096343a69ac232c7f2861, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5337,7 +5295,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7519568887721732069, guid: e0b5bc43070f7c7489053c3597727cd2, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7519568887721732069, guid: e0b5bc43070f7c7489053c3597727cd2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5613,9 +5571,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 432145666}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &329940384
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5657,7 +5613,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4461525478859692, guid: a95da9e299c9e1c41af8a4fe583b1832, type: 3}
       propertyPath: m_RootOrder
-      value: 32
+      value: 23
       objectReference: {fileID: 0}
     - target: {fileID: 4461525478859692, guid: a95da9e299c9e1c41af8a4fe583b1832, type: 3}
       propertyPath: m_LocalScale.x
@@ -5731,7 +5687,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4879895948571250, guid: 4c76dafd02a02674ca2ecd6ace8d1f84, type: 3}
       propertyPath: m_RootOrder
-      value: 23
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 4879895948571250, guid: 4c76dafd02a02674ca2ecd6ace8d1f84, type: 3}
       propertyPath: m_LocalScale.x
@@ -5805,7 +5761,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4430310747170416, guid: 3c504ebe14130b84183ced3ad6d39629, type: 3}
       propertyPath: m_RootOrder
-      value: 52
+      value: 44
       objectReference: {fileID: 0}
     - target: {fileID: 4430310747170416, guid: 3c504ebe14130b84183ced3ad6d39629, type: 3}
       propertyPath: m_LocalScale.x
@@ -5915,9 +5871,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 212063600}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &348457814
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6006,9 +5960,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 383449779}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &350257681
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6035,7 +5987,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4222775516459544, guid: 7bd76aa729d941845b33428838fa35b7, type: 3}
       propertyPath: m_RootOrder
-      value: 31
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 4222775516459544, guid: 7bd76aa729d941845b33428838fa35b7, type: 3}
       propertyPath: m_LocalScale.x
@@ -6121,7 +6073,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2220998629345216855, guid: d2ee9689c3568954bbf4168607c60da3, type: 3}
       propertyPath: m_RootOrder
-      value: 17
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 2220998629345216855, guid: d2ee9689c3568954bbf4168607c60da3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6411,7 +6363,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4879895948571250, guid: 4c76dafd02a02674ca2ecd6ace8d1f84, type: 3}
       propertyPath: m_RootOrder
-      value: 94
+      value: 82
       objectReference: {fileID: 0}
     - target: {fileID: 4879895948571250, guid: 4c76dafd02a02674ca2ecd6ace8d1f84, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6500,7 +6452,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4808902006620486, guid: f78421ee35f065d4588360cd21603ab8, type: 3}
       propertyPath: m_RootOrder
-      value: 100
+      value: 87
       objectReference: {fileID: 0}
     - target: {fileID: 4808902006620486, guid: f78421ee35f065d4588360cd21603ab8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6593,9 +6545,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1188455585}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &377961846
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6663,9 +6613,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1443680061}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &380063759
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6692,7 +6640,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4530726713625508, guid: c5f00645aea3beb4e84ca10669446164, type: 3}
       propertyPath: m_RootOrder
-      value: 99
+      value: 86
       objectReference: {fileID: 0}
     - target: {fileID: 4530726713625508, guid: c5f00645aea3beb4e84ca10669446164, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6770,9 +6718,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1894396200}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &383449780
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6850,9 +6796,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 2049498002}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &385258064
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6879,7 +6823,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4879895948571250, guid: 4c76dafd02a02674ca2ecd6ace8d1f84, type: 3}
       propertyPath: m_RootOrder
-      value: 66
+      value: 59
       objectReference: {fileID: 0}
     - target: {fileID: 4879895948571250, guid: 4c76dafd02a02674ca2ecd6ace8d1f84, type: 3}
       propertyPath: m_LocalScale.x
@@ -6989,9 +6933,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 2048209213}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &400218696
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7222,9 +7164,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 441290442}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &413584692
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7459,9 +7399,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 212063600}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &425392702
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7524,9 +7462,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 25514499}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &425450879
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7553,7 +7489,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4939407296409954, guid: 11ebe6be1e931b944b297dd7869d3e4d, type: 3}
       propertyPath: m_RootOrder
-      value: 39
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 4939407296409954, guid: 11ebe6be1e931b944b297dd7869d3e4d, type: 3}
       propertyPath: m_LocalScale.x
@@ -7648,9 +7584,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1250775486}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &432145667
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7692,7 +7626,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4530726713625508, guid: c5f00645aea3beb4e84ca10669446164, type: 3}
       propertyPath: m_RootOrder
-      value: 33
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 4530726713625508, guid: c5f00645aea3beb4e84ca10669446164, type: 3}
       propertyPath: m_LocalScale.x
@@ -8025,9 +7959,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1326961400}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &441290443
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8136,9 +8068,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1286866262}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &444608134
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8201,9 +8131,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 2049498002}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &446320799
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8266,9 +8194,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 600037582}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &449160960
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8356,7 +8282,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4879895948571250, guid: 4c76dafd02a02674ca2ecd6ace8d1f84, type: 3}
       propertyPath: m_RootOrder
-      value: 64
+      value: 57
       objectReference: {fileID: 0}
     - target: {fileID: 4879895948571250, guid: 4c76dafd02a02674ca2ecd6ace8d1f84, type: 3}
       propertyPath: m_LocalScale.x
@@ -8466,9 +8392,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1526656919}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &457415704
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8495,7 +8419,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4430310747170416, guid: 3c504ebe14130b84183ced3ad6d39629, type: 3}
       propertyPath: m_RootOrder
-      value: 47
+      value: 39
       objectReference: {fileID: 0}
     - target: {fileID: 4430310747170416, guid: 3c504ebe14130b84183ced3ad6d39629, type: 3}
       propertyPath: m_LocalScale.x
@@ -8605,9 +8529,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 950464441}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &464883193
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8639,7 +8561,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4879895948571250, guid: 4c76dafd02a02674ca2ecd6ace8d1f84, type: 3}
       propertyPath: m_RootOrder
-      value: 17
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4879895948571250, guid: 4c76dafd02a02674ca2ecd6ace8d1f84, type: 3}
       propertyPath: m_LocalScale.x
@@ -8983,7 +8905,7 @@ Transform:
   - {fileID: 1230925022}
   - {fileID: 1990243427}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &488537531
 GameObject:
@@ -9070,9 +8992,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1912912734}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &491800051
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9099,7 +9019,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4430310747170416, guid: 3c504ebe14130b84183ced3ad6d39629, type: 3}
       propertyPath: m_RootOrder
-      value: 49
+      value: 41
       objectReference: {fileID: 0}
     - target: {fileID: 4430310747170416, guid: 3c504ebe14130b84183ced3ad6d39629, type: 3}
       propertyPath: m_LocalScale.x
@@ -9209,9 +9129,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 600037582}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &503223721
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9274,9 +9192,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 950464441}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &503261962
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9339,9 +9255,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 741542343}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &503519729
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9404,9 +9318,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1784226895}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &515872163
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9469,9 +9381,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1202560181}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &520353090
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9798,9 +9708,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 2055043505}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &539197275
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9889,9 +9797,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 329940383}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &548557222
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9954,9 +9860,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 2110505554}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &552197053
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10013,7 +9917,7 @@ Transform:
   - {fileID: 150888697}
   - {fileID: 2030431573}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &556887773
 GameObject:
@@ -10257,9 +10161,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1188455585}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &569335086
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10322,9 +10224,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1326961400}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &575262749
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10558,9 +10458,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 60596251}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &591137135
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10713,9 +10611,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 2055043505}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &600037583
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10943,7 +10839,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6481019470207937502, guid: 75178c329dbcd5a4ea2d8d0afb97e626, type: 3}
       propertyPath: m_RootOrder
-      value: 16
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 6481019470207937502, guid: 75178c329dbcd5a4ea2d8d0afb97e626, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11008,8 +10904,6 @@ MonoBehaviour:
   bow: {fileID: 0}
   inven: {fileID: 0}
   FirePosition: {fileID: 0}
-  speed: 10
-  gravity: {x: 0, y: -0.98100007, z: 0}
 --- !u!1 &624376105
 GameObject:
   m_ObjectHideFlags: 0
@@ -11147,9 +11041,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 110679341}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &631545002
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11197,9 +11089,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 783424729}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &635589261
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11313,9 +11203,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 600037582}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &639432581
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11499,6 +11387,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41e136e9ea4d1174b86aae4cbf1e44bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitObj: {fileID: 0}
   hitLayer:
     serializedVersion: 2
     m_Bits: 1
@@ -11639,7 +11528,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4530726713625508, guid: c5f00645aea3beb4e84ca10669446164, type: 3}
       propertyPath: m_RootOrder
-      value: 93
+      value: 81
       objectReference: {fileID: 0}
     - target: {fileID: 4530726713625508, guid: c5f00645aea3beb4e84ca10669446164, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11701,7 +11590,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4879895948571250, guid: 4c76dafd02a02674ca2ecd6ace8d1f84, type: 3}
       propertyPath: m_RootOrder
-      value: 55
+      value: 48
       objectReference: {fileID: 0}
     - target: {fileID: 4879895948571250, guid: 4c76dafd02a02674ca2ecd6ace8d1f84, type: 3}
       propertyPath: m_LocalScale.x
@@ -11775,7 +11664,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5416799373326289968, guid: 6562b0699c6f3bb4ea1902c53a9b478e, type: 3}
       propertyPath: m_RootOrder
-      value: 85
+      value: 77
       objectReference: {fileID: 0}
     - target: {fileID: 5416799373326289968, guid: 6562b0699c6f3bb4ea1902c53a9b478e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11837,7 +11726,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5416799373326289968, guid: 6562b0699c6f3bb4ea1902c53a9b478e, type: 3}
       propertyPath: m_RootOrder
-      value: 79
+      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 5416799373326289968, guid: 6562b0699c6f3bb4ea1902c53a9b478e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11996,9 +11885,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 950464441}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &688855560
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12061,9 +11948,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1634609433}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &692462411
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12126,9 +12011,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1634609433}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &700213824
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12212,7 +12095,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4430310747170416, guid: 3c504ebe14130b84183ced3ad6d39629, type: 3}
       propertyPath: m_RootOrder
-      value: 25
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 4430310747170416, guid: 3c504ebe14130b84183ced3ad6d39629, type: 3}
       propertyPath: m_LocalScale.x
@@ -12307,9 +12190,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 591137134}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &719317512
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12491,9 +12372,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 957723291}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &730792060
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12571,9 +12450,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 212063600}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &732522439
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12662,9 +12539,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1538556011}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &735817392
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12727,9 +12602,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 635589260}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &736573049
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12777,9 +12650,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1526656919}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &741542344
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12857,9 +12728,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1912912734}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &743585508
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12976,7 +12845,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4808902006620486, guid: f78421ee35f065d4588360cd21603ab8, type: 3}
       propertyPath: m_RootOrder
-      value: 27
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 4808902006620486, guid: f78421ee35f065d4588360cd21603ab8, type: 3}
       propertyPath: m_LocalScale.x
@@ -13086,9 +12955,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 432145666}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &757671757
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13151,9 +13018,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 2110505554}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &758031941
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13242,9 +13107,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 950464441}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &762758971
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13528,9 +13391,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1538556011}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &783424730
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13641,7 +13502,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4430310747170416, guid: 3c504ebe14130b84183ced3ad6d39629, type: 3}
       propertyPath: m_RootOrder
-      value: 38
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 4430310747170416, guid: 3c504ebe14130b84183ced3ad6d39629, type: 3}
       propertyPath: m_LocalScale.x
@@ -13751,9 +13612,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 730792059}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &793744123
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13901,9 +13760,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 2043720262}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &796295031
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13966,9 +13823,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1912912734}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &798529634
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14057,9 +13912,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1887125774}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &814402461
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14159,7 +14012,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7519568887721732069, guid: e0b5bc43070f7c7489053c3597727cd2, type: 3}
       propertyPath: m_RootOrder
-      value: 61
+      value: 38
       objectReference: {fileID: 0}
     - target: {fileID: 7519568887721732069, guid: e0b5bc43070f7c7489053c3597727cd2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -14261,9 +14114,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 432145666}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &817875993
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14588,9 +14439,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1803138055}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &821814051
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14653,9 +14502,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 329940383}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &823796426
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14682,7 +14529,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4430310747170416, guid: 3c504ebe14130b84183ced3ad6d39629, type: 3}
       propertyPath: m_RootOrder
-      value: 46
+      value: 37
       objectReference: {fileID: 0}
     - target: {fileID: 4430310747170416, guid: 3c504ebe14130b84183ced3ad6d39629, type: 3}
       propertyPath: m_LocalScale.x
@@ -14818,7 +14665,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4884704482240300, guid: 9bf72f042efce154a8b89faba4b13739, type: 3}
       propertyPath: m_RootOrder
-      value: 41
+      value: 32
       objectReference: {fileID: 0}
     - target: {fileID: 4884704482240300, guid: 9bf72f042efce154a8b89faba4b13739, type: 3}
       propertyPath: m_LocalScale.x
@@ -14990,9 +14837,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1894396200}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &834930160
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15217,7 +15062,7 @@ Transform:
   - {fileID: 923566563}
   - {fileID: 1297757526}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &850234563
 PrefabInstance:
@@ -15325,7 +15170,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4430310747170416, guid: 3c504ebe14130b84183ced3ad6d39629, type: 3}
       propertyPath: m_RootOrder
-      value: 88
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 4430310747170416, guid: 3c504ebe14130b84183ced3ad6d39629, type: 3}
       propertyPath: m_LocalScale.x
@@ -15395,7 +15240,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7519568887721732069, guid: e0b5bc43070f7c7489053c3597727cd2, type: 3}
       propertyPath: m_RootOrder
-      value: 78
+      value: 69
       objectReference: {fileID: 0}
     - target: {fileID: 7519568887721732069, guid: e0b5bc43070f7c7489053c3597727cd2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -15627,7 +15472,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4884704482240300, guid: 9bf72f042efce154a8b89faba4b13739, type: 3}
       propertyPath: m_RootOrder
-      value: 42
+      value: 33
       objectReference: {fileID: 0}
     - target: {fileID: 4884704482240300, guid: 9bf72f042efce154a8b89faba4b13739, type: 3}
       propertyPath: m_LocalScale.x
@@ -15972,9 +15817,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 591137134}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &890979882
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16109,7 +15952,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7519568887721732069, guid: e0b5bc43070f7c7489053c3597727cd2, type: 3}
       propertyPath: m_RootOrder
-      value: 73
+      value: 64
       objectReference: {fileID: 0}
     - target: {fileID: 7519568887721732069, guid: e0b5bc43070f7c7489053c3597727cd2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -16171,7 +16014,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4574619902718666, guid: 045fb745ffc155d41aa3f697e6df5dc1, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4574619902718666, guid: 045fb745ffc155d41aa3f697e6df5dc1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -16231,7 +16074,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4222775516459544, guid: 7bd76aa729d941845b33428838fa35b7, type: 3}
       propertyPath: m_RootOrder
-      value: 22
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 4222775516459544, guid: 7bd76aa729d941845b33428838fa35b7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -16395,9 +16238,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 719317511}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &928163513
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16461,6 +16302,71 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4879124124417010, guid: eaddbbeccd02f5440af45e5c51dba347, type: 3}
   m_PrefabInstance: {fileID: 929473678}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &939567501
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 55dcb2ef4a05ce44f9efcba0b1c33cfa, type: 3}
+      propertyPath: m_RootOrder
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 55dcb2ef4a05ce44f9efcba0b1c33cfa, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 6.86
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 55dcb2ef4a05ce44f9efcba0b1c33cfa, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.608
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 55dcb2ef4a05ce44f9efcba0b1c33cfa, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 57.324
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 55dcb2ef4a05ce44f9efcba0b1c33cfa, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 55dcb2ef4a05ce44f9efcba0b1c33cfa, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.00000008146034
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 55dcb2ef4a05ce44f9efcba0b1c33cfa, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 55dcb2ef4a05ce44f9efcba0b1c33cfa, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 55dcb2ef4a05ce44f9efcba0b1c33cfa, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 55dcb2ef4a05ce44f9efcba0b1c33cfa, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 55dcb2ef4a05ce44f9efcba0b1c33cfa, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 55dcb2ef4a05ce44f9efcba0b1c33cfa, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4b39a536c51761a489ac6b0e3af2bff4, type: 2}
+    - target: {fileID: 919132149155446097, guid: 55dcb2ef4a05ce44f9efcba0b1c33cfa, type: 3}
+      propertyPath: m_Name
+      value: Box_2_100 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 55dcb2ef4a05ce44f9efcba0b1c33cfa, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 55dcb2ef4a05ce44f9efcba0b1c33cfa, type: 3}
 --- !u!1 &946262869
 GameObject:
   m_ObjectHideFlags: 0
@@ -16692,9 +16598,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 741542343}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &950464442
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16772,9 +16676,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 814402460}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &956143015
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16822,9 +16724,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 441290442}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &957723292
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16866,7 +16766,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4430310747170416, guid: 3c504ebe14130b84183ced3ad6d39629, type: 3}
       propertyPath: m_RootOrder
-      value: 48
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 4430310747170416, guid: 3c504ebe14130b84183ced3ad6d39629, type: 3}
       propertyPath: m_LocalScale.x
@@ -17182,7 +17082,7 @@ Transform:
   - {fileID: 867342687}
   - {fileID: 1738316464}
   m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &975483403
 GameObject:
@@ -17233,9 +17133,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 2055043505}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &975483406
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17464,9 +17362,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 60596251}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &995308797
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17618,9 +17514,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 2049498002}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1004023244
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17942,9 +17836,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 814402460}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1021031918
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18007,9 +17899,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1784226895}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1023076314
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18184,9 +18074,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1370188095}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1027325889
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18249,9 +18137,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 741542343}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1029873991
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18274,7 +18160,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7909948886873561317, guid: 85d3fa2ccf19c5c49a23a0b0d263a044, type: 3}
       propertyPath: m_RootOrder
-      value: 72
+      value: 63
       objectReference: {fileID: 0}
     - target: {fileID: 7909948886873561317, guid: 85d3fa2ccf19c5c49a23a0b0d263a044, type: 3}
       propertyPath: m_LocalPosition.x
@@ -18459,9 +18345,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 814402460}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1040305621
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18524,9 +18408,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1250775486}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1042816460
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18672,9 +18554,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1513320518}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1064639198
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18799,9 +18679,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 591137134}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1071663279
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19032,9 +18910,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 635589260}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1087596780
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19061,7 +18937,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4879895948571250, guid: 4c76dafd02a02674ca2ecd6ace8d1f84, type: 3}
       propertyPath: m_RootOrder
-      value: 30
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 4879895948571250, guid: 4c76dafd02a02674ca2ecd6ace8d1f84, type: 3}
       propertyPath: m_LocalPosition.x
@@ -19311,9 +19187,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1914644614}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1093560809
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19376,9 +19250,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1887125774}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1110415759
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19441,9 +19313,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 600037582}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1114638757
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19670,9 +19540,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1203381628}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1133504514
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19769,9 +19637,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 2110505554}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1138886896
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19881,7 +19747,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4879895948571250, guid: 4c76dafd02a02674ca2ecd6ace8d1f84, type: 3}
       propertyPath: m_RootOrder
-      value: 54
+      value: 47
       objectReference: {fileID: 0}
     - target: {fileID: 4879895948571250, guid: 4c76dafd02a02674ca2ecd6ace8d1f84, type: 3}
       propertyPath: m_LocalScale.x
@@ -20036,7 +19902,7 @@ PrefabInstance:
       objectReference: {fileID: 1851209649}
     - target: {fileID: 1653120714246798865, guid: 519cb7290dc4f9f46b35faa3021f6277, type: 3}
       propertyPath: m_RootOrder
-      value: 15
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 1653120714246798865, guid: 519cb7290dc4f9f46b35faa3021f6277, type: 3}
       propertyPath: m_LocalPosition.x
@@ -20178,7 +20044,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4430310747170416, guid: 3c504ebe14130b84183ced3ad6d39629, type: 3}
       propertyPath: m_RootOrder
-      value: 59
+      value: 52
       objectReference: {fileID: 0}
     - target: {fileID: 4430310747170416, guid: 3c504ebe14130b84183ced3ad6d39629, type: 3}
       propertyPath: m_LocalScale.x
@@ -20288,9 +20154,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1203381628}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1162218301
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20410,9 +20274,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1513320518}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1165927527
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20475,9 +20337,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 635589260}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1167594998
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20912,9 +20772,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1894396200}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1174840493
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20977,9 +20835,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 783424729}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1175251723
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21002,7 +20858,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3548204073837834756, guid: 7c158b91846096343a69ac232c7f2861, type: 3}
       propertyPath: m_RootOrder
-      value: 77
+      value: 68
       objectReference: {fileID: 0}
     - target: {fileID: 3548204073837834756, guid: 7c158b91846096343a69ac232c7f2861, type: 3}
       propertyPath: m_LocalPosition.x
@@ -21064,7 +20920,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7519568887721732069, guid: e0b5bc43070f7c7489053c3597727cd2, type: 3}
       propertyPath: m_RootOrder
-      value: 75
+      value: 66
       objectReference: {fileID: 0}
     - target: {fileID: 7519568887721732069, guid: e0b5bc43070f7c7489053c3597727cd2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -21208,9 +21064,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1803138055}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1188455586
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21314,9 +21168,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 783424729}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1192935560
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21379,9 +21231,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 25514499}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1193577214
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21429,9 +21279,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1443680061}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1202560182
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21494,9 +21342,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 2043720262}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1203381629
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21823,9 +21669,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 2043720262}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1213980469
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21919,9 +21763,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 2048209213}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1222979811
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22046,9 +21888,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1634609433}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1239461780
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22137,9 +21977,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1634609433}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1250775487
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22181,7 +22019,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4430310747170416, guid: 3c504ebe14130b84183ced3ad6d39629, type: 3}
       propertyPath: m_RootOrder
-      value: 101
+      value: 88
       objectReference: {fileID: 0}
     - target: {fileID: 4430310747170416, guid: 3c504ebe14130b84183ced3ad6d39629, type: 3}
       propertyPath: m_LocalPosition.x
@@ -22225,6 +22063,101 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c504ebe14130b84183ced3ad6d39629, type: 3}
+--- !u!1001 &1252893319
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 55dcb2ef4a05ce44f9efcba0b1c33cfa, type: 3}
+      propertyPath: m_RootOrder
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 55dcb2ef4a05ce44f9efcba0b1c33cfa, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 6.853
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 55dcb2ef4a05ce44f9efcba0b1c33cfa, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.608
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 55dcb2ef4a05ce44f9efcba0b1c33cfa, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 58.921513
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 55dcb2ef4a05ce44f9efcba0b1c33cfa, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 55dcb2ef4a05ce44f9efcba0b1c33cfa, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.00000008146034
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 55dcb2ef4a05ce44f9efcba0b1c33cfa, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 55dcb2ef4a05ce44f9efcba0b1c33cfa, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 55dcb2ef4a05ce44f9efcba0b1c33cfa, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 55dcb2ef4a05ce44f9efcba0b1c33cfa, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 55dcb2ef4a05ce44f9efcba0b1c33cfa, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 55dcb2ef4a05ce44f9efcba0b1c33cfa, type: 3}
+      propertyPath: m_Name
+      value: Box_2_100
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 55dcb2ef4a05ce44f9efcba0b1c33cfa, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 55dcb2ef4a05ce44f9efcba0b1c33cfa, type: 3}
+--- !u!1 &1252893320 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 55dcb2ef4a05ce44f9efcba0b1c33cfa, type: 3}
+  m_PrefabInstance: {fileID: 1252893319}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1252893321
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1252893320}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.99999994, z: 1}
+  m_Center: {x: 0, y: -0.000000029802322, z: 0}
+--- !u!54 &1252893322
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1252893320}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1253953763
 GameObject:
   m_ObjectHideFlags: 0
@@ -22357,9 +22290,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 25514499}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1260048755
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22483,9 +22414,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1286866262}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1263180091
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22605,9 +22534,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 2043720262}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1266331034
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22857,7 +22784,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7519568887721732069, guid: e0b5bc43070f7c7489053c3597727cd2, type: 3}
       propertyPath: m_RootOrder
-      value: 80
+      value: 71
       objectReference: {fileID: 0}
     - target: {fileID: 7519568887721732069, guid: e0b5bc43070f7c7489053c3597727cd2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -22944,9 +22871,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 814402460}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1286866263
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23188,9 +23113,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1250775486}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1302508823
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23315,9 +23238,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 2043720262}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1308292870
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23380,9 +23301,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1784226895}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1309709403
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23450,9 +23369,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 591137134}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1313227965
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23515,9 +23432,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1188455585}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1315064024
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23781,9 +23696,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 212063600}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1326961401
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23861,9 +23774,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 719317511}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1328866093
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24073,9 +23984,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1526656919}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1347358844
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24102,7 +24011,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4879895948571250, guid: 4c76dafd02a02674ca2ecd6ace8d1f84, type: 3}
       propertyPath: m_RootOrder
-      value: 24
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 4879895948571250, guid: 4c76dafd02a02674ca2ecd6ace8d1f84, type: 3}
       propertyPath: m_LocalScale.x
@@ -24255,7 +24164,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 167656737163933981, guid: a0b193b1d1a2abe46bc1e4183d8f333b, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 167656737163933981, guid: a0b193b1d1a2abe46bc1e4183d8f333b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -24316,7 +24225,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: bc139ebc1cbd31d40b797322c16eedeb, type: 2}
     - target: {fileID: 7519568887721732069, guid: e0b5bc43070f7c7489053c3597727cd2, type: 3}
       propertyPath: m_RootOrder
-      value: 83
+      value: 74
       objectReference: {fileID: 0}
     - target: {fileID: 7519568887721732069, guid: e0b5bc43070f7c7489053c3597727cd2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -24418,9 +24327,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 2055043505}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1368752649
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24530,9 +24437,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 2048209213}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1370188096
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24574,7 +24479,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4222775516459544, guid: 7bd76aa729d941845b33428838fa35b7, type: 3}
       propertyPath: m_RootOrder
-      value: 21
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 4222775516459544, guid: 7bd76aa729d941845b33428838fa35b7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -24757,9 +24662,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 2048209213}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1380705500
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24929,7 +24832,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1511837649119779561, guid: c122ff6318eb30e4496fdc825958bd39, type: 3}
       propertyPath: m_RootOrder
-      value: 96
+      value: 84
       objectReference: {fileID: 0}
     - target: {fileID: 1511837649119779561, guid: c122ff6318eb30e4496fdc825958bd39, type: 3}
       propertyPath: m_LocalPosition.x
@@ -25026,9 +24929,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 2048209213}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1390500261
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -25091,9 +24992,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1370188095}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1390544332
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -25274,7 +25173,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4879895948571250, guid: 4c76dafd02a02674ca2ecd6ace8d1f84, type: 3}
       propertyPath: m_RootOrder
-      value: 62
+      value: 55
       objectReference: {fileID: 0}
     - target: {fileID: 4879895948571250, guid: 4c76dafd02a02674ca2ecd6ace8d1f84, type: 3}
       propertyPath: m_LocalScale.x
@@ -25384,9 +25283,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 730792059}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1402932559
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -25547,7 +25444,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4599088761030030, guid: c806d1da24ba39147bda6c27f109b78d, type: 3}
       propertyPath: m_RootOrder
-      value: 36
+      value: 27
       objectReference: {fileID: 0}
     - target: {fileID: 4599088761030030, guid: c806d1da24ba39147bda6c27f109b78d, type: 3}
       propertyPath: m_LocalScale.x
@@ -25714,9 +25611,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1912912734}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1426516089
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -25743,7 +25638,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5416799373326289968, guid: 6562b0699c6f3bb4ea1902c53a9b478e, type: 3}
       propertyPath: m_RootOrder
-      value: 88
+      value: 79
       objectReference: {fileID: 0}
     - target: {fileID: 5416799373326289968, guid: 6562b0699c6f3bb4ea1902c53a9b478e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -25888,7 +25783,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4879895948571250, guid: 4c76dafd02a02674ca2ecd6ace8d1f84, type: 3}
       propertyPath: m_RootOrder
-      value: 63
+      value: 56
       objectReference: {fileID: 0}
     - target: {fileID: 4879895948571250, guid: 4c76dafd02a02674ca2ecd6ace8d1f84, type: 3}
       propertyPath: m_LocalScale.x
@@ -26176,9 +26071,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 25514499}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1443680062
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -26220,7 +26113,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4884704482240300, guid: 9bf72f042efce154a8b89faba4b13739, type: 3}
       propertyPath: m_RootOrder
-      value: 44
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 4884704482240300, guid: 9bf72f042efce154a8b89faba4b13739, type: 3}
       propertyPath: m_LocalScale.x
@@ -26740,9 +26633,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 2110505554}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1481837789
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -26841,9 +26732,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1202560181}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1491845331
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -26906,9 +26795,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1803138055}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1492126142
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -27037,9 +26924,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1203381628}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1498894652
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -27260,9 +27145,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1286866262}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1513320519
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -27340,9 +27223,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1513320518}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1516398253
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -27405,9 +27286,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1784226895}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1526531982
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -27455,9 +27334,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 730792059}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1526656920
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -27520,9 +27397,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 2110505554}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1538556012
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -27636,9 +27511,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 2049498002}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1540630042
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -27718,7 +27591,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4649350781184310, guid: b1e6b34038a36a748967fbdabc8c0ff1, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4649350781184310, guid: b1e6b34038a36a748967fbdabc8c0ff1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -27804,9 +27677,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 719317511}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1543610320
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -27869,9 +27740,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1370188095}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1547237100
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -28048,9 +27917,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 591137134}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1550736808
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -28170,7 +28037,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3548204073837834756, guid: 7c158b91846096343a69ac232c7f2861, type: 3}
       propertyPath: m_RootOrder
-      value: 71
+      value: 62
       objectReference: {fileID: 0}
     - target: {fileID: 3548204073837834756, guid: 7c158b91846096343a69ac232c7f2861, type: 3}
       propertyPath: m_LocalPosition.x
@@ -28395,7 +28262,7 @@ Transform:
   - {fileID: 659484124}
   - {fileID: 2025892835}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1566264552
 GameObject:
@@ -28446,7 +28313,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4430310747170416, guid: 3c504ebe14130b84183ced3ad6d39629, type: 3}
       propertyPath: m_RootOrder
-      value: 53
+      value: 46
       objectReference: {fileID: 0}
     - target: {fileID: 4430310747170416, guid: 3c504ebe14130b84183ced3ad6d39629, type: 3}
       propertyPath: m_LocalScale.x
@@ -28520,7 +28387,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4879895948571250, guid: 4c76dafd02a02674ca2ecd6ace8d1f84, type: 3}
       propertyPath: m_RootOrder
-      value: 65
+      value: 58
       objectReference: {fileID: 0}
     - target: {fileID: 4879895948571250, guid: 4c76dafd02a02674ca2ecd6ace8d1f84, type: 3}
       propertyPath: m_LocalScale.x
@@ -28640,9 +28507,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1326961400}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1594319946
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -28754,7 +28619,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5416799373326289968, guid: 6562b0699c6f3bb4ea1902c53a9b478e, type: 3}
       propertyPath: m_RootOrder
-      value: 82
+      value: 73
       objectReference: {fileID: 0}
     - target: {fileID: 5416799373326289968, guid: 6562b0699c6f3bb4ea1902c53a9b478e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -29441,9 +29306,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1526656919}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1610477838
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -29470,7 +29333,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4594015521208422, guid: cbaa06eeb6a141341867ad2817c6f6de, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4594015521208422, guid: cbaa06eeb6a141341867ad2817c6f6de, type: 3}
       propertyPath: m_LocalPosition.x
@@ -29562,9 +29425,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1370188095}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1634609434
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -29642,9 +29503,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1887125774}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1638503524
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -29790,9 +29649,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 783424729}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1640560763
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -29881,9 +29738,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1803138055}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1643446828
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -30138,9 +29993,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 730792059}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1670808818
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -30203,9 +30056,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1326961400}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1671722230
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -30315,7 +30166,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4752192998761682, guid: 1f39b30bc8cc0024daa9f23d0940500f, type: 3}
       propertyPath: m_RootOrder
-      value: 40
+      value: 31
       objectReference: {fileID: 0}
     - target: {fileID: 4752192998761682, guid: 1f39b30bc8cc0024daa9f23d0940500f, type: 3}
       propertyPath: m_LocalScale.x
@@ -30425,9 +30276,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 635589260}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1693311718
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -30707,9 +30556,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1202560181}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1708396562
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -30855,9 +30702,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 730792059}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1711650911
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -31043,9 +30888,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 383449779}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1728684361
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -31072,7 +30915,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4440124639690016, guid: fa88cd43813723a438303b2e2d1202fd, type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4440124639690016, guid: fa88cd43813723a438303b2e2d1202fd, type: 3}
       propertyPath: m_LocalScale.x
@@ -31170,7 +31013,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4808902006620486, guid: f78421ee35f065d4588360cd21603ab8, type: 3}
       propertyPath: m_RootOrder
-      value: 28
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 4808902006620486, guid: f78421ee35f065d4588360cd21603ab8, type: 3}
       propertyPath: m_LocalScale.x
@@ -31399,9 +31242,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1203381628}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1752474711
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -31692,7 +31533,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4879895948571250, guid: 4c76dafd02a02674ca2ecd6ace8d1f84, type: 3}
       propertyPath: m_RootOrder
-      value: 69
+      value: 61
       objectReference: {fileID: 0}
     - target: {fileID: 4879895948571250, guid: 4c76dafd02a02674ca2ecd6ace8d1f84, type: 3}
       propertyPath: m_LocalScale.x
@@ -31802,9 +31643,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 60596251}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1773290143
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -31867,9 +31706,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1188455585}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1774739856
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -31989,9 +31826,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 957723291}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1777105339
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -32281,9 +32116,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 719317511}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1784226896
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -32361,9 +32194,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 441290442}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1788911548
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -32451,7 +32282,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4222775516459544, guid: 7bd76aa729d941845b33428838fa35b7, type: 3}
       propertyPath: m_RootOrder
-      value: 19
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4222775516459544, guid: 7bd76aa729d941845b33428838fa35b7, type: 3}
       propertyPath: m_LocalScale.x
@@ -32594,9 +32425,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1914644614}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1799400522
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -32705,9 +32534,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 950464441}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1803138056
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -32834,7 +32661,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5416799373326289968, guid: 6562b0699c6f3bb4ea1902c53a9b478e, type: 3}
       propertyPath: m_RootOrder
-      value: 76
+      value: 67
       objectReference: {fileID: 0}
     - target: {fileID: 5416799373326289968, guid: 6562b0699c6f3bb4ea1902c53a9b478e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -32937,9 +32764,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1538556011}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1806582483
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -33059,9 +32884,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 110679341}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1814946298
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -33124,9 +32947,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 60596251}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1816371871
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -33161,7 +32982,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5de21491ee594e746940d186986001a5, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 173.50568
+      value: 45.2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5de21491ee594e746940d186986001a5, type: 3}
       propertyPath: m_LocalRotation.w
@@ -33218,7 +33039,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d3ee4209f899ff418cb984f68c27749, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerCar: {fileID: 0}
+  playerCar: {fileID: 65559226}
   spawnInterval: 5
   dropCooldown: 60
   itemType: 2
@@ -33311,9 +33132,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1443680061}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1829372190
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -33402,7 +33221,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4430310747170416, guid: 3c504ebe14130b84183ced3ad6d39629, type: 3}
       propertyPath: m_RootOrder
-      value: 50
+      value: 42
       objectReference: {fileID: 0}
     - target: {fileID: 4430310747170416, guid: 3c504ebe14130b84183ced3ad6d39629, type: 3}
       propertyPath: m_LocalScale.x
@@ -33559,7 +33378,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4879895948571250, guid: 4c76dafd02a02674ca2ecd6ace8d1f84, type: 3}
       propertyPath: m_RootOrder
-      value: 58
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 4879895948571250, guid: 4c76dafd02a02674ca2ecd6ace8d1f84, type: 3}
       propertyPath: m_LocalScale.x
@@ -33633,7 +33452,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4430310747170416, guid: 3c504ebe14130b84183ced3ad6d39629, type: 3}
       propertyPath: m_RootOrder
-      value: 37
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 4430310747170416, guid: 3c504ebe14130b84183ced3ad6d39629, type: 3}
       propertyPath: m_LocalScale.x
@@ -33720,8 +33539,6 @@ MonoBehaviour:
   bow: {fileID: 812012611883900888, guid: 697a7a896a77c22439d36c3cc152a049, type: 3}
   inven: {fileID: 2017584521}
   FirePosition: {fileID: 63905439}
-  speed: 10
-  gravity: {x: 0, y: -0.98100007, z: 0}
 --- !u!114 &1847045641
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33796,9 +33613,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 110679341}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1848724290
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -33921,9 +33736,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 329940383}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1856237344
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -34095,9 +33908,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1914644614}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1861074416
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -34160,9 +33971,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1894396200}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1862739118
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -34600,9 +34409,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 741542343}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1883071090
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -34650,9 +34457,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1203381628}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1887125775
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -34813,9 +34618,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 25514499}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1893804119
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -34863,9 +34666,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1513320518}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1894396201
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -35076,7 +34877,7 @@ Transform:
   - {fileID: 1995940722}
   - {fileID: 1779773804}
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1912912733
 GameObject:
@@ -35112,9 +34913,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 2049498002}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1912912735
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -35177,9 +34976,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1188455585}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1914644615
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -35257,9 +35054,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1914644614}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1915811613
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -35322,9 +35117,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 783424729}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1916453902
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -35387,9 +35180,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 212063600}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1920303104
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -35452,9 +35243,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 719317511}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1923901259
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -35797,7 +35586,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3548204073837834756, guid: 7c158b91846096343a69ac232c7f2861, type: 3}
       propertyPath: m_RootOrder
-      value: 86
+      value: 78
       objectReference: {fileID: 0}
     - target: {fileID: 3548204073837834756, guid: 7c158b91846096343a69ac232c7f2861, type: 3}
       propertyPath: m_LocalPosition.x
@@ -36026,9 +35815,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 441290442}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1946355522
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -36091,9 +35878,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1513320518}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1953212516
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -36120,7 +35905,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4430310747170416, guid: 3c504ebe14130b84183ced3ad6d39629, type: 3}
       propertyPath: m_RootOrder
-      value: 51
+      value: 43
       objectReference: {fileID: 0}
     - target: {fileID: 4430310747170416, guid: 3c504ebe14130b84183ced3ad6d39629, type: 3}
       propertyPath: m_LocalScale.x
@@ -36230,9 +36015,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1443680061}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1966567174
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -36259,7 +36042,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4820845810167580, guid: 5c87670be91b12548b479de572150a2b, type: 3}
       propertyPath: m_RootOrder
-      value: 29
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 4820845810167580, guid: 5c87670be91b12548b479de572150a2b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -36357,9 +36140,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 957723291}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1969752310
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -36422,9 +36203,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 432145666}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1979395569
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -36482,7 +36261,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4430310747170416, guid: 3c504ebe14130b84183ced3ad6d39629, type: 3}
       propertyPath: m_RootOrder
-      value: 60
+      value: 53
       objectReference: {fileID: 0}
     - target: {fileID: 4430310747170416, guid: 3c504ebe14130b84183ced3ad6d39629, type: 3}
       propertyPath: m_LocalScale.x
@@ -36654,9 +36433,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 383449779}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1995647259
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -36817,6 +36594,71 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4000011227296186, guid: 9defeac88977c0d448aa4541073ee9e4, type: 3}
   m_PrefabInstance: {fileID: 2005625181}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &2007752285
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 55dcb2ef4a05ce44f9efcba0b1c33cfa, type: 3}
+      propertyPath: m_RootOrder
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 55dcb2ef4a05ce44f9efcba0b1c33cfa, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.92
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 55dcb2ef4a05ce44f9efcba0b1c33cfa, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.61
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 55dcb2ef4a05ce44f9efcba0b1c33cfa, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 58.9
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 55dcb2ef4a05ce44f9efcba0b1c33cfa, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 55dcb2ef4a05ce44f9efcba0b1c33cfa, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.00000008146034
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 55dcb2ef4a05ce44f9efcba0b1c33cfa, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 55dcb2ef4a05ce44f9efcba0b1c33cfa, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 55dcb2ef4a05ce44f9efcba0b1c33cfa, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 55dcb2ef4a05ce44f9efcba0b1c33cfa, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 55dcb2ef4a05ce44f9efcba0b1c33cfa, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 55dcb2ef4a05ce44f9efcba0b1c33cfa, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4af5f85641fb4f54a9848f1d7a42d245, type: 2}
+    - target: {fileID: 919132149155446097, guid: 55dcb2ef4a05ce44f9efcba0b1c33cfa, type: 3}
+      propertyPath: m_Name
+      value: Box_2_100 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 55dcb2ef4a05ce44f9efcba0b1c33cfa, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 55dcb2ef4a05ce44f9efcba0b1c33cfa, type: 3}
 --- !u!1001 &2008527613
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -36830,7 +36672,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4430310747170416, guid: 3c504ebe14130b84183ced3ad6d39629, type: 3}
       propertyPath: m_RootOrder
-      value: 58
+      value: 51
       objectReference: {fileID: 0}
     - target: {fileID: 4430310747170416, guid: 3c504ebe14130b84183ced3ad6d39629, type: 3}
       propertyPath: m_LocalScale.x
@@ -36904,7 +36746,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4530726713625508, guid: c5f00645aea3beb4e84ca10669446164, type: 3}
       propertyPath: m_RootOrder
-      value: 47
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 4530726713625508, guid: c5f00645aea3beb4e84ca10669446164, type: 3}
       propertyPath: m_LocalScale.x
@@ -37014,9 +36856,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1894396200}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &2016626773
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -37075,7 +36915,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4958812348825656, guid: dabb7fd00c5e4c64cbcb07db47690032, type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4958812348825656, guid: dabb7fd00c5e4c64cbcb07db47690032, type: 3}
       propertyPath: m_LocalScale.x
@@ -37271,9 +37111,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 329940383}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &2020637961
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -37490,7 +37328,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4222775516459544, guid: 7bd76aa729d941845b33428838fa35b7, type: 3}
       propertyPath: m_RootOrder
-      value: 57
+      value: 49
       objectReference: {fileID: 0}
     - target: {fileID: 4222775516459544, guid: 7bd76aa729d941845b33428838fa35b7, type: 3}
       propertyPath: m_LocalScale.x
@@ -37586,7 +37424,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3548204073837834756, guid: 7c158b91846096343a69ac232c7f2861, type: 3}
       propertyPath: m_RootOrder
-      value: 81
+      value: 72
       objectReference: {fileID: 0}
     - target: {fileID: 3548204073837834756, guid: 7c158b91846096343a69ac232c7f2861, type: 3}
       propertyPath: m_LocalPosition.x
@@ -37673,9 +37511,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 110679341}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &2043720263
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -37738,9 +37574,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1202560181}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &2048209214
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -37803,9 +37637,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 383449779}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &2049498003
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -37868,9 +37700,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1912912734}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &2055043506
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -37948,9 +37778,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1286866262}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &2065020120
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -37973,7 +37801,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6368216002459736860, guid: b66ab809882a7ec45817e2c669d10fd6, type: 3}
       propertyPath: m_RootOrder
-      value: 84
+      value: 75
       objectReference: {fileID: 0}
     - target: {fileID: 6368216002459736860, guid: b66ab809882a7ec45817e2c669d10fd6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -38034,7 +37862,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4884704482240300, guid: 9bf72f042efce154a8b89faba4b13739, type: 3}
       propertyPath: m_RootOrder
-      value: 43
+      value: 34
       objectReference: {fileID: 0}
     - target: {fileID: 4884704482240300, guid: 9bf72f042efce154a8b89faba4b13739, type: 3}
       propertyPath: m_LocalScale.x
@@ -38108,7 +37936,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4820845810167580, guid: 5c87670be91b12548b479de572150a2b, type: 3}
       propertyPath: m_RootOrder
-      value: 34
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 4820845810167580, guid: 5c87670be91b12548b479de572150a2b, type: 3}
       propertyPath: m_LocalScale.x
@@ -38208,7 +38036,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4069142899063568, guid: 5b8bebd61acba4e40ac400e8cd220a40, type: 3}
       propertyPath: m_RootOrder
-      value: 26
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 4069142899063568, guid: 5b8bebd61acba4e40ac400e8cd220a40, type: 3}
       propertyPath: m_LocalScale.x
@@ -38318,9 +38146,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 441290442}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &2087168937
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -38623,9 +38449,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1250775486}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &2099834283
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -38874,7 +38698,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4951087927239166, guid: da637f7d18bde774bbb182e8fb34044a, type: 3}
       propertyPath: m_RootOrder
-      value: 15
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4951087927239166, guid: da637f7d18bde774bbb182e8fb34044a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -39028,9 +38852,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1914644614}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &2110505555
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -39077,7 +38899,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5416799373326289968, guid: 6562b0699c6f3bb4ea1902c53a9b478e, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5416799373326289968, guid: 6562b0699c6f3bb4ea1902c53a9b478e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -39170,9 +38992,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 1887125774}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &2124622267
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -39235,9 +39055,7 @@ MonoBehaviour:
   nextPoint:
   - nextPoint: {fileID: 110679341}
     weight: 1
-  associatedDropInfo:
-    dropPoint: {fileID: 0}
-    itemType: 0
+  wayPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &2129341661
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -39260,7 +39078,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7909948886873561317, guid: 85d3fa2ccf19c5c49a23a0b0d263a044, type: 3}
       propertyPath: m_RootOrder
-      value: 74
+      value: 65
       objectReference: {fileID: 0}
     - target: {fileID: 7909948886873561317, guid: 85d3fa2ccf19c5c49a23a0b0d263a044, type: 3}
       propertyPath: m_LocalPosition.x
@@ -39358,7 +39176,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4430310747170416, guid: 3c504ebe14130b84183ced3ad6d39629, type: 3}
       propertyPath: m_RootOrder
-      value: 45
+      value: 36
       objectReference: {fileID: 0}
     - target: {fileID: 4430310747170416, guid: 3c504ebe14130b84183ced3ad6d39629, type: 3}
       propertyPath: m_LocalScale.x
@@ -39424,6 +39242,67 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9191600507859106525, guid: 57d7eb2855636b24abcf419b890aa7e5, type: 3}
   m_PrefabInstance: {fileID: 8648501776210084391}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &3662032635908571632
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4149783849768919734, guid: 5ecfc011429e61a44b774317b5f8bbd3, type: 3}
+      propertyPath: m_Name
+      value: Bow
+      objectReference: {fileID: 0}
+    - target: {fileID: 4149783849768919737, guid: 5ecfc011429e61a44b774317b5f8bbd3, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4149783849768919737, guid: 5ecfc011429e61a44b774317b5f8bbd3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 8.618144
+      objectReference: {fileID: 0}
+    - target: {fileID: 4149783849768919737, guid: 5ecfc011429e61a44b774317b5f8bbd3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4149783849768919737, guid: 5ecfc011429e61a44b774317b5f8bbd3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 45.59
+      objectReference: {fileID: 0}
+    - target: {fileID: 4149783849768919737, guid: 5ecfc011429e61a44b774317b5f8bbd3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.68945855
+      objectReference: {fileID: 0}
+    - target: {fileID: 4149783849768919737, guid: 5ecfc011429e61a44b774317b5f8bbd3, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.72432524
+      objectReference: {fileID: 0}
+    - target: {fileID: 4149783849768919737, guid: 5ecfc011429e61a44b774317b5f8bbd3, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4149783849768919737, guid: 5ecfc011429e61a44b774317b5f8bbd3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4149783849768919737, guid: 5ecfc011429e61a44b774317b5f8bbd3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 92.82501
+      objectReference: {fileID: 0}
+    - target: {fileID: 4149783849768919737, guid: 5ecfc011429e61a44b774317b5f8bbd3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4149783849768919737, guid: 5ecfc011429e61a44b774317b5f8bbd3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4149783849768919741, guid: 5ecfc011429e61a44b774317b5f8bbd3, type: 3}
+      propertyPath: inven
+      value: 
+      objectReference: {fileID: 80970070}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5ecfc011429e61a44b774317b5f8bbd3, type: 3}
 --- !u!1001 &8648501776210084391
 PrefabInstance:
   m_ObjectHideFlags: 0
