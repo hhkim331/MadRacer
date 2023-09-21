@@ -247,15 +247,15 @@ public class KHHNewKart : MonoBehaviour
         return Physics.BoxCast(transform.position, groundBox * 0.5f, -transform.up, out RaycastHit hit, transform.rotation, 0.1f, groundLayer);
     }
 
-    public void ApplyItem(Item.ItmeType itemType)
+    public void ApplyItem(Item.ItemType itemType)
     {
         switch (itemType)
         {
-            case Item.ItmeType.Bullet:
+            case Item.ItemType.Bullet:
                 BulletCount = 250;
                 print("총알충전");
                 break;
-            case Item.ItmeType.Booster:
+            case Item.ItemType.Booster:
                 BoostGauge = boostMax;
                 print("부스터 충전");
                 break;

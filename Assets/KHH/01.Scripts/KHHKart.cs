@@ -87,6 +87,12 @@ public class KHHKart : MonoBehaviour
 
         rb = GetComponent<Rigidbody>();
 
+        if (PlayerPrefs.HasKey("SelectedModelType"))
+        {
+            modelType = (KHHModel.ModelType)PlayerPrefs.GetInt("SelectedModelType");
+            Debug.Log("Loaded Model Type: " + modelType);
+        }
+
         model.Set(modelType);
         BoostGauge = boostMax;
 
@@ -354,20 +360,20 @@ public class KHHKart : MonoBehaviour
         isBoost = false;
     }
 
-    public void ApplyItem(Item.ItmeType itemType)
+    public void ApplyItem(Item.ItemType itemType)
     {
         switch (itemType)
         {
-            case Item.ItmeType.Bullet:
+            case Item.ItemType.Bullet:
                 weapon.BulletSupply();
                 SoundManager.instance.PlaySFX("Reload");
                 print("총알충전");
                 break;
-            case Item.ItmeType.Booster:
+            case Item.ItemType.Booster:
                 BoostGauge = boostMax;
                 print("부스터 충전");
                 break;
-            case Item.ItmeType.attack:
+            case Item.ItemType.attack:
                 weapon.SetWeapon();
                 break;
             default:
