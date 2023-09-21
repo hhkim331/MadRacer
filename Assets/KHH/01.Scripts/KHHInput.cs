@@ -32,8 +32,6 @@ public class KHHInput : MonoBehaviour
     public bool InputGrip { get; set; }
     public bool InputShield { get; set; }
     public bool InputReturn { get; set; }
-    public Vector3 InputRightHandPos { get; set; }
-    public Quaternion InputRightHandRot { get; set; }
 
     // Update is called once per frame
     void Update()

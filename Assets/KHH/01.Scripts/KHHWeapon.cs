@@ -43,6 +43,7 @@ public class KHHWeapon : MonoBehaviour
     public GameObject stoneEffect;
 
     bool gripSubWeapon = false;
+    bool subFire = false;
     GameObject subWeapon;
     public GameObject bow;
     public Transform inven;
@@ -153,7 +154,6 @@ public class KHHWeapon : MonoBehaviour
         }
     }
 
-    bool subFire = false;
     void UpdateSubWeapon()
     {
         if (crossBow == null)

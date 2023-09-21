@@ -89,11 +89,10 @@ public class KHHPlayerUI : MonoBehaviour
         infoText.text = noEnergyShield;
     }
 
-    public void LapTime()
+    public void LapTime(float time)
     {
         infoTime = infoTimeMax;
         infoText.gameObject.SetActive(true);
-        float time = KHHGameManager.instance.time;
         int min = (int)(time / 60);
         int sec = (int)(time % 60);
         int milli = (int)((time - (int)time) * 1000);

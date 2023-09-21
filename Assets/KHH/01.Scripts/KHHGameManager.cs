@@ -70,16 +70,22 @@ public class KHHGameManager : MonoBehaviour
 
         time += Time.deltaTime;
         //모든 카트 순위 계산
-        foreach (var item in kartRanks)
+        foreach (var kartRank in kartRanks)
         {
-            item.rank = 1;
+            if (kartRank.isFinish) continue;
+            kartRank.rank = 1;
             foreach (var other in kartRanks)
             {
-                if (item == other) continue;
-                if (item.lap > other.lap) continue;
-                if (item.lap == other.lap && item.wayPointIndex > other.wayPointIndex) continue;
-                if (item.lap == other.lap && item.wayPointIndex == other.wayPointIndex && item.wayPercent > other.wayPercent) continue;
-                item.rank++;
+                if (other.isFinish)
+                {
+                    kartRank.rank++;
+                    continue;
+                }
+                if (kartRank == other) continue;
+                if (kartRank.lap > other.lap) continue;
+                if (kartRank.lap == other.lap && kartRank.nextWaypoint.waypointIndex > other.nextWaypoint.waypointIndex) continue;
+                if (kartRank.lap == other.lap && kartRank.nextWaypoint.waypointIndex == other.nextWaypoint.waypointIndex && kartRank.wayPercent > other.wayPercent) continue;
+                kartRank.rank++;
             }
         }
     }
