@@ -8,6 +8,10 @@ public class KHHGameManager : MonoBehaviour
 {
     public static KHHGameManager instance;
 
+    KHHPlayerUI playerUI;
+    public KHHPlayerUI PlayerUI { get { return playerUI; } }
+
+    public float time = 0;
     //start
     public bool isStart = false;
     public bool isEnd = false;
@@ -21,10 +25,10 @@ public class KHHGameManager : MonoBehaviour
     public Transform vrCam;
     public PostProcessProfile postProcessProfile;
 
-
     private void Awake()
     {
         instance = this;
+        playerUI = GetComponent<KHHPlayerUI>();
     }
 
     private void Start()
@@ -53,6 +57,7 @@ public class KHHGameManager : MonoBehaviour
         SoundManager.instance.PlaySFX("StartCountEnd");
         yield return new WaitForSeconds(0.1f);
         isStart = true;
+        time = 0;
         yield return new WaitForSeconds(0.9f);
         startText.gameObject.SetActive(false);
         rankUIObj.SetActive(true);
@@ -63,6 +68,7 @@ public class KHHGameManager : MonoBehaviour
     {
         if (!isStart) return;
 
+        time += Time.deltaTime;
         //모든 카트 순위 계산
         foreach (var item in kartRanks)
         {

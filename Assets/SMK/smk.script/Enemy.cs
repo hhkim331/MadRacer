@@ -142,7 +142,7 @@ public class Enemy : MonoBehaviour
                     var bulletImpact = Instantiate(bulletEffect);
                     bulletImpact.transform.position = hitInfo.point;
                     bulletTime = 0;
-                    enemyEye.visibleTargets[0].transform.GetComponentInParent<KHHHealth>().Hit(2);
+                    enemyEye.visibleTargets[0].transform.GetComponentInParent<KHHHealth>().Hit(2, GetComponent<KHHKartRank>());
                 }
             }
             else

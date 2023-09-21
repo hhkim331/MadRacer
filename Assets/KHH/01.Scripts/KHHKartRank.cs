@@ -1,8 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static Item;
-using static KHHWaypoint;
 
 [System.Serializable]
 public class WaypointItemSpawnInfo
@@ -21,6 +19,7 @@ public enum ItemType
 
 public class KHHKartRank : MonoBehaviour
 {
+    public string name;
     public bool isFinish = false;
     public int rank = 0;
     public int lap = 0;
@@ -58,9 +57,7 @@ public class KHHKartRank : MonoBehaviour
     public GameObject[] itemPrefabs;
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("dsdsds");
         KHHWaypoint hitWaypoint = other.GetComponent<KHHWaypoint>();
-        Debug.Log(hitWaypoint);
         if (hitWaypoint == null) return;
         if (wayPointIndex == hitWaypoint.waypointIndex) return;
         //if (isMine)
@@ -120,8 +117,6 @@ public class KHHKartRank : MonoBehaviour
         nextWaypoint = hitWaypoint.NextPoint();
         checkPointCount++;
 
-
-
         if (nextWaypoint.waypointIndex == 0 && checkPointCount > 20)
         {
             checkPointCount = 0;
@@ -130,6 +125,10 @@ public class KHHKartRank : MonoBehaviour
             {
                 isFinish = true;
                 if (isMine) KHHGameManager.instance.GameEnd();
+            }
+            else
+            {
+                KHHGameManager.instance.PlayerUI.LapTime();
             }
         }
     }
