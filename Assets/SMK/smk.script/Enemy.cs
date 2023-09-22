@@ -61,6 +61,7 @@ public class Enemy : MonoBehaviour
         //enemyAttackline = GetComponent<LineRenderer>();
         enemyHP = GetComponent<EnemyHP>();
         //enemyEye = GetComponent<EnemyEye>();
+        waypointFollow = GetComponent<WaypointFollow>();
 
 
 
