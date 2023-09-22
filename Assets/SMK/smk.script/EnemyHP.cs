@@ -23,9 +23,9 @@ public class EnemyHP : KHHHealth
         enemy = GetComponent<Enemy>();
     }
 
-    public override void Hit(float damage)
+    public override void Hit(float damage, KHHKartRank kart)
     {
-        base.Hit(damage);
+        base.Hit(damage, kart);
         //일정 시간이 지나면 UI 비활성화
 
         if (health > 0)

@@ -6,6 +6,7 @@ using UnityEngine;
 public class EnemyAttack : MonoBehaviour
 {
     EnemyEye enemyEye;
+    KHHKartRank kartRank;
 
     public GameObject bulletEffect;
     public int bulletCount = 0;
@@ -28,6 +29,7 @@ public class EnemyAttack : MonoBehaviour
         bulletCount = 0;
         enemyAttackline = GetComponent<LineRenderer>();
         enemyEye = GetComponent<EnemyEye>();
+        kartRank = GetComponent<KHHKartRank>();
 
     }
 
@@ -77,7 +79,7 @@ public class EnemyAttack : MonoBehaviour
                         //var bulletImpact = Instantiate(bulletEffect);
                         //bulletImpact.transform.position = hitInfo.point;
                         bulletTime = 0;
-                        enemyEye.visibleTargets[0].transform.GetComponentInParent<KHHHealth>().Hit(2);
+                        enemyEye.visibleTargets[0].transform.GetComponentInParent<KHHHealth>().Hit(2, kartRank);
                     }
                 }
                 else

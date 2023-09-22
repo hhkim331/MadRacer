@@ -135,23 +135,22 @@ public class Enemy : MonoBehaviour
     }
 
     
-    //상태 불러와서, bullet이면 enemystye
-    public void EnemyItem(Item.ItmeType itemType)
-    {
-        switch (itemType)
-        {
-            case Item.ItmeType.Bullet:
-                enemyAttack.BulletAdd();
-                break;
-            case Item.ItmeType.Booster:
-                boosterGauge = boosterMaxGauge;
-                break;
-            case Item.ItmeType.attack:
-                enemyAttack.MeleeAttack();
-                break;
-            default:
-                break;
-        }
-    }
-
+    ////상태 불러와서, bullet이면 enemystye
+    //public void EnemyItem(Item.ItmeType itemType)
+    //{
+    //    switch (itemType)
+    //    {
+    //        case Item.ItmeType.Bullet:
+    //            enemyAttack.BulletAdd();
+    //            break;
+    //        case Item.ItmeType.Booster:
+    //            boosterGauge = boosterMaxGauge;
+    //            break;
+    //        case Item.ItmeType.attack:
+    //            enemyAttack.MeleeAttack();
+    //            break;
+    //        default:
+    //            break;
+    //    }
+    //}
 }
