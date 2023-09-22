@@ -156,7 +156,7 @@ public class KHHWeapon : MonoBehaviour
         }
         else
         {
-            fireTime = fireDelay;
+            fireTime = fireDelay; 
             bulletText.transform.localScale = new Vector3(-0.05f, 0.05f, 0.05f);
             bulletText.transform.localPosition = new Vector3(0, 0.1f, 0);
         }
