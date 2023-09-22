@@ -3558,6 +3558,10 @@ PrefabInstance:
       propertyPath: viewRadius
       value: 25
       objectReference: {fileID: 0}
+    - target: {fileID: 8037933237495302548, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
 --- !u!1 &243096181
@@ -5498,6 +5502,7 @@ MonoBehaviour:
   bulletItem: {fileID: 0}
   explosionPrefab: {fileID: 0}
   postProcessProfile: {fileID: 11400000, guid: 6a354086c8e766c43bb492b6efa318fa, type: 2}
+  hitAnimator: {fileID: 0}
 --- !u!114 &395740604
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5510,8 +5515,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b6343bd4f655fb49ae765d8fc673288, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myKartRank: {fileID: 0}
   rankText: {fileID: 0}
   lapText: {fileID: 0}
+  infoText: {fileID: 0}
 --- !u!114 &395740605
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5524,17 +5531,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc427883bce29fa47bc8fa30d121d0a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  name: 
   isFinish: 0
   rank: 0
   lap: 0
   finalLap: 2
-  wayPointIndex: 0
+  finalRank: 0
+  time: 0
+  waypointIndex: 0
   wayPercent: 0
   itemPrefab: {fileID: 0}
   waypointItemSpawnInfos: []
   prevWaypoint: {fileID: 0}
   nextWaypoint: {fileID: 0}
-  itemSpawnPoints: []
   itemPrefabs: []
 --- !u!114 &395740606
 MonoBehaviour:
@@ -5550,6 +5559,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletMax: 250
   bulletText: {fileID: 839725168}
+  gripRight: {fileID: 0}
   laser: {fileID: 52283778}
   gunBody: {fileID: 1650632704}
   gunBarrel: {fileID: 276300678}
@@ -5558,8 +5568,10 @@ MonoBehaviour:
   metalEffect: {fileID: 1000010355441670, guid: 6aefc11fb4d4cbf4a88f115839a7ef9e, type: 3}
   sandEffect: {fileID: 1000012142692022, guid: 800ef6c97664b5844bbef16848ed09d3, type: 3}
   stoneEffect: {fileID: 1000010844420130, guid: 92cac2166432c0046b935155b209bf46, type: 3}
-  bow: {fileID: 0}
   inven: {fileID: 0}
+  subWeaponNotice: {fileID: 0}
+  bow: {fileID: 0}
+  saw: {fileID: 0}
 --- !u!114 &395740607
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5595,7 +5607,6 @@ MonoBehaviour:
   targetSpeed: 40
   normalSpeed: 40
   boostMultiply: 1.5
-  gaugeBoostImage: {fileID: 1596351306}
   boostEffect: {fileID: 1620728827}
   driftRotMultifly: 1.5
   driftSpeedMultifly: 0.7
@@ -5608,6 +5619,8 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 1
+  shieldObjs: []
+  gaugeImage: {fileID: 0}
 --- !u!54 &395740609
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -20807,6 +20820,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 8037933237495302548, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
 --- !u!1 &1564084451
@@ -21334,17 +21351,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.19, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1596351306 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 9115380156320080305, guid: be27701706ad1e94dbeebfe6be7768da, type: 3}
-  m_PrefabInstance: {fileID: 6218817961301621898}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1597804661
 GameObject:
   m_ObjectHideFlags: 0
