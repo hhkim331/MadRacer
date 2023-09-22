@@ -3067,6 +3067,7 @@ GameObject:
   - component: {fileID: 4667048316251629700}
   - component: {fileID: 5766413230043917670}
   - component: {fileID: 1144060380}
+  - component: {fileID: 772970602004358802}
   - component: {fileID: 1144060388}
   - component: {fileID: 507324633}
   - component: {fileID: 8037933237495302548}
@@ -3138,19 +3139,10 @@ MonoBehaviour:
   model: {fileID: 5251671850368336712}
   modelType: 1
   state: 0
-  fireTime: 0.5
-  bulletFactory: {fileID: 5925654299909838073, guid: 840085c1d013b0b45aa54187525b3825, type: 3}
-  firePosition: {fileID: 4667048315107771221}
-  boosterMaxGauge: 250
   boosterGauge: 0
-  bulletCount: 0
-  bulletMaxCount: 250
-  bulletTime: 0.1
-  bulletDelay: 0.1
+  boosterMaxGauge: 250
   driftREffect: {fileID: 100002, guid: 20b31fcfaed0cb842a56fbbe2419428f, type: 3}
   driftLEffect: {fileID: 100002, guid: 20b31fcfaed0cb842a56fbbe2419428f, type: 3}
-  bulletEffect: {fileID: 100002, guid: 20b31fcfaed0cb842a56fbbe2419428f, type: 3}
-  muzzle: {fileID: 4667048315107771221}
 --- !u!114 &5766413230043917670
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3189,6 +3181,25 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &772970602004358802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4667048316251630457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e89183b1604cd0248a4052563b5876f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletEffect: {fileID: 1000010355441670, guid: 6aefc11fb4d4cbf4a88f115839a7ef9e, type: 3}
+  bulletCount: 0
+  bulletMaxCount: 250
+  bulletTime: 0.1
+  bulletDelay: 0.1
+  fireTime: 0
+  muzzle: {fileID: 4667048315107771221}
 --- !u!120 &1144060388
 LineRenderer:
   m_ObjectHideFlags: 0

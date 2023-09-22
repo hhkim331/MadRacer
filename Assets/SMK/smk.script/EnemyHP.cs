@@ -41,6 +41,7 @@ public class EnemyHP : KHHHealth
 
     public override void Die()
     {
+        //죽었을 시 사운드 활성화 
         base.Die();
         enemy.enabled = false;
         _waypointFollow.enabled = false;
