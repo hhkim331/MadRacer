@@ -12319,6 +12319,10 @@ PrefabInstance:
       value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 8037933237495302548, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: name
+      value: "\uC774\uC9C0\uC624"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8037933237495302548, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
       propertyPath: nextWaypoint
       value: 
       objectReference: {fileID: 520347996}
@@ -23142,6 +23146,10 @@ PrefabInstance:
       value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 8037933237495302548, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: name
+      value: "Zl\uC874\uB3C4\uC801"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8037933237495302548, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
       propertyPath: nextWaypoint
       value: 
       objectReference: {fileID: 520347996}
@@ -32898,6 +32906,10 @@ PrefabInstance:
       value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 8037933237495302548, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: name
+      value: "\uAE40\uD615\uD6C8"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8037933237495302548, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
       propertyPath: nextWaypoint
       value: 
       objectReference: {fileID: 520347996}
@@ -36783,6 +36795,10 @@ PrefabInstance:
     - target: {fileID: 4667048316251630457, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8037933237495302548, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: name
+      value: "\uC11C\uBBFC\uACBD"
       objectReference: {fileID: 0}
     - target: {fileID: 8037933237495302548, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
       propertyPath: nextWaypoint
