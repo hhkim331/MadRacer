@@ -5,6 +5,7 @@ using static KHHTarget;
 public class KHHWeapon : MonoBehaviour
 {
     KHHInput input;
+    KHHKartRank kartRank;
 
     //fire
     int bulletCount = 0;
@@ -29,6 +30,8 @@ public class KHHWeapon : MonoBehaviour
     float fireLineTime = 0.0f;
     float fireLineDelay = 0.05f;
 
+    public Transform gripRight;
+
     public KHHLaser laser;
     public Transform gunBody;
     public Transform gunBarrel;
@@ -39,18 +42,26 @@ public class KHHWeapon : MonoBehaviour
     public GameObject sandEffect;
     public GameObject stoneEffect;
 
+    bool gripSubWeapon = false;
+    bool subFire = false;
     GameObject subWeapon;
-    public GameObject bow;
     public Transform inven;
+    public GameObject subWeaponNotice;
+    public GameObject bow;
+    CrossBow crossBow;
+
+    float pingPongTime = 0;
 
     // Start is called before the first frame update
     void Start()
     {
         input = GetComponent<KHHInput>();
+        kartRank = GetComponent<KHHKartRank>();
         fireLine = firePos.GetComponent<LineRenderer>();
         BulletCount = 250;
     }
 
+    public Animator saw;
     // Update is called once per frame
     void Update()
     {
@@ -67,69 +78,114 @@ public class KHHWeapon : MonoBehaviour
             }
         }
 
-        UpdateFire();
+        if (gripSubWeapon)
+        {
+            UpdateSubWeapon();
+        }
+        else
+        {
+            UpdateFire();
+            if (subWeapon != null)
+            {
+                if (input.InputGrip)
+                    GripWeapon();
+
+                //notice를 위아래로 반복이동
+                if (!gripSubWeapon)
+                {
+                    pingPongTime += Time.deltaTime;
+                    subWeaponNotice.transform.localPosition = new Vector3(-0.05f, 0.25f + Mathf.PingPong(pingPongTime * 0.2f, 0.1f), 0.1f);
+                }
+            }
+        }
     }
 
     void UpdateFire()
     {
         gunBody.LookAt(laser.HitPoint);
-        if (input.InputFire && bulletCount > 0)
+        if (input.InputFire)
         {
-            fireTime += Time.deltaTime;
-            if (fireTime > fireDelay)
+            if (bulletCount > 0)
             {
-                BulletCount--;
-                fireTime = 0;
-                fireLineOn = true;
-                fireLine.enabled = true;
-                fireLineTime = 0f;
-                fireLine.SetPosition(0, firePos.position);
-                fireLine.SetPosition(1, laser.HitPoint);
-                muzzleFlash.Play();
-                SoundManager.instance.PlaySFX("Fire");
-
-                KHHHealth health = laser.hitObj.GetComponentInParent<KHHHealth>();
-                if (health != null)
-                    health.Hit(10);
-
-                KHHTarget target = laser.hitObj.GetComponentInParent<KHHTarget>();
-                if(target!=null)
+                fireTime += Time.deltaTime;
+                if (fireTime > fireDelay)
                 {
-                    if (target.hitType == KHHTarget.HitType.Metal)
+                    BulletCount--;
+                    fireTime = 0;
+                    fireLineOn = true;
+                    fireLine.enabled = true;
+                    fireLineTime = 0f;
+                    fireLine.SetPosition(0, firePos.position);
+                    fireLine.SetPosition(1, laser.HitPoint);
+                    muzzleFlash.Play();
+                    SoundManager.instance.PlaySFX("Fire");
+
+                    KHHHealth health = laser.hitObj.GetComponentInParent<KHHHealth>();
+                    if (health != null)
+                        health.Hit(10, kartRank);
+
+                    KHHTarget target = laser.hitObj.GetComponentInParent<KHHTarget>();
+                    if (target != null)
                     {
-                        Instantiate(metalEffect, laser.HitPoint, Quaternion.LookRotation(laser.HitNormal));
-                    }
-                    else if (target.hitType == KHHTarget.HitType.Sand)
-                    {
-                        Instantiate(sandEffect, laser.HitPoint, Quaternion.LookRotation(laser.HitNormal));
-                    }
-                    else if (target.hitType == KHHTarget.HitType.Stone)
-                    {
-                        Instantiate(stoneEffect, laser.HitPoint, Quaternion.LookRotation(laser.HitNormal));
+                        if (target.hitType == KHHTarget.HitType.Metal)
+                        {
+                            Instantiate(metalEffect, laser.HitPoint, Quaternion.LookRotation(laser.HitNormal));
+                        }
+                        else if (target.hitType == KHHTarget.HitType.Sand)
+                        {
+                            Instantiate(sandEffect, laser.HitPoint, Quaternion.LookRotation(laser.HitNormal));
+                        }
+                        else if (target.hitType == KHHTarget.HitType.Stone)
+                        {
+                            Instantiate(stoneEffect, laser.HitPoint, Quaternion.LookRotation(laser.HitNormal));
+                        }
                     }
                 }
-            }
 
-            bulletText.transform.localScale = new Vector3(-0.05f, 0.05f, 0.05f) * laser.Distance;
-            bulletText.transform.position = laser.HitPoint + Camera.main.transform.right * laser.Distance * 0.05f + Camera.main.transform.up * laser.Distance * 0.05f;
-            gunBarrel.Rotate(Vector3.forward * 1000f * Time.deltaTime);
+                bulletText.transform.localScale = new Vector3(-0.05f, 0.05f, 0.05f) * laser.Distance;
+                bulletText.transform.position = laser.HitPoint + Camera.main.transform.right * laser.Distance * 0.05f + Camera.main.transform.up * laser.Distance * 0.05f;
+                gunBarrel.Rotate(Vector3.forward * 1000f * Time.deltaTime);
+            }
+            else
+            {
+                fireTime = fireDelay;
+                bulletText.transform.localScale = new Vector3(-0.05f, 0.05f, 0.05f);
+                bulletText.transform.localPosition = new Vector3(0, 0.1f, 0);
+                KHHGameManager.instance.PlayerUI.NoBullet();
+            }
         }
         else
         {
             fireTime = fireDelay;
-
             bulletText.transform.localScale = new Vector3(-0.05f, 0.05f, 0.05f);
             bulletText.transform.localPosition = new Vector3(0, 0.1f, 0);
-        }
-
-        if (input.InputGrip)
-        {
-            Debug.Log("Sub");
         }
 
         if (input.InputShield)
         {
             Debug.Log("Shield");
+        }
+    }
+
+    void UpdateSubWeapon()
+    {
+        if (crossBow == null)
+        {
+            gripSubWeapon = false;
+            return;
+        }
+
+        if (input.InputFire)
+        {
+            if (subFire == false)
+            {
+                subFire = true;
+                crossBow.UpdateAttack();
+            }
+        }
+        else
+        {
+            subFire = false;
         }
     }
 
@@ -141,7 +197,42 @@ public class KHHWeapon : MonoBehaviour
 
     public void SetWeapon()
     {
-        //if (subWeapon == null)
-        //    subWeapon = Instantiate(bow, inven);
+        if (subWeapon == null)
+        {
+            subWeapon = Instantiate(bow, inven);
+            KHHGameManager.instance.PlayerUI.SubWeaponReady();
+            subWeaponNotice.SetActive(true);
+        }
+    }
+
+    void GripWeapon()
+    {
+        float distance = Vector3.Distance(gripRight.position, subWeapon.transform.position);
+        if (distance < 1)
+        {
+            gripSubWeapon = true;
+            subWeaponNotice.SetActive(false);
+            subWeaponNotice.transform.localPosition = Vector3.zero;
+
+            subWeapon.transform.SetParent(gripRight);
+            subWeapon.transform.localPosition = Vector3.zero;
+            subWeapon.transform.localRotation = Quaternion.identity;
+            subWeapon.transform.localScale = Vector3.one * 0.1f;
+            crossBow = subWeapon.GetComponent<CrossBow>();
+
+            subWeapon = null;
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        //적 레이어
+        if (other.gameObject.layer == LayerMask.NameToLayer("Enemy"))
+        {
+            saw.SetTrigger("Active");
+            KHHHealth health = other.GetComponentInParent<KHHHealth>();
+            if (health != null)
+                health.Hit(999, kartRank);
+        }
     }
 }

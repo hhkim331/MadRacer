@@ -17,10 +17,10 @@ public class Item : MonoBehaviour
     public class DropPointInfo
     {
         public Transform dropPoint;  // 드롭 지점의 위치
-        public ItmeType itemType;  // 드롭할 아이템 타입
+        public ItemType itemType;  // 드롭할 아이템 타입
     }
 
-    public enum ItmeType
+    public enum ItemType
     {
         Bullet,
         Booster,
@@ -28,7 +28,7 @@ public class Item : MonoBehaviour
         
 
     }
-    public ItmeType itemType;
+    public ItemType itemType;
     private Dictionary<Transform, float> lastDropTimeByPoint = new Dictionary<Transform, float>();
     
     public List<DropPointInfo> dropPointInfos;
@@ -98,7 +98,7 @@ public class Item : MonoBehaviour
     public float distanceInFrontOfCar = 100f;  // 차량 전방의 거리
     public float heightAboveCar = 50f;  // 차량 위의 높이
 
-    Transform GetNearestDropPoint(out ItmeType nearestItemType)
+    Transform GetNearestDropPoint(out ItemType nearestItemType)
     {
         float minDistance = float.MaxValue;
         Transform nearestDropPoint = null;
@@ -120,7 +120,7 @@ public class Item : MonoBehaviour
     public GameObject itemPrefab;  // 아이템 프리팹
     void CheckForItemDrop()
     {
-        ItmeType nearestItemType;
+        ItemType nearestItemType;
         Transform nearestDropPoint = GetNearestDropPoint(out nearestItemType);
 
         if (nearestDropPoint != null)  // 여기서 추가된 조건문!
@@ -142,7 +142,7 @@ public class Item : MonoBehaviour
 
         return Time.time - lastDropTimeByPoint[dropPoint] > dropCooldown;
     }
-    void SpawnItem(Transform dropPoint, ItmeType typeToSpawn)
+    void SpawnItem(Transform dropPoint, ItemType typeToSpawn)
     {
         Vector3 spawnPosition = dropPoint.position;
         GameObject droppedItem = Instantiate(itemPrefab, spawnPosition, Quaternion.identity);

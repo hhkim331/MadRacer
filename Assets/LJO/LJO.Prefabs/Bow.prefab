@@ -114,11 +114,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bowFactory: {fileID: 4007206006421385781, guid: 17826ab38617c154290eafd781ab0c6d, type: 3}
-  bow: {fileID: 0}
+  bow: {fileID: 812012611883900888}
   inven: {fileID: 0}
   FirePosition: {fileID: 812012612622714182}
-  speed: 5
-  gravity: {x: 0, y: -0.98100007, z: 0}
 --- !u!54 &812012611883900882
 Rigidbody:
   m_ObjectHideFlags: 0

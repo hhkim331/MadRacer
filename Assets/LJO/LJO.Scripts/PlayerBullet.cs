@@ -43,16 +43,7 @@ public class PlayerBullet : MonoBehaviour
         
         transform.position += velocity * Time.deltaTime;
 
-        //if (isHit)
-        //{
-        //    transform.rotation = hitRotation;
-        //    transform.position = hitPosition;
-        //}
-        //else
-        //{
-        //    rb.transform.forward = rb.velocity.normalized;
-        //}
-
+       
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -67,5 +58,16 @@ public class PlayerBullet : MonoBehaviour
             GetComponent<Collider>().enabled = false;
             
         }
+
+        if (isHit)
+        {
+            transform.rotation = hitRotation;
+            transform.position = hitPosition;
+        }
+        else
+        {
+            rb.transform.forward = rb.velocity.normalized;
+        }
+
     }
 }

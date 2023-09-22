@@ -9,11 +9,11 @@ public class ItemDropManager : MonoBehaviour
     {
         public int waypointIndex;
         public Transform dropPoint;
-        public Item.ItmeType itemType;
+        public Item.ItemType itemType;
     }
     public List<DropInfo> dropInfos = new List<DropInfo>();
 
-    public Transform GetDropPointForWaypoint(int waypointIndex, out Item.ItmeType itemType)
+    public Transform GetDropPointForWaypoint(int waypointIndex, out Item.ItemType itemType)
     {
         foreach (var info in dropInfos)
         {

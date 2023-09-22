@@ -8,6 +8,10 @@ public class KHHGameManager : MonoBehaviour
 {
     public static KHHGameManager instance;
 
+    KHHPlayerUI playerUI;
+    public KHHPlayerUI PlayerUI { get { return playerUI; } }
+
+    public float time = 0;
     //start
     public bool isStart = false;
     public bool isEnd = false;
@@ -21,10 +25,10 @@ public class KHHGameManager : MonoBehaviour
     public Transform vrCam;
     public PostProcessProfile postProcessProfile;
 
-
     private void Awake()
     {
         instance = this;
+        playerUI = GetComponent<KHHPlayerUI>();
     }
 
     private void Start()
@@ -53,6 +57,7 @@ public class KHHGameManager : MonoBehaviour
         SoundManager.instance.PlaySFX("StartCountEnd");
         yield return new WaitForSeconds(0.1f);
         isStart = true;
+        time = 0;
         yield return new WaitForSeconds(0.9f);
         startText.gameObject.SetActive(false);
         rankUIObj.SetActive(true);
@@ -63,17 +68,24 @@ public class KHHGameManager : MonoBehaviour
     {
         if (!isStart) return;
 
+        time += Time.deltaTime;
         //모든 카트 순위 계산
-        foreach (var item in kartRanks)
+        foreach (var kartRank in kartRanks)
         {
-            item.rank = 1;
+            if (kartRank.isFinish) continue;
+            kartRank.rank = 1;
             foreach (var other in kartRanks)
             {
-                if (item == other) continue;
-                if (item.lap > other.lap) continue;
-                if (item.lap == other.lap && item.wayPointIndex > other.wayPointIndex) continue;
-                if (item.lap == other.lap && item.wayPointIndex == other.wayPointIndex && item.wayPercent > other.wayPercent) continue;
-                item.rank++;
+                if (other.isFinish)
+                {
+                    kartRank.rank++;
+                    continue;
+                }
+                if (kartRank == other) continue;
+                if (kartRank.lap > other.lap) continue;
+                if (kartRank.lap == other.lap && kartRank.nextWaypoint.waypointIndex > other.nextWaypoint.waypointIndex) continue;
+                if (kartRank.lap == other.lap && kartRank.nextWaypoint.waypointIndex == other.nextWaypoint.waypointIndex && kartRank.wayPercent > other.wayPercent) continue;
+                kartRank.rank++;
             }
         }
     }

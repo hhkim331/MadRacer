@@ -1,4 +1,5 @@
 using UnityEngine;
+using static KHHModel;
 
 public class KHHModel : MonoBehaviour
 {
@@ -18,12 +19,21 @@ public class KHHModel : MonoBehaviour
     public Material[] bodyMats;
     public Material[] interiorMats;
     public Material[] weaponMats;
+    public KHHModel.ModelType modelType = KHHModel.ModelType.Black;
 
     // Start is called before the first frame update
     public void Set(ModelType modelType)
     {
+        this.modelType = modelType;
         SetModel((int)modelType);
+        Debug.Log("Model Type: " + modelType);
+
     }
+    public KHHModel.ModelType CurrentModelType
+    {
+        get { return modelType; }
+    }
+
 
     void SetModel(int type)
     {
