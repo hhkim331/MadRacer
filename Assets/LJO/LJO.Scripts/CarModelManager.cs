@@ -42,6 +42,7 @@ public class CarModelManager : MonoBehaviour
             // ¾À ÀüÈ¯
             SceneManager.LoadScene("LJO_Test");
         }
+
     }
 
     void ChangeToNextModel()
