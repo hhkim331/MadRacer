@@ -20,6 +20,7 @@ public class KHHGameManager : MonoBehaviour
     //end
     [Header("End")]
     bool isEnd = false;
+    public GameObject endingObj;
     public Transform rankInfoParent;
     public GameObject rankInfoPrefab;
     KHHRankInfo[] rankInfos;
@@ -73,6 +74,7 @@ public class KHHGameManager : MonoBehaviour
     void Update()
     {
         if (!isStart) return;
+        time += Time.deltaTime;
         if (isEnd)
         {
             for (int i = 0; i < kartRanks.Length; i++)
@@ -80,7 +82,6 @@ public class KHHGameManager : MonoBehaviour
             return;
         }
 
-        time += Time.deltaTime;
         //모든 카트 순위 계산
         foreach (var kartRank in kartRanks)
         {
@@ -100,6 +101,8 @@ public class KHHGameManager : MonoBehaviour
                 kartRank.rank++;
             }
         }
+
+        GameEnd();
     }
 
     public void GameEnd()
@@ -126,7 +129,8 @@ public class KHHGameManager : MonoBehaviour
 
         yield return new WaitForSeconds(0.25f);
         vrCam.transform.parent = null;
-        vrCam.transform.position = new Vector3(0, 5000, 0);
+        vrCam.transform.position = new Vector3(-53.77964f, 5012, -90);
+        endingObj.SetActive(true);
         gameUIObj.SetActive(false);
 
         while (value < 1)
