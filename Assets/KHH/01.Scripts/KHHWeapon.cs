@@ -217,7 +217,7 @@ public class KHHWeapon : MonoBehaviour
             subWeapon.transform.SetParent(gripRight);
             subWeapon.transform.localPosition = Vector3.zero;
             subWeapon.transform.localRotation = Quaternion.identity;
-            subWeapon.transform.localScale = Vector3.one * 0.1f;
+            subWeapon.transform.localScale = Vector3.one;
             crossBow = subWeapon.GetComponent<CrossBow>();
 
             subWeapon = null;

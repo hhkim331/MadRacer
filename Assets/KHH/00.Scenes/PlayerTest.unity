@@ -7810,7 +7810,7 @@ MonoBehaviour:
   stoneEffect: {fileID: 1000010844420130, guid: 92cac2166432c0046b935155b209bf46, type: 3}
   inven: {fileID: 1247555260}
   subWeaponNotice: {fileID: 2032826856}
-  bow: {fileID: 812012611883900888, guid: 697a7a896a77c22439d36c3cc152a049, type: 3}
+  bow: {fileID: 5699944476039683156, guid: e758f94f948a0dc48b690ba272bf093a, type: 3}
   saw: {fileID: 678280918}
 --- !u!114 &429817434
 MonoBehaviour:
@@ -7898,7 +7898,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 429817432}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.1, z: 0}
+  m_LocalPosition: {x: 0, y: 0.5, z: 160}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -26215,7 +26215,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2037080, guid: 126d619cf4daa52469682f85c1378b4a, type: 3}
       propertyPath: m_CullingMask.m_Bits
-      value: 71703
+      value: 6363159
       objectReference: {fileID: 0}
     - target: {fileID: 1054112583220142, guid: 126d619cf4daa52469682f85c1378b4a, type: 3}
       propertyPath: m_Layer
