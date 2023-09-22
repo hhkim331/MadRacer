@@ -1,5 +1,4 @@
 using System.Collections;
-using System.ComponentModel;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,6 +7,7 @@ public class KHHKart : MonoBehaviour
     KHHInput input;
     KHHWeapon weapon;
     KHHKartRank myKartRank;
+    KHHPlayerHealth myHealth;
     Rigidbody rb;
 
     public KHHModel model;
@@ -35,21 +35,7 @@ public class KHHKart : MonoBehaviour
 
     //boost
     public float boostMultiply = 1.8f;
-    float boostMax = 100f;
-    float boostGauge = 100f;
-    public float BoostGauge
-    {
-        get { return boostGauge; }
-        set
-        {
-            boostGauge = value;
-            if (boostGauge < 0) boostGauge = 0;
-            if (boostGauge > boostMax) boostGauge = boostMax;
-            gaugeBoostImage.fillAmount = boostGauge / boostMax;
-        }
-    }
     float boostUse = 12f;
-    public Image gaugeBoostImage;
     public GameObject boostEffect;
 
     //drift
@@ -77,12 +63,38 @@ public class KHHKart : MonoBehaviour
     float boostLeftTime = 0f;
     Coroutine coBoost;
 
+    //쉴드
+    bool shieldActive = false;
+    public bool ShieldActive
+    {
+        get { return shieldActive; }
+    }
+    float shieldUse = 12f;
+    public Transform[] shieldObjs;
+
+    //게이지
+    float gaugeMax = 100f;
+    float gauge = 100f;
+    public float Gauge
+    {
+        get { return gauge; }
+        set
+        {
+            gauge = value;
+            if (gauge < 0) gauge = 0;
+            if (gauge > gaugeMax) gauge = gaugeMax;
+            gaugeImage.fillAmount = gauge / gaugeMax;
+        }
+    }
+    public Image gaugeImage;
+
     // Start is called before the first frame update
     void Start()
     {
         input = GetComponent<KHHInput>();
         weapon = GetComponent<KHHWeapon>();
         myKartRank = GetComponent<KHHKartRank>();
+        myHealth = GetComponent<KHHPlayerHealth>();
         myKartRank.IsMine = true;
 
         rb = GetComponent<Rigidbody>();
@@ -94,7 +106,7 @@ public class KHHKart : MonoBehaviour
         }
 
         model.Set(modelType);
-        BoostGauge = boostMax;
+        Gauge = gaugeMax;
 
         //wheel
         rb.centerOfMass = new Vector3(0, -1f, 0);
@@ -131,6 +143,7 @@ public class KHHKart : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        if (myHealth.IsDead) return;
         if (myKartRank.isFinish) return;
         if (KHHGameManager.instance.isStart == false)
         {
@@ -152,6 +165,7 @@ public class KHHKart : MonoBehaviour
         UpdateMove();
         if (input.InputReturn)
             ReturnTrack();
+        UpdateShield();
     }
 
     void UpdateMove()
@@ -162,11 +176,11 @@ public class KHHKart : MonoBehaviour
             //부스트
             if (input.InputBoost)
             {
-                if (BoostGauge > 0)
+                if (Gauge > 0)
                 {
                     boostEffect.SetActive(true);
                     targetSpeed = normalSpeed * boostMultiply;
-                    BoostGauge -= Time.fixedDeltaTime * boostUse;
+                    Gauge -= Time.fixedDeltaTime * boostUse;
                 }
                 else
                 {
@@ -222,7 +236,7 @@ public class KHHKart : MonoBehaviour
                     if (addSpeed < 0) addSpeed = 0;
                     //드리프트 충전
                     if (!input.InputBoost)
-                        BoostGauge += Time.fixedDeltaTime * driftCharge;
+                        Gauge += Time.fixedDeltaTime * driftCharge;
                     break;
                 case MoveState.Brake:
                     //물리재질
@@ -368,6 +382,29 @@ public class KHHKart : MonoBehaviour
         isBoost = false;
     }
 
+    void UpdateShield()
+    {
+        //쉴드
+        if (input.InputShield)
+        {
+            if (Gauge > 0)
+            {
+                shieldActive = true;
+                Gauge -= Time.fixedDeltaTime * shieldUse;
+            }
+            else
+            {
+                shieldActive = false;
+                KHHGameManager.instance.PlayerUI.NoEnergyShield();
+            }
+        }
+        else
+            shieldActive = false;
+
+        foreach (Transform shieldObj in shieldObjs)
+            shieldObj.localScale = Vector3.MoveTowards(shieldObj.localScale, shieldActive ? Vector3.one : Vector3.zero, Time.fixedDeltaTime * 20);
+    }
+
     public void ApplyItem(Item.ItemType itemType)
     {
         switch (itemType)
@@ -377,7 +414,7 @@ public class KHHKart : MonoBehaviour
                 SoundManager.instance.PlaySFX("Reload");
                 break;
             case Item.ItemType.Booster:
-                BoostGauge = boostMax;
+                Gauge = gaugeMax;
                 break;
             case Item.ItemType.attack:
                 weapon.SetWeapon();

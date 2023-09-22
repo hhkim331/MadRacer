@@ -45,9 +45,12 @@ public class KHHWeapon : MonoBehaviour
     bool gripSubWeapon = false;
     bool subFire = false;
     GameObject subWeapon;
-    public GameObject bow;
     public Transform inven;
+    public GameObject subWeaponNotice;
+    public GameObject bow;
     CrossBow crossBow;
+
+    float pingPongTime = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -82,8 +85,18 @@ public class KHHWeapon : MonoBehaviour
         else
         {
             UpdateFire();
-            if (subWeapon != null && input.InputGrip)
-                GripWeapon();
+            if (subWeapon != null)
+            {
+                if (input.InputGrip)
+                    GripWeapon();
+
+                //notice를 위아래로 반복이동
+                if (!gripSubWeapon)
+                {
+                    pingPongTime += Time.deltaTime;
+                    subWeaponNotice.transform.localPosition = new Vector3(-0.05f, 0.25f + Mathf.PingPong(pingPongTime * 0.2f, 0.1f), 0.1f);
+                }
+            }
         }
     }
 
@@ -162,9 +175,9 @@ public class KHHWeapon : MonoBehaviour
             return;
         }
 
-        if(input.InputFire)
+        if (input.InputFire)
         {
-            if(subFire==false)
+            if (subFire == false)
             {
                 subFire = true;
                 crossBow.UpdateAttack();
@@ -188,6 +201,7 @@ public class KHHWeapon : MonoBehaviour
         {
             subWeapon = Instantiate(bow, inven);
             KHHGameManager.instance.PlayerUI.SubWeaponReady();
+            subWeaponNotice.SetActive(true);
         }
     }
 
@@ -197,11 +211,16 @@ public class KHHWeapon : MonoBehaviour
         if (distance < 1)
         {
             gripSubWeapon = true;
+            subWeaponNotice.SetActive(false);
+            subWeaponNotice.transform.localPosition = Vector3.zero;
+
             subWeapon.transform.SetParent(gripRight);
             subWeapon.transform.localPosition = Vector3.zero;
             subWeapon.transform.localRotation = Quaternion.identity;
             subWeapon.transform.localScale = Vector3.one * 0.1f;
             crossBow = subWeapon.GetComponent<CrossBow>();
+
+            subWeapon = null;
         }
     }
 

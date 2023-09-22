@@ -8,7 +8,6 @@ public class KHHPlayerUI : MonoBehaviour
     const string playerKillEnemy = "당신이 {0}(을)를 처치했습니다!!!";
     const string enemyKillPlayer = "{0}이 당신을 죽였습니다!!!";
     const string enemyKillEnemy = "{0}이 {1}(을)를 처치했습니다!!!";
-    const string subWeaponGrab = "사용하기 위해 잡아주세요";
     const string subWeaponReady = "당신의 특별한 무기가 준비 되었습니다!";
     const string noEnergyBoost = "<color=#4285f4>에너지</color>가 부족해서 부스트를 사용할 수 없습니다";
     const string noEnergyShield = "<color=#4285f4>에너지</color>가 부족해서 쉴드를 사용할 수 없습니다";
@@ -59,13 +58,6 @@ public class KHHPlayerUI : MonoBehaviour
         infoTime = infoTimeMax;
         infoText.gameObject.SetActive(true);
         infoText.text = string.Format(enemyKillEnemy, enemyName, enemyName2);
-    }
-
-    public void SubWeaponGrab()
-    {
-        infoTime = infoTimeMax;
-        infoText.gameObject.SetActive(true);
-        infoText.text = subWeaponGrab;
     }
 
     public void SubWeaponReady()
