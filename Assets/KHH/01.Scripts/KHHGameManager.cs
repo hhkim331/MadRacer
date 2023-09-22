@@ -10,21 +10,27 @@ public class KHHGameManager : MonoBehaviour
 
     KHHPlayerUI playerUI;
     public KHHPlayerUI PlayerUI { get { return playerUI; } }
-
     public float time = 0;
+
     //start
+    [Header("Start")]
     public bool isStart = false;
-    public bool isEnd = false;
     public TextMeshProUGUI startText;
 
-    public GameObject[] kartObjs;
+    //end
+    [Header("End")]
+    bool isEnd = false;
+    public Transform rankInfoParent;
+    public GameObject rankInfoPrefab;
+    KHHRankInfo[] rankInfos;
 
+    [Header("ETC")]
+    public GameObject[] kartObjs;
+    public GameObject gameUIObj;
     public GameObject rankUIObj;
     KHHKartRank[] kartRanks;
-
     public Transform vrCam;
     public PostProcessProfile postProcessProfile;
-
     private void Awake()
     {
         instance = this;
@@ -67,6 +73,12 @@ public class KHHGameManager : MonoBehaviour
     void Update()
     {
         if (!isStart) return;
+        if (isEnd)
+        {
+            for (int i = 0; i < kartRanks.Length; i++)
+                rankInfos[kartRanks[i].rank - 1].SetRankText(kartRanks[i].isFinish, kartRanks[i].name, kartRanks[i].time);
+            return;
+        }
 
         time += Time.deltaTime;
         //모든 카트 순위 계산
@@ -92,7 +104,9 @@ public class KHHGameManager : MonoBehaviour
 
     public void GameEnd()
     {
+        isEnd = true;
         StopEngineSound();
+        SetFinishRankInfo();
         StartCoroutine(CoGameEnd());
     }
 
@@ -113,8 +127,7 @@ public class KHHGameManager : MonoBehaviour
         yield return new WaitForSeconds(0.25f);
         vrCam.transform.parent = null;
         vrCam.transform.position = new Vector3(0, 5000, 0);
-        rankUIObj.transform.localPosition = Vector3.zero;
-        rankUIObj.transform.localScale = Vector3.one * 2f;
+        gameUIObj.SetActive(false);
 
         while (value < 1)
         {
@@ -124,7 +137,6 @@ public class KHHGameManager : MonoBehaviour
             colorGrading.colorFilter.value = color;
             yield return null;
         }
-        isEnd = true;
     }
 
     void StopEngineSound()
@@ -133,5 +145,16 @@ public class KHHGameManager : MonoBehaviour
         SoundManager.instance.StopEngine("EngineAccel");
         SoundManager.instance.StopEngine("EngineDrift");
         SoundManager.instance.StopEngine("EngineBrake");
+    }
+
+    void SetFinishRankInfo()
+    {
+        rankInfos = new KHHRankInfo[kartRanks.Length];
+        for (int i = 0; i < kartRanks.Length; i++)
+        {
+            GameObject obj = Instantiate(rankInfoPrefab, rankInfoParent);
+            rankInfos[i] = obj.GetComponent<KHHRankInfo>();
+            rankInfos[i].Set(i + 1);
+        }
     }
 }
