@@ -81,9 +81,10 @@ public class WaypointFollow : MonoBehaviour
         //이동
         //피격, 시작 후 시간 흐름으로 속도 증가.
         //if (!KHHGameManager.instance.isStart) return;
-
+        
         transform.position += transform.forward * speed * Time.deltaTime;
-
+        //사운드 실행.
+        EnemySound.Instance.Move();
 
 
         //회전

@@ -1,5 +1,3 @@
-using System;
-using System.Collections;
 using UnityEngine;
 using static KHHModel;
 
@@ -24,10 +22,8 @@ public class Enemy : MonoBehaviour
     public EnemyState state;
     //EnemyEye enemyEye;
     WaypointFollow waypointFollow;
-    EnemyHP enemyHP;
-    EnemyAttack enemyAttack;
 
-
+    public AudioSource sound;
     float currentTime;
     //public float fireTime;
     //public GameObject bulletFactory;
@@ -44,7 +40,7 @@ public class Enemy : MonoBehaviour
     //이펙트 효과들
     public GameObject driftREffect;
     public GameObject driftLEffect;
-
+   
     //LineRenderer enemyAttackline;
 
     //public Transform muzzle;
@@ -54,17 +50,10 @@ public class Enemy : MonoBehaviour
     {
         state = EnemyState.Move;
         boosterGauge = 0;
-        //bulletCount = 0;
 
         driftLEffect.SetActive(false);
         driftREffect.SetActive(false);
-        //enemyAttackline = GetComponent<LineRenderer>();
-        enemyHP = GetComponent<EnemyHP>();
-        //enemyEye = GetComponent<EnemyEye>();
         waypointFollow = GetComponent<WaypointFollow>();
-
-
-
     }
 
     private void Start()
@@ -148,7 +137,7 @@ public class Enemy : MonoBehaviour
     //            boosterGauge = boosterMaxGauge;
     //            break;
     //        case Item.ItmeType.attack:
-    //            enemyAttack.MeleeAttack();
+    //            enemyAttack.MeleeAttackAdd();
     //            break;
     //        default:
     //            break;
