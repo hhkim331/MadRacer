@@ -31,9 +31,10 @@ public class WaypointFollow : MonoBehaviour
 
 
     public KHHWaypoint waypoint;//향하는 곳.
-    public float normalSpeed = 0.1f;//평소 속도
-    public float acceleration = 30f;//가속
+    public float normalSpeed = 36;//평소 속도
+    public float acceleration = 55f;//가속
     public float breakForce = 0.01f;//감속
+    public float max;
     public float speed;
 
     public float currentTime;
@@ -50,39 +51,23 @@ public class WaypointFollow : MonoBehaviour
         waypointAngleValue = waypoint.transform.rotation.eulerAngles.y;
 
         currentTime = 0;
-        speed = normalSpeed;
+        speed = 0;
         rb = GetComponent<Rigidbody>();
         rb.constraints = RigidbodyConstraints.FreezeRotationX;
         rb.constraints = RigidbodyConstraints.FreezeRotationZ;
 
         driftLEffect.SetActive(false);
         driftREffect.SetActive(false);
+        max = normalSpeed;
     }
 
     bool isRot;
     public Transform tr;
     void Update()
     {
-        if (!KHHGameManager.instance.isStart) return;
+        //if (!KHHGameManager.instance.isStart) return;
 
         UpdateFollow();
-
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            isRot = true;
-        }
-
-        if (isRot)
-        {
-            //회전
-            Vector3 dir = tr.position - transform.position;
-            dir.y = 0;
-            Vector3 dir2 = transform.forward;
-            dir2.y = 0;
-            dir = Vector3.Lerp(dir2, dir, Time.deltaTime);
-            dir.y = transform.forward.y;
-            transform.forward = dir;
-        }
 
     }
 
@@ -90,10 +75,10 @@ public class WaypointFollow : MonoBehaviour
     //이동
     void UpdateFollow()
     {
-
+        
         //시작 후 시간 흐름으로 속도 증가.
-        speed += 2 * Time.deltaTime;
-        speed = Mathf.Clamp(speed, 0, acceleration);
+        speed += 5 * Time.deltaTime;
+        speed = Mathf.Clamp(speed, 0, max);
         transform.position += transform.forward * speed * Time.deltaTime;
         //사운드 실행.
         EnemySound.Instance.Move();
@@ -104,7 +89,7 @@ public class WaypointFollow : MonoBehaviour
         dir.y = 0;
         Vector3 dir2 = transform.forward;
         dir2.y = 0;
-        dir = Vector3.Lerp(dir2, dir, Time.deltaTime * 0.1f);
+        dir = Vector3.MoveTowards(dir2, dir, Time.deltaTime * 4f);
         dir.y = transform.forward.y;
         transform.forward = dir;
 

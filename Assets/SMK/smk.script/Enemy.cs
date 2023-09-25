@@ -70,13 +70,12 @@ public class Enemy : MonoBehaviour
         //움직이는 상태일때, 스피드 가속
         if (boosterGauge >= 0)
         {
-            waypointFollow.speed += 5 * Time.deltaTime;
-            waypointFollow.speed = Mathf.Clamp(waypointFollow.speed, 0, waypointFollow.acceleration);
+            waypointFollow.max = waypointFollow.acceleration;
         }
         boosterGauge -= Time.deltaTime;
         if (boosterGauge <= 0)
         {
-            state = EnemyState.Move;
+            waypointFollow.max = waypointFollow.normalSpeed;
         }
     }
 
