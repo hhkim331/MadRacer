@@ -52,7 +52,7 @@ public class WaypointFollow : MonoBehaviour
     public Transform tr;
     void Update()
     {
-        //if (!KHHGameManager.instance.isStart) return;
+        if (!KHHGameManager.instance.isStart) return;
 
         UpdateFollow();
 
