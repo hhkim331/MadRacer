@@ -2384,7 +2384,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &121266579
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2406,6 +2406,7 @@ MonoBehaviour:
   bulletItem: {fileID: 4131127300465671443, guid: b0a18ca11e5907a4591dc3d763fa379c, type: 3}
   explosionPrefab: {fileID: 1000011797152326, guid: 032891c1e66b4594398c38966f484d2b, type: 3}
   postProcessProfile: {fileID: 11400000, guid: 6a354086c8e766c43bb492b6efa318fa, type: 2}
+  hitAnimator: {fileID: 0}
 --- !u!114 &121266580
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2439,7 +2440,9 @@ MonoBehaviour:
   rank: 0
   lap: 0
   finalLap: 2
-  wayPointIndex: 0
+  finalRank: 0
+  time: 0
+  waypointIndex: 0
   wayPercent: 0
   itemPrefab: {fileID: 0}
   waypointItemSpawnInfos: []
@@ -2469,8 +2472,9 @@ MonoBehaviour:
   metalEffect: {fileID: 1000010355441670, guid: 6aefc11fb4d4cbf4a88f115839a7ef9e, type: 3}
   sandEffect: {fileID: 1000012142692022, guid: 800ef6c97664b5844bbef16848ed09d3, type: 3}
   stoneEffect: {fileID: 1000010844420130, guid: 92cac2166432c0046b935155b209bf46, type: 3}
-  bow: {fileID: 812012611883900888, guid: 697a7a896a77c22439d36c3cc152a049, type: 3}
   inven: {fileID: 347742222}
+  subWeaponNotice: {fileID: 0}
+  bow: {fileID: 812012611883900888, guid: 697a7a896a77c22439d36c3cc152a049, type: 3}
   saw: {fileID: 0}
 --- !u!114 &121266583
 MonoBehaviour:
@@ -2507,7 +2511,6 @@ MonoBehaviour:
   targetSpeed: 40
   normalSpeed: 40
   boostMultiply: 1.5
-  gaugeBoostImage: {fileID: 1665937618}
   boostEffect: {fileID: 413585363}
   driftRotMultifly: 1.5
   driftSpeedMultifly: 0.7
@@ -2520,6 +2523,8 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 1
+  shieldObjs: []
+  gaugeImage: {fileID: 0}
 --- !u!54 &121266585
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -8071,35 +8076,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4ac86c9758c93784fad3d0f5172bfda3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.4
+      value: -3.359
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4ac86c9758c93784fad3d0f5172bfda3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.7190001
+      value: 2.588
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4ac86c9758c93784fad3d0f5172bfda3, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.442
+      value: 8.92
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4ac86c9758c93784fad3d0f5172bfda3, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.66949946
+      value: 0.69285
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4ac86c9758c93784fad3d0f5172bfda3, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.22753112
+      value: 0.14127569
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4ac86c9758c93784fad3d0f5172bfda3, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.6694996
+      value: -0.6928501
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4ac86c9758c93784fad3d0f5172bfda3, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.22753116
+      value: 0.14127572
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4ac86c9758c93784fad3d0f5172bfda3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: -37.541
+      value: 23.05
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4ac86c9758c93784fad3d0f5172bfda3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -8119,7 +8124,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 4ac86c9758c93784fad3d0f5172bfda3, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ac86c9758c93784fad3d0f5172bfda3, type: 3}
@@ -8294,7 +8299,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &399688901
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8316,6 +8321,7 @@ MonoBehaviour:
   bulletItem: {fileID: 4131127300465671443, guid: b0a18ca11e5907a4591dc3d763fa379c, type: 3}
   explosionPrefab: {fileID: 1000011797152326, guid: 032891c1e66b4594398c38966f484d2b, type: 3}
   postProcessProfile: {fileID: 11400000, guid: 6a354086c8e766c43bb492b6efa318fa, type: 2}
+  hitAnimator: {fileID: 0}
 --- !u!114 &399688902
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8349,7 +8355,9 @@ MonoBehaviour:
   rank: 0
   lap: 0
   finalLap: 2
-  wayPointIndex: 0
+  finalRank: 0
+  time: 0
+  waypointIndex: 0
   wayPercent: 0
   itemPrefab: {fileID: 0}
   waypointItemSpawnInfos: []
@@ -8379,8 +8387,9 @@ MonoBehaviour:
   metalEffect: {fileID: 1000010355441670, guid: 6aefc11fb4d4cbf4a88f115839a7ef9e, type: 3}
   sandEffect: {fileID: 1000012142692022, guid: 800ef6c97664b5844bbef16848ed09d3, type: 3}
   stoneEffect: {fileID: 1000010844420130, guid: 92cac2166432c0046b935155b209bf46, type: 3}
-  bow: {fileID: 812012611883900888, guid: 697a7a896a77c22439d36c3cc152a049, type: 3}
   inven: {fileID: 1975003836}
+  subWeaponNotice: {fileID: 0}
+  bow: {fileID: 812012611883900888, guid: 697a7a896a77c22439d36c3cc152a049, type: 3}
   saw: {fileID: 0}
 --- !u!114 &399688905
 MonoBehaviour:
@@ -8417,7 +8426,6 @@ MonoBehaviour:
   targetSpeed: 40
   normalSpeed: 40
   boostMultiply: 1.5
-  gaugeBoostImage: {fileID: 1602483260}
   boostEffect: {fileID: 1364970818}
   driftRotMultifly: 1.5
   driftSpeedMultifly: 0.7
@@ -8430,6 +8438,8 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 1
+  shieldObjs: []
+  gaugeImage: {fileID: 0}
 --- !u!54 &399688907
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -13748,6 +13758,7 @@ MonoBehaviour:
   bulletItem: {fileID: 4131127300465671443, guid: b0a18ca11e5907a4591dc3d763fa379c, type: 3}
   explosionPrefab: {fileID: 1000011797152326, guid: 032891c1e66b4594398c38966f484d2b, type: 3}
   postProcessProfile: {fileID: 11400000, guid: 6a354086c8e766c43bb492b6efa318fa, type: 2}
+  hitAnimator: {fileID: 0}
 --- !u!114 &574657613
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13765,7 +13776,9 @@ MonoBehaviour:
   rank: 0
   lap: 0
   finalLap: 2
-  wayPointIndex: 0
+  finalRank: 0
+  time: 0
+  waypointIndex: 0
   wayPercent: 0
   itemPrefab: {fileID: 0}
   waypointItemSpawnInfos:
@@ -13824,8 +13837,9 @@ MonoBehaviour:
   metalEffect: {fileID: 1000010355441670, guid: 6aefc11fb4d4cbf4a88f115839a7ef9e, type: 3}
   sandEffect: {fileID: 1000012142692022, guid: 800ef6c97664b5844bbef16848ed09d3, type: 3}
   stoneEffect: {fileID: 1000010844420130, guid: 92cac2166432c0046b935155b209bf46, type: 3}
-  bow: {fileID: 812012611883900888, guid: 697a7a896a77c22439d36c3cc152a049, type: 3}
   inven: {fileID: 873210315}
+  subWeaponNotice: {fileID: 0}
+  bow: {fileID: 812012611883900888, guid: 697a7a896a77c22439d36c3cc152a049, type: 3}
   saw: {fileID: 801846776}
 --- !u!114 &574657615
 MonoBehaviour:
@@ -13862,7 +13876,6 @@ MonoBehaviour:
   targetSpeed: 40
   normalSpeed: 40
   boostMultiply: 1.5
-  gaugeBoostImage: {fileID: 659203775}
   boostEffect: {fileID: 1208753279}
   driftRotMultifly: 1.5
   driftSpeedMultifly: 0.7
@@ -13875,6 +13888,8 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 1
+  shieldObjs: []
+  gaugeImage: {fileID: 0}
 --- !u!54 &574657617
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -13998,8 +14013,8 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.27502584
-  m_Height: 0.21612592
-  m_Direction: 1
+  m_Height: 0
+  m_Direction: 2
   m_Center: {x: -0.0026229322, y: -0.0013147071, z: 0.00622423}
 --- !u!1 &580952941
 GameObject:
@@ -26343,6 +26358,103 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1035010085}
   m_Mesh: {fileID: 7607727476845574890, guid: 67a5fc564b2ec7547b40c7358ba47b83, type: 3}
+--- !u!1001 &1038073560
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 772970602004358802, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: bulletCount
+      value: 5000
+      objectReference: {fileID: 0}
+    - target: {fileID: 772970602004358802, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: bulletMaxCount
+      value: 5000
+      objectReference: {fileID: 0}
+    - target: {fileID: 4667048316251629700, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4667048316251629702, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: waypoint
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4667048316251629702, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4667048316251629702, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: normalSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4667048316251629703, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 4667048316251629703, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4667048316251629703, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4667048316251629703, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4667048316251629703, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4667048316251629703, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4667048316251629703, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4667048316251629703, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4667048316251629703, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4667048316251629703, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4667048316251629703, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4667048316251630457, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_Name
+      value: enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 4667048316251630457, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8037933237495302548, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: name
+      value: "\uC11C\uBBFC\uACBD"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8037933237495302548, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: nextWaypoint
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8037933237495302548, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: prevWaypoint
+      value: 
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
 --- !u!1 &1038717075
 GameObject:
   m_ObjectHideFlags: 0
@@ -27347,6 +27459,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   gravity: {x: 0, y: -0.0000001, z: 0}
+  impactEffectPrefab: {fileID: 100000, guid: 27be4219c782c0b4aa574b597ddb869f, type: 3}
   bowFactory: {fileID: 0}
   FirePosition: {fileID: 0}
 --- !u!65 &1081632936
@@ -29666,6 +29779,7 @@ GameObject:
   - component: {fileID: 1156825046}
   - component: {fileID: 1156825045}
   - component: {fileID: 1156825044}
+  - component: {fileID: 1156825048}
   m_Layer: 0
   m_Name: Plane
   m_TagString: Untagged
@@ -29681,10 +29795,10 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1156825043}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1156825045
@@ -29752,6 +29866,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1156825048
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1156825043}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10, y: 2.220446e-16, z: 10}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1160085293
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34668,6 +34795,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   gravity: {x: 0, y: -0.0000001, z: 0}
+  impactEffectPrefab: {fileID: 100000, guid: 27be4219c782c0b4aa574b597ddb869f, type: 3}
   bowFactory: {fileID: 0}
   FirePosition: {fileID: 0}
 --- !u!65 &1356218651
@@ -34718,6 +34846,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   gravity: {x: 0, y: -0.0000001, z: 0}
+  impactEffectPrefab: {fileID: 100000, guid: 27be4219c782c0b4aa574b597ddb869f, type: 3}
   bowFactory: {fileID: 0}
   FirePosition: {fileID: 0}
 --- !u!65 &1356769522
@@ -38670,6 +38799,7 @@ GameObject:
   - component: {fileID: 1554106406}
   - component: {fileID: 1554106405}
   - component: {fileID: 1554106407}
+  - component: {fileID: 1554106408}
   m_Layer: 0
   m_Name: KartSelect
   m_TagString: Untagged
@@ -38839,6 +38969,8 @@ MonoBehaviour:
   - childObject: {fileID: 1544686821}
     animationTrigger: Gun_Active
     childAnimator: {fileID: 1544686822}
+  lineRenderer: {fileID: 1554106408}
+  rayLength: 100
 --- !u!114 &1554106406
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38881,6 +39013,105 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3.5, y: 3.26, z: 5.16}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!120 &1554106408
+LineRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1554106400}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 0
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Positions:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 1}
+  m_Parameters:
+    serializedVersion: 3
+    widthMultiplier: 1
+    widthCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.5060234
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    colorGradient:
+      serializedVersion: 2
+      key0: {r: 1, g: 1, b: 1, a: 1}
+      key1: {r: 1, g: 1, b: 1, a: 1}
+      key2: {r: 0, g: 0, b: 0, a: 0}
+      key3: {r: 0, g: 0, b: 0, a: 0}
+      key4: {r: 0, g: 0, b: 0, a: 0}
+      key5: {r: 0, g: 0, b: 0, a: 0}
+      key6: {r: 0, g: 0, b: 0, a: 0}
+      key7: {r: 0, g: 0, b: 0, a: 0}
+      ctime0: 0
+      ctime1: 65535
+      ctime2: 0
+      ctime3: 0
+      ctime4: 0
+      ctime5: 0
+      ctime6: 0
+      ctime7: 0
+      atime0: 0
+      atime1: 65535
+      atime2: 0
+      atime3: 0
+      atime4: 0
+      atime5: 0
+      atime6: 0
+      atime7: 0
+      m_Mode: 0
+      m_NumColorKeys: 2
+      m_NumAlphaKeys: 2
+    numCornerVertices: 0
+    numCapVertices: 0
+    alignment: 0
+    textureMode: 0
+    shadowBias: 0.5
+    generateLightingData: 0
+  m_UseWorldSpace: 1
+  m_Loop: 0
 --- !u!1 &1554818159
 GameObject:
   m_ObjectHideFlags: 0
@@ -43195,6 +43426,7 @@ MonoBehaviour:
   bulletItem: {fileID: 4131127300465671443, guid: b0a18ca11e5907a4591dc3d763fa379c, type: 3}
   explosionPrefab: {fileID: 1000011797152326, guid: 032891c1e66b4594398c38966f484d2b, type: 3}
   postProcessProfile: {fileID: 11400000, guid: 6a354086c8e766c43bb492b6efa318fa, type: 2}
+  hitAnimator: {fileID: 0}
 --- !u!114 &1761470031
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43228,7 +43460,9 @@ MonoBehaviour:
   rank: 0
   lap: 0
   finalLap: 2
-  wayPointIndex: 0
+  finalRank: 0
+  time: 0
+  waypointIndex: 0
   wayPercent: 0
   itemPrefab: {fileID: 0}
   waypointItemSpawnInfos: []
@@ -43258,8 +43492,9 @@ MonoBehaviour:
   metalEffect: {fileID: 1000010355441670, guid: 6aefc11fb4d4cbf4a88f115839a7ef9e, type: 3}
   sandEffect: {fileID: 1000012142692022, guid: 800ef6c97664b5844bbef16848ed09d3, type: 3}
   stoneEffect: {fileID: 1000010844420130, guid: 92cac2166432c0046b935155b209bf46, type: 3}
-  bow: {fileID: 812012611883900888, guid: 697a7a896a77c22439d36c3cc152a049, type: 3}
   inven: {fileID: 1691354854}
+  subWeaponNotice: {fileID: 0}
+  bow: {fileID: 812012611883900888, guid: 697a7a896a77c22439d36c3cc152a049, type: 3}
   saw: {fileID: 0}
 --- !u!114 &1761470034
 MonoBehaviour:
@@ -43296,7 +43531,6 @@ MonoBehaviour:
   targetSpeed: 40
   normalSpeed: 40
   boostMultiply: 1.5
-  gaugeBoostImage: {fileID: 845967829}
   boostEffect: {fileID: 861341444}
   driftRotMultifly: 1.5
   driftSpeedMultifly: 0.7
@@ -43309,6 +43543,8 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 1
+  shieldObjs: []
+  gaugeImage: {fileID: 0}
 --- !u!54 &1761470036
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -43333,7 +43569,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1761470029}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.88, y: 0.1, z: -12}
+  m_LocalPosition: {x: -7.25, y: 0.1, z: -3.29}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -45182,7 +45418,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1819813713}
   m_LocalRotation: {x: 0.1129493, y: -0, z: -0, w: 0.9936008}
-  m_LocalPosition: {x: 5.01, y: 2.36, z: -11.65}
+  m_LocalPosition: {x: 6.39, y: 2.36, z: -11.65}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -46240,7 +46476,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1877897097
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46262,6 +46498,7 @@ MonoBehaviour:
   bulletItem: {fileID: 4131127300465671443, guid: b0a18ca11e5907a4591dc3d763fa379c, type: 3}
   explosionPrefab: {fileID: 1000011797152326, guid: 032891c1e66b4594398c38966f484d2b, type: 3}
   postProcessProfile: {fileID: 11400000, guid: 6a354086c8e766c43bb492b6efa318fa, type: 2}
+  hitAnimator: {fileID: 0}
 --- !u!114 &1877897098
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46295,7 +46532,9 @@ MonoBehaviour:
   rank: 0
   lap: 0
   finalLap: 2
-  wayPointIndex: 0
+  finalRank: 0
+  time: 0
+  waypointIndex: 0
   wayPercent: 0
   itemPrefab: {fileID: 0}
   waypointItemSpawnInfos: []
@@ -46325,8 +46564,9 @@ MonoBehaviour:
   metalEffect: {fileID: 1000010355441670, guid: 6aefc11fb4d4cbf4a88f115839a7ef9e, type: 3}
   sandEffect: {fileID: 1000012142692022, guid: 800ef6c97664b5844bbef16848ed09d3, type: 3}
   stoneEffect: {fileID: 1000010844420130, guid: 92cac2166432c0046b935155b209bf46, type: 3}
-  bow: {fileID: 812012611883900888, guid: 697a7a896a77c22439d36c3cc152a049, type: 3}
   inven: {fileID: 583863506}
+  subWeaponNotice: {fileID: 0}
+  bow: {fileID: 812012611883900888, guid: 697a7a896a77c22439d36c3cc152a049, type: 3}
   saw: {fileID: 0}
 --- !u!114 &1877897101
 MonoBehaviour:
@@ -46363,7 +46603,6 @@ MonoBehaviour:
   targetSpeed: 40
   normalSpeed: 40
   boostMultiply: 1.5
-  gaugeBoostImage: {fileID: 1082623200}
   boostEffect: {fileID: 452978660}
   driftRotMultifly: 1.5
   driftSpeedMultifly: 0.7
@@ -46376,6 +46615,8 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 1
+  shieldObjs: []
+  gaugeImage: {fileID: 0}
 --- !u!54 &1877897103
 Rigidbody:
   m_ObjectHideFlags: 0

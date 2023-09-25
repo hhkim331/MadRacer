@@ -40,7 +40,7 @@ public class CarModelManager : MonoBehaviour
             PlayerPrefs.SetInt("SelectedModelType", (int)khhModel.CurrentModelType);
 
             // ¾À ÀüÈ¯
-            SceneManager.LoadScene("LJO_Test");
+            SceneManager.LoadScene("PlayerTest");
         }
 
     }
