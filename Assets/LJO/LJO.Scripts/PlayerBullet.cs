@@ -114,17 +114,17 @@ public class PlayerBullet : MonoBehaviour
     //    }
     //}
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
         if(kartRank==null) return;
         //if (Time.time - fireTime < 1.5f) return;  // 이 부분 추가
-        KHHKartRank hitkartRank = collision.gameObject.GetComponentInParent<KHHKartRank>();
+        KHHKartRank hitkartRank = other.gameObject.GetComponentInParent<KHHKartRank>();
         if (hitkartRank == kartRank) return;
 
         if (isHit == false)
         {
-            Debug.Log("Bullet collided with: " + collision.gameObject.name);
-            Debug.Log("Collision point: " + collision.contacts[0].point);
+            Debug.Log("Bullet collided with: " + other.gameObject.name);
+            //Debug.Log("Collision point: " + collision.contacts[0].point);
             isHit = true;
             hitRotation = transform.rotation;
             hitPosition = transform.position;
@@ -137,7 +137,7 @@ public class PlayerBullet : MonoBehaviour
             GetComponent<Collider>().enabled = false;
 
             // 총알이 Enemy 오브젝트와 충돌한 경우
-            KHHHealth enemyHP = collision.gameObject.GetComponentInParent<KHHHealth>();
+            KHHHealth enemyHP = other.gameObject.GetComponentInParent<KHHHealth>();
             if (enemyHP != null) // 적에게 EnemyHP 스크립트가 있는 경우
             {
                 float damageValue = 100f; // 여기서는 예시로 100의 데미지를 가정

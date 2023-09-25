@@ -46,6 +46,7 @@ public class KHHGameManager : MonoBehaviour
         for (int i = 0; i < kartObjs.Length; i++)
             kartRanks[i] = kartObjs[i].GetComponent<KHHKartRank>();
 
+        SetFinishRankInfo();
         StartCoroutine(StartGame());
     }
 
@@ -75,12 +76,6 @@ public class KHHGameManager : MonoBehaviour
     {
         if (!isStart) return;
         time += Time.deltaTime;
-        if (isEnd)
-        {
-            for (int i = 0; i < kartRanks.Length; i++)
-                rankInfos[kartRanks[i].rank - 1].SetRankText(kartRanks[i].isFinish, kartRanks[i].name, kartRanks[i].time);
-            return;
-        }
 
         //모든 카트 순위 계산
         foreach (var kartRank in kartRanks)
@@ -96,12 +91,14 @@ public class KHHGameManager : MonoBehaviour
                 }
                 if (kartRank == other) continue;
                 if (kartRank.lap > other.lap) continue;
-                if (kartRank.lap == other.lap && kartRank.nextWaypoint.waypointIndex > other.nextWaypoint.waypointIndex) continue;
-                if (kartRank.lap == other.lap && kartRank.nextWaypoint.waypointIndex == other.nextWaypoint.waypointIndex && kartRank.wayPercent > other.wayPercent) continue;
+                if (kartRank.lap == other.lap && kartRank.waypointIndex > other.waypointIndex) continue;
+                if (kartRank.lap == other.lap && kartRank.waypointIndex == other.waypointIndex && kartRank.wayPercent > other.wayPercent) continue;
                 kartRank.rank++;
             }
         }
 
+        for (int i = 0; i < kartRanks.Length; i++)
+            rankInfos[kartRanks[i].rank - 1].SetRankText(kartRanks[i].isFinish, kartRanks[i].name, kartRanks[i].time);
         //GameEnd();
     }
 
@@ -109,7 +106,6 @@ public class KHHGameManager : MonoBehaviour
     {
         isEnd = true;
         StopEngineSound();
-        SetFinishRankInfo();
         StartCoroutine(CoGameEnd());
     }
 
