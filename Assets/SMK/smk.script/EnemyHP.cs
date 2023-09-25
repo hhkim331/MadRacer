@@ -150,8 +150,7 @@ public class EnemyHP : KHHHealth
     //일정 시간이 지나면 UI 비활성화
     IEnumerator EndUI()
     {
-        UI.SetActive(false);
-
         yield return new WaitForSeconds(1f);
+        UI.SetActive(false);
     }
 }

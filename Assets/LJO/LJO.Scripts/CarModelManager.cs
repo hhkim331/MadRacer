@@ -7,15 +7,15 @@ public class CarModelManager : MonoBehaviour
     public static CarModelManager Instance;
 
     public KHHModel khhModel; // 차량 모델에 대한 참조
-    public KHHModel.ModelType selectedModelType = KHHModel.ModelType.Black; 
-    private int currentModelTypeIndex = 0; 
+    public KHHModel.ModelType selectedModelType = KHHModel.ModelType.Black;
+    private int currentModelTypeIndex = 0;
 
     private void Awake()
     {
         if (Instance == null)
         {
             Instance = this;
-          
+
         }
         else
         {
@@ -26,15 +26,15 @@ public class CarModelManager : MonoBehaviour
     void Update()
     {
         // 오른쪽 클릭으로 색상 변경
-        if (Input.GetMouseButtonDown(1))
+        if (OVRInput.GetDown(OVRInput.Button.One, OVRInput.Controller.RTouch))
         {
             ChangeToNextModel();
-          
+
             PlayerPrefs.SetInt("SelectedModelType", (int)khhModel.CurrentModelType);
         }
 
         // 왼쪽 클릭으로 씬 전환
-        if (Input.GetMouseButtonDown(0))
+        if (OVRInput.GetDown(OVRInput.Button.Two, OVRInput.Controller.RTouch))
         {
             // 선택한 색상 값을 PlayerPrefs에 저장
             PlayerPrefs.SetInt("SelectedModelType", (int)khhModel.CurrentModelType);

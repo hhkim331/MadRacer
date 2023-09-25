@@ -3,8 +3,6 @@ using System.Collections.Generic;
 
 public class CrossBow : MonoBehaviour
 {
-    public static CrossBow Instance;
-
     public GameObject bowFactory;
     public Transform inven;
 
@@ -16,12 +14,7 @@ public class CrossBow : MonoBehaviour
     private int bulletCount = 3;
     private float bowCreateTime;
 
-    private void Awake()
-    {
-        Instance = this;
-        bowCreateTime = Time.time;
-        LoadBulletToLaunchPad(); // 초기 bullet 장전
-    }
+    KHHKartRank kartRank;
 
     void Update()
     {
@@ -35,6 +28,13 @@ public class CrossBow : MonoBehaviour
         }
     }
 
+    public void Set(KHHKartRank kartRank)
+    {
+        this.kartRank = kartRank;
+        bowCreateTime = Time.time;
+        LoadBulletToLaunchPad(kartRank); // 초기 bullet 장전
+    }
+
     private void DestroyBow()
     {
         Destroy(gameObject);
@@ -42,7 +42,7 @@ public class CrossBow : MonoBehaviour
 
     
 
-    private void LoadBulletToLaunchPad()
+    private void LoadBulletToLaunchPad(KHHKartRank kartRank)
     {
         if (magazine.Count > 0)
         {
@@ -50,7 +50,9 @@ public class CrossBow : MonoBehaviour
             currentBullet = magazine[0];
             currentBullet.transform.position = launchPad.position;
             currentBullet.transform.rotation = launchPad.rotation;
-            currentBullet.GetComponent<PlayerBullet>().SetParent(transform);  // 부모 설정
+            PlayerBullet bullet = currentBullet.GetComponent<PlayerBullet>();
+            bullet.SetParent(transform);  // 부모 설정
+            bullet.Set(kartRank);
             magazine.RemoveAt(0);  // 탄창에서 bullet 제거
         }
     }
@@ -63,7 +65,7 @@ public class CrossBow : MonoBehaviour
             currentBullet = null;  // 참조 초기화
             bulletCount--;
 
-            LoadBulletToLaunchPad();  // 발사대에 bullet 장전
+            LoadBulletToLaunchPad(kartRank);  // 발사대에 bullet 장전
         }
         Debug.Log("bulletCount:" + bulletCount);
     }

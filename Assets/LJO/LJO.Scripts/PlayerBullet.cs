@@ -18,6 +18,8 @@ public class PlayerBullet : MonoBehaviour
     public GameObject impactEffectPrefab; // 충돌 이펙트 프리팹
     private float fireTime;  // 발사 시간을 저장하기 위한 변수 추가
 
+    KHHKartRank kartRank;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +28,12 @@ public class PlayerBullet : MonoBehaviour
         rb.isKinematic = true;    // 초기에는 물리적 행동을 받지 않도록 설정
         velocity = transform.forward * speed;
     }
+
+    public void Set(KHHKartRank kartRank)
+    {
+        this.kartRank = kartRank;
+    }
+
     public void FireBullet() // 이 함수는 총알을 발사할 때 호출
     {
         isFired = true;
@@ -108,7 +116,10 @@ public class PlayerBullet : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (Time.time - fireTime < 0.1f) return;  // 이 부분 추가
+        if(kartRank==null) return;
+        //if (Time.time - fireTime < 1.5f) return;  // 이 부분 추가
+        KHHKartRank hitkartRank = collision.gameObject.GetComponentInParent<KHHKartRank>();
+        if (hitkartRank == kartRank) return;
 
         if (isHit == false)
         {
@@ -118,19 +129,19 @@ public class PlayerBullet : MonoBehaviour
             hitRotation = transform.rotation;
             hitPosition = transform.position;
 
-            GameObject impactEffect = Instantiate(impactEffectPrefab, collision.contacts[0].point, Quaternion.LookRotation(collision.contacts[0].normal));
-            Destroy(impactEffect, 1f);
+           // GameObject impactEffect = Instantiate(impactEffectPrefab, collision.contacts[0].point, Quaternion.LookRotation(collision.contacts[0].normal));
+           // Destroy(impactEffect, 1f);
 
             rb.isKinematic = true;
             rb.useGravity = false;
             GetComponent<Collider>().enabled = false;
 
             // 총알이 Enemy 오브젝트와 충돌한 경우
-            EnemyHP enemyHP = collision.gameObject.GetComponent<EnemyHP>();
+            KHHHealth enemyHP = collision.gameObject.GetComponentInParent<KHHHealth>();
             if (enemyHP != null) // 적에게 EnemyHP 스크립트가 있는 경우
             {
                 float damageValue = 100f; // 여기서는 예시로 100의 데미지를 가정
-                enemyHP.Hit(damageValue, null); // null을 넘겨주었지만, 필요한 경우 적절한 KHHKartRank 값을 넘겨주면 됩니다.
+                enemyHP.Hit(damageValue, kartRank); // null을 넘겨주었지만, 필요한 경우 적절한 KHHKartRank 값을 넘겨주면 됩니다.
 
                 // 총알을 활성화 상태에서 비활성화 상태로 변경
                 this.gameObject.SetActive(false);

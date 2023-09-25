@@ -229,6 +229,7 @@ public class KHHWeapon : MonoBehaviour
             subWeapon.transform.localRotation = Quaternion.identity;
             subWeapon.transform.localScale = Vector3.one;
             crossBow = subWeapon.GetComponent<CrossBow>();
+            crossBow.Set(kartRank);
 
             rightHandAni.SetBool("Bow", true);
 
