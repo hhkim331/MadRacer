@@ -32,6 +32,7 @@ public class CrossBow : MonoBehaviour
     {
         this.kartRank = kartRank;
         bowCreateTime = Time.time;
+        GetComponent<Collider>().enabled = false;
         LoadBulletToLaunchPad(kartRank); // 초기 bullet 장전
     }
 
