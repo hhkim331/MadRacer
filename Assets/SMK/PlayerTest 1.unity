@@ -3486,10 +3486,6 @@ PrefabInstance:
       propertyPath: waypoint
       value: 
       objectReference: {fileID: 520347996}
-    - target: {fileID: 4667048316251629702, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4667048316251629703, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -3538,29 +3534,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemy (2)
       objectReference: {fileID: 0}
-    - target: {fileID: 4667048316251630457, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5766413230043917670, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
-      propertyPath: objectId
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7904012599585061115, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
-      propertyPath: Priority
-      value: 120
-      objectReference: {fileID: 0}
-    - target: {fileID: 7904012599585061115, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
-      propertyPath: m_Volume
-      value: 0.04
-      objectReference: {fileID: 0}
-    - target: {fileID: 7904012599585061115, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
-      propertyPath: rolloffMode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8037933237495302548, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
-      propertyPath: m_Enabled
-      value: 1
+    - target: {fileID: 6802570542212266014, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: SoundList.Array.size
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
@@ -7422,6 +7398,16 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 4430310747170416, guid: 3c504ebe14130b84183ced3ad6d39629, type: 3}
   m_PrefabInstance: {fileID: 500783202}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &511770468 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 7904012599585061115, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+  m_PrefabInstance: {fileID: 1564037134}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &511770480 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 511770480, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+  m_PrefabInstance: {fileID: 1564037134}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &517159561 stripped
 Transform:
@@ -20772,6 +20758,10 @@ PrefabInstance:
       propertyPath: waypoint
       value: 
       objectReference: {fileID: 520347996}
+    - target: {fileID: 4667048316251629702, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4667048316251629703, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -20820,6 +20810,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 6802570542212266014, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: SoundList.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6802570542212266014, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: audioSource.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6802570542212266014, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: audioSource.Array.data[0]
+      value: 
+      objectReference: {fileID: 511770468}
+    - target: {fileID: 6802570542212266014, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: audioSource.Array.data[1]
+      value: 
+      objectReference: {fileID: 511770480}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
 --- !u!1 &1564084451
@@ -29060,6 +29066,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 829966071968894314, guid: be27701706ad1e94dbeebfe6be7768da, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2062459497234366467, guid: be27701706ad1e94dbeebfe6be7768da, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2320464317665949469, guid: be27701706ad1e94dbeebfe6be7768da, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6094661971693637979, guid: be27701706ad1e94dbeebfe6be7768da, type: 3}

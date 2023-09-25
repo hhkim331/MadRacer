@@ -35,9 +35,6 @@ public class EnemyHP : KHHHealth
             //피격 받았을경우 uI 활성화
             UI.SetActive(true);
 
-            //피격사운드 실행
-            EnemySound.Instance.Hit();
-
             hitTime = 0;
             if (hitEffect != null)
                 StopCoroutine(hitEffect);
@@ -55,9 +52,6 @@ public class EnemyHP : KHHHealth
 
         //죽은 경우 uI 활성화
         UI.SetActive(true);
-
-        //죽었을 시 사운드 활성화 
-        EnemySound.Instance.Die();
 
         enemy.enabled = false;
         _waypointFollow.enabled = false;

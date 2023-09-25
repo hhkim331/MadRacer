@@ -22,7 +22,7 @@ public class Enemy : MonoBehaviour
     public EnemyState state;
     //EnemyEye enemyEye;
     WaypointFollow waypointFollow;
-
+    EnemyAttack enemyAttack;
     public AudioSource sound;
     float currentTime;
     //public float fireTime;
@@ -31,16 +31,8 @@ public class Enemy : MonoBehaviour
 
     public float boosterGauge;
     public float boosterMaxGauge = 250;
-    //public int bulletCount = 0;
-    //public int bulletMaxCount = 250;
-    //public float bulletTime = 0.1f;
-    //public float bulletDelay = 0.1f;
 
 
-    //이펙트 효과들
-    public GameObject driftREffect;
-    public GameObject driftLEffect;
-   
     //LineRenderer enemyAttackline;
 
     //public Transform muzzle;
@@ -50,10 +42,8 @@ public class Enemy : MonoBehaviour
     {
         state = EnemyState.Move;
         boosterGauge = 0;
-
-        driftLEffect.SetActive(false);
-        driftREffect.SetActive(false);
         waypointFollow = GetComponent<WaypointFollow>();
+
     }
 
     private void Start()
@@ -64,33 +54,24 @@ public class Enemy : MonoBehaviour
 
     }
 
-    void Update()
-    {
-        //if (!KHHGameManager.instance.isStart) return;
 
-        //EnemyState enemyState = GetEnemyState();
-        switch (state)
+    public void item(Item.ItemType itemType)
+    {
+        switch (itemType)
         {
-            case EnemyState.Move: UpdateMove(); break;
-            case EnemyState.Booster: UpdateBooster(); break;
-            case EnemyState.Drift: UpdateDrift(); break;
+            //case EnemyState.Move: UpdateMove(); break;
+            case Item.ItemType.Booster: UpdateBooster(); EnemySound.Instance.Booster(); break;
+            case Item.ItemType.Bullet: UpdateBulletAdd(); break;
         }
-        //Vector3 dir = transform.position - enemyEye.visibleTargets[0].position;
     }
-
-    private void UpdateDrift()
-    {
-        //waypoint 전환을 하면, 
-    }
-
     private void UpdateBooster()
     {
         //상태 변환
         //움직이는 상태일때, 스피드 가속
-        waypointFollow.speed = waypointFollow.acceleration;
-        if (boosterGauge >=0)
+        if (boosterGauge >= 0)
         {
-
+            waypointFollow.speed += 5 * Time.deltaTime;
+            waypointFollow.speed = Mathf.Clamp(waypointFollow.speed, 0, waypointFollow.acceleration);
         }
         boosterGauge -= Time.deltaTime;
         if (boosterGauge <= 0)
@@ -99,32 +80,23 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    private void UpdateMove()
+    public void UpdateBulletAdd()
     {
-        //부스터 게이지 증가.
-        boosterGauge += Time.deltaTime;
-        //EnemyEye에서 리스트에 인식된 오브젝트가 있을 경우. << 이게 문제인데, 
-        //if (enemyEye.visibleTargets.Count > 0)
-        //{
-        //    //Attack 상태로 변경하기
-        //    state = EnemyState.Attack;
-        //}
-        //만약, item 과 부딪혔을 경우
-        //피격 당했을 경우,
-
-        //만약 부스터 게이지가 다 찼을 경우
-        if (boosterGauge == 100)
-        {
-            //상태 변환
-            state = EnemyState.Booster;
-        }
-        else
-        {
-            waypointFollow.speed = waypointFollow.normalSpeed;
-        }
+        enemyAttack.bulletCount += 25;
     }
+    //private void UpdateMove()
+    //{
+    //    //부스터 게이지 증가.
+    //    boosterGauge += Time.deltaTime;
 
-    
+    //    //만약 부스터 게이지가 다 찼을 경우
+    //    if (boosterGauge == 100)
+    //    {
+    //        //상태 변환
+    //        state = EnemyState.Booster;
+    //    }
+    //}
+
     ////상태 불러와서, bullet이면 enemystye
     //public void EnemyItem(Item.ItmeType itemType)
     //{

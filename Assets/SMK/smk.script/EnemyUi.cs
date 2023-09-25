@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class EnemyUi : MonoBehaviour
 {
     public GameObject UICanvace;
-    public Text NameText;
+    public TMP_Text NameText;
 
     KHHKartRank kHHKartRank;
 

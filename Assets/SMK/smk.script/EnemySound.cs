@@ -22,24 +22,23 @@ public class EnemySound : MonoBehaviour
     }
 
     public EnemyBgm[] SoundList;
-    AudioSource audioSource;
-
+    public AudioSource[] audioSource;
+    bool boosterChange;
     #region 사운드 상태전환
     public enum Soundstate
     {
         Move,
-        Attack,
         Booster,
-        Drift,
-        Hit,
         Die,
+        Attack,
         Idle,
     }
     #endregion
 
     void Start()
     {
-        audioSource = GetComponent<AudioSource>();
+        boosterChange = false;
+        //audioSource = GetComponent<AudioSource>();
     }
 
     public Soundstate state;
@@ -51,58 +50,30 @@ public class EnemySound : MonoBehaviour
             case Soundstate.Move: Move(); break;
             case Soundstate.Attack: Attack(); break;
             case Soundstate.Booster: Booster(); break;
-            case Soundstate.Drift: Drift(); break;
-            case Soundstate.Hit: Hit(); break;
-            case Soundstate.Die: Die(); break;
-            case Soundstate.Idle: Idle(); break;
         }
     }
-     
 
-    public void Idle()
-    {
-        //움직이지 않을때 잠깐 소리 나오는 엔진 켜는 소리
-        audioSource.PlayOneShot(SoundList[6].sound, 0.5f);
-    }
-
-    public void Die()
-    {
-        audioSource.PlayOneShot(SoundList[5].sound, 0.5f);
-
-    }
-
-    public void Hit()
-    {
-        audioSource.PlayOneShot(SoundList[4].sound, 0.5f);
-    }
-
-    public void Drift()
-    {
-        audioSource.Pause();
-
-        audioSource.PlayOneShot(SoundList[3].sound, 0.5f);
-    }
 
     public void Booster()
     {
-        audioSource.Pause();
-
-        audioSource.PlayOneShot(SoundList[2].sound, 0.5f);
+        boosterChange = true;
+        audioSource[0].Pause();
+        audioSource[0].PlayOneShot(SoundList[2].sound, 0.5f);
+        boosterChange = false;
     }
 
     public void Attack()
     {
-        audioSource.Pause();
-
-        audioSource.PlayOneShot(SoundList[1].sound, 0.5f);
+        audioSource[1].PlayOneShot(SoundList[1].sound, 0.5f);
     }
 
     public void Move()
     {
-        audioSource.Pause();
-
-        audioSource.PlayOneShot(SoundList[0].sound, 0.5f);
-
+        if (boosterChange == false)
+        {
+            audioSource[0].Pause();
+        }
+        audioSource[0].PlayOneShot(SoundList[0].sound, 0.5f);
     }
 
     #region 남긴거

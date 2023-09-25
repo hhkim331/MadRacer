@@ -71,6 +71,11 @@ public class Item : MonoBehaviour
             rb.isKinematic = true;
 
         }
+        if (other.CompareTag("Enemy"))
+        {
+            other.GetComponent<Enemy>().item(itemType);
+            Destroy(gameObject);
+        }
     }
     void OnCollisionEnter(Collision collision)
     {

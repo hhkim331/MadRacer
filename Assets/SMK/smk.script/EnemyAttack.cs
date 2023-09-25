@@ -97,10 +97,6 @@ public class EnemyAttack : MonoBehaviour
         }
 
     }
-    public void BulletAdd()
-    {
-        bulletCount += 25;
-    }
     public void MeleeAttackAdd()
     {
         //충돌시 MeleeAttack()에
