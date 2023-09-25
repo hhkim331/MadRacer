@@ -74,7 +74,7 @@ public class KHHKartRank : MonoBehaviour
         nextWaypoint = hitWaypoint.NextPoint();
         checkPointCount++;
 
-        if (nextWaypoint.waypointIndex == 0 && checkPointCount > 20)
+        if (waypointIndex == 0 && checkPointCount > 20)
         {
             checkPointCount = 0;
             lap++;
