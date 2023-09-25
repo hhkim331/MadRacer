@@ -2645,12 +2645,12 @@ MonoBehaviour:
   - {fileID: 2051163799}
   - {fileID: 1915128937}
   - {fileID: 1357921545}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 947160126}
+  - {fileID: 590537024}
+  - {fileID: 570031028}
+  - {fileID: 582752535}
+  - {fileID: 1690303578}
+  - {fileID: 896985078}
   bodyMats:
   - {fileID: 2100000, guid: 40327c5dfdcb19f4e9e6dbc79527c490, type: 2}
   - {fileID: 2100000, guid: 74ab3404aa1ab294492d1ace2d965a76, type: 2}
