@@ -51,7 +51,7 @@ public class KHHInput : MonoBehaviour
         //보조무기
         if (OVRInput.GetDown(OVRInput.Button.PrimaryHandTrigger, OVRInput.Controller.RTouch)) InputGrip = true;
         else if (OVRInput.GetUp(OVRInput.Button.PrimaryHandTrigger, OVRInput.Controller.RTouch)) InputGrip = false;
-        InputShield = Input.GetKey(KeyCode.Space);  //OVRInput.Get(OVRInput.Button.Two, OVRInput.Controller.RTouch);
+        InputShield = OVRInput.Get(OVRInput.Button.Two, OVRInput.Controller.RTouch);
         InputReturn = OVRInput.Get(OVRInput.Button.Two, OVRInput.Controller.LTouch);
     }
 }

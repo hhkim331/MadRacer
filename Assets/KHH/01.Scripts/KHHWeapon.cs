@@ -52,6 +52,9 @@ public class KHHWeapon : MonoBehaviour
 
     float pingPongTime = 0;
 
+    //handAni
+    public Animator rightHandAni;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -77,6 +80,12 @@ public class KHHWeapon : MonoBehaviour
                 fireLine.enabled = false;
             }
         }
+
+
+        if (input.InputGrip)
+            rightHandAni.SetBool("Grap", true);
+        else
+            rightHandAni.SetBool("Grap", false);
 
         if (gripSubWeapon)
         {
@@ -172,6 +181,7 @@ public class KHHWeapon : MonoBehaviour
         if (crossBow == null)
         {
             gripSubWeapon = false;
+            rightHandAni.SetBool("Bow", false);
             return;
         }
 
@@ -215,10 +225,12 @@ public class KHHWeapon : MonoBehaviour
             subWeaponNotice.transform.localPosition = Vector3.zero;
 
             subWeapon.transform.SetParent(gripRight);
-            subWeapon.transform.localPosition = Vector3.zero;
+            subWeapon.transform.localPosition = new Vector3(-0.015f, 0.06f, 0.075f);
             subWeapon.transform.localRotation = Quaternion.identity;
-            subWeapon.transform.localScale = Vector3.one * 0.1f;
+            subWeapon.transform.localScale = Vector3.one;
             crossBow = subWeapon.GetComponent<CrossBow>();
+
+            rightHandAni.SetBool("Bow", true);
 
             subWeapon = null;
         }
