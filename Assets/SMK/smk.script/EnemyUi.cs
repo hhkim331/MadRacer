@@ -11,10 +11,13 @@ public class EnemyUi : MonoBehaviour
 
     KHHKartRank kHHKartRank;
 
+    public Image[] IconImage;
+    public Image icon;
+
     void Start()
     {
         kHHKartRank = GetComponent<KHHKartRank>();
-
+        
         UICanvace.SetActive(false);
         NameText.text = kHHKartRank.name;
     }
@@ -23,5 +26,9 @@ public class EnemyUi : MonoBehaviour
     {
         //바라보게 하기.
         UICanvace.transform.LookAt(Camera.main.transform);
+        if (EnemyEye.Instance.objectId==0)
+        {
+            i
+        }
     }
 }

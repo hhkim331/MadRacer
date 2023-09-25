@@ -3302,7 +3302,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletEffect: {fileID: 1000010355441670, guid: 6aefc11fb4d4cbf4a88f115839a7ef9e, type: 3}
-  bulletCount: 20
+  bulletCount: 0
   bulletMaxCount: 250
   bulletTime: 0.1
   bulletDelay: 0.1
@@ -3627,7 +3627,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 0.95
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -3723,7 +3723,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 0.95
       inSlope: 0
       outSlope: 0
       tangentMode: 0

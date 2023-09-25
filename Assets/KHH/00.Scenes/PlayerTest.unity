@@ -39018,14 +39018,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 511770480, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
-      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
-      value: 0.95
-      objectReference: {fileID: 0}
-    - target: {fileID: 772970602004358802, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
-      propertyPath: bulletCount
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4667048316251629702, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
       propertyPath: waypoint
       value: 
@@ -39077,10 +39069,6 @@ PrefabInstance:
     - target: {fileID: 4667048316251630457, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
       propertyPath: m_Name
       value: enemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 7904012599585061115, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
-      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
-      value: 0.95
       objectReference: {fileID: 0}
     - target: {fileID: 8037933237495302548, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
       propertyPath: nextWaypoint
