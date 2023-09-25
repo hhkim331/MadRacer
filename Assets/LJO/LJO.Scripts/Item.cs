@@ -73,7 +73,7 @@ public class Item : MonoBehaviour
         }
         if (other.CompareTag("Enemy"))
         {
-            other.GetComponent<Enemy>().item(itemType);
+            other.GetComponentInParent<Enemy>().item(itemType);
             Destroy(gameObject);
         }
     }

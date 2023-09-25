@@ -43,7 +43,7 @@ public class Enemy : MonoBehaviour
         state = EnemyState.Move;
         boosterGauge = 0;
         waypointFollow = GetComponent<WaypointFollow>();
-
+        enemyAttack = GetComponent<EnemyAttack>();
     }
 
     private void Start()
@@ -60,7 +60,7 @@ public class Enemy : MonoBehaviour
         switch (itemType)
         {
             //case EnemyState.Move: UpdateMove(); break;
-            case Item.ItemType.Booster: UpdateBooster(); EnemySound.Instance.Booster(); break;
+            case Item.ItemType.Booster: UpdateBooster();  break;//EnemySound.Instance.Booster();
             case Item.ItemType.Bullet: UpdateBulletAdd(); break;
         }
     }

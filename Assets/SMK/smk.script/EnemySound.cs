@@ -28,7 +28,7 @@ public class EnemySound : MonoBehaviour
     public enum Soundstate
     {
         Move,
-        Booster,
+        //Booster,
         Die,
         Attack,
         Idle,
@@ -49,18 +49,18 @@ public class EnemySound : MonoBehaviour
         {
             case Soundstate.Move: Move(); break;
             case Soundstate.Attack: Attack(); break;
-            case Soundstate.Booster: Booster(); break;
+                //case Soundstate.Booster: Booster(); break;
         }
     }
 
 
-    public void Booster()
-    {
-        boosterChange = true;
-        audioSource[0].Pause();
-        audioSource[0].PlayOneShot(SoundList[2].sound, 0.5f);
-        boosterChange = false;
-    }
+    //public void Booster()
+    //{
+    //    boosterChange = true;
+    //    audioSource[0].Pause();
+    //    audioSource[0].PlayOneShot(SoundList[2].sound, 0.5f);
+    //    boosterChange = false;
+    //}
 
     public void Attack()
     {
@@ -69,11 +69,20 @@ public class EnemySound : MonoBehaviour
 
     public void Move()
     {
-        if (boosterChange == false)
+        if (audioSource[0].isPlaying)
         {
-            audioSource[0].Pause();
+            //if (boosterChange == false)
+            //{
+            //    audioSource[0].Pause();
+            //}
         }
-        audioSource[0].PlayOneShot(SoundList[0].sound, 0.5f);
+        else
+        {
+            audioSource[0].clip = SoundList[0].sound;
+            audioSource[0].loop = true;
+            audioSource[0].volume = 0.5f;
+            audioSource[0].Play();
+        }
     }
 
     #region ³²±ä°Å

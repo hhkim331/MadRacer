@@ -86,11 +86,11 @@ public class WaypointFollow : MonoBehaviour
 
         //È¸Àü
         Vector3 dir = waypoint.wayPosition - transform.position;
-        dir.y = 0;
+       // dir.y = 0;
         Vector3 dir2 = transform.forward;
-        dir2.y = 0;
+        //dir2.y = 0;
         dir = Vector3.MoveTowards(dir2, dir, Time.deltaTime * 4f);
-        dir.y = transform.forward.y;
+        //dir.y = transform.forward.y;
         transform.forward = dir;
 
     }
