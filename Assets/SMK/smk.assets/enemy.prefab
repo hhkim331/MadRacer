@@ -3209,7 +3209,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4667048316251630457}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1e171d39b9ce9c44196ef9f6af7699ea, type: 3}
   m_Name: 
@@ -3217,8 +3217,8 @@ MonoBehaviour:
   mindriftSpeed: 0
   drifttime: 0
   driftswingPos: 0
-  driftLEffect: {fileID: 0}
-  driftREffect: {fileID: 0}
+  driftLEffect: {fileID: 6387861281203784549}
+  driftREffect: {fileID: 5579108313410998524}
   waypointAngleValue: 0
   currentAngleValue: 0
   groundLr:
@@ -3229,6 +3229,7 @@ MonoBehaviour:
   normalSpeed: 5
   acceleration: 30
   breakForce: 0.1
+  max: 0
   speed: 0
   currentTime: 0
   tr: {fileID: 0}
@@ -3494,6 +3495,9 @@ MonoBehaviour:
     sound: {fileID: 8300000, guid: 7c3da9bda68bb154e9c9303b566a1fb5, type: 3}
   - name: Die
     sound: {fileID: 8300000, guid: 85865eeec34b6154283b6a6f3279de92, type: 3}
+  audioSource:
+  - {fileID: 7904012599585061115}
+  - {fileID: 511770480}
   state: 0
 --- !u!82 &7904012599585061115
 AudioSource:

@@ -102,7 +102,7 @@ public class KHHGameManager : MonoBehaviour
             }
         }
 
-        GameEnd();
+        //GameEnd();
     }
 
     public void GameEnd()

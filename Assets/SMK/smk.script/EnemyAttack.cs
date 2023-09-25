@@ -36,7 +36,7 @@ public class EnemyAttack : MonoBehaviour
 
     void Update()
     {
-        //if (!KHHGameManager.instance.isStart) return;
+        if (!KHHGameManager.instance.isStart) return;
 
         //인식했을 경우
         if (enemyEye.visibleTargets.Count > 0)
