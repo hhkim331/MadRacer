@@ -32,6 +32,7 @@ public class KHHPlayerHealth : KHHHealth
     public override void Hit(float damage, KHHKartRank kart)
     {
         if (myKart.ShieldActive) return;
+        if (kartRank.isFinish) return;
         base.Hit(damage, kart);
         SoundManager.instance.PlaySFX("Hit");
         if (health > 0)
