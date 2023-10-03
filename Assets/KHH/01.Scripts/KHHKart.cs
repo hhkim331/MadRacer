@@ -37,6 +37,7 @@ public class KHHKart : MonoBehaviour
     public float boostMultiply = 1.8f;
     float boostUse = 12f;
     public GameObject boostEffect;
+    public ParticleSystem[] boostParticles;
 
     //drift
     public float driftRotMultifly = 1.5f;
@@ -179,12 +180,16 @@ public class KHHKart : MonoBehaviour
                 if (Gauge > 0)
                 {
                     boostEffect.SetActive(true);
+                    foreach (var particle in boostParticles)
+                        particle.Play();
                     targetSpeed = normalSpeed * boostMultiply;
                     Gauge -= Time.fixedDeltaTime * boostUse;
                 }
                 else
                 {
                     boostEffect.SetActive(false);
+                    foreach (var particle in boostParticles)
+                        particle.Stop();
                     targetSpeed = normalSpeed;
                     KHHGameManager.instance.PlayerUI.NoEnergyBoost();
                 }
