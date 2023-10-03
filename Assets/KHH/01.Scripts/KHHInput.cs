@@ -44,7 +44,7 @@ public class KHHInput : MonoBehaviour
         else steer = 1f - Mathf.Abs(steer);
         InputSteer = steer;
 
-        InputBoost = OVRInput.Get(OVRInput.Button.One, OVRInput.Controller.RTouch);
+        InputBoost = Input.GetKey(KeyCode.A); //OVRInput.Get(OVRInput.Button.One, OVRInput.Controller.RTouch);
 
         //»ç°Ý
         InputFire = OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger, OVRInput.Controller.RTouch) > 0.2f;
