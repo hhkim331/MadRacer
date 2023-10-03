@@ -101,10 +101,7 @@ public class KHHKart : MonoBehaviour
         rb = GetComponent<Rigidbody>();
 
         if (PlayerPrefs.HasKey("SelectedModelType"))
-        {
             modelType = (KHHModel.ModelType)PlayerPrefs.GetInt("SelectedModelType");
-            Debug.Log("Loaded Model Type: " + modelType);
-        }
 
         model.Set(modelType);
         Gauge = gaugeMax;

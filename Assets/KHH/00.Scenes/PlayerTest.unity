@@ -14339,10 +14339,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 511770480, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
-      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
-      value: 0.95
-      objectReference: {fileID: 0}
     - target: {fileID: 645273246, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
       propertyPath: m_Layer
       value: 16
@@ -14358,10 +14354,6 @@ PrefabInstance:
     - target: {fileID: 863273257, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
       propertyPath: m_hasFontAssetChanged
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1144060380, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
-      propertyPath: m_UseGravity
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 12155080362147221, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
       propertyPath: m_Layer
@@ -14390,10 +14382,6 @@ PrefabInstance:
     - target: {fileID: 660665528617243214, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
       propertyPath: m_Layer
       value: 16
-      objectReference: {fileID: 0}
-    - target: {fileID: 772970602004358802, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
-      propertyPath: bulletCount
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 804756922809009121, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
       propertyPath: m_Layer
@@ -14558,14 +14546,6 @@ PrefabInstance:
     - target: {fileID: 4667048316251629702, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
       propertyPath: m_Enabled
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4667048316251629702, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
-      propertyPath: normalSpeed
-      value: 32
-      objectReference: {fileID: 0}
-    - target: {fileID: 4667048316251629702, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
-      propertyPath: acceleration
-      value: 48
       objectReference: {fileID: 0}
     - target: {fileID: 4667048316251629703, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
       propertyPath: m_RootOrder
@@ -14782,10 +14762,6 @@ PrefabInstance:
     - target: {fileID: 7869861613054161435, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
       propertyPath: m_Layer
       value: 16
-      objectReference: {fileID: 0}
-    - target: {fileID: 7904012599585061115, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
-      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
-      value: 0.95
       objectReference: {fileID: 0}
     - target: {fileID: 7921690345086302296, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
       propertyPath: m_Layer
@@ -27782,10 +27758,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 511770480, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
-      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
-      value: 0.95
-      objectReference: {fileID: 0}
     - target: {fileID: 645273246, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
       propertyPath: m_Layer
       value: 16
@@ -27801,10 +27773,6 @@ PrefabInstance:
     - target: {fileID: 863273257, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
       propertyPath: m_hasFontAssetChanged
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1144060380, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
-      propertyPath: m_UseGravity
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 12155080362147221, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
       propertyPath: m_Layer
@@ -27833,10 +27801,6 @@ PrefabInstance:
     - target: {fileID: 660665528617243214, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
       propertyPath: m_Layer
       value: 16
-      objectReference: {fileID: 0}
-    - target: {fileID: 772970602004358802, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
-      propertyPath: bulletCount
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 804756922809009121, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
       propertyPath: m_Layer
@@ -28001,14 +27965,6 @@ PrefabInstance:
     - target: {fileID: 4667048316251629702, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
       propertyPath: m_Enabled
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4667048316251629702, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
-      propertyPath: normalSpeed
-      value: 32
-      objectReference: {fileID: 0}
-    - target: {fileID: 4667048316251629702, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
-      propertyPath: acceleration
-      value: 48
       objectReference: {fileID: 0}
     - target: {fileID: 4667048316251629703, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
       propertyPath: m_RootOrder
@@ -28225,10 +28181,6 @@ PrefabInstance:
     - target: {fileID: 7869861613054161435, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
       propertyPath: m_Layer
       value: 16
-      objectReference: {fileID: 0}
-    - target: {fileID: 7904012599585061115, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
-      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
-      value: 0.95
       objectReference: {fileID: 0}
     - target: {fileID: 7921690345086302296, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
       propertyPath: m_Layer
@@ -39771,10 +39723,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 511770480, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
-      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
-      value: 0.95
-      objectReference: {fileID: 0}
     - target: {fileID: 645273246, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
       propertyPath: m_Layer
       value: 16
@@ -39790,10 +39738,6 @@ PrefabInstance:
     - target: {fileID: 863273257, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
       propertyPath: m_hasFontAssetChanged
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1144060380, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
-      propertyPath: m_UseGravity
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 12155080362147221, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
       propertyPath: m_Layer
@@ -39822,10 +39766,6 @@ PrefabInstance:
     - target: {fileID: 660665528617243214, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
       propertyPath: m_Layer
       value: 16
-      objectReference: {fileID: 0}
-    - target: {fileID: 772970602004358802, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
-      propertyPath: bulletCount
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 804756922809009121, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
       propertyPath: m_Layer
@@ -39990,14 +39930,6 @@ PrefabInstance:
     - target: {fileID: 4667048316251629702, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
       propertyPath: m_Enabled
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4667048316251629702, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
-      propertyPath: normalSpeed
-      value: 32
-      objectReference: {fileID: 0}
-    - target: {fileID: 4667048316251629702, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
-      propertyPath: acceleration
-      value: 48
       objectReference: {fileID: 0}
     - target: {fileID: 4667048316251629703, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
       propertyPath: m_RootOrder
@@ -40218,10 +40150,6 @@ PrefabInstance:
     - target: {fileID: 7869861613054161435, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
       propertyPath: m_Layer
       value: 16
-      objectReference: {fileID: 0}
-    - target: {fileID: 7904012599585061115, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
-      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
-      value: 0.95
       objectReference: {fileID: 0}
     - target: {fileID: 7921690345086302296, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
       propertyPath: m_Layer
@@ -45090,38 +45018,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 511770480, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
-      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
-      value: 0.95
-      objectReference: {fileID: 0}
-    - target: {fileID: 863273257, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 7f19789f0a719bd409ad1bd3eb5b9cf6, type: 2}
-    - target: {fileID: 863273257, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: 572345666623017987, guid: 7f19789f0a719bd409ad1bd3eb5b9cf6, type: 2}
-    - target: {fileID: 863273257, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
-      propertyPath: m_hasFontAssetChanged
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 772970602004358802, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
-      propertyPath: bulletCount
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4667048316251629702, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
       propertyPath: waypoint
       value: 
       objectReference: {fileID: 36757870}
-    - target: {fileID: 4667048316251629702, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
-      propertyPath: normalSpeed
-      value: 32
-      objectReference: {fileID: 0}
-    - target: {fileID: 4667048316251629702, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
-      propertyPath: acceleration
-      value: 48
-      objectReference: {fileID: 0}
     - target: {fileID: 4667048316251629703, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
       propertyPath: m_RootOrder
       value: 14
@@ -45169,14 +45069,6 @@ PrefabInstance:
     - target: {fileID: 4667048316251630457, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
       propertyPath: m_Name
       value: enemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 7904012599585061115, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
-      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
-      value: 0.95
-      objectReference: {fileID: 0}
-    - target: {fileID: 8037933237495302548, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
-      propertyPath: name
-      value: "\uCD5C\uBBFC\uC601"
       objectReference: {fileID: 0}
     - target: {fileID: 8037933237495302548, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
       propertyPath: nextWaypoint

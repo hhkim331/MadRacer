@@ -258,8 +258,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: New Text
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8a4ecddf8fd72ec4c8cdef60f73dd9dd, type: 2}
-  m_sharedMaterial: {fileID: 5561655975406874116, guid: 8a4ecddf8fd72ec4c8cdef60f73dd9dd, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 7f19789f0a719bd409ad1bd3eb5b9cf6, type: 2}
+  m_sharedMaterial: {fileID: 572345666623017987, guid: 7f19789f0a719bd409ad1bd3eb5b9cf6, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3302,8 +3302,8 @@ MonoBehaviour:
     m_Bits: 4294967295
   groundBx: {x: 1, y: 1, z: 1}
   waypoint: {fileID: 0}
-  normalSpeed: 36
-  acceleration: 60
+  normalSpeed: 32
+  acceleration: 48
   breakForce: 0.1
   max: 0
   speed: 0
@@ -3505,6 +3505,7 @@ MonoBehaviour:
   explosionPrefab: {fileID: 1000011797152326, guid: 032891c1e66b4594398c38966f484d2b, type: 3}
   hitDuration: 0.5
   maxIntensity: 0.3
+  waypointFollow: {fileID: 4667048316251629702}
   UI: {fileID: 7669125579852198236}
 --- !u!114 &8037933237495302548
 MonoBehaviour:
@@ -3518,7 +3519,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc427883bce29fa47bc8fa30d121d0a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: sssss
+  name: "\uCD5C\uBBFC\uC601"
   isFinish: 0
   rank: 0
   lap: 0
@@ -3551,7 +3552,6 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  icon: {fileID: 0}
 --- !u!114 &6802570542212266014
 MonoBehaviour:
   m_ObjectHideFlags: 0

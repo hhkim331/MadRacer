@@ -10,6 +10,7 @@ public class KHHModel : MonoBehaviour
         Camo,
         G24K,
         Camo2,
+        Length,
     }
     //public ModelType modelType = ModelType.Black;
 

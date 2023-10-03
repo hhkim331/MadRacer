@@ -1,5 +1,4 @@
 using UnityEngine;
-using static KHHModel;
 
 public class Enemy : MonoBehaviour
 {
@@ -48,6 +47,13 @@ public class Enemy : MonoBehaviour
 
     private void Start()
     {
+        if (PlayerPrefs.HasKey("SelectedModelType"))
+        {
+            int newModelType = (int)modelType + PlayerPrefs.GetInt("SelectedModelType");
+            if (newModelType >= (int)KHHModel.ModelType.Length)
+                newModelType -= (int)KHHModel.ModelType.Length;
+            modelType = (KHHModel.ModelType)newModelType;
+        }
         model.Set(modelType);
         //증가 제한
         boosterGauge = Mathf.Clamp(boosterGauge, 0, 250);
@@ -60,7 +66,7 @@ public class Enemy : MonoBehaviour
         switch (itemType)
         {
             //case EnemyState.Move: UpdateMove(); break;
-            case Item.ItemType.Booster: UpdateBooster();  break;//EnemySound.Instance.Booster();
+            case Item.ItemType.Booster: UpdateBooster(); break;//EnemySound.Instance.Booster();
             case Item.ItemType.Bullet: UpdateBulletAdd(); break;
         }
     }
