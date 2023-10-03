@@ -16,11 +16,10 @@ public class CarModelChanger : MonoBehaviour
     void Update()
     {
         // 마우스 오른쪽 버튼을 누르는 동안
-        if (Input.GetMouseButton(1))
+        if (OVRInput.GetDown(OVRInput.Button.One, OVRInput.Controller.RTouch))
         {
             // 일정 시간마다 (예: 매 프레임마다) 모델 변경
-            ChangeToNextModel();
-        
+            ChangeToNextModel();        
         }
         transform.Rotate(0, rotationSpeed * Time.deltaTime, 0);
 

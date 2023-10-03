@@ -1,11 +1,10 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.UI;
+
 
 
 public class EnemyHP : KHHHealth
 {
-    //피격 효과
     float hitTime = 0.0f;
     public float hitDuration = 0.5f;
     float intensity = 0.0f;
@@ -14,7 +13,8 @@ public class EnemyHP : KHHHealth
 
     WaypointFollow _waypointFollow;
     Enemy enemy;
-    //죽는 상태
+
+    public GameObject UI;
 
     protected override void Start()
     {
@@ -22,33 +22,56 @@ public class EnemyHP : KHHHealth
         enemy = GetComponent<Enemy>();
     }
 
+
+
     public override void Hit(float damage, KHHKartRank kart)
     {
+
         base.Hit(damage, kart);
+
+
         if (health > 0)
         {
+            //피격 받았을경우 uI 활성화
+            UI.SetActive(true);
+
             hitTime = 0;
             if (hitEffect != null)
                 StopCoroutine(hitEffect);
+
+            //이펙트 활성화->비활성화.
             hitEffect = StartCoroutine(HitEffect());
+            //피격 하지 않을 경우 비활성화.
+            StartCoroutine(EndUI());
         }
     }
 
     public override void Die()
     {
         base.Die();
+
+        //죽은 경우 uI 활성화
+        UI.SetActive(true);
+
         enemy.enabled = false;
         _waypointFollow.enabled = false;
+        StartCoroutine(EndUI());
+
 
     }
     public override void Respawn()
     {
+        //리스폰 된 경우 uI 활성화
+        UI.SetActive(true);
+
         base.Respawn();
         hitTime = 0;
         intensity = 0;
         enemy.enabled = true;
-
         _waypointFollow.enabled = true;
+        //일정 시간이 지나면 UI 비활성화
+        StartCoroutine(EndUI());
+
     }
     #region
     //public void UpdateHit(int dmg, Vector3 origine)
@@ -122,5 +145,12 @@ public class EnemyHP : KHHHealth
             if (intensity < 0) intensity = 0;
             yield return null;
         }
+    }
+    
+    //일정 시간이 지나면 UI 비활성화
+    IEnumerator EndUI()
+    {
+        yield return new WaitForSeconds(1f);
+        UI.SetActive(false);
     }
 }

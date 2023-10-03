@@ -17,14 +17,21 @@ public class MouseOverAnimation : MonoBehaviour
     }
     public List<ChildAnimationMapping> childMappings;  // 자식 오브젝트와 애니메이션의 매핑 리스트
 
+    public LineRenderer lineRenderer;  // LineRenderer에 대한 참조
+    public float rayLength = 100f;     // 레이의 길이
+    public Transform controllerTransform;  // 컨트롤러의 Transform
+
+
     private void Update()
     {
         RaycastHit hit;
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-        if (Physics.Raycast(ray, out hit, Mathf.Infinity))
-        {        Debug.Log("Raycast hit: " + hit.transform.name);
-
+        Ray ray = new Ray(controllerTransform.position, controllerTransform.forward);  // 컨트롤러의 위치와 방향으로 레이 생성
+        Vector3 rayStart = ray.origin;
+        Vector3 rayEnd = ray.origin + ray.direction * rayLength;
+        if (Physics.Raycast(ray, out hit, rayLength))
+        {
+            Debug.Log("Raycast hit: " + hit.transform.name);
+            rayEnd = hit.point;
             foreach (ChildAnimationMapping mapping in childMappings)
             {
                 if (hit.transform == mapping.childObject)
@@ -34,6 +41,8 @@ public class MouseOverAnimation : MonoBehaviour
                 }
             }
         }
+        lineRenderer.SetPosition(0, rayStart);
+        lineRenderer.SetPosition(1, rayEnd);
     }
 
     public void PlayAnimation()
