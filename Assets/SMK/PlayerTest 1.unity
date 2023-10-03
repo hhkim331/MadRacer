@@ -1106,17 +1106,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3407364091224566767, guid: 90f97e7969158554899f594cfa6ba54e, type: 3}
   m_PrefabInstance: {fileID: 1185921963}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &103151430 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 103151430, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
-  m_PrefabInstance: {fileID: 1564037134}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &114894020
 GameObject:
   m_ObjectHideFlags: 0
@@ -3497,18 +3486,6 @@ PrefabInstance:
       propertyPath: waypoint
       value: 
       objectReference: {fileID: 520347996}
-    - target: {fileID: 4667048316251629702, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4667048316251629702, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
-      propertyPath: normalSpeed
-      value: 36
-      objectReference: {fileID: 0}
-    - target: {fileID: 4667048316251629702, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
-      propertyPath: acceleration
-      value: 60
-      objectReference: {fileID: 0}
     - target: {fileID: 4667048316251629703, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -3557,9 +3534,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemy (2)
       objectReference: {fileID: 0}
-    - target: {fileID: 6802570542212266014, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
-      propertyPath: SoundList.Array.size
-      value: 3
+    - target: {fileID: 5766413230043917670, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: objectId
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
@@ -5608,6 +5585,7 @@ MonoBehaviour:
   normalSpeed: 40
   boostMultiply: 1.5
   boostEffect: {fileID: 1620728827}
+  boostParticles: []
   driftRotMultifly: 1.5
   driftSpeedMultifly: 0.7
   driftRightEffect: {fileID: 185306361}
@@ -20820,26 +20798,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemy
       objectReference: {fileID: 0}
-    - target: {fileID: 5243502578656383916, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
-      propertyPath: icon
-      value: 
-      objectReference: {fileID: 103151430}
-    - target: {fileID: 5243502578656383916, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
-      propertyPath: IconImage.Array.data[0]
-      value: 
-      objectReference: {fileID: 21300000, guid: dd483914dd51216408544f86959ba49b, type: 3}
-    - target: {fileID: 5243502578656383916, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
-      propertyPath: IconImage.Array.data[1]
-      value: 
-      objectReference: {fileID: 21300000, guid: 182b37484c3fb04488c5cd195df07c31, type: 3}
-    - target: {fileID: 5243502578656383916, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
-      propertyPath: IconImage.Array.data[2]
-      value: 
-      objectReference: {fileID: 21300000, guid: 303263b4a4aa72f48a3d23e8c80a76e4, type: 3}
-    - target: {fileID: 5243502578656383916, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
-      propertyPath: IconImage.Array.data[3]
-      value: 
-      objectReference: {fileID: 21300000, guid: 34f4662e1d4a5114eba9cf768c05bbad, type: 3}
+    - target: {fileID: 5766413230043917670, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: objectId
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
 --- !u!1 &1564084451

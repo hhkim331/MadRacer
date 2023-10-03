@@ -11,6 +11,7 @@ public class EnemyUi : MonoBehaviour
 
     KHHKartRank kHHKartRank;
 
+    public Image img_render;
     public Sprite[] IconImage;
 
     void Start()
@@ -19,15 +20,28 @@ public class EnemyUi : MonoBehaviour
         
         UICanvace.SetActive(false);
         NameText.text = kHHKartRank.name;
+        if (EnemyEye.Instance.objectId == 0)
+        {
+            img_render.sprite = IconImage[0];
+        }
+        if (EnemyEye.Instance.objectId == 1)
+        {
+            img_render.sprite = IconImage[1];
+        }
+        if (EnemyEye.Instance.objectId == 2)
+        {
+            img_render.sprite = IconImage[2];
+        }
+        if (EnemyEye.Instance.objectId == 3)
+        {
+            img_render.sprite = IconImage[3];
+        }
+
     }
 
     void Update()
     {
         //바라보게 하기.
         UICanvace.transform.LookAt(Camera.main.transform);
-        //if (EnemyEye.Instance.objectId == 0)
-        //{
-
-        //}
     }
 }

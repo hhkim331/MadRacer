@@ -3302,8 +3302,8 @@ MonoBehaviour:
     m_Bits: 4294967295
   groundBx: {x: 1, y: 1, z: 1}
   waypoint: {fileID: 0}
-  normalSpeed: 32
-  acceleration: 48
+  normalSpeed: 36
+  acceleration: 60
   breakForce: 0.1
   max: 0
   speed: 0
@@ -3547,11 +3547,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UICanvace: {fileID: 7669125579852198236}
   NameText: {fileID: 863273257}
+  img_render: {fileID: 103151430}
   IconImage:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 21300000, guid: 182b37484c3fb04488c5cd195df07c31, type: 3}
+  - {fileID: 21300000, guid: 34f4662e1d4a5114eba9cf768c05bbad, type: 3}
+  - {fileID: 21300000, guid: dd483914dd51216408544f86959ba49b, type: 3}
+  - {fileID: 21300000, guid: 303263b4a4aa72f48a3d23e8c80a76e4, type: 3}
 --- !u!114 &6802570542212266014
 MonoBehaviour:
   m_ObjectHideFlags: 0
