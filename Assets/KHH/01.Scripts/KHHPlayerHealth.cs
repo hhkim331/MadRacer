@@ -5,23 +5,33 @@ using UnityEngine.UI;
 
 public class KHHPlayerHealth : KHHHealth
 {
-    //피격 효과
-    float hitTime = 0.0f;
+    KHHKart myKart;
+
+    float hitTime = 0.5f;
     float hitDuration = 0.5f;
     public PostProcessProfile postProcessProfile;
     float intensity = 0.0f;
     float maxIntensity = 0.6f;
 
     Coroutine coHitEffect;
+    public Animator hitAnimator;
 
     // Start is called before the first frame update
     protected override void Start()
     {
+        base.Start();
+        myKart = GetComponent<KHHKart>();
         postProcessProfile.GetSetting<Vignette>().intensity.value = 0;
+    }
+
+    protected override void Update()
+    {
+        base.Update();
     }
 
     public override void Hit(float damage, KHHKartRank kart)
     {
+        if (myKart.ShieldActive) return;
         base.Hit(damage, kart);
         SoundManager.instance.PlaySFX("Hit");
         if (health > 0)
@@ -30,6 +40,8 @@ public class KHHPlayerHealth : KHHHealth
             if (coHitEffect != null)
                 StopCoroutine(coHitEffect);
             coHitEffect = StartCoroutine(CoHitEffect());
+            hitAnimator.transform.Rotate(Vector3.forward, Random.Range(0, 360));
+            hitAnimator.SetTrigger("Hit");
         }
     }
 

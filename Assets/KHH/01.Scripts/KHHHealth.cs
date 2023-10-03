@@ -8,6 +8,7 @@ public class KHHHealth : MonoBehaviour
     public Image healthBar;
 
     bool isDead = false;
+    public bool IsDead { get { return isDead; } }
     float respawnTime = 0f;
     public float respawnDelay = 2.0f;
 

@@ -10,21 +10,28 @@ public class KHHGameManager : MonoBehaviour
 
     KHHPlayerUI playerUI;
     public KHHPlayerUI PlayerUI { get { return playerUI; } }
-
     public float time = 0;
+
     //start
+    [Header("Start")]
     public bool isStart = false;
-    public bool isEnd = false;
     public TextMeshProUGUI startText;
 
-    public GameObject[] kartObjs;
+    //end
+    [Header("End")]
+    bool isEnd = false;
+    public GameObject endingObj;
+    public Transform rankInfoParent;
+    public GameObject rankInfoPrefab;
+    KHHRankInfo[] rankInfos;
 
+    [Header("ETC")]
+    public GameObject[] kartObjs;
+    public GameObject gameUIObj;
     public GameObject rankUIObj;
     KHHKartRank[] kartRanks;
-
     public Transform vrCam;
     public PostProcessProfile postProcessProfile;
-
     private void Awake()
     {
         instance = this;
@@ -39,6 +46,7 @@ public class KHHGameManager : MonoBehaviour
         for (int i = 0; i < kartObjs.Length; i++)
             kartRanks[i] = kartObjs[i].GetComponent<KHHKartRank>();
 
+        SetFinishRankInfo();
         StartCoroutine(StartGame());
     }
 
@@ -67,25 +75,36 @@ public class KHHGameManager : MonoBehaviour
     void Update()
     {
         if (!isStart) return;
-
         time += Time.deltaTime;
+
         //모든 카트 순위 계산
-        foreach (var item in kartRanks)
+        foreach (var kartRank in kartRanks)
         {
-            item.rank = 1;
+            if (kartRank.isFinish) continue;
+            kartRank.rank = 1;
             foreach (var other in kartRanks)
             {
-                if (item == other) continue;
-                if (item.lap > other.lap) continue;
-                if (item.lap == other.lap && item.wayPointIndex > other.wayPointIndex) continue;
-                if (item.lap == other.lap && item.wayPointIndex == other.wayPointIndex && item.wayPercent > other.wayPercent) continue;
-                item.rank++;
+                if (other.isFinish)
+                {
+                    kartRank.rank++;
+                    continue;
+                }
+                if (kartRank == other) continue;
+                if (kartRank.lap > other.lap) continue;
+                if (kartRank.lap == other.lap && kartRank.waypointIndex > other.waypointIndex) continue;
+                if (kartRank.lap == other.lap && kartRank.waypointIndex == other.waypointIndex && kartRank.wayPercent > other.wayPercent) continue;
+                kartRank.rank++;
             }
         }
+
+        for (int i = 0; i < kartRanks.Length; i++)
+            rankInfos[kartRanks[i].rank - 1].SetRankText(kartRanks[i].isFinish, kartRanks[i].name, kartRanks[i].time);
+        //GameEnd();
     }
 
     public void GameEnd()
     {
+        isEnd = true;
         StopEngineSound();
         StartCoroutine(CoGameEnd());
     }
@@ -106,9 +125,9 @@ public class KHHGameManager : MonoBehaviour
 
         yield return new WaitForSeconds(0.25f);
         vrCam.transform.parent = null;
-        vrCam.transform.position = new Vector3(0, 5000, 0);
-        rankUIObj.transform.localPosition = Vector3.zero;
-        rankUIObj.transform.localScale = Vector3.one * 2f;
+        vrCam.transform.position = new Vector3(-53.77964f, 5012, -90);
+        endingObj.SetActive(true);
+        gameUIObj.SetActive(false);
 
         while (value < 1)
         {
@@ -118,7 +137,6 @@ public class KHHGameManager : MonoBehaviour
             colorGrading.colorFilter.value = color;
             yield return null;
         }
-        isEnd = true;
     }
 
     void StopEngineSound()
@@ -127,5 +145,16 @@ public class KHHGameManager : MonoBehaviour
         SoundManager.instance.StopEngine("EngineAccel");
         SoundManager.instance.StopEngine("EngineDrift");
         SoundManager.instance.StopEngine("EngineBrake");
+    }
+
+    void SetFinishRankInfo()
+    {
+        rankInfos = new KHHRankInfo[kartRanks.Length];
+        for (int i = 0; i < kartRanks.Length; i++)
+        {
+            GameObject obj = Instantiate(rankInfoPrefab, rankInfoParent);
+            rankInfos[i] = obj.GetComponent<KHHRankInfo>();
+            rankInfos[i].Set(i + 1);
+        }
     }
 }

@@ -24,12 +24,15 @@ public class KHHKartRank : MonoBehaviour
     public int rank = 0;
     public int lap = 0;
     public int finalLap = 2;
-    public int wayPointIndex = 0;
+    public int finalRank = 0;
+    public float time = 0;
+
+    public int waypointIndex = 0;
     public float wayPercent = 0;
     public GameObject itemPrefab;
     bool isMine = false;
     public bool IsMine { get { return isMine; } set { isMine = value; } }
-   public List<WaypointItemSpawnInfo> waypointItemSpawnInfos = new List<WaypointItemSpawnInfo>();
+    public List<WaypointItemSpawnInfo> waypointItemSpawnInfos = new List<WaypointItemSpawnInfo>();
 
     int checkPointCount = 0;
 
@@ -49,13 +52,13 @@ public class KHHKartRank : MonoBehaviour
     {
         KHHWaypoint hitWaypoint = other.GetComponent<KHHWaypoint>();
         if (hitWaypoint == null) return;
-        if (wayPointIndex == hitWaypoint.waypointIndex) return;
+        if (waypointIndex == hitWaypoint.waypointIndex) return;
 
-        wayPointIndex = hitWaypoint.waypointIndex;
+        waypointIndex = hitWaypoint.waypointIndex;
 
         if (isMine)
         {
-            WaypointItemSpawnInfo spawnInfo = waypointItemSpawnInfos.Find(info => info.waypointIndex == wayPointIndex);
+            WaypointItemSpawnInfo spawnInfo = waypointItemSpawnInfos.Find(info => info.waypointIndex == waypointIndex);
             if (spawnInfo != null)
             {
                 GameObject itemToSpawn = itemPrefabs[(int)spawnInfo.itemType]; // 아이템 타입에 따른 프리팹을 선택
@@ -66,23 +69,25 @@ public class KHHKartRank : MonoBehaviour
             }
         }
 
-        wayPointIndex = hitWaypoint.waypointIndex;
+        waypointIndex = hitWaypoint.waypointIndex;
         prevWaypoint = hitWaypoint;
         nextWaypoint = hitWaypoint.NextPoint();
         checkPointCount++;
 
-        if (nextWaypoint.waypointIndex == 0 && checkPointCount > 20)
+        if (waypointIndex == 0 && checkPointCount > 20)
         {
             checkPointCount = 0;
             lap++;
+            time = KHHGameManager.instance.time;
             if (lap == finalLap)
             {
                 isFinish = true;
+                finalRank = rank;
                 if (isMine) KHHGameManager.instance.GameEnd();
             }
-            else
+            else if (isMine)
             {
-                KHHGameManager.instance.PlayerUI.LapTime();
+                KHHGameManager.instance.PlayerUI.LapTime(time);
             }
         }
     }

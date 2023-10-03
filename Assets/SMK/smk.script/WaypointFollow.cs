@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 
@@ -7,97 +8,136 @@ public class WaypointFollow : MonoBehaviour
 {
     //waypoint로 향하게 함.
     //만약, waypoint를 지나면, 오브젝트의 앞방향에 위치한 다음 waypoint를 방향삼기.
+    //nextpoint로 이동하기전에 돌린 rotation 이 일정 이상이면, 드리프트 하게 바꾸기.
+
     //nextpoint를 인식해서 해당 위치로 이동하기. 
 
 
     #region drift 변수
-    public float maxdriftAngle;
-    public float mindriftAngle;
     public float mindriftSpeed;
     public float drifttime;
     public float driftswingPos;
-    #endregion
+    public GameObject driftLEffect;
+    public GameObject driftREffect;
+    public float waypointAngleValue;
+    public float currentAngleValue;
+
     //드리프트
     //-자동차를 미끄러트려 컨트롤.
-    //차체 후미
-    //부스터
 
-    bool isGround = false;
+    //부스터
     public LayerMask groundLr;
     public Vector3 groundBx = Vector3.zero;
 
 
     public KHHWaypoint waypoint;//향하는 곳.
-    public float normalSpeed = 0.1f;//평소 속도
-    public float acceleration = 2f;//가속
+    public float normalSpeed = 36;//평소 속도
+    public float acceleration = 55f;//가속
     public float breakForce = 0.01f;//감속
+    public float max;
     public float speed;
 
+    public float currentTime;
     Rigidbody rb;
 
 
     int waypointIndex = -1;
 
+    #endregion
     void Start()
     {
-        speed = normalSpeed;
+        //현재,waypoint rotation값 저장.
+        currentAngleValue = gameObject.transform.rotation.eulerAngles.y;
+        waypointAngleValue = waypoint.transform.rotation.eulerAngles.y;
+
+        currentTime = 0;
+        speed = 0;
         rb = GetComponent<Rigidbody>();
         rb.constraints = RigidbodyConstraints.FreezeRotationX;
         rb.constraints = RigidbodyConstraints.FreezeRotationZ;
+
+        driftLEffect.SetActive(false);
+        driftREffect.SetActive(false);
+        max = normalSpeed;
     }
 
+    bool isRot;
+    public Transform tr;
     void Update()
     {
         if (!KHHGameManager.instance.isStart) return;
 
         UpdateFollow();
-        //바닥으로 ray를 쏴서  ground 판정하기
 
     }
 
 
+    //이동
     void UpdateFollow()
     {
-        //속도 변화 가까워지면 감속 / 멀면 가속
-        //이동
-        transform.position = Vector3.MoveTowards(gameObject.transform.position, waypoint.wayPosition, normalSpeed); //이동
+        
+        //시작 후 시간 흐름으로 속도 증가.
+        speed += 5 * Time.deltaTime;
+        speed = Mathf.Clamp(speed, 0, max);
+        transform.position += transform.forward * speed * Time.deltaTime;
+        //사운드 실행.
+        EnemySound.Instance.Move();
 
 
         //회전
         Vector3 dir = waypoint.wayPosition - transform.position;
-        dir.y = 0;
-        Quaternion way = Quaternion.LookRotation(dir);
-        transform.rotation = way;
-
+       // dir.y = 0;
+        Vector3 dir2 = transform.forward;
+        //dir2.y = 0;
+        dir = Vector3.MoveTowards(dir2, dir, Time.deltaTime * 4f);
+        //dir.y = transform.forward.y;
+        transform.forward = dir;
 
     }
 
-    bool Isground()
+
+
+    //충돌시 다음 waypoint로 변경
+    public void OnTriggerEnter(Collider other)
     {
-        isGround = Physics.BoxCast(transform.position, groundBx * 0.5f, -transform.up, out RaycastHit hit, transform.rotation, 0.1f, groundLr);
-        return isGround;
-    }
-    //다음 waypoint 로 교체
-    private void OnTriggerEnter(Collider other)
-    {
-        //waypoint를 n개중에 하나로 바꾸기.
+
         KHHWaypoint hitWaypoint = other.GetComponent<KHHWaypoint>();
+
+        currentTime += Time.deltaTime;
         if (hitWaypoint == null) return;
+        //waypoint 
         if (waypointIndex == hitWaypoint.waypointIndex) return;
         waypointIndex = hitWaypoint.waypointIndex;
         waypoint = hitWaypoint.NextPoint();
 
-        StartCoroutine(speedchange());
-        speed = normalSpeed;
+        //다음 nextpoint의 angle 을 측정해서,
+        //waypoint와 충돌했을때 + 현재의 angle값과 +30도 일경우 오른쪽으로, -30도일경우 왼쪽으로 이펙트
+        //더 회전하게 하기.
+        if (waypointAngleValue == currentAngleValue + 30)
+        {
+            Debug.Log("dL");
+            driftLEffect.SetActive(true);
+            driftLEffect.SetActive(false);
+        }
+        else if (waypointAngleValue == currentAngleValue - 30)
+        {
+            Debug.Log("dR");
+            driftREffect.SetActive(true);
+            driftREffect.SetActive(false);
+        }
+
+        //충돌했을때 rotation값 저장.
+        currentAngleValue = gameObject.transform.rotation.eulerAngles.y;
+        waypointAngleValue = waypoint.transform.rotation.eulerAngles.y;
+
+
     }
 
-    //시간 야매로 조정하기.
-    IEnumerator speedchange()
+
+    void drift()
     {
-        speed = acceleration;
-        yield return new WaitForSeconds(3);
-    }
 
+    }
 }
 #region
 //public class WaypointFollow : MonoBehaviour
