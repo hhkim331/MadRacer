@@ -66,7 +66,6 @@ public class WaypointFollow : MonoBehaviour
     void Update()
     {
         if (!KHHGameManager.instance.isStart) return;
-
         UpdateFollow();
 
     }

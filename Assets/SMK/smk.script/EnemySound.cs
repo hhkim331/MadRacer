@@ -52,16 +52,6 @@ public class EnemySound : MonoBehaviour
                 //case Soundstate.Booster: Booster(); break;
         }
     }
-
-
-    //public void Booster()
-    //{
-    //    boosterChange = true;
-    //    audioSource[0].Pause();
-    //    audioSource[0].PlayOneShot(SoundList[2].sound, 0.5f);
-    //    boosterChange = false;
-    //}
-
     public void Attack()
     {
         audioSource[1].PlayOneShot(SoundList[1].sound, 0.5f);

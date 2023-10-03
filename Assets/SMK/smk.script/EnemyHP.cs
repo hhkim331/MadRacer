@@ -14,6 +14,7 @@ public class EnemyHP : KHHHealth
     WaypointFollow _waypointFollow;
     Enemy enemy;
 
+    public WaypointFollow waypointFollow;
     public GameObject UI;
 
     protected override void Start()
@@ -32,8 +33,9 @@ public class EnemyHP : KHHHealth
 
         if (health > 0)
         {
-            //피격 받았을경우 uI 활성화
-            UI.SetActive(true);
+            //피격 받았을경우+ uI 활성화
+            //if (.CompareTag("Enemy") == )
+                UI.SetActive(true);
 
             hitTime = 0;
             if (hitEffect != null)
@@ -49,9 +51,11 @@ public class EnemyHP : KHHHealth
     public override void Die()
     {
         base.Die();
-
+        waypointFollow.speed = 0;
         //죽은 경우 uI 활성화
         UI.SetActive(true);
+        //죽은 경우 가속도 초기화
+        _waypointFollow.speed = 0;
 
         enemy.enabled = false;
         _waypointFollow.enabled = false;
@@ -150,7 +154,7 @@ public class EnemyHP : KHHHealth
     //일정 시간이 지나면 UI 비활성화
     IEnumerator EndUI()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.1f);
         UI.SetActive(false);
     }
 }

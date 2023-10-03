@@ -11,8 +11,7 @@ public class EnemyUi : MonoBehaviour
 
     KHHKartRank kHHKartRank;
 
-    public Image[] IconImage;
-    public Image icon;
+    public Sprite[] IconImage;
 
     void Start()
     {
@@ -26,9 +25,9 @@ public class EnemyUi : MonoBehaviour
     {
         //바라보게 하기.
         UICanvace.transform.LookAt(Camera.main.transform);
-        if (EnemyEye.Instance.objectId==0)
-        {
-            i
-        }
+        //if (EnemyEye.Instance.objectId == 0)
+        //{
+
+        //}
     }
 }

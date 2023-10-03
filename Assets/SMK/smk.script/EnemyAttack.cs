@@ -23,6 +23,7 @@ public class EnemyAttack : MonoBehaviour
     LineRenderer enemyAttackline;
     public Transform muzzle;
 
+    //public Animator MeleeAttack;
     //enemy 공격 
     void Start()
     {
@@ -85,6 +86,8 @@ public class EnemyAttack : MonoBehaviour
 
                         bulletTime = 0;
                         enemyEye.visibleTargets[0].transform.GetComponentInParent<KHHHealth>().Hit(2, kartRank);
+                        // ray를 쏜 놈에게 자신의 태그를 알려주기.
+
                     }
                 }
                 else
@@ -97,11 +100,11 @@ public class EnemyAttack : MonoBehaviour
         }
 
     }
-    public void MeleeAttackAdd()
-    {
-        //충돌시 MeleeAttack()에
-        MeleeAttackCount++;
-        //일정 범위안에 다른 오브젝트가 있으면 && MeleeAttackCount>=0 이면 상태전환
-        //근접공격 시행 MeleeAttackCount--;
-    }
+    //public void MeleeAttackAdd()
+    //{
+    //    //충돌시 MeleeAttack()에
+    //    MeleeAttackCount++;
+    //    //일정 범위안에 다른 오브젝트가 있으면 && MeleeAttackCount>=0 이면 상태전환
+    //    //근접공격 시행 MeleeAttackCount--;
+    //}
 }
