@@ -123,11 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &90087086 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5699944477003871377, guid: e758f94f948a0dc48b690ba272bf093a, type: 3}
-  m_PrefabInstance: {fileID: 500735429}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &127567244 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4922880663756926039, guid: e758f94f948a0dc48b690ba272bf093a, type: 3}
@@ -485,11 +480,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa62272771808f9479ebd834c173a3d5, type: 3}
---- !u!1 &464477579 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5699944475462037619, guid: e758f94f948a0dc48b690ba272bf093a, type: 3}
-  m_PrefabInstance: {fileID: 500735429}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &483469801 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 812012612622714182, guid: 697a7a896a77c22439d36c3cc152a049, type: 3}
@@ -502,58 +492,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4889550871248012591, guid: e758f94f948a0dc48b690ba272bf093a, type: 3}
-      propertyPath: FirePosition
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4889550871248530648, guid: e758f94f948a0dc48b690ba272bf093a, type: 3}
-      propertyPath: FirePosition
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4889550871506889874, guid: e758f94f948a0dc48b690ba272bf093a, type: 3}
-      propertyPath: FirePosition
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4889550871506889887, guid: e758f94f948a0dc48b690ba272bf093a, type: 3}
-      propertyPath: m_Size.x
-      value: 0.08856367
-      objectReference: {fileID: 0}
-    - target: {fileID: 4889550871506889887, guid: e758f94f948a0dc48b690ba272bf093a, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4889550871506889887, guid: e758f94f948a0dc48b690ba272bf093a, type: 3}
-      propertyPath: m_Center.x
-      value: 0.0000004824251
-      objectReference: {fileID: 0}
-    - target: {fileID: 4889550871506889887, guid: e758f94f948a0dc48b690ba272bf093a, type: 3}
-      propertyPath: m_Center.y
-      value: -0.0027734227
-      objectReference: {fileID: 0}
-    - target: {fileID: 4889550871506889887, guid: e758f94f948a0dc48b690ba272bf093a, type: 3}
-      propertyPath: m_Center.z
-      value: -0.0018847417
-      objectReference: {fileID: 0}
-    - target: {fileID: 4889550872873102876, guid: e758f94f948a0dc48b690ba272bf093a, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4889550873086590017, guid: e758f94f948a0dc48b690ba272bf093a, type: 3}
-      propertyPath: currentBullet
-      value: 
-      objectReference: {fileID: 90087086}
-    - target: {fileID: 4889550873086590017, guid: e758f94f948a0dc48b690ba272bf093a, type: 3}
-      propertyPath: magazine.Array.data[0]
-      value: 
-      objectReference: {fileID: 90087086}
-    - target: {fileID: 4889550873086590017, guid: e758f94f948a0dc48b690ba272bf093a, type: 3}
-      propertyPath: magazine.Array.data[2]
-      value: 
-      objectReference: {fileID: 464477579}
-    - target: {fileID: 4889550873086590029, guid: e758f94f948a0dc48b690ba272bf093a, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4922880663875300041, guid: e758f94f948a0dc48b690ba272bf093a, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5703127
@@ -622,30 +560,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4922880664613924395, guid: e758f94f948a0dc48b690ba272bf093a, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.60225
-      objectReference: {fileID: 0}
-    - target: {fileID: 4922880664613924395, guid: e758f94f948a0dc48b690ba272bf093a, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.60225
-      objectReference: {fileID: 0}
-    - target: {fileID: 4922880664613924395, guid: e758f94f948a0dc48b690ba272bf093a, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.60225
-      objectReference: {fileID: 0}
-    - target: {fileID: 4922880664613924395, guid: e758f94f948a0dc48b690ba272bf093a, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4922880664613924395, guid: e758f94f948a0dc48b690ba272bf093a, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.073
-      objectReference: {fileID: 0}
-    - target: {fileID: 4922880664613924395, guid: e758f94f948a0dc48b690ba272bf093a, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.153
-      objectReference: {fileID: 0}
     - target: {fileID: 5699944476039683156, guid: e758f94f948a0dc48b690ba272bf093a, type: 3}
       propertyPath: m_Name
       value: Mad Race_Crossbow
@@ -669,7 +583,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2220998629345216840, guid: d2ee9689c3568954bbf4168607c60da3, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2220998629345216840, guid: d2ee9689c3568954bbf4168607c60da3, type: 3}
       propertyPath: m_TagString
@@ -863,7 +777,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!81 &1223830380
 AudioListener:
   m_ObjectHideFlags: 0
@@ -1312,7 +1226,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1937895029}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3afadb4981d430140872ddf1367a0eb3, type: 3}
   m_Name: 
