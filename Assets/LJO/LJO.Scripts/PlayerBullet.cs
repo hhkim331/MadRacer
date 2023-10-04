@@ -5,11 +5,11 @@ using UnityEngine;
 
 public class PlayerBullet : MonoBehaviour
 {
-    
+
     Rigidbody rb;
-    public float speed = 10;
+    public float speed = 30;
     Vector3 velocity;
-    public Vector3 gravity = new Vector3 (0, -1f * 0.1f, 0);
+    public Vector3 gravity = new Vector3(0, -1f * 0.1f, 0);
     bool isFired = false; // 추가: 총알이 발사되었는지 확인
 
     bool isHit;
@@ -34,12 +34,12 @@ public class PlayerBullet : MonoBehaviour
         this.kartRank = kartRank;
     }
 
-    public void FireBullet() // 이 함수는 총알을 발사할 때 호출
+    public void FireBullet(Vector3 fireVec) // 이 함수는 총알을 발사할 때 호출
     {
         isFired = true;
         rb.isKinematic = false;
         rb.useGravity = false;
-        velocity = transform.forward * speed;
+        velocity = fireVec * speed;
         fireTime = Time.time; // 발사 시간 저장
 
     }
@@ -71,126 +71,67 @@ public class PlayerBullet : MonoBehaviour
     private void UpdateSpecialAttack()
     {
         velocity += gravity * Time.deltaTime;
-       
-        
-            transform.forward = velocity.normalized;
-        
+
+
+        transform.forward = velocity.normalized;
+
         transform.position += velocity * Time.deltaTime;
 
-       
+
     }
 
-    //private void OnCollisionEnter(Collision collision)
-    //{
-    //    if (isHit == false)
-    //    {
-    //        isHit = true;
-    //        hitRotation = transform.rotation;
-    //        hitPosition = transform.position;
-    //        rb.isKinematic = true;
-    //        rb.useGravity = false;
-    //        GetComponent<Collider>().enabled = false;
-
-    //        // 총알이 Enemy 오브젝트와 충돌한 경우
-    //        EnemyHP enemyHP = collision.gameObject.GetComponent<EnemyHP>();
-    //        if (enemyHP != null) // 적에게 EnemyHP 스크립트가 있는 경우
-    //        {
-    //            float damageValue = 100f; // 여기서는 예시로 100의 데미지를 가정
-    //            enemyHP.Hit(damageValue, null); // null을 넘겨주었지만, 필요한 경우 적절한 KHHKartRank 값을 넘겨주면 됩니다.
-
-    //            // 총알을 활성화 상태에서 비활성화 상태로 변경
-    //            this.gameObject.SetActive(false);
-    //        }
-    //    }
-
-    //    if (isHit)
-    //    {
-    //        transform.rotation = hitRotation;
-    //        transform.position = hitPosition;
-    //    }
-    //    else
-    //    {
-    //        rb.transform.forward = rb.velocity.normalized;
-    //    }
-    //}
-
-    //private void OnTriggerEnter(Collider other)
-    //{
-    //    if(kartRank==null) return;
-    //    //if (Time.time - fireTime < 1.5f) return;  // 이 부분 추가
-    //    KHHKartRank hitkartRank = other.gameObject.GetComponentInParent<KHHKartRank>();
-    //    if (hitkartRank == kartRank) return;
-
-    //    if (isHit == false)
-    //    {
-    //        Debug.Log("Bullet collided with: " + other.gameObject.name);
-    //        //Debug.Log("Collision point: " + collision.contacts[0].point);
-    //        isHit = true;
-    //        hitRotation = transform.rotation;
-    //        hitPosition = transform.position;
-
-    //        // GameObject impactEffect = Instantiate(impactEffectPrefab, collision.contacts[0].point, Quaternion.LookRotation(collision.contacts[0].normal));
-    //        // Destroy(impactEffect, 1f);
-
-    //        if (impactEffectPrefab != null) // impactEffectPrefab가 null이 아닌지 확인
-    //        {
-    //            Instantiate(impactEffectPrefab, transform.position, Quaternion.identity);
-    //        }
-
-    //        rb.isKinematic = true;
-    //        rb.useGravity = false;
-    //        GetComponent<Collider>().enabled = false;
-
-    //        // 총알이 Enemy 오브젝트와 충돌한 경우
-    //        KHHHealth enemyHP = other.gameObject.GetComponentInParent<KHHHealth>();
-    //        if (enemyHP != null) // 적에게 EnemyHP 스크립트가 있는 경우
-    //        {
-    //            float damageValue = 100f; // 여기서는 예시로 100의 데미지를 가정
-    //            enemyHP.Hit(damageValue, kartRank); // null을 넘겨주었지만, 필요한 경우 적절한 KHHKartRank 값을 넘겨주면 됩니다.
-
-    //            // 총알을 활성화 상태에서 비활성화 상태로 변경
-    //            this.gameObject.SetActive(false);
-    //        }
-    //    }
-    //    else if (isHit)
-    //    {
-    //        transform.rotation = hitRotation;
-    //        transform.position = hitPosition;
-    //    }
-    //    else
-    //    {
-    //        rb.transform.forward = rb.velocity.normalized;
-    //    }
-    //}
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
         if (kartRank == null) return;
-        KHHKartRank hitkartRank = collision.gameObject.GetComponentInParent<KHHKartRank>();
+        Debug.Log("ffdfdf");
+        if (other.CompareTag("Ground")) // Ground 태그를 확인하는 조건 추가
+        {
+            Debug.Log("Bullet collided with: " + other.gameObject.name);
+
+            // 이펙트 생성
+            if (impactEffectPrefab != null)
+            {
+                Instantiate(impactEffectPrefab, transform.position, Quaternion.identity);
+            }
+
+            // 총알 비활성화
+            this.gameObject.SetActive(false);
+
+            return;
+        }
+       
+            //if (Time.time - fireTime < 1.5f) return;  // 이 부분 추가
+            KHHKartRank hitkartRank = other.gameObject.GetComponentInParent<KHHKartRank>();
         if (hitkartRank == kartRank) return;
 
         if (isHit == false)
         {
-            Debug.Log("Bullet collided with: " + collision.gameObject.name);
+            Debug.Log("Bullet collided with: " + other.gameObject.name);
+            //Debug.Log("Collision point: " + collision.contacts[0].point);
             isHit = true;
             hitRotation = transform.rotation;
             hitPosition = transform.position;
 
-            // 여기에 이펙트를 생성하는 코드를 추가합니다.
-            // 예를 들어, 충돌의 위치에 이펙트를 생성하려면 다음과 같이 할 수 있습니다.
+            // GameObject impactEffect = Instantiate(impactEffectPrefab, collision.contacts[0].point, Quaternion.LookRotation(collision.contacts[0].normal));
+            // Destroy(impactEffect, 1f);
+
             if (impactEffectPrefab != null) // impactEffectPrefab가 null이 아닌지 확인
             {
-                Instantiate(impactEffectPrefab, collision.contacts[0].point, Quaternion.identity);
+                Instantiate(impactEffectPrefab, transform.position, Quaternion.identity);
             }
 
             rb.isKinematic = true;
             rb.useGravity = false;
             GetComponent<Collider>().enabled = false;
 
-            KHHHealth enemyHP = collision.gameObject.GetComponentInParent<KHHHealth>();
-            if (enemyHP != null)
+            // 총알이 Enemy 오브젝트와 충돌한 경우
+            KHHHealth enemyHP = other.gameObject.GetComponentInParent<KHHHealth>();
+            if (enemyHP != null) // 적에게 EnemyHP 스크립트가 있는 경우
             {
-                float damageValue = 100f;
-                enemyHP.Hit(damageValue, kartRank);
+                float damageValue = 100f; // 여기서는 예시로 100의 데미지를 가정
+                enemyHP.Hit(damageValue, kartRank); // null을 넘겨주었지만, 필요한 경우 적절한 KHHKartRank 값을 넘겨주면 됩니다.
+
+                // 총알을 활성화 상태에서 비활성화 상태로 변경
                 this.gameObject.SetActive(false);
             }
         }
@@ -204,6 +145,9 @@ public class PlayerBullet : MonoBehaviour
             rb.transform.forward = rb.velocity.normalized;
         }
     }
+
+
+   
 
 
 }

@@ -23,7 +23,7 @@ RenderSettings:
   m_AmbientSkyColor: {r: 0.15294118, g: 0.20452814, b: 0.24705882, a: 1}
   m_AmbientEquatorColor: {r: 0.25148332, g: 0.36404732, b: 0.46226418, a: 1}
   m_AmbientGroundColor: {r: 0.050492447, g: 0.12901565, b: 0.21698111, a: 1}
-  m_AmbientIntensity: 2.2
+  m_AmbientIntensity: 2.55
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.9245283, g: 0.9245283, b: 0.9245283, a: 1}
   m_SkyboxMaterial: {fileID: 2100000, guid: 2d796ced94d61438fbab81b194038162, type: 2}
@@ -35,10 +35,10 @@ RenderSettings:
   m_DefaultReflectionMode: 1
   m_DefaultReflectionResolution: 128
   m_ReflectionBounces: 1
-  m_ReflectionIntensity: 0.3
+  m_ReflectionIntensity: 0.05
   m_CustomReflection: {fileID: 8900000, guid: a8574e9b1eba5ae459eb64fe53ccbc75, type: 3}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.058774505, g: 0.07118519, b: 0.09328179, a: 0.3}
+  m_IndirectSpecularColor: {r: 0.0097957505, g: 0.011864197, b: 0.0155469645, a: 0.05}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2980,7 +2980,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.6603774, g: 0.245461, b: 0.245461, a: 1}
+  m_Color: {r: 0.8392157, g: 0.15686275, b: 0.13725491, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3288,7 +3288,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.7735849, g: 0.14158058, b: 0.14158058, a: 1}
+  m_Color: {r: 0.8392157, g: 0.15686275, b: 0.13725491, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -4669,8 +4669,8 @@ Light:
   m_Color: {r: 0.3207547, g: 0.2636932, b: 0.23199238, a: 1}
   m_Intensity: 9.7
   m_Range: 509.9
-  m_SpotAngle: 39
-  m_InnerSpotAngle: 21.80208
+  m_SpotAngle: 45
+  m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
     m_Type: 1
@@ -4724,14 +4724,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 694829223}
-  m_LocalRotation: {x: 0.66214895, y: -0.11277416, z: -0.3030166, w: 0.67603385}
+  m_LocalRotation: {x: 0.67134684, y: -0.12061854, z: -0.3176991, w: 0.65864396}
   m_LocalPosition: {x: 75.6, y: 51.96, z: -97.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 55.784, y: -79.996, z: -96.179}
+  m_LocalEulerAnglesHint: {x: 53.873, y: -83.231, z: -100.089}
 --- !u!1 &715274472
 GameObject:
   m_ObjectHideFlags: 0
@@ -6134,7 +6134,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 0e7a843f027026443a7d305274287221, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6433,14 +6433,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1096197328}
-  m_LocalRotation: {x: 0.000000021855694, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0.0011429954, y: -0.0014373659, z: -0.0021757784, w: 0.99999595}
   m_LocalPosition: {x: -0.7405004, y: 0.37882403, z: 1.880023}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 12463480}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0.131, y: -0.165, z: -0.25}
 --- !u!33 &1096197330
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -6773,6 +6773,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &1177881944 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100004, guid: 126d619cf4daa52469682f85c1378b4a, type: 3}
+  m_PrefabInstance: {fileID: 92766559}
+  m_PrefabAsset: {fileID: 0}
+--- !u!81 &1177881945
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1177881944}
+  m_Enabled: 1
 --- !u!1 &1193971733
 GameObject:
   m_ObjectHideFlags: 0
@@ -8045,7 +8058,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 0e7a843f027026443a7d305274287221, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8736,7 +8749,7 @@ Light:
   m_Color: {r: 0.13207549, g: 0.07623645, b: 0.0407025, a: 1}
   m_Intensity: 16.1
   m_Range: 509.9
-  m_SpotAngle: 39
+  m_SpotAngle: 46
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
@@ -10363,7 +10376,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!82 &1916115654
 AudioSource:
   m_ObjectHideFlags: 0

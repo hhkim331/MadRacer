@@ -74,6 +74,7 @@ public class KHHGameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //if (isEnd) return;
         if (!isStart) return;
         time += Time.deltaTime;
 
@@ -98,7 +99,7 @@ public class KHHGameManager : MonoBehaviour
         }
 
         for (int i = 0; i < kartRanks.Length; i++)
-            rankInfos[kartRanks[i].rank - 1].SetRankText(kartRanks[i].isFinish, kartRanks[i].name, kartRanks[i].time);
+            rankInfos[kartRanks[i].rank - 1].SetRankText(kartRanks[i].isFinish, kartRanks[i].name, kartRanks[i].time, kartRanks[i].IsMine);
         //GameEnd();
     }
 
@@ -141,6 +142,7 @@ public class KHHGameManager : MonoBehaviour
 
     void StopEngineSound()
     {
+        SoundManager.instance.StopEngine("EngineBoost");
         SoundManager.instance.StopEngine("EngineIdle");
         SoundManager.instance.StopEngine("EngineAccel");
         SoundManager.instance.StopEngine("EngineDrift");

@@ -15168,7 +15168,7 @@ MonoBehaviour:
   gameUIObj: {fileID: 2056854302}
   rankUIObj: {fileID: 354877316}
   vrCam: {fileID: 1592203204}
-  postProcessProfile: {fileID: 11400000, guid: 6a354086c8e766c43bb492b6efa318fa, type: 2}
+  postProcessProfile: {fileID: 11400000, guid: 06d227243ee79034ea56d6e87354fa7b, type: 2}
 --- !u!4 &572322599
 Transform:
   m_ObjectHideFlags: 0
@@ -25170,8 +25170,16 @@ PrefabInstance:
       propertyPath: m_Convex
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 64725712599916642, guid: 2d1307e678da9104da3b64bf04d994c9, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 64849817286019296, guid: 2d1307e678da9104da3b64bf04d994c9, type: 3}
       propertyPath: m_Convex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 64849817286019296, guid: 2d1307e678da9104da3b64bf04d994c9, type: 3}
+      propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -42731,6 +42739,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 612e9cb257d1bcd47939dfd5bcf18454, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 007a5628d4b11034aa2f546d91ba1a5f, type: 2}
     - target: {fileID: 919132149155446097, guid: 612e9cb257d1bcd47939dfd5bcf18454, type: 3}
       propertyPath: m_Name
       value: welcome
@@ -43060,6 +43072,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 326f44d7ce251c849b5d324a2943f8b6, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f1cb5f582d0e228438359e218e26c75a, type: 2}
     - target: {fileID: 919132149155446097, guid: 326f44d7ce251c849b5d324a2943f8b6, type: 3}
       propertyPath: m_Name
       value: mad racer

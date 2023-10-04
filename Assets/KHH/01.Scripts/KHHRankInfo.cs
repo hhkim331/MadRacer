@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class KHHRankInfo : MonoBehaviour
 {
+    public GameObject image;
     public TextMeshProUGUI rankText;
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI timeText;
@@ -14,9 +15,10 @@ public class KHHRankInfo : MonoBehaviour
         rankText.text = rank.ToString();
     }
 
-    public void SetRankText(bool finish, string name, float time)
+    public void SetRankText(bool finish, string name, float time, bool isMine)
     {
         nameText.text = name;
+        image.SetActive(isMine);
 
         if (finish)
         {
