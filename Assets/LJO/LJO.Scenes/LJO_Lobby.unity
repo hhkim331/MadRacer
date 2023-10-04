@@ -2475,6 +2475,7 @@ MonoBehaviour:
   inven: {fileID: 347742222}
   subWeaponNotice: {fileID: 0}
   bow: {fileID: 812012611883900888, guid: 697a7a896a77c22439d36c3cc152a049, type: 3}
+  rightHandAni: {fileID: 0}
   saw: {fileID: 0}
 --- !u!114 &121266583
 MonoBehaviour:
@@ -2512,6 +2513,7 @@ MonoBehaviour:
   normalSpeed: 40
   boostMultiply: 1.5
   boostEffect: {fileID: 413585363}
+  boostParticles: []
   driftRotMultifly: 1.5
   driftSpeedMultifly: 0.7
   driftRightEffect: {fileID: 1637682880}
@@ -8390,6 +8392,7 @@ MonoBehaviour:
   inven: {fileID: 1975003836}
   subWeaponNotice: {fileID: 0}
   bow: {fileID: 812012611883900888, guid: 697a7a896a77c22439d36c3cc152a049, type: 3}
+  rightHandAni: {fileID: 0}
   saw: {fileID: 0}
 --- !u!114 &399688905
 MonoBehaviour:
@@ -8427,6 +8430,7 @@ MonoBehaviour:
   normalSpeed: 40
   boostMultiply: 1.5
   boostEffect: {fileID: 1364970818}
+  boostParticles: []
   driftRotMultifly: 1.5
   driftSpeedMultifly: 0.7
   driftRightEffect: {fileID: 1787635973}
@@ -13840,6 +13844,7 @@ MonoBehaviour:
   inven: {fileID: 873210315}
   subWeaponNotice: {fileID: 0}
   bow: {fileID: 812012611883900888, guid: 697a7a896a77c22439d36c3cc152a049, type: 3}
+  rightHandAni: {fileID: 0}
   saw: {fileID: 801846776}
 --- !u!114 &574657615
 MonoBehaviour:
@@ -13877,6 +13882,7 @@ MonoBehaviour:
   normalSpeed: 40
   boostMultiply: 1.5
   boostEffect: {fileID: 1208753279}
+  boostParticles: []
   driftRotMultifly: 1.5
   driftSpeedMultifly: 0.7
   driftRightEffect: {fileID: 1190476953}
@@ -27551,6 +27557,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1082623198}
   m_CullTransparentMesh: 1
+--- !u!1001 &1083586084
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4849446085756065945, guid: 459da90794aaebe4a85646303af96852, type: 3}
+      propertyPath: m_Name
+      value: Crossbow
+      objectReference: {fileID: 0}
+    - target: {fileID: 5190223924697645603, guid: 459da90794aaebe4a85646303af96852, type: 3}
+      propertyPath: m_RootOrder
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 5190223924697645603, guid: 459da90794aaebe4a85646303af96852, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 5190223924697645603, guid: 459da90794aaebe4a85646303af96852, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.26
+      objectReference: {fileID: 0}
+    - target: {fileID: 5190223924697645603, guid: 459da90794aaebe4a85646303af96852, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -5.14
+      objectReference: {fileID: 0}
+    - target: {fileID: 5190223924697645603, guid: 459da90794aaebe4a85646303af96852, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9812019
+      objectReference: {fileID: 0}
+    - target: {fileID: 5190223924697645603, guid: 459da90794aaebe4a85646303af96852, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.19298433
+      objectReference: {fileID: 0}
+    - target: {fileID: 5190223924697645603, guid: 459da90794aaebe4a85646303af96852, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5190223924697645603, guid: 459da90794aaebe4a85646303af96852, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5190223924697645603, guid: 459da90794aaebe4a85646303af96852, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 22.254
+      objectReference: {fileID: 0}
+    - target: {fileID: 5190223924697645603, guid: 459da90794aaebe4a85646303af96852, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5190223924697645603, guid: 459da90794aaebe4a85646303af96852, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 459da90794aaebe4a85646303af96852, type: 3}
 --- !u!1 &1084928591
 GameObject:
   m_ObjectHideFlags: 0
@@ -38966,11 +39029,15 @@ MonoBehaviour:
   - childObject: {fileID: 74327714}
     animationTrigger: Active
     childAnimator: {fileID: 74327715}
+    associatedUI: {fileID: 0}
   - childObject: {fileID: 1544686821}
     animationTrigger: Gun_Active
     childAnimator: {fileID: 1544686822}
+    associatedUI: {fileID: 0}
   lineRenderer: {fileID: 1554106408}
   rayLength: 100
+  controller: 2
+  defaultUI: {fileID: 0}
 --- !u!114 &1554106406
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43495,6 +43562,7 @@ MonoBehaviour:
   inven: {fileID: 1691354854}
   subWeaponNotice: {fileID: 0}
   bow: {fileID: 812012611883900888, guid: 697a7a896a77c22439d36c3cc152a049, type: 3}
+  rightHandAni: {fileID: 0}
   saw: {fileID: 0}
 --- !u!114 &1761470034
 MonoBehaviour:
@@ -43532,6 +43600,7 @@ MonoBehaviour:
   normalSpeed: 40
   boostMultiply: 1.5
   boostEffect: {fileID: 861341444}
+  boostParticles: []
   driftRotMultifly: 1.5
   driftSpeedMultifly: 0.7
   driftRightEffect: {fileID: 724004353}
@@ -46567,6 +46636,7 @@ MonoBehaviour:
   inven: {fileID: 583863506}
   subWeaponNotice: {fileID: 0}
   bow: {fileID: 812012611883900888, guid: 697a7a896a77c22439d36c3cc152a049, type: 3}
+  rightHandAni: {fileID: 0}
   saw: {fileID: 0}
 --- !u!114 &1877897101
 MonoBehaviour:
@@ -46604,6 +46674,7 @@ MonoBehaviour:
   normalSpeed: 40
   boostMultiply: 1.5
   boostEffect: {fileID: 452978660}
+  boostParticles: []
   driftRotMultifly: 1.5
   driftSpeedMultifly: 0.7
   driftRightEffect: {fileID: 1826851600}
