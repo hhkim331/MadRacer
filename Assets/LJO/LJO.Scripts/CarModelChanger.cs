@@ -27,7 +27,7 @@ public class CarModelChanger : MonoBehaviour
     void ChangeToNextModel()
     {
         // ModelType enum의 길이를 얻기
-        int modelTypeCount = System.Enum.GetValues(typeof(KHHModel.ModelType)).Length;
+        int modelTypeCount = (int)KHHModel.ModelType.Length;
 
         // 다음 인덱스로 이동 (마지막 인덱스에서는 처음으로 돌아감)
         currentModelTypeIndex = (currentModelTypeIndex + 1) % modelTypeCount;

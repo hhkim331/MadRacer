@@ -40,7 +40,7 @@ public class CarModelManager : MonoBehaviour
             PlayerPrefs.SetInt("SelectedModelType", (int)khhModel.CurrentModelType);
 
             // 씬 전환
-            SceneManager.LoadScene("PlayerTest");
+            SceneManager.LoadScene("GameTrack");
         }
 
     }
@@ -48,7 +48,7 @@ public class CarModelManager : MonoBehaviour
     void ChangeToNextModel()
     {
         currentModelTypeIndex++; // 다음 모델 타입으로 이동
-        if (currentModelTypeIndex >= System.Enum.GetValues(typeof(KHHModel.ModelType)).Length)
+        if (currentModelTypeIndex >= (int)KHHModel.ModelType.Length)
         {
             currentModelTypeIndex = 0; // 모든 모델을 순회한 후 처음으로 돌아옴
         }
@@ -61,6 +61,6 @@ public class CarModelManager : MonoBehaviour
     void LoadPlayerTestScene()
     {
         // PlayerTest 씬 로드
-        SceneManager.LoadScene("PlayerTest");
+        SceneManager.LoadScene("GameTrack");
     }
 }

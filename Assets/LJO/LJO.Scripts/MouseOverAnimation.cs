@@ -44,12 +44,12 @@ public class MouseOverAnimation : MonoBehaviour
     private void Update()
     {
         // 컨트롤러의 위치와 방향을 가져옴
-        Vector3 controllerPosition = OVRInput.GetLocalControllerPosition(controller);
-        Quaternion controllerRotation = OVRInput.GetLocalControllerRotation(controller);
+        //Vector3 controllerPosition = OVRInput.GetLocalControllerPosition(controller);
+        //Quaternion controllerRotation = OVRInput.GetLocalControllerRotation(controller);
 
 
         RaycastHit hit;
-        Ray ray = new Ray(controllerPosition, controllerRotation * Vector3.forward);
+        Ray ray = new Ray(transform.position, transform.forward);
 
         Vector3 rayStart = ray.origin;
         Vector3 rayEnd = ray.origin + ray.direction * rayLength;
@@ -58,7 +58,7 @@ public class MouseOverAnimation : MonoBehaviour
         {
             Debug.Log("Raycast hit: " + hit.transform.name);
            
-            defaultUI.SetActive(false); 
+            //defaultUI.SetActive(false); 
 
             rayEnd = hit.point;
             foreach (ChildAnimationMapping mapping in childMappings)
@@ -74,12 +74,15 @@ public class MouseOverAnimation : MonoBehaviour
 
                     if (mapping.associatedUI != null)
                     {
+                        Debug.Log("Activating UI for " + mapping.childObject.name);
+                        defaultUI.SetActive(false);
                         mapping.associatedUI.SetActive(true); // 새로운 UI 활성화
                         currentActiveUI = mapping.associatedUI; // 현재 활성화된 UI 업데이트
                     }
                     else
                     {
                         Debug.LogWarning("No associated UI for " + mapping.childObject.name);
+                        defaultUI.SetActive(true);
                         currentActiveUI = null;
                     }
                     break;
