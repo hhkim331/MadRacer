@@ -27,7 +27,6 @@ public class EnemyAttack : MonoBehaviour
     //enemy АјАн 
     void Start()
     {
-        bulletCount = bulletMaxCount;
         MeleeAttackCount = 0;
         enemyAttackline = GetComponent<LineRenderer>();
         enemyEye = GetComponent<EnemyEye>();

@@ -74,7 +74,6 @@ public class KHHGameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isEnd) return;
         if (!isStart) return;
         time += Time.deltaTime;
 

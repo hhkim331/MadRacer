@@ -15,16 +15,16 @@ RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
   m_Fog: 1
-  m_FogColor: {r: 0.4627451, g: 0.4627451, b: 0.4627451, a: 1}
+  m_FogColor: {r: 0.9607843, g: 0.8117647, b: 0.7019608, a: 1}
   m_FogMode: 3
-  m_FogDensity: 0.002
+  m_FogDensity: 0.0023
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
   m_AmbientSkyColor: {r: 0.81960785, g: 0.5137255, b: 0.28235295, a: 1}
   m_AmbientEquatorColor: {r: 0.26415092, g: 0.20675728, b: 0.18066926, a: 1}
   m_AmbientGroundColor: {r: 0.20754719, g: 0.14662565, b: 0.11062656, a: 1}
-  m_AmbientIntensity: 1
-  m_AmbientMode: 3
+  m_AmbientIntensity: 1.35
+  m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.36078432, g: 0.38039216, b: 0.3882353, a: 1}
   m_SkyboxMaterial: {fileID: 2100000, guid: 01f4eb1c73693428d923f1520032e7f9, type: 2}
   m_HaloStrength: 0.5
@@ -35,10 +35,10 @@ RenderSettings:
   m_DefaultReflectionMode: 1
   m_DefaultReflectionResolution: 128
   m_ReflectionBounces: 1
-  m_ReflectionIntensity: 0.227
-  m_CustomReflection: {fileID: 0}
+  m_ReflectionIntensity: 0.18
+  m_CustomReflection: {fileID: 8900000, guid: 31a88e5092ee6a74db1c190d275ad199, type: 3}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.035264704, g: 0.042711113, b: 0.055969074, a: 0.18}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 9f4a494b6bf898e469cefd40c188e194, type: 2}
   m_LightingSettings: {fileID: 4890085278179872738, guid: 6e92bbe280b960a4eb55da40d4f88ea2, type: 2}
 --- !u!196 &4
 NavMeshSettings:
@@ -10119,7 +10119,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &374384981
 Transform:
   m_ObjectHideFlags: 0
@@ -15771,7 +15771,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -15781,7 +15781,7 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
-  m_ShadowAngle: 0
+  m_ShadowAngle: 10.7
 --- !u!4 &604834005
 Transform:
   m_ObjectHideFlags: 0
@@ -35841,6 +35841,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 16
       objectReference: {fileID: 0}
+    - target: {fileID: 772970602004358802, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: bulletCount
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 804756922809009121, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
       propertyPath: m_Layer
       value: 16
@@ -41753,6 +41757,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 16
       objectReference: {fileID: 0}
+    - target: {fileID: 772970602004358802, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: bulletCount
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 804756922809009121, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
       propertyPath: m_Layer
       value: 16
@@ -42210,6 +42218,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 303263b4a4aa72f48a3d23e8c80a76e4, type: 3}
+    - target: {fileID: 772970602004358802, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: bulletCount
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 4667048316251629702, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
       propertyPath: waypoint
       value: 
@@ -47313,6 +47325,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 16
       objectReference: {fileID: 0}
+    - target: {fileID: 772970602004358802, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
+      propertyPath: bulletCount
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 804756922809009121, guid: f48b151d9c1de36468d191e7e2a35ff8, type: 3}
       propertyPath: m_Layer
       value: 16
@@ -49254,7 +49270,7 @@ LineRenderer:
   - {x: 0, y: 0, z: 1}
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 0.05
+    widthMultiplier: 0.02
     widthCurve:
       serializedVersion: 2
       m_Curve:

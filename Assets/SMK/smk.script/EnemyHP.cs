@@ -44,7 +44,9 @@ public class EnemyHP : KHHHealth
             //이펙트 활성화->비활성화.
             hitEffect = StartCoroutine(HitEffect());
             //피격 하지 않을 경우 비활성화.
-            StartCoroutine(EndUI());
+            if (endCoroutine != null)
+                StopCoroutine(endCoroutine);
+            endCoroutine = StartCoroutine(EndUI());
         }
     }
 
@@ -59,10 +61,14 @@ public class EnemyHP : KHHHealth
 
         enemy.enabled = false;
         _waypointFollow.enabled = false;
-        StartCoroutine(EndUI());
+        if (endCoroutine != null)
+            StopCoroutine(endCoroutine);
+        endCoroutine = StartCoroutine(EndUI());
 
 
     }
+
+    Coroutine endCoroutine;
     public override void Respawn()
     {
         //리스폰 된 경우 uI 활성화
@@ -74,8 +80,9 @@ public class EnemyHP : KHHHealth
         enemy.enabled = true;
         _waypointFollow.enabled = true;
         //일정 시간이 지나면 UI 비활성화
-        StartCoroutine(EndUI());
-
+        if (endCoroutine != null)
+            StopCoroutine(endCoroutine);
+        endCoroutine=StartCoroutine(EndUI());
     }
     #region
     //public void UpdateHit(int dmg, Vector3 origine)
@@ -154,7 +161,7 @@ public class EnemyHP : KHHHealth
     //일정 시간이 지나면 UI 비활성화
     IEnumerator EndUI()
     {
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.3f);
         UI.SetActive(false);
     }
 }

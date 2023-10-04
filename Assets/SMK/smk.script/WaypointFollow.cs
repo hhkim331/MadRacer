@@ -51,7 +51,7 @@ public class WaypointFollow : MonoBehaviour
         waypointAngleValue = waypoint.transform.rotation.eulerAngles.y;
 
         currentTime = 0;
-        speed = 0;
+        speed = normalSpeed;
         rb = GetComponent<Rigidbody>();
         rb.constraints = RigidbodyConstraints.FreezeRotationX;
         rb.constraints = RigidbodyConstraints.FreezeRotationZ;
