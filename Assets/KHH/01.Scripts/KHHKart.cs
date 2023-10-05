@@ -194,6 +194,8 @@ public class KHHKart : MonoBehaviour
             else
             {
                 boostEffect.SetActive(false);
+                foreach (var particle in boostParticles)
+                    particle.Stop();
                 targetSpeed = normalSpeed;
             }
 
